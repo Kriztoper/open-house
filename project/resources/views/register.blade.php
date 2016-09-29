@@ -59,8 +59,9 @@
                         {!! form_row($form->last_name) !!}
                         {!! form_row($form->student_number) !!}
                         {!! form_row($form->password) !!}
+                        {!! form_row($form->register) !!}
 
-                        <a href="/laravel/public/register/done" class="btn btn-success btn-block" role="button"> Register </a>
+                        <a href="/openhouse/project/public/register/done" class="btn btn-success btn-block" role="button"> Register </a>
                       </div>
                     </div>
 

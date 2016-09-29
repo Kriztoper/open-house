@@ -74,7 +74,7 @@
                                     <a href="#" class="btn btn-primary btn-block" role="button">Login</a>
                                 </div>
                                 <div class="row">
-                                    <a href="/laravel/public/register" class="btn btn-success btn-block" role="button">Register</a>
+                                    <a href="/openhouse/project/public/register" class="btn btn-success btn-block" role="button">Register</a>
                                 </div>
                                 <div class="row">
                                     <a href="#">Forgot Password</a> |

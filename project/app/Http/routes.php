@@ -11,14 +11,13 @@
 |
 */
 
-Route::get('/home/lol', function () {
-    return view('welcome');
-});
-
-Route::get('/project', function () {
+Route::get('/', function () {
     return view('project');
 });
 
+/*
+*	Routes for user registration
+*/
 Route::get('/register', 'RegistrationController@create');
-Route::get('/register', 'RegistrationController@create');
-Route::post('/register/done', 'RegistrationController@store');
+Route::post('/register', 'RegistrationController@store');
+Route::get('/success', 'RegistrationController@success');

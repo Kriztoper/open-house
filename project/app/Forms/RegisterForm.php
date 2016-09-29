@@ -18,12 +18,16 @@ class RegisterForm extends Form
                 'label' => 'Last Name'
             ])
             ->add('student_number', 'number', [
-                'rules' => 'required|min:9|max:9',
+                'rules' => 'required',
                 'label' => 'Student Number'
             ])
             ->add('password', 'text', [
                 'rules' => 'required|min:6',
                 'label' => 'Password'
+            ])
+            ->add('register', 'submit', [
+                'label' => 'Register',
+                'attr'  => ['class' => 'btn btn-primary']
             ]);
     }
 }
