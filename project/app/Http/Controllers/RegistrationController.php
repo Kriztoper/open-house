@@ -48,6 +48,7 @@ class RegistrationController extends Controller
         }
 
         $data = $request->all();
+        $data['password'] = bcrypt($data['password']);
         $user = User::create($data);
 
         return \Redirect::to('/success');
@@ -55,7 +56,7 @@ class RegistrationController extends Controller
     }
 
     public function success(){
-        return view('success');s
+        return view('success');
     }
 
     /**
