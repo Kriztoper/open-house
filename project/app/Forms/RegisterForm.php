@@ -21,7 +21,7 @@ class RegisterForm extends Form
                 'rules' => 'required',
                 'label' => 'Student Number'
             ])
-            ->add('password', 'text', [
+            ->add('password', 'password', [
                 'rules' => 'required|min:6',
                 'label' => 'Password'
             ])

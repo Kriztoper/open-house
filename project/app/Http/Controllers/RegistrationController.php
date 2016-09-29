@@ -55,7 +55,7 @@ class RegistrationController extends Controller
     }
 
     public function success(){
-        return view('success');
+        return view('success');s
     }
 
     /**
