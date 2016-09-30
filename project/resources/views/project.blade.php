@@ -1,76 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Open House 2016</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <style>
-            body{
-             /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00589F', endColorstr='#0073CF', GradientType=0);
-              background: -webkit-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-              background: -moz-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-              background: -ms-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-              background: -o-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-              background: linear-gradient(to bottom, #00589F 50%, #0073CF) !important;*/
-              background-image: url("http://i.imgur.com/MJVPjaV.jpg");
-              color: white;
-            }
+  <head>
+    <title>Open House 2016</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      body{
+        background-image: url("http://i.imgur.com/MJVPjaV.jpg");
+        color: white;
+      }
 
-            div.well{
-              height: 250px;
-            } 
+      div.well{
+        height: 250px;
+      } 
 
-            .responsive-center{
-              margin-top: 10px;
-              width: 30%;
-            }
-            .btn{
-                margin-bottom: 10px;
-            }
+      .responsive-center{
+        margin-top: 30px;
+        width: 23%;
+      }
 
-            #log{
-              background: #FF8226;
-            }
+      .btn{
+          margin-bottom: 15px;
+      }
 
-            #reg{
-              background: #BA002C;
-            }
+      #logo{
+        margin-top: 3%;
+      }
 
+      #log{
+        background: #FF8226;
+      }
 
-        </style>
-    </head>
-    <body>
-      <center><div class="container-fluid">
-        <img src="http://i.imgur.com/i4LQ5Bi.png" />
-        <div class="responsive-center">
-          <form action="" id="loginForm">
-              <div class="form-group input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                  <input class="form-control" type="text" name='username' placeholder="student number"/>
-              </div>
-              
-              <div class="form-group input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                  <input class="form-control" type="password" name='password' placeholder="password"/>     
-              </div>
+      #reg{
+        background: #BA002C;
+      }
+    </style>
+  </head>
+  <body>
+    <center><div class="container-fluid">
+    <img id="logo" src="http://i.imgur.com/i4LQ5Bi.png" />
+    <div class="responsive-center">
+      <form action="" id="loginForm">
+        <div class="form-group input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input class="form-control" type="text" name='username' placeholder="student number"/>
+        </div>
+        
+        <div class="form-group input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input class="form-control" type="password" name='password' placeholder="password"/>     
+        </div>
 
-              <div class="text-center container-fluid">
-                  <div class="row">
-                      <a href="#" id="log" class="btn btn-primary btn-block" role="button">Login</a>
-                  </div>
-                  <div class="row">
-                      <a href="/openhouse/project/public/register" id="reg" class="btn btn-success btn-block" role="button">Register</a>
-                  </div>
-                  <div class="row">
-                      <a href="#">Forgot Password</a> 
-                      <a href="#">Support</a>
-                  </div>
-              </div>
-          </form>        
-      </div>
-      </div></center>
-    </body>
+        <div class="text-center container-fluid">
+          <div class="row">
+            <a href="#" id="log" class="btn btn-primary btn-block" role="button">Login</a>
+          </div>
+          <div class="row">
+            <a href="/openhouse/project/public/register" id="reg" class="btn btn-success btn-block" role="button">Register</a>
+          </div>
+          <div class="row">
+            <a href="#">Forgot Password</a> 
+          </div>
+        </div>
+      </form>        
+    </div>
+  </div></center>
+</body>
 </html>

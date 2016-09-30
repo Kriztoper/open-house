@@ -8,18 +8,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
-            body{
-              background: #00589F;
-              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00589F', endColorstr='#0073CF', GradientType=0);
-              background: -webkit-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-              background: -moz-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-              background: -ms-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-              background: -o-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-              background: linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
-              color: default;
-            }
-
-            
 
             .Absolute-Center {
               margin: auto;
@@ -46,10 +34,10 @@
     </head>
     <body>
         <div class="container-fluid">
-        <div id="logo-container"></div>
+            <div id="logo-container"></div>
             <div class="row">
                 <div class="Absolute-Center is-Responsive">
-                    <div class="panel panel-info">
+                    <div class="panel panel-info">  
                       <div class="panel-heading"> Registration </div>
                       <div class="panel-body">
                           
