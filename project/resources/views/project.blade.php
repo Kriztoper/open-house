@@ -9,7 +9,6 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
             body{
-              background: #00589F;
               filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00589F', endColorstr='#0073CF', GradientType=0);
               background: -webkit-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
               background: -moz-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
@@ -40,23 +39,32 @@
             #logo-container{
               margin: auto;
               margin-bottom: 10px;
-              width:164px;
-              height:165px;
-              background-image:url('http://upvtc.edu.ph/wp-content/uploads/2016/07/footer1.png');
+              width:400px;
+              height:200px;
+              background-image:url('http://i.imgur.com/i4LQ5Bi.png');
             }
 
             .btn{
                 margin-bottom: 10px;
             }
+
+            #log{
+              background: #FF8226;
+            }
+
+            #reg{
+              background: #BA002C;
+            }
+
         </style>
     </head>
     <body>
         <div class="container">
             <div class="row">
+              <div id="logo-container"></div>
+            </div>
+            <div class="row">
                 <div class="Absolute-Center is-Responsive">
-                    <div id="logo-container">
-                        
-                    </div>
                     <div class="col-sm-12 col-md-10 col-md-offset-1">
                         <form action="" id="loginForm">
                             <div class="form-group input-group">
@@ -71,13 +79,13 @@
         
                             <div class="text-center container-fluid">
                                 <div class="row">
-                                    <a href="#" class="btn btn-primary btn-block" role="button">Login</a>
+                                    <a href="#" id="log" class="btn btn-primary btn-block" role="button">Login</a>
                                 </div>
                                 <div class="row">
-                                    <a href="/openhouse/project/public/register" class="btn btn-success btn-block" role="button">Register</a>
+                                    <a href="/openhouse/project/public/register" id="reg" class="btn btn-success btn-block" role="button">Register</a>
                                 </div>
                                 <div class="row">
-                                    <a href="#">Forgot Password</a> |
+                                    <a href="#">Forgot Password</a> 
                                     <a href="#">Support</a>
                                 </div>
 

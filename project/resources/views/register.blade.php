@@ -46,10 +46,9 @@
     </head>
     <body>
         <div class="container-fluid">
+        <div id="logo-container"></div>
             <div class="row">
                 <div class="Absolute-Center is-Responsive">
-                    <div id="logo-container"></div>
-                    
                     <div class="panel panel-info">
                       <div class="panel-heading"> Registration </div>
                       <div class="panel-body">
