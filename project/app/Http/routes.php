@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('project');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
 /*
 *	Routes for user registration
 */

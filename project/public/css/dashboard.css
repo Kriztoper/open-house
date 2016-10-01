@@ -1,0 +1,48 @@
+html {
+	width: 100%;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-image: url(http://i.imgur.com/unOVvYX.jpg);
+}
+
+@font-face {
+    font-family: 'goboldregular';
+    src: url('../fonts/gobold_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gobold_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.navbar-fixed-bottom {
+	background-color: #BA002c;
+	padding: ;
+}
+
+.navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+    background-color: #BA002c;
+    color: white;
+}
+
+.navbar-fixed-top .navbar-nav > li > a {
+	color: white;
+	font-size: 15pt;
+	letter-spacing: 2pt;
+}
+
+.red {
+	color: #BA002c;
+}
+
+.white {
+	color: white;
+}
+
+.gobold {
+	font-family: goboldregular;
+}
+
+#links {
+	margin-right: 10px;
+}
