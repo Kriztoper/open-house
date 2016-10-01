@@ -9,7 +9,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
       body{
-        background-image: url("http://i.imgur.com/MJVPjaV.jpg");
+        background-color: #233F59;
+        overflow: hidden;
         color: white;
       }
 
@@ -37,36 +38,45 @@
       #reg{
         background: #BA002C;
       }
+
+      #btm{
+        width: 100%;
+        position: fixed;
+        z-index: -1;
+        bottom: 0;
+      }
+
     </style>
   </head>
   <body>
     <center><div class="container-fluid">
-    <img id="logo" src="http://i.imgur.com/i4LQ5Bi.png" />
-    <div class="responsive-center">
-      <form action="" id="loginForm">
-        <div class="form-group input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-          <input class="form-control" type="text" name='username' placeholder="student number"/>
-        </div>
+      <img id="logo" src="http://i.imgur.com/i4LQ5Bi.png" />
+      <div class="responsive-center">
+        <form action="" id="loginForm">
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" type="text" name='username' placeholder="Student Number"/>
+          </div>
         
-        <div class="form-group input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-          <input class="form-control" type="password" name='password' placeholder="password"/>     
-        </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" name='password' placeholder="Password"/>     
+          </div>
 
-        <div class="text-center container-fluid">
-          <div class="row">
-            <a href="#" id="log" class="btn btn-primary btn-block" role="button">Login</a>
+          <div class="text-center container-fluid">
+            <div class="row">
+              <a href="#" id="log" class="btn btn-primary btn-block" role="button">Login</a>
+            </div>
+            <div class="row">
+              <a href="/openhouse/project/public/register" id="reg" class="btn btn-success btn-block" role="button">Register</a>
+            </div>
+            <div class="row">
+              <a href="#">Forgot Password</a> 
+            </div>
           </div>
-          <div class="row">
-            <a href="/openhouse/project/public/register" id="reg" class="btn btn-success btn-block" role="button">Register</a>
-          </div>
-          <div class="row">
-            <a href="#">Forgot Password</a> 
-          </div>
-        </div>
-      </form>        
-    </div>
-  </div></center>
-</body>
+        </form>        
+      </div>
+    </div></center>
+    <img id="btm" src="http://i.imgur.com/pMAtGEl.png"/>
+  </body>
 </html>
