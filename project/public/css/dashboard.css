@@ -12,12 +12,14 @@ html {
          url('../fonts/gobold_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
-.navbar-fixed-bottom {
-	background-color: #BA002c;
-	padding: ;
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
@@ -26,9 +28,28 @@ html {
 }
 
 .navbar-fixed-top .navbar-nav > li > a {
+	margin-right: 10px;
+	font-family: goboldregular;
 	color: white;
 	font-size: 15pt;
 	letter-spacing: 2pt;
+}
+
+.navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+    background-color: transparent;
+    color: white;
+}
+
+.navbar-fixed-bottom .navbar-nav > li > a {
+	margin-right: 10px;
+	font-family: montserratregular;
+	font-size: 8pt;
+	font-weight: bold;
+	color: darkgray;
+}
+
+.navbar-fixed-bottom {
+	background-color: #BA002c;
 }
 
 .red {
@@ -37,12 +58,4 @@ html {
 
 .white {
 	color: white;
-}
-
-.gobold {
-	font-family: goboldregular;
-}
-
-#links {
-	margin-right: 10px;
 }
