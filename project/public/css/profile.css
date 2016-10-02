@@ -21,10 +21,15 @@ html {
 	font-size: 23px;
 }
 
+.gobolds {
+	font-family: goboldregular;
+	font-size: 15px;
+}
+
 .pac{
 	position: absolute;
-	top: 42%;
-	left: 57%;
+	top: 41.5%;
+	left: 56%;
 }
 
 .ghost{
@@ -101,4 +106,7 @@ html {
 }
 .cyan {
 	color: cyan;
+}
+.blue {
+	color: #233f59;
 }

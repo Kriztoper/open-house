@@ -48,7 +48,7 @@
     		<div class="profBody">
     			<div class="panel panel-info trans">
     				<div class="panel-heading">
-    					<h1 class="panel-title">User Profile</h1>
+    					<h1 class="panel-title gobold blue">User Profile</h1>
     				</div>
     				<div class="panel panel-body trans">
     					<div class="col-lg-3">
@@ -58,16 +58,16 @@
     						<table class="table table-user-information cyan">
     							<tbody >
     								<tr>
-    									<td class="white">First Name:</td>
-    									<td>Carlo</td>
+    									<td class="white gobolds">First Name:</td>
+    									<td class="gobolds">Carlo</td>
     								</tr>
     								<tr>
-    									<td class="white">Last Name:</td>
-    									<td>Valleramos</td>
+    									<td class="white gobolds">Last Name:</td>
+    									<td class="gobolds">Valleramos</td>
     								</tr>
     								<tr>
-    									<td class="white">Student Number:</td>
-    									<td>2013-44347</td>
+    									<td class="white gobolds">Student Number:</td>
+    									<td class="gobolds">2013-44347</td>
     								</tr>
     							</tbody>
     						</table>
@@ -76,8 +76,8 @@
     				</div>
     				<div class="panel panel-footer trans col-lg-12">
     					<div class="pull-right">
-    					<a href="#" class="btn btn-primary goldbg p">Edit Profile</a>
-    					<a href="#" class="btn btn-primary redbg p">Change Password</a>
+    					<a href="#" class="btn btn-primary goldbg gobolds blue">Edit Profile</a>
+    					<a href="#" class="btn btn-primary redbg gobolds blue">Change Password</a>
     				</div>
     				</div>
   				</div>
@@ -89,7 +89,7 @@
   			</div>
 
   			<div class="pac p">
-  				<img src="http://i.imgur.com/tInEKtg.gif" alt="Cinque Terre" width="30" height="30">
+  				<img src="http://i.imgur.com/7stkOu8.gif" alt="Cinque Terre" width="55" height="40">
   			</div>
   			<!-- ghost dapat an gif pero wa pa source-->
   			<div class="ghost">
