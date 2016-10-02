@@ -1,0 +1,104 @@
+
+html {
+	width: 100%;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-image: url(http://i.imgur.com/Rhri8TK.png);
+}
+
+@font-face {
+    font-family: 'goboldregular';
+    src: url('../fonts/gobold_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gobold_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.gobold {
+	font-family: goboldregular;
+	font-size: 23px;
+}
+
+.pac{
+	position: absolute;
+	top: 42%;
+	left: 57%;
+}
+
+.ghost{
+	position: absolute;
+	top: 42%;
+	left: 60%;
+}
+
+.logo{
+	position: absolute;
+	top: 15%;
+	left: 62%;
+}
+
+.profBody{
+	position: absolute;
+	top: 15%;
+	left:7%;
+	width: 40%;
+}
+
+.navbar-fixed-bottom {
+	background-color: #BA002c;
+	padding: ;
+}
+
+.navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+    background-color: #BA002c;
+    color: white;
+}
+
+.navbar-fixed-top .navbar-nav > li > a {
+	color: white;
+	font-size: 15pt;
+	letter-spacing: 2pt;
+}
+
+.gobold {
+	font-family: goboldregular;
+}
+
+#links {
+	margin-right: 10px;
+}
+
+.trans{
+	background: none;
+}
+
+.p{
+	opacity: 0.9;
+}
+
+.greybg{
+	background: rgb(60, 60, 60);
+}
+
+.redbg{
+	background: red;
+}
+
+.goldbg{
+	background: gold;
+}
+
+.gold {
+	color: gold;
+}
+.red {
+	color: red;
+}
+.white {
+	color: white;
+}
+.cyan {
+	color: cyan;
+}
