@@ -22,9 +22,33 @@ Route::get('/dashboard', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
-/*
-*	Routes for user registration
-*/
+
 Route::get('/register', 'RegistrationController@create');
 Route::post('/register', 'RegistrationController@store');
 Route::get('/success', 'RegistrationController@success');
+
+/*
+*
+*	Author: Khalile Pujante
+*	please ignore the implementations below
+*	still in beta. not stable
+*/ 
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+
+Route::controllers([
+   'password' => 'Auth\PasswordController',
+]);
+
+
+
+
+
