@@ -23,6 +23,10 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+Route::get('/hall_of_fame', function () {
+    return view('hall_of_fame');
+});
+
 Route::get('/register', 'RegistrationController@create');
 Route::post('/register', 'RegistrationController@store');
 Route::get('/success', 'RegistrationController@success');

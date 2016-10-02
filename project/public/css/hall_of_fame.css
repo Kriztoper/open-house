@@ -3,7 +3,7 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: url(http://i.imgur.com/kQ3naS0.jpg);
+	background-image: url(http://i.imgur.com/G0Dguwk.png);
 }
 
 body {
@@ -79,13 +79,6 @@ body {
 	background-color: #BA002c;
 }
 
-.redfont{
-	color: red;
-}
-.gold {
-	color: gold;
-}
-
 .red {
 	color: #BA002c;
 }
@@ -115,4 +108,12 @@ body {
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.gold {
+	color: gold;
+}
+
+.redfont{
+	color: red;
 }

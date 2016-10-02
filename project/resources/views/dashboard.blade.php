@@ -21,10 +21,10 @@
      				</a>
   				</div>
     			<ul id="tokens" class="nav navbar-nav">
-	      			<li>
-	      				<p class="navbar-text"><span class="glyphicon glyphicon-record white"></span><span class="red"> x </span><span class="white">{{'69'}}</span></p>
-	      			</li>
-	    		</ul>
+              		<li>
+                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{'69'}}</span></p>
+              		</li>
+          		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
 	    			<li class="active"><a href="#">DASHBOARD</a></li>
 	      			<li><a href="#">HALL OF FAME</a></li>
@@ -47,6 +47,7 @@
 		<nav class="navbar navbar-fixed-bottom">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Help</a></li>
 					<li><a href="#">ABOUT THE DEVELOPERS</a></li>
 				</ul>
 			</div>
