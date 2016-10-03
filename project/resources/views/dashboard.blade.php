@@ -31,7 +31,7 @@
 	      			<li><a href="#">GAMES</a></li>
 	      			<li><a href="#">VIDEOS</a></li>
 	      			<!-- Change to user name -->
-	      			<li><a href="#">{{'JAMES'}}</a></li>
+	      			<li><a href="{{url('\profile')}}">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a></li>
 	    		</ul>
   			</div>
 		</nav>

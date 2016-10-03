@@ -31,7 +31,7 @@
 	      			<li><a href="#">GAMES</a></li>
 	      			<li><a href="#">VIDEOS</a></li>
 	      			<!-- Change to user name -->
-	      			<li class="active"><a href="#">{{'CARLO'}}</a></li>
+	      			<li class="active"><a href="#">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a></li>
 	    		</ul>
   			</div>
 		</nav>
@@ -60,15 +60,15 @@
     							<tbody >
     								<tr>
     									<td class="white gobolds">First Name:</td>
-    									<td class="gobolds">Carlo</td>
+    									<td class="gobolds">{{ Auth::user()->first_name }}</td>
     								</tr>
     								<tr>
     									<td class="white gobolds">Last Name:</td>
-    									<td class="gobolds">Valleramos</td>
+    									<td class="gobolds">{{ Auth::user()->last_name }}</td>
     								</tr>
     								<tr>
     									<td class="white gobolds">Student Number:</td>
-    									<td class="gobolds">2013-44347</td>
+    									<td class="gobolds">{{ Auth::user()->student_number }}</td>
     								</tr>
     							</tbody>
     						</table>
