@@ -1,0 +1,175 @@
+
+html {
+	width: 100%;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-image: url(http://i.imgur.com/Rhri8TK.png);
+}
+
+body {
+	background-color: transparent;
+	font-family: montserratregular;
+}
+
+@font-face {
+    font-family: 'goboldregular';
+    src: url('../fonts/gobold_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gobold_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.gobolds {
+	font-family: goboldregular;
+	font-size: 15px;
+}
+
+.pac{
+	position: absolute;
+	top: 41.5%;
+	left: 58%;
+}
+
+.ghost{
+	position: absolute;
+	top: 42%;
+	left: 62%;
+}
+
+.logo{
+	position: absolute;
+	top: 15%;
+	left: 64%;
+}
+
+.profBody{
+	position: absolute;
+	top: 15%;
+	left:10%;
+	width: 40%;
+}
+
+.trans{
+	background: none;
+}
+
+.p{
+	opacity: 0.9;
+}
+
+.greybg{
+	background: rgb(60, 60, 60);
+}
+
+.redbg{
+	background: red;
+}
+
+.redfont{
+	color: red;
+}
+
+.goldbg{
+	background: gold;
+}
+
+.gold {
+	color: gold;
+}
+
+.white {
+	color: white;
+}
+.cyan {
+	color: cyan;
+}
+.blue {
+	color: #233f59;
+}
+
+
+
+
+.navbar-brand {
+	padding: 0px 0px !important;
+	padding-top: 10px !important;
+}
+
+.page-header {
+	font-family: goboldregular;
+	color: white !important;
+	border-color: transparent !important;
+	letter-spacing: 5pt;
+	line-height: 120%;
+}
+
+#top-navbar {
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+    background-color: #BA002c;
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+	margin-right: 10px;
+	font-family: goboldregular;
+	color: white;
+	font-size: 15pt;
+	letter-spacing: 2pt;
+}
+
+.navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+    background-color: transparent;
+    color: white;
+}
+
+.navbar-fixed-bottom .navbar-nav > li > a {
+	margin-right: 10px;
+	font-family: montserratregular;
+	font-size: 8pt;
+	font-weight: bold;
+	color: darkgray;
+}
+
+.navbar-fixed-bottom {
+	background-color: #BA002c;
+}
+
+.red {
+	color: #BA002c;
+}
+
+#owl-demo .item{
+  background: #3fbf79;
+  padding: 30px 0px;
+  margin: 10px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+.customNavigation{
+  text-align: center;
+}
+//use styles below to disable ugly selection
+.customNavigation a{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
