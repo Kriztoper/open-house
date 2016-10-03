@@ -26,7 +26,7 @@
 	      			</li>
 	    		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
-	    			<li><a href="#">DASHBOARD</a></li>
+	    			<li><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
 	      			<li><a href="#">HALL OF FAME</a></li>
 	      			<li><a href="#">GAMES</a></li>
 	      			<li><a href="#">VIDEOS</a></li>
