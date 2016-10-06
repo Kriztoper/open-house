@@ -31,7 +31,7 @@
               <li><a href="#">GAMES</a></li>
               <li><a href="#">VIDEOS</a></li>
               <!-- Change to user name -->
-              <li><a href="#">{{'JAMES'}}</a></li>
+              <li><a href="#">{{'CARLO'}}</a></li>
           </ul>
         </div>
     </nav>
@@ -44,6 +44,47 @@
         </ul>
       </div>
     </nav>
+    </div>
+
+    <div class="container tablePos col-lg-7">
+      <table class="table table-hover">
+        <thead>
+          <tr class="gold gob">
+            <th><font size="5"><STRONG> GAME </STRONG></font></th>
+            <th><font size="5"><STRONG> CHAMPION </STRONG></font></th>
+          </tr>
+        </thead>
+        <tbody class="gold">
+          <tr>
+            <td><font size="3"> Basketball </font></td>
+            <td><font size="3"> Sinugdanan </font><img src="http://i.imgur.com/ANQHzFM.gif" width="50" height="40"></td>
+          </tr>
+          <tr>
+            <td><font size="3"> Volleyball </font></td>
+            <td><font size="3"> Sinugdanan </font><img src="http://i.imgur.com/ANQHzFM.gif" width="50" height="40"></td>
+          </tr>
+          <tr>
+            <td><font size="3"> Football </font></td>
+            <td><font size="3"> Sinugdanan </font><img src="http://i.imgur.com/ANQHzFM.gif" width="50" height="40"></td>
+          </tr>
+          <tr>
+            <td><font size="3"> Ultimate Frisbee </font></td>
+            <td><font size="3"> Sinugdanan </font><img src="http://i.imgur.com/ANQHzFM.gif" width="50" height="40"></td>
+          </tr>
+          <tr>
+            <td><font size="3"> Paraptayay </font></td>
+            <td><font size="3"> Sinugdanan </font><img src="http://i.imgur.com/ANQHzFM.gif" width="50" height="40"></td>
+          </tr>
+          <tr>
+            <td><font size="3"> Futsal </font></td>
+            <td><font size="3"> Sinugdanan </font><img src="http://i.imgur.com/ANQHzFM.gif" width="50" height="40"></td>
+          </tr>
+          <tr>
+            <td><font size="3"> DOTA 2 </font></td>
+            <td><font size="3"> Sinugdanan </font><img src="http://i.imgur.com/ANQHzFM.gif" width="50" height="40"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     		
     		

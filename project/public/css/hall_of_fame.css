@@ -54,6 +54,16 @@ body {
     color: white;
 }
 
+.mons {
+	font-family: monsterratregular;
+	letter-spacing: 5px;
+}
+
+.gob {
+	font-family: goboldregular;
+	letter-spacing: 5px;
+}
+
 .navbar-default .navbar-nav > li > a {
 	margin-right: 10px;
 	font-family: goboldregular;
@@ -116,4 +126,14 @@ body {
 
 .redfont{
 	color: red;
+}
+
+.bluefont {
+	color: #00ffe9;
+}
+
+.tablePos {
+	position: fixed;
+	top: 17%;
+	left: 20%;
 }
