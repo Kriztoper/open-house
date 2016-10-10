@@ -16,7 +16,7 @@
       </div>
       <div class="row">
         <div class="Absolute-Center is-Responsive">
-          <form class="form-horizontal" role="form" method="POST" action="/openhouse/project/public/auth/register">
+          <form class="form-horizontal" role="form" method="POST" action="/openhouse/project/public/register">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group">
