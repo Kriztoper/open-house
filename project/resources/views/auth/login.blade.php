@@ -47,7 +47,7 @@
         </div>
         @endif
 
-        <form class="form-horizontal" role="form" method="POST" action="/openhouse/project/public/auth/login">
+        <form class="form-horizontal" role="form" method="POST" action="/openhouse/project/public/login">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="form-group">
             <div class="col-md-12">
@@ -67,7 +67,7 @@
                 <button type="submit" id="log" class="btn btn-primary">Login</button>
               </div>
               <div>
-                <button id="reg" class="btn btn-primary">Register</button>
+                <a id="reg" role="btn btn-success btn-block" href="/openhouse/project/public/register">Register</a>
               </div>
               <div class="checkbox">
                 <label>
