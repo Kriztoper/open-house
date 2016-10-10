@@ -64,10 +64,10 @@
           <div class="form-group">
             <div class="col-md-12">
               <div>
-                <button type="submit" id="log" class="btn btn-primary">Login</button>
+                <button type="submit" id="log" class="btn btn-primary btn-block">Login</button>
               </div>
               <div>
-                <a id="reg" role="btn btn-success btn-block" href="/openhouse/project/public/register">Register</a>
+                <a id="reg" class="btn btn-success btn-block button" href="/openhouse/project/public/register">Register</a>
               </div>
               <div class="checkbox">
                 <label>

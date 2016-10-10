@@ -51,7 +51,7 @@
 
             <div class="form-group">
               <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" id="reg" class="btn btn-primary btn-block">Register</button>
               </div>
             </div>
           </form> 
