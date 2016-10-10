@@ -47,7 +47,6 @@
 		<nav class="navbar navbar-fixed-bottom">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Help</a></li>
 					<li><a href="#">ABOUT THE DEVELOPERS</a></li>
 				</ul>
 			</div>

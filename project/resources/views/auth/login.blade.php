@@ -67,7 +67,7 @@
                 <button type="submit" id="log" class="btn btn-primary">Login</button>
               </div>
               <div>
-                <button id="reg" class="btn btn-primary">Register</button>
+                <button id="reg" class="btn btn-success btn-block">Register</button>
               </div>
               <div class="checkbox">
                 <label>

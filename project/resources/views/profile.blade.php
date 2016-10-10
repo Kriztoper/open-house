@@ -39,8 +39,7 @@
 		<nav class="navbar navbar-fixed-bottom">
       		<div class="container-fluid">
         		<ul class="nav navbar-nav navbar-right">
-          			<li><a href="#">Help</a></li>
-					<li><a href="#">ABOUT THE DEVELOPERS</a></li>
+                <li><a href="#">ABOUT THE DEVELOPERS</a></li>
         		</ul>
       		</div>
     	</nav>
@@ -86,7 +85,7 @@
 
 
   			<div class="logo">
-  				<img src="http://i.imgur.com/zTC2alp.png" alt="Cinque Terre" width="300" height="150">
+  				<img src="http://i.imgur.com/i4LQ5Bi.png" alt="Cinque Terre" width="300" height="150">
   			</div>
 
   			<div class="pac p">
