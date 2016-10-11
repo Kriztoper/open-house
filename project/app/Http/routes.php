@@ -23,6 +23,10 @@ Route::get('/hall_of_fame', function () {
     return view('hall_of_fame');
 });
 
+Route::get('/developers', function () {
+    return view('developers');
+});
+
 /*
 *	Author: Khalile Pujante
 *	Working login and registration routes

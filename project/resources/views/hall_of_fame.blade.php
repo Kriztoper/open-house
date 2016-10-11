@@ -39,7 +39,6 @@
 		<nav class="navbar navbar-fixed-bottom">
       <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Help</a></li>
           <li><a href="#">ABOUT THE DEVELOPERS</a></li>
         </ul>
       </div>
@@ -50,8 +49,12 @@
       <table class="table table-hover">
         <thead>
           <tr class="gold gob">
-            <th><font size="5"><STRONG> GAME </STRONG></font></th>
-            <th><font size="5"><STRONG> CHAMPION </STRONG></font></th>
+            <th><font size="5"><STRONG> GAME 
+              <img src="http://i.imgur.com/bwLy1gt.gif" width="50" height="40">
+              <img src="http://i.imgur.com/2iQcN1i.gif" width="50" height="40">
+              <img src="http://i.imgur.com/rHYMNr2.gif" width="50" height="40">
+              <img src="http://i.imgur.com/10XxdHk.gif" width="50" height="40"></STRONG></font></th>
+            <th><font size="5"><STRONG> CHAMPION <img src="http://i.imgur.com/qa1QYrs.gif"  width="50" height="40"></STRONG></font></th>
           </tr>
         </thead>
         <tbody class="gold">

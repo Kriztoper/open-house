@@ -31,7 +31,7 @@
 	      			<li><a href="#">GAMES</a></li>
 	      			<li><a href="#">VIDEOS</a></li>
 	      			<!-- Change to user name -->
-	      			<li class="active"><a href="#">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a></li>
+	      			<li class="active"><a href="#">CARLO</a></li>
 	    		</ul>
   			</div>
 		</nav>
@@ -48,7 +48,7 @@
     		<div class="profBody">
     			<div class="panel panel-info trans">
     				<div class="panel-heading">
-    					<h1 class="panel-title gobold blue">User Profile</h1>
+    					<h1 class="panel-title gobold blue">User Profile <img src="http://i.imgur.com/99sXEI5.gif" width="40" height="35"></h1>
     				</div>
     				<div class="panel panel-body trans">
     					<div class="col-lg-3">
@@ -59,15 +59,15 @@
     							<tbody >
     								<tr>
     									<td class="white gobolds">First Name:</td>
-    									<td class="gobolds">{{ Auth::user()->first_name }}</td>
+    									<td class="gobolds">Carlo</td>
     								</tr>
     								<tr>
     									<td class="white gobolds">Last Name:</td>
-    									<td class="gobolds">{{ Auth::user()->last_name }}</td>
+    									<td class="gobolds">Valleramos</td>
     								</tr>
     								<tr>
     									<td class="white gobolds">Student Number:</td>
-    									<td class="gobolds">{{ Auth::user()->student_number }}</td>
+    									<td class="gobolds">2013-44347</td>
     								</tr>
     							</tbody>
     						</table>
