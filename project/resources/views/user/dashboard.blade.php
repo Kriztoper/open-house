@@ -30,10 +30,9 @@
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
 	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
-	      			<li><a href="#">HALL OF FAME</a></li>
-	      			<li><a href="#">GAMES</a></li>
-	      			<li><a href="#">VIDEOS</a></li>
-	      			<!-- Change to user name -->
+	      			<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
+	      			<li><a href="{{ url('/games') }}">GAMES</a></li>
+	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>

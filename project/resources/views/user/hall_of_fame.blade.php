@@ -26,12 +26,20 @@
               </li>
           </ul>
           <ul id="links" class="nav navbar-nav navbar-right">
-            <li><a href="#">DASHBOARD</a></li>
-              <li class="active"><a href="#">HALL OF FAME</a></li>
-              <li><a href="#">GAMES</a></li>
-              <li><a href="#">VIDEOS</a></li>
-              <!-- Change to user name -->
-              <li><a href="#">{{'CARLO'}}</a></li>
+            <li><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
+              <li class="active"><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
+              <li><a href="{{ url('/games') }}">GAMES</a></li>
+              <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-left col-xs-12">
+                    <li><a href="{{url('\profile')}}">PROFILE</a></li>
+                    <li><a href="#">ADD TOKENS</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="{{url('logout')}}">LOGOUT</a></li>
+                </ul>
+              </li>
           </ul>
         </div>
     </nav>
@@ -39,7 +47,6 @@
 		<nav class="navbar navbar-fixed-bottom">
       <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Help</a></li>
           <li><a href="#">ABOUT THE DEVELOPERS</a></li>
         </ul>
       </div>
