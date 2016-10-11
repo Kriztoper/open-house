@@ -37,6 +37,8 @@ body{
   text-align: center;
 }
 
-.pbody{
-  background-color: #FF8226;
+.btn{
+  width: 100%;
+  border-color: #BA002C
+  background: #BA002C;
 }

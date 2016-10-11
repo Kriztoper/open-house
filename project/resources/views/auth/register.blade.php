@@ -16,52 +16,45 @@
       </div>
       <div class="row">
         <div class="Absolute-Center is-Responsive">
-              <form class="form-horizontal" role="form" method="POST" action="/openhouse/project/public/auth/register">
-              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <form class="form-horizontal" role="form" method="POST" action="/openhouse/project/public/register">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-              <div class="form-group">
-                <label class="col-md-4 control-label">First Name</label>
-                <div class="col-md-6">
-                  <input type="text" class="form-control" name="first_name" value="{{ old('first_name') }}">
-                </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="first_name" placeholder="First Name" value="{{ old('first_name') }}">
               </div>
+            </div>
 
-              <div class="form-group">
-                <label class="col-md-4 control-label">Last Name</label>
-                <div class="col-md-6">
-                  <input type="text" class="form-control" name="last_name" value="{{ old('first_name') }}">
-                </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{ old('last_name') }}">
               </div>
+            </div>
 
-              <div class="form-group">
-                <label class="col-md-4 control-label">Student Number</label>
-                <div class="col-md-6">
-                  <input type="number" class="form-control" name="student_number" value="{{ old('student_number') }}">
-                </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="number" class="form-control" name="student_number" placeholder="Student Number" value="{{ old('student_number') }}">
               </div>
+            </div>
 
-              <div class="form-group">
-                <label class="col-md-4 control-label">Password</label>
-                  <div class="col-md-6">
-                  <input type="password" class="form-control" name="password">
-                </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="password" class="form-control" name="password" placeholder="Password">
               </div>
+            </div>
 
-              <div class="form-group">
-                <label class="col-md-4 control-label">Confirm Password</label>
-                <div class="col-md-6">
-                  <input type="password" class="form-control" name="password_confirmation">
-                </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
               </div>
+            </div>
 
-              <div class="form-group">
-                <div class="col-md-6 col-md-offset-4">
-                  <button type="submit" class="btn btn-primary">
-                  Register
-                  </button>
-                </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <button type="submit" id="reg" class="btn btn-primary btn-block">Register</button>
               </div>
-           </form> 
+            </div>
+          </form> 
         </div>    
       </div>
     </div>

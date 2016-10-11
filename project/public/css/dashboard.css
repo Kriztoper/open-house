@@ -44,6 +44,8 @@ body {
 	line-height: 120%;
 }
 
+/*-------NAVBAR SHIT----------*/
+
 #top-navbar {
 	background-color: transparent !important;
 	border-color: transparent !important;
@@ -55,7 +57,6 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a {
-	margin-right: 10px;
 	font-family: goboldregular;
 	color: white;
 	font-size: 15pt;
@@ -79,6 +80,13 @@ body {
 	background-color: #BA002c;
 }
 
+.dropdown-menu > li > a {
+	font-family: montserratregular;
+	letter-spacing: 2pt;
+	font-size: 8pt;
+	color: black;
+}
+
 .redfont{
 	color: red;
 }
@@ -94,25 +102,8 @@ body {
 	color: white;
 }
 
-#owl-demo .item{
-  background: #3fbf79;
-  padding: 30px 0px;
-  margin: 10px;
-  color: #FFF;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-}
-.customNavigation{
-  text-align: center;
-}
-//use styles below to disable ugly selection
-.customNavigation a{
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+/*-------END OF NAVBAR SHIT---------*/
+
+.slick-item img {
+	margin: auto !important;
 }
