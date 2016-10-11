@@ -51,7 +51,12 @@
 
             <div class="form-group">
               <div class="col-md-12">
-                <button type="submit" id="reg" class="btn btn-primary btn-block">Register</button>
+                <div>
+                  <button type="submit" id="reg" class="btn btn-primary btn-block">Register</button>
+                </div>
+                <div>
+                  <a id="back" class="btn btn-success btn-block" href="/openhouse/project/public/login">Back to Login</a>
+                </div>
               </div>
             </div>
           </form> 
