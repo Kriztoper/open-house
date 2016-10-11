@@ -26,12 +26,20 @@
 	      			</li>
 	    		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
-	    			<li><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
-	      			<li><a href="#">HALL OF FAME</a></li>
-	      			<li><a href="#">GAMES</a></li>
-	      			<li><a href="#">VIDEOS</a></li>
-	      			<!-- Change to user name -->
-	      			<li class="active"><a href="#">CARLO</a></li>
+	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
+              <li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
+              <li><a href="{{ url('/games') }}">GAMES</a></li>
+              <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-left col-xs-12">
+                    <li><a href="{{url('\profile')}}">PROFILE</a></li>
+                    <li><a href="#">ADD TOKENS</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="{{url('logout')}}">LOGOUT</a></li>
+                </ul>
+              </li>
 	    		</ul>
   			</div>
 		</nav>
@@ -48,7 +56,7 @@
     		<div class="profBody">
     			<div class="panel panel-info trans">
     				<div class="panel-heading">
-    					<h1 class="panel-title gobold blue">User Profile <img src="http://i.imgur.com/99sXEI5.gif" width="40" height="35"></h1>
+    					<h1 class="panel-title gobold blue">User Profile</h1>
     				</div>
     				<div class="panel panel-body trans">
     					<div class="col-lg-3">
@@ -59,15 +67,15 @@
     							<tbody >
     								<tr>
     									<td class="white gobolds">First Name:</td>
-    									<td class="gobolds">Carlo</td>
+    									<td class="gobolds">{{ Auth::user()->first_name }}</td>
     								</tr>
     								<tr>
     									<td class="white gobolds">Last Name:</td>
-    									<td class="gobolds">Valleramos</td>
+    									<td class="gobolds">{{ Auth::user()->last_name }}</td>
     								</tr>
     								<tr>
     									<td class="white gobolds">Student Number:</td>
-    									<td class="gobolds">2013-44347</td>
+    									<td class="gobolds">{{ Auth::user()->student_number }}</td>
     								</tr>
     							</tbody>
     						</table>
