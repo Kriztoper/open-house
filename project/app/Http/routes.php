@@ -11,26 +11,6 @@
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-Route::get('/hall_of_fame', function () {
-    return view('hall_of_fame');
-});
-
-Route::get('/videos', function () {
-    return view('videos');
-});
-
-Route::get('/game', function () {
-    return view('game');
-});
-
 /*
 *	Author: Khalile Pujante
 *	Working login and registration routes
@@ -61,7 +41,8 @@ Route::get('/dashboard'   , 'UserController@show_dashboard');
 Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
 Route::get('/profile'     , 'UserController@show_profile');
 Route::get('/developers'  , 'UserController@show_developers');
-Route::get('/game'       , 'UserController@show_games');
+Route::get('/game'        , 'UserController@show_games');
+Route::post('/tokens'     , 'UserController@add_token');
 Route::get('/videos'      , 'UserController@show_videos');
 
 ?>
