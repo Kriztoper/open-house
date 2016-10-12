@@ -85,7 +85,13 @@ class TokenController extends Controller
         //
     }
 
-    public function addTokens() {
+    public function getTokenValue($tokenCode) {
+        $temp=  DB::select('select tokenValue from tokens where tokenName=$tokenCode');
+        $toReturn = 0;
+        foreach ($temp as $key) {  
+            $toReturn = $key;
+        }
+        DB::update('update users set token = token + $toReturn where student_number=Auth::user()->student_number');
         return view('user.dashboard');
     }
 }

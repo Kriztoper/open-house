@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -35,6 +36,6 @@ Route::controllers([
 Route::get('/dashboard'   , 'UserController@show_dashboard');
 Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
 Route::get('/profile'     , 'UserController@show_profile');
-Route::get('/tokens'      , 'TokenController@addTokens');
+Route::get('/tokens/{tokenCode}'      , 'TokenController@getTokenValue');
 
 ?>
