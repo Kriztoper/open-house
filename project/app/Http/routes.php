@@ -42,6 +42,9 @@ Route::post('/register', 'Auth\AuthController@postRegister');
 Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);
+Route::get('/game', function () {
+    return view('game');
+});
 
 
 
