@@ -20,9 +20,9 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show dashboard
      *
-     * @return \Illuminate\Http\Response
+     * @return view
      */
     public function show_dashboard()
     {
@@ -30,9 +30,9 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show profile
      *
-     * @return \Illuminate\Http\Response
+     * @return view
      */
     public function show_profile()
     {
@@ -40,9 +40,9 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show hall of fame
      *
-     * @return \Illuminate\Http\Response
+     * @return view
      */
     public function show_hall_of_fame()
     {
@@ -62,5 +62,16 @@ class UserController extends Controller
     public function show_videos()
     {
         return view('user.videos');
+    }
+
+    
+    /**
+     * Show developers
+     *
+     * @return view
+     */
+    public function show_developers()
+    {
+        return view('user.developers');
     }
 }
