@@ -10,12 +10,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/videos.css">
 
 </head>
 <body>
 
-	<div class="container-fluid">
+	<div class="container-fluid videos">
 		<nav id="top-navbar" class="navbar navbar-default">
 			<div class="container-fluid">
     			<div class="navbar-header">
@@ -46,25 +46,152 @@
 	    		</ul>
   			</div>
 		</nav>
-			
+
 		<div class="jumbotron">
 			<div class="container">
 				<h1 class="page-header">
-					VIDEOS
+					FEATURED VIDEOS
 				</h1>
 				<br>
 				<div class="container">
-					<div class="multiple-items">
-						<div class="slick-item"><img src="http://yes-games.com/images/kartinki/dota2logo_250x150.jpg"></div>
-						<?php 
-								for($x=0; $x<25; $x++){
-						?>
-								<div class="slick-item"><img src="http://placehold.it/250x150"></div>
-						<?php
-								}
-						?>
+					<div class="single-item">
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 					</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="jumbotron">
+			<h2 class="page-header class">ANIME</h2>
+			<div class="row">
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+			</div>
+
+			<h2 class="page-header class">K-DRAMA</h2>
+			<div class="row">
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
 			</div>
 		</div>
 
@@ -83,32 +210,9 @@
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 
   	 <script type="text/javascript">
-    	$('.multiple-items').slick({
- 			centerMode: true,
-			centerPadding: '60px',
-			slidesToShow: 3,
-			responsive: [
-			    {
-			      	breakpoint: 768,
-			      	settings: {
-			        	arrows: false,
-			        	centerMode: true,
-			        	centerPadding: '40px',
-			        	slidesToShow: 3
-			      	}
-			    },
-			    {
-			      	breakpoint: 480,
-			      	settings: {
-			        	arrows: false,
-			        	centerMode: true,
-			        	centerPadding: '40px',
-			        	slidesToShow: 1
-			      	}
-			    	}
-			  	],
-  			dots: true
-		});
+    	$('.single-item').slick({
+    		dots: true
+    	});
     </script>
 </body>
 </html>
