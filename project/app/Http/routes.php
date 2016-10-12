@@ -57,5 +57,4 @@ Route::get('/developers'  , 'UserController@show_developers');
 Route::get('/game'       , 'UserController@show_games');
 Route::get('/videos'      , 'UserController@show_videos');
 
-
 ?>
