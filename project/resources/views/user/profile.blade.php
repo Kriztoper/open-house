@@ -26,11 +26,11 @@
 	      			</li>
 	    		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
-	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
+	    			  <li><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
               <li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
               <li><a href="{{ url('/games') }}">GAMES</a></li>
               <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
-              <li class="dropdown">
+              <li class="dropdown active">
                 <a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-menu-left col-xs-12">
