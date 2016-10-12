@@ -67,7 +67,7 @@
                 <button type="submit" id="log" class="btn btn-primary btn-block">Login</button>
               </div>
               <div>
-                <a id="reg" class="btn btn-success btn-block button" href="/openhouse/project/public/register">Register</a>
+                <a id="reg" class="btn btn-success btn-block button" href="/register">Register</a>
               </div>
               <div class="checkbox">
                 <label>

@@ -31,8 +31,9 @@
 	    		<ul id="links" class="nav navbar-nav navbar-right">
 	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
 	      			<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
-	      			<li><a href="{{ url('/games') }}">GAMES</a></li>
-	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
+	      			<li><a href="{{ url('/game') }}">GAMES</a></li>
+	      			<li><a href="{{url('videos')}}">VIDEOS</a></li>
+	      			<!-- Change to user name -->
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
@@ -55,13 +56,12 @@
 				<br>
 				<div class="container">
 					<div class="multiple-items">
-						<div class="slick-item"><img src="http://yes-games.com/images/kartinki/dota2logo_250x150.jpg"></div>
-						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
-						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
-						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
-						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
-						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
-						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
+						@for($i = 1; $i < 8; $i++)
+							<div class="slick-item">
+								<img src="http://placehold.it/250x150">
+								<p>{{ strtoupper("Content " . $i) }}</p>
+							</div>
+						@endfor
 					</div>
 				</div>
 			</div>
@@ -85,7 +85,7 @@
     	$('.multiple-items').slick({
  			centerMode: true,
 			centerPadding: '60px',
-			slidesToShow: 3,
+			slidesToShow: 3,																											
 			responsive: [
 			    {
 			      	breakpoint: 768,

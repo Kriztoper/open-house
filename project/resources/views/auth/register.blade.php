@@ -55,7 +55,7 @@
                   <button type="submit" id="reg" class="btn btn-primary btn-block">Register</button>
                 </div>
                 <div>
-                  <a id="back" class="btn btn-success btn-block" href="/openhouse/project/public/login">Back to Login</a>
+                  <a id="back" class="btn btn-success btn-block" href="/login">Back to Login</a>
                 </div>
               </div>
             </div>
