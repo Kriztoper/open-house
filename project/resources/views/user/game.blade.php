@@ -55,7 +55,7 @@
 				<br>
 				<div class="container">
 					<div class="single-item">
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://imgur.com/ZVzhqwU"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
@@ -158,6 +158,69 @@
 			      		<img src="http://placehold.it/250x250" alt="...">
 			      		<div class="caption">
 			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+			</div>
+
+			<h2 class="page-header class">BOARD GAMES</h2>
+			<div class="row">
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://imgur.com/z5C1fyC" alt="4 Squares">
+			      		<div class="caption">
+			        		<h3>4 Squares</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://imgur.com/7OvTKyv" alt="Domineering">
+			      		<div class="caption">
+			        		<h3>Domineering</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://imgur.com/tDXAs0H" alt="Sungka">
+			      		<div class="caption">
+			        		<h3>Sungka</h3>
 			        		<p>...</p>
 			      		</div>
 			    	</div>
