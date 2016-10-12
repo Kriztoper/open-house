@@ -55,7 +55,7 @@
 				<br>
 				<div class="container">
 					<div class="single-item">
-						<div class="slick-item"><img src="http://imgur.com/ZVzhqwU.jpg"></div>
+						<div class="slick-item"><a href="games/four.php"><img src="http://imgur.com/ZVzhqwU.jpg"></a></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
