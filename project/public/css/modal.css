@@ -1,0 +1,9 @@
+
+.modal-body>form>input{
+	width:85%;
+	display:inline-block;
+}
+
+.modal-title {
+    font-family: montserratregular;
+}
