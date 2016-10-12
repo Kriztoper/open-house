@@ -56,7 +56,7 @@
 				<br>
 				<div class="container">
 					<div class="single-item">
-						<div class="slick-item"><a href="games/four.php"><img src="http://imgur.com/ZVzhqwU.jpg"></a></div>
+						<div class="slick-item"><a href="games/fourSquare/four.php"><img src="http://imgur.com/ZVzhqwU.jpg"></a></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
@@ -199,7 +199,7 @@
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			    		<a href="games/four.php">
+			    		<a href="games/fourSquare/four.php">
 			      			<img src="http://imgur.com/W7wpm5G.jpg" alt="4 Squares">
 			      		</a>
 			      		<div class="caption">
@@ -211,7 +211,9 @@
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
+			    		<a href="games/Domineering/Domineering.php">
 			      		<img src="http://imgur.com/OUbMZpd.jpg" alt="Domineering">
+			      		</a>
 			      		<div class="caption">
 			        		<h3>Domineering</h3>
 			        		<p></p>
