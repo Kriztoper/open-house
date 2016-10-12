@@ -25,7 +25,7 @@
   				</div>
     			<ul id="tokens" class="nav navbar-nav">
               		<li>
-                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{'69'}}</span></p>
+                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span></p>
               		</li>
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
