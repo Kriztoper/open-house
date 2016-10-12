@@ -198,7 +198,9 @@
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://imgur.com/W7wpm5G.jpg" alt="4 Squares">
+			    		<a href="games/four.php">
+			      			<img src="http://imgur.com/W7wpm5G.jpg" alt="4 Squares">
+			      		</a>
 			      		<div class="caption">
 			        		<h3>4 Squares</h3>
 			        		<p></p>
