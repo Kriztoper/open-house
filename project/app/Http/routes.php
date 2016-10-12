@@ -35,14 +35,18 @@ Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);
 
+Route::group(['middleware' => 'auth'], function () {
+    // place your route definitions here
+    Route::get('/dashboard'   , 'UserController@show_dashboard');
+	Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
+	Route::get('/profile'     , 'UserController@show_profile');
+	Route::get('/developers'  , 'UserController@show_developers');
+	Route::get('/game'        , 'UserController@show_games');
+	Route::post('/tokens'     , 'UserController@add_token');
+	Route::get('/videos'      , 'UserController@show_videos');
+});
 
-// Routes for user dashboard
-Route::get('/dashboard'   , 'UserController@show_dashboard');
-Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
-Route::get('/profile'     , 'UserController@show_profile');
-Route::get('/developers'  , 'UserController@show_developers');
-Route::get('/game'        , 'UserController@show_games');
-Route::post('/tokens'     , 'UserController@add_token');
-Route::get('/videos'      , 'UserController@show_videos');
 
+//Admin
+Route::get('/admin', 'AdminController@show_dashboard');
 ?>
