@@ -47,7 +47,7 @@
         </div>
         @endif
 
-        <form class="form-horizontal" role="form" method="POST" action="/login">
+        <form class="form-horizontal" role="form" method="POST" action="/openhouse/project/public/login">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="form-group">
             <div class="col-md-12">
