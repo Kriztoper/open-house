@@ -49,16 +49,11 @@ class UserController extends Controller
         return view('user.hall_of_fame');
     }
 
-    public function show_games()
-    {
-        return view('user.game');
-    }
-    public function show_developers()
-    {
-        return view('user.developers');
-    }
-
-
+    /**
+     * Show videos
+     *
+     * @return view
+     */
     public function show_videos()
     {
         return view('user.videos');
