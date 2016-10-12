@@ -11,14 +11,14 @@ class RegisterForm extends Form
         $this
             ->add('first_name', 'text', [
             	'label' => 'First Name',
-                'rules' => 'required'
+                'rules' => 'required|Alpha'
             ])
             ->add('last_name', 'text', [
-                'rules' => 'required',
+                'rules' => 'required|Alpha',
                 'label' => 'Last Name'
             ])
-            ->add('student_number', 'number', [
-                'rules' => 'required',
+            ->add('student_number', 'text', [
+                'rules' => 'required|Numeric',
                 'label' => 'Student Number'
             ])
             ->add('password', 'password', [

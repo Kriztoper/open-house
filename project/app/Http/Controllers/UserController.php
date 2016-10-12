@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function show_profile()
     {
-        return view('user.hall_of_fame');
+        return view('user.profile');
     }
 
     /**
@@ -46,7 +46,22 @@ class UserController extends Controller
      */
     public function show_hall_of_fame()
     {
-        return view('user.profile');
+        return view('user.hall_of_fame');
+    }
+
+    public function show_games()
+    {
+        return view('user.game');
+    }
+    public function show_developers()
+    {
+        return view('user.developers');
+    }
+
+
+    public function show_videos()
+    {
+        return view('user.videos');
     }
 
     
@@ -58,5 +73,15 @@ class UserController extends Controller
     public function show_developers()
     {
         return view('user.developers');
+    }
+
+    /**
+     * Show games list
+     *
+     * @return view
+     */
+    public function show_games()
+    {
+        return view('user.game');
     }
 }

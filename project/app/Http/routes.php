@@ -30,15 +30,13 @@ Route::post('/register', 'Auth\AuthController@postRegister');
 Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);
-Route::get('/game', function () {
-    return view('game');
-});
+
 
 // Routes for user dashboard
 Route::get('/dashboard'   , 'UserController@show_dashboard');
 Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
 Route::get('/profile'     , 'UserController@show_profile');
 Route::get('/developers'  , 'UserController@show_developers');
-
+Route::get('/games'        , 'UserController@show_games');
 
 ?>
