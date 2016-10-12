@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	
-	<title>Videos</title>
+	<title>Awesome Games!</title>
 
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,8 +31,8 @@
 	    		<ul id="links" class="nav navbar-nav navbar-right">
 	    			<li><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
 	      			<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
-	      			<li><a href="{{ url('/game') }}">GAMES</a></li>
-	      			<li class="active"><a href="{{ url('/videos') }}">VIDEOS</a></li>
+	      			<li class="active"><a href="{{ url('/game') }}">GAMES</a></li>
+	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
@@ -50,12 +50,12 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1 class="page-header">
-					FEATURED VIDEOS
+					FEATURED GAMES
 				</h1>
 				<br>
 				<div class="container">
 					<div class="single-item">
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://imgur.com/ZVzhqwU.jpg"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
@@ -68,7 +68,7 @@
 		</div>
 
 		<div class="jumbotron">
-			<h2 class="page-header class">ANIME</h2>
+			<h2 class="page-header class">ACTION</h2>
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
@@ -131,7 +131,7 @@
 			  	</div>
 			</div>
 
-			<h2 class="page-header class">K-DRAMA</h2>
+			<h2 class="page-header class">ADVENTURE</h2>
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
@@ -159,6 +159,69 @@
 			      		<div class="caption">
 			        		<h3>Thumbnail label</h3>
 			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+			</div>
+
+			<h2 class="page-header class">BOARD GAMES</h2>
+			<div class="row">
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://imgur.com/W7wpm5G.jpg" alt="4 Squares">
+			      		<div class="caption">
+			        		<h3>4 Squares</h3>
+			        		<p></p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://imgur.com/OUbMZpd.jpg" alt="Domineering">
+			      		<div class="caption">
+			        		<h3>Domineering</h3>
+			        		<p></p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://imgur.com/tDXAs0H.jpg" alt="Sungka">
+			      		<div class="caption">
+			        		<h3>Sungka</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
