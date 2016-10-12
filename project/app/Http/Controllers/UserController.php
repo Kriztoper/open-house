@@ -2,18 +2,13 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< Updated upstream
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-=======
 use DB;
->>>>>>> Stashed changes
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-<<<<<<< Updated upstream
     /**
      * Display a listing of the resource.
      *
@@ -68,9 +63,4 @@ class UserController extends Controller
     {
         return view('user.videos');
     }
-
 }
-=======
-    
-}
->>>>>>> Stashed changes

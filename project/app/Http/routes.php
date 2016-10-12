@@ -12,13 +12,40 @@
 |
 */
 
+<<<<<<< HEAD
+=======
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/hall_of_fame', function () {
+    return view('hall_of_fame');
+});
+
+Route::get('/videos', function () {
+    return view('videos');
+});
+
+Route::get('/game', function () {
+    return view('game');
+});
+
+>>>>>>> 79867ab33907be3d86c12efc7872fed2785a5ccf
 /*
 *	Author: Khalile Pujante
 *	Working login and registration routes
 *	Stable
 */ 
 
+// Default landing page
+Route::get('/', 'Auth\AuthController@getLogin');
+
 // Authentication routes...
+Route::get('/', 'Auth\AuthController@getLogin');
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');
