@@ -16,7 +16,7 @@
       </div>
       <div class="row">
         <div class="Absolute-Center is-Responsive">
-          <form class="form-horizontal" role="form" method="POST" action="/openhouse/project/public/register">
+          <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group">
@@ -55,7 +55,7 @@
                   <button type="submit" id="reg" class="btn btn-primary btn-block">Register</button>
                 </div>
                 <div>
-                  <a id="back" class="btn btn-success btn-block" href="/login">Back to Login</a>
+                  <a id="back" class="btn btn-success btn-block" href="{{ url('/login') }}">Back to Login</a>
                 </div>
               </div>
             </div>
