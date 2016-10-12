@@ -28,6 +28,10 @@ Route::get('/videos', function () {
     return view('videos');
 });
 
+Route::get('/game', function () {
+    return view('game');
+});
+
 /*
 *	Author: Khalile Pujante
 *	Working login and registration routes

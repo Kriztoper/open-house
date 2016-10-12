@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	
-	<title>KOMSAI OPENHAUS</title>
+	<title>Videos</title>
 
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
 	    		<ul id="links" class="nav navbar-nav navbar-right">
 	    			<li><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
 	      			<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
-	      			<li><a href="{{ url('/games') }}">GAMES</a></li>
+	      			<li><a href="{{ url('/game') }}">GAMES</a></li>
 	      			<li class="active"><a href="{{ url('/videos') }}">VIDEOS</a></li>
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
