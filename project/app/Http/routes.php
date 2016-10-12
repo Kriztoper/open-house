@@ -11,6 +11,23 @@
 |
 */
 
+/*<<<<<<< Updated upstream*/
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/hall_of_fame', function () {
+    return view('hall_of_fame');
+});
+
+Route::get('/videos', function () {
+    return view('videos');
+});
+
 /*
 *	Author: Khalile Pujante
 *	Working login and registration routes

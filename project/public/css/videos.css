@@ -1,9 +1,9 @@
 html {
 	width: 100%;
 	padding: 0;
+	background-color: #233D4E;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: url(http://i.imgur.com/kQ3naS0.jpg);
 }
 
 body {
@@ -108,8 +108,12 @@ body {
 	margin: auto !important;
 }
 
-.slick-item p {
-	margin-left: 40px;
-	font-size: 10pt;
-	color: white;
+.class {
+	margin-top: 150px;
+}
+
+.videos {
+	background-color: #233D4E !important;
+	background: url(http://i.imgur.com/kQ3naS0.jpg);
+	background-repeat: no-repeat;
 }
