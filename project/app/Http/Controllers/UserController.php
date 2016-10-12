@@ -64,14 +64,4 @@ class UserController extends Controller
         return view('user.videos');
     }
 
-    
-    /**
-     * Show developers
-     *
-     * @return view
-     */
-    public function show_developers()
-    {
-        return view('user.developers');
-    }
 }

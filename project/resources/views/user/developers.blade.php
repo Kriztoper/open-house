@@ -166,7 +166,7 @@
                   <img src="http://i.imgur.com/cW6nHoy.png" width="50" height="50">
                   <img src="http://i.imgur.com/0QCguSy.gif" width="50" height="50">
                 </p>
-                <p>Jeff Lucanas</p>
+                <p>Jeff Lucañas</p>
                 <p>Graphics</p>
 
               </div>
@@ -236,7 +236,7 @@
                   <img src="http://i.imgur.com/cW6nHoy.png" width="50" height="50">
                   <img src="http://i.imgur.com/0QCguSy.gif" width="50" height="50">
                 </p>
-                <p>Zyra Penaranda</p>
+                <p>Zyra Peñaranda</p>
                 <p>Graphics</p>
 
               </div>
