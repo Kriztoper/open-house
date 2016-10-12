@@ -7,7 +7,7 @@
 }
 
 body{
-  background: url("http://imgur.com/k94UPQK.png") no-repeat center fixed;
+  background: url("http://imgur.com/B9P1JYs.gif") no-repeat center fixed;
   background-size: cover;
   overflow: hidden;
   font-family: 'montserratregular';
@@ -40,4 +40,14 @@ body{
 .btn{
   width: 100%;
   margin-bottom: 15px;
+}
+
+#reg{
+  border-color: #FF8226;
+  background: #FF8226; 
+}
+
+#back{
+  border-color: #BA002C;
+  background: #BA002C;
 }
