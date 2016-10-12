@@ -55,7 +55,7 @@
 				<br>
 				<div class="container">
 					<div class="single-item">
-						<div class="slick-item"><img src="http://imgur.com/ZVzhqwU"></div>
+						<div class="slick-item"><img src="http://imgur.com/ZVzhqwU.jpg"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
@@ -198,30 +198,30 @@
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://imgur.com/z5C1fyC" alt="4 Squares">
+			      		<img src="http://imgur.com/W7wpm5G.jpg" alt="4 Squares">
 			      		<div class="caption">
 			        		<h3>4 Squares</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://imgur.com/7OvTKyv" alt="Domineering">
+			      		<img src="http://imgur.com/OUbMZpd.jpg" alt="Domineering">
 			      		<div class="caption">
 			        		<h3>Domineering</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://imgur.com/tDXAs0H" alt="Sungka">
+			      		<img src="http://imgur.com/tDXAs0H.jpg" alt="Sungka">
 			      		<div class="caption">
 			        		<h3>Sungka</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
