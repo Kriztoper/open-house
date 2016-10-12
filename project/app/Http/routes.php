@@ -11,7 +11,6 @@
 |
 */
 
-/*<<<<<<< Updated upstream*/
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -42,6 +41,7 @@ Route::get('/game', function () {
 Route::get('/', 'Auth\AuthController@getLogin');
 
 // Authentication routes...
+Route::get('/', 'Auth\AuthController@getLogin');
 Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', 'Auth\AuthController@getLogout');
