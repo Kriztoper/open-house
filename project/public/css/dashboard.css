@@ -3,7 +3,8 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: url(http://i.imgur.com/kQ3naS0.jpg);
+	background: url(../images/backgrounds/dash-bg.jpg);
+	background-size: 100%;
 }
 
 body {
@@ -27,9 +28,13 @@ body {
     font-style: normal;
 }
 
-.navbar-brand {
-	padding: 0px 0px !important;
-	padding-top: 10px !important;
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 .jumbotron {
@@ -37,11 +42,26 @@ body {
 }
 
 .page-header {
-	font-family: goboldregular;
 	color: white !important;
 	border-color: transparent !important;
-	letter-spacing: 5pt;
-	line-height: 120%;
+}
+
+#welcome {
+	margin-top: 20%;
+	text-align: center;
+}
+
+#welcome h3 {
+	font-family: montserratregular;
+	letter-spacing: 3pt;
+	padding: 0;
+	margin: 0;
+}
+
+#welcome h1 {
+	font-family: lemonmilkregular;
+	padding: 0;
+	margin: 0;
 }
 
 /*-------NAVBAR SHIT----------*/
@@ -51,16 +71,16 @@ body {
 	border-color: transparent !important;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+.navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
     background-color: #BA002c;
     color: white;
 }
 
-.navbar-default .navbar-nav > li > a {
-	font-family: goboldregular;
+.navbar-fixed-top .navbar-nav > li > a {
+	font-family: montserratregular;
 	color: white;
-	font-size: 15pt;
-	letter-spacing: 2pt;
+	font-size: 10pt;
+	/*letter-spacing: 2pt;*/
 }
 
 .navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
@@ -69,11 +89,17 @@ body {
 }
 
 .navbar-fixed-bottom .navbar-nav > li > a {
-	margin-right: 10px;
 	font-family: montserratregular;
 	font-size: 8pt;
 	font-weight: bold;
 	color: darkgray;
+	padding-top: 5px !important;
+    padding-bottom: 5px !important;
+	height: 30px !important;
+}
+
+.navbar {
+	min-height: 30px !important;
 }
 
 .navbar-fixed-bottom {
