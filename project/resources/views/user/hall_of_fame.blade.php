@@ -6,6 +6,7 @@
   		  <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/hall_of_fame.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/modal.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
      	
@@ -35,7 +36,7 @@
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-menu-left col-xs-12">
                     <li><a href="{{url('\profile')}}">PROFILE</a></li>
-                    <li><a href="#">ADD TOKENS</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="{{url('logout')}}">LOGOUT</a></li>
                 </ul>
@@ -43,6 +44,25 @@
           </ul>
         </div>
     </nav>
+
+    <!-- Modal for token -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">KOMSAY OPENHOUSE TOKEN GENERATOR</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 		<nav class="navbar navbar-fixed-bottom">
       <div class="container-fluid">
