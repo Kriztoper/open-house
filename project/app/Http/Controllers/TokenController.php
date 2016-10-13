@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\token;
-use App\User;
+//use App\User;
 
 class TokenController extends Controller
 {
@@ -87,42 +88,21 @@ class TokenController extends Controller
         //
     }
 
-    public function getTokenValue($tokenName) {
+    public function getTokenValue($tokenCode) {
         /**
-        * pseudocode
-        * $result = select isActive from tokens where tokenName = $tokenName;
-        * $isActive = $result[0];
-        * if ($isActive) {
-        *   $tokenValueArr = select tokenValue from tokens where tokenName = $tokenName;
-        *   $tokenValue = 0;
-        *   foreach ($tokenValue as $val) {
-        *       $tokenValue = $val;
-        *   }
-        *   update users set token = token + $tokenValue where student_number =
-        *       user.$student_number;
-        *   update tokens set isActive = 0 where tokenName = $tokenName;
-        * }
-        * return view;
+        * add token to user
         *
+        * @return profile;
         **/
-
-       // $isActiveRS = token::where([['isActive', 1], ['tokenName', $tokenName]])->get();
-       // if (!empty($isActiveRS)) {
-            $tokenValueRS = DB::table('tokens')->select(DB::raw('tokenValue')->where('tokenName', $tokenName)->get());
-            $tokenValue = $tokenValueRS[0];
-            DB::table('users')->where('student_number', user::student_number)->update(['token'=>'token'+$tokenValue]);
-            DB::table('tokens')->where('tokenName', $tokenName)->update(['isActive'=>0]);
-       // }
-        return view('user.dashboard');
-
-        //$temp = token::where('tokenValue', $tokenName)->get(); 
-        //$tokenVal = 0;
-        //foreach ($temp as $key) {  
-            //$tokenVal = $key;
-        //}
-        //User::where('student_number', 201362775)->update(['token'=>$tokenVal]);
-        //token::where('tokenName', $tokenName)->update(['isActive'=>1]);
-        //DB::update('update users set token = token + $toReturn where student_number=$sn');
-        //return view('user.dashboard');
+        $isActiveRS = DB::table('tokens')->select('tokenValue')->where('isActive', 1)->where('tokenName', $tokenCode)->get();
+        if (!empty($isActiveRS)) {
+            $tokenValue = DB::table('tokens')->select('tokenValue')->where('tokenName', $tokenCode)->pluck('tokenValue');
+            //$tokenValue = $tokenValueRS[0];
+            $currentTokens = DB::table('users')->where('student_number', Auth::user()->student_number)->pluck('token');
+            $newValue = $currentTokens + $tokenValue;
+            DB::table('users')->where('student_number', Auth::user()->student_number)->update(['token'=>(int)$newValue]);
+            DB::table('tokens')->where('tokenName', $tokenCode)->update(['isActive'=>0]);
+        }
+        return redirect('/profile');
     }
 }

@@ -18,12 +18,12 @@ class token extends Model
     *
     *@var array
     */
-    protected $fillable = ['tokenName'];
+    protected $fillable = ['tokenName', 'isActive'];
 
     /**
     * The attributes excluded from the model's JSON form.
     *
     *@var array
     */
-    protected $hidden = ['tokenID'];
+    protected $hidden = [];
 }

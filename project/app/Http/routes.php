@@ -12,8 +12,6 @@
 |
 */
 
-<<<<<<< HEAD
-=======
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -34,7 +32,6 @@ Route::get('/game', function () {
     return view('game');
 });
 
->>>>>>> 79867ab33907be3d86c12efc7872fed2785a5ccf
 /*
 *	Author: Khalile Pujante
 *	Working login and registration routes
