@@ -17,11 +17,12 @@
 <body>
 
 	<div class="container-fluid">
-		<nav id="top-navbar" class="navbar navbar-default">
+		<nav id="top-navbar" class="navbar navbar-fixed-top">
 			<div class="container-fluid">
     			<div class="navbar-header">
      				<a class="navbar-brand" href="#">
-     					<img src="http://i.imgur.com/js8s2AR.png" style="margin: auto !important; position: center" width=80%/>
+     					{{-- <img src="http://i.imgur.com/js8s2AR.png" style="margin: auto !important; position: center" width=80%/> --}}
+     					<img src="http://i.imgur.com/js8s2AR.png?2" alt="OpenHouse">
      				</a>
   				</div>
     			<ul id="tokens" class="nav navbar-nav">
@@ -33,16 +34,15 @@
 	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
 	      			<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
 	      			<li><a href="{{ url('/game') }}">GAMES</a></li>
-	      			<li><a href="{{url('/videos')}}">VIDEOS</a></li>
-	      			<!-- Change to user name -->
+	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
        					<ul class="dropdown-menu dropdown-menu-left col-xs-12">
-          					<li><a href="{{url('/profile')}}">PROFILE</a></li>
+          					<li><a href="{{url('\profile')}}">PROFILE</a></li>
           					<li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
           					<li role="separator" class="divider"></li>
-          					<li><a href="{{url('/logout')}}">LOGOUT</a></li>
+          					<li><a href="{{url('logout')}}">LOGOUT</a></li>
         				</ul>
       				</li>
 	    		</ul>
@@ -50,27 +50,15 @@
 		</nav>
 			
 		<div class="jumbotron">
-			<div class="container">
-				<h1 class="page-header">
-					WELCOME TO<br>KOMSAI OPENHOUSE
-				</h1>
-				<br>
-				<div class="container">
-					<div class="multiple-items">
-						@for($i = 1; $i < 8; $i++)
-							<div class="slick-item">
-								<img src="http://placehold.it/250x150">
-								<p>{{ strtoupper("Content " . $i) }}</p>
-							</div>
-						@endfor
-					</div>
-				</div>
+			<div id="welcome" class="container">
+				<h3 class="page-header">WELCOME TO</h3>
+				<h1 class="page-header">KOMSAI OPENHOUSE</h1>
 			</div>
 		</div>
 
 		<nav class="navbar navbar-fixed-bottom">
 			<div class="container-fluid">
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right navbar-xs">
 					<li><a href="#">ABOUT THE DEVELOPERS</a></li>
 				</ul>
 			</div>

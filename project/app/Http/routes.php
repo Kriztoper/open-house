@@ -47,6 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-//Admin
+//	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
 ?>
