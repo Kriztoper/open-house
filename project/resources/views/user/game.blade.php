@@ -56,6 +56,7 @@
 				<br>
 				<div class="container">
 					<div class="single-item">
+<<<<<<< HEAD
 						<div class="slick-item">
 							<a href="games/fourSquare/four.php"><img src="http://imgur.com/ZVzhqwU.jpg"></a>
 						</div>
@@ -64,6 +65,14 @@
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+=======
+						<div class="slick-item"><a href="games/fourSquare/four.php"><img src="http://imgur.com/ZVzhqwU.jpg"></a></div>
+						<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="http://imgur.com/GiveJFP.jpg"></a></div>
+						<div class="slick-item"><a href="games/box_head_2_play/boxhead.php"><img src="http://imgur.com/mbgfGto.jpg"></a></div>
+						<div class="slick-item"><a href="games/detonate2/detonate2.php"><img src="http://imgur.com/pha8HJ8.jpg"></a></div>
+						<div class="slick-item"><a href="games/fireboy_watergirl2/fireboy_watergirl2.php"><img src="http://imgur.com/8lz3Zgg.jpg"></a></div>
+						<div class="slick-item"><a href="games/pandemic2/pandemic2.php"><img src="http://imgur.com/bv9I182.jpg"></a></div>
+>>>>>>> 4044bc41093cf634771fa4a850f648d2d0dd3493
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 					</div>
 				</div>
@@ -75,19 +84,30 @@
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
+<<<<<<< HEAD
 			      		<img src="http://imgur.com/ljeLe2f.png" alt="...">
 			      		<div class="caption">
 			        		<h3>Boxhead 2Play</h3>
 			        		<p></p>
+=======
+			    		<a href="games/box_head_2_play/boxhead.php">
+			      		<img src="http://imgur.com/GXbhBcM.jpg" alt="...">
+			      		</a>
+			      		<div class="caption">
+			        		<h3>BOXHEAD</h3>
+			        		<p>...</p>
+>>>>>>> 4044bc41093cf634771fa4a850f648d2d0dd3493
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			    		<a href="games/detonate2/detonate2.php">
+			      		<img src="http://imgur.com/sqkwOal.jpg" alt="...">
+			      		</a>
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
+			        		<h3>DETONATE 2</h3>
 			        		<p>...</p>
 			      		</div>
 			    	</div>
@@ -138,20 +158,38 @@
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
+<<<<<<< HEAD
 			      		<img src="http://imgur.com/x5l7OmG.png" alt="...">
 			      		<div class="caption">
 			        		<h3>Pandemic 2</h3>
 			        		<p></p>
+=======
+			    		<a href="games/fireboy_watergirl2/fireboy_watergirl2.php">
+			      		<img src=http://imgur.com/OvnIHAO.jpg" alt="...">
+			      		</a>
+			      		<div class="caption">
+			        		<h3>FIREBOY & WATERGIRL 2</h3>
+			        		<p>...</p>
+>>>>>>> 4044bc41093cf634771fa4a850f648d2d0dd3493
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
+<<<<<<< HEAD
 			      		<img src="http://imgur.com/n2FMyDR.jpg" alt="...">
 			      		<div class="caption">
 			        		<h3>Light Temple</h3>
 			        		<p></p>
+=======
+			    		<a href="games/pandemic2/pandemic2.php">
+			      		<img src="http://imgur.com/0JXlcQM.jpg" alt="...">
+			      		</a>
+			      		<div class="caption">
+			        		<h3>PANDEMIC 2</h3>
+			        		<p>...</p>
+>>>>>>> 4044bc41093cf634771fa4a850f648d2d0dd3493
 			      		</div>
 			    	</div>
 			  	</div>
