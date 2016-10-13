@@ -45,6 +45,6 @@ Route::get('/game'        , 'UserController@show_games');
 Route::post('/tokens'     , 'UserController@add_token');
 Route::get('/videos'      , 'UserController@show_videos');
 
-//Admin
+//	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
 ?>
