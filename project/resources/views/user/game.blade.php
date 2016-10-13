@@ -56,8 +56,10 @@
 				<br>
 				<div class="container">
 					<div class="single-item">
-						<div class="slick-item"><a href="games/fourSquare/four.php"><img src="http://imgur.com/ZVzhqwU.jpg"></a></div>
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item">
+							<a href="games/fourSquare/four.php"><img src="http://imgur.com/ZVzhqwU.jpg"></a>
+						</div>
+						<div class="slick-item"><img src="http://imgur.com/LeJneUM.png"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
@@ -73,10 +75,10 @@
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="http://imgur.com/ljeLe2f.png" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Boxhead 2Play</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -132,34 +134,34 @@
 			  	</div>
 			</div>
 
-			<h2 class="page-header class">ADVENTURE</h2>
+			<h2 class="page-header class">STRATEGIC GAMES</h2>
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="http://imgur.com/x5l7OmG.png" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Pandemic 2</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="http://imgur.com/n2FMyDR.jpg" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Light Temple</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="http://imgur.com/Poqr7Rv.png" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Detonate 2</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -233,10 +235,10 @@
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="http://imgur.com/toJ9Srk.jpg" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Chain Reaction</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>

@@ -57,12 +57,38 @@
 				<br>
 				<div class="container">
 					<div class="multiple-items">
-						@for($i = 1; $i < 8; $i++)
-							<div class="slick-item">
-								<img src="http://placehold.it/250x150">
-								<p>{{ strtoupper("Content " . $i) }}</p>
-							</div>
-						@endfor
+						<div class="slick-item">
+								<img src="http://imgur.com/CutHNSI.jpg">
+								<p>{{ strtoupper("Chain Reaction" ) }}</p>
+						</div>
+						<div class="slick-item">
+								<img src="http://imgur.com/7BtwEFo.jpg">
+								<p>{{ strtoupper("Assasination Classroom") }}</p>
+						</div>
+						<div class="slick-item">
+								<img src="http://imgur.com/7OvTKyv.jpg">
+								<p>{{ strtoupper("Domineering") }}</p>
+						</div>
+						<div class="slick-item">
+								<img src="http://imgur.com/z5C1fyC.jpg">
+								<p>{{ strtoupper("4 Square") }}</p>
+						</div>
+						<div class="slick-item">
+								<img src="http://imgur.com/rwaV9D3.png">
+								<p>{{ strtoupper("White Album 2") }}</p>
+						</div>
+						<div class="slick-item">
+								<img src="http://imgur.com/1rO45FV.jpg">
+								<p>{{ strtoupper("BoxHead 2Play") }}</p>
+						</div>
+						<div class="slick-item">
+								<img src="http://imgur.com/9yKJw2j.jpg">
+								<p>{{ strtoupper("Charlotte") }}</p>
+						</div>
+						<div class="slick-item">
+								<img src="http://imgur.com/IWC0ekz.png">
+								<p>{{ strtoupper("Kimi no na wa") }}</p>
+						</div>
 					</div>
 				</div>
 			</div>
