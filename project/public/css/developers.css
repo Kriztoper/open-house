@@ -3,7 +3,13 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url(http://i.imgur.com/3J0KX6B.jpg);
+	background-image: url(http://i.imgur.com/gK6iSXP.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
@@ -27,10 +33,19 @@ body {
     font-style: normal;
 }
 
+.back {
+   position: fixed;
+   right: 2.5%;
+   bottom: 3%;
+   color: white;
+   opacity: 0.2;
+}
+
+
 .jumbotron {
 	font-family: goboldregular;
 	font-size: 90px;
-	letter-spacing: 15px;
+	letter-spacing: 25px;
 	color: gold;
 	background: none;
 }
@@ -39,7 +54,7 @@ body {
 	font-family: goboldregular;
 	font-size: 20px;
 	letter-spacing: 5px;
-	color: white;
+	color: #80ffff;
 }
 
 .pic {

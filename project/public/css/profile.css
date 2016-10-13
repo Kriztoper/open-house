@@ -5,6 +5,12 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-image: url(http://i.imgur.com/Rhri8TK.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
