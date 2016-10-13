@@ -13,10 +13,11 @@ class CreateGamesTable extends Migration
     public function up()
     {
         Schema::create('games', function (Blueprint $table) {
-           $table->integer('gameID');
+           $table->increments('gameID');
            $table->String('gameName');
            $table->String('gameDesc');
            $table->integer('scoreID');
+           $table->String('gameURL');
            $table->String('thumbnail');
         });
     }
@@ -28,6 +29,6 @@ class CreateGamesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('games');
+        Schema::dropIfExists('games');
     }
 }

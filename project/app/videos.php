@@ -8,5 +8,5 @@ class videos extends Model
 {
     public $timestamps = false;
 
-    protected $table = 'video';
+    protected $table = 'videos';
 }
