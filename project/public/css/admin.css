@@ -9,7 +9,7 @@
 body{
   background: url("http://imgur.com/k94UPQK.png") no-repeat center fixed;
   background-size: cover;
-  overflow: hidden;
+  /*overflow: hidden;*/
   color: white;
   font-family: 'goboldregular';
 }
