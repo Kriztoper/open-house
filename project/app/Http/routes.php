@@ -62,4 +62,9 @@ Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
 Route::get('/profile'     , 'UserController@show_profile');
 Route::get('/tokens/{tokenCode}'      , 'TokenController@getTokenValue');
 
+
+
+//	Admin
+Route::get('/admin', 'AdminController@show_dashboard');
+
 ?>

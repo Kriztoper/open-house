@@ -17,7 +17,8 @@ use App\User;
 class AdminController extends Controller
 {
     use FormBuilderTrait;
-   public function create()
+    
+    public function create()
     {
         $form = $this->form('App\Forms\SeriesForm', [
             'method' => 'POST',
@@ -26,7 +27,6 @@ class AdminController extends Controller
 
         return view('createSeries', ['form' => $form] );
     }
-
 
     public function store(Request $request)
     {
@@ -43,6 +43,7 @@ class AdminController extends Controller
         return \Redirect::to('/success');
         // Do saving and other things...
     }
+    
     public function saveSeries(Request $request){
         $series = new Series;
         $series->seriesName = $request->seriesName;
@@ -67,6 +68,7 @@ class AdminController extends Controller
         
         return view('admin.addSeries', $data);
     }
+    
     public function saveGenre(Request $request){
         $genres = new genres;
         $genres->genreName = $request->genreName;
@@ -75,15 +77,21 @@ class AdminController extends Controller
         $data = ['videos' => $genres->genreName ];
         return view('admin.addGenre',$data);
     }
+    
     public function getGenre(){
         $genres = DB::table('genres')->get();
         
         return view('admin.sortGenre',$genres);
     }
+    
     public function sortGenre(Request $request){
     }
+    
     public function success(){
         return view('success');
     }
     
+    public function show_dashboard(){
+        return view('admin.adminPage');
+    }
 }

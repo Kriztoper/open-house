@@ -5,7 +5,7 @@
        	<meta charset="utf-8">
   		  <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/hall_of_fame.css" type="text/css">
+        <link rel="stylesheet" href="/openhouse/project/public/css/hall_of_fame.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -29,14 +29,14 @@
           <ul id="links" class="nav navbar-nav navbar-right">
             <li><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
               <li class="active"><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
-              <li><a href="{{ url('/game') }}">GAMES</a></li>
+              <li><a href="{{ url('/games') }}">GAMES</a></li>
               <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-menu-left col-xs-12">
                     <li><a href="{{url('\profile')}}">PROFILE</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
+                    <li><a href="#">ADD TOKENS</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="{{url('logout')}}">LOGOUT</a></li>
                 </ul>
@@ -77,15 +77,12 @@
       <table class="table table-hover">
         <thead>
           <tr class="gold gob">
-            <th><font size="5"><STRONG> GAME 
-              <img src="http://i.imgur.com/bwLy1gt.gif" width="50" height="40">
-              <img src="http://i.imgur.com/2iQcN1i.gif" width="50" height="40">
-              <img src="http://i.imgur.com/rHYMNr2.gif" width="50" height="40">
               <img src="http://i.imgur.com/10XxdHk.gif" width="50" height="40"></STRONG></font></th>
             <th><font size="5"><STRONG> CHAMPION <img src="http://i.imgur.com/qa1QYrs.gif"  width="50" height="40"></STRONG></font></th>
           </tr>
         </thead>
         <tbody class="gold">
+
           <tr>
             <td><font size="3"> Basketball </font></td>
             <td><font size="3"> Sinugdanan </font><img src="http://i.imgur.com/ANQHzFM.gif" width="50" height="40"></td>
