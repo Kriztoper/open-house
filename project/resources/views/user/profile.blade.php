@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Student Profile</title>
-      <meta charset="utf-8">
-  		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Student Profile</title>
+       	<meta charset="utf-8">
+  		 <meta name="viewport" content="width=device-width, initial-scale=1">
     	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- 		  <link rel="stylesheet" href="css/profile.css" type="text/css">
-      <link rel="stylesheet" type="text/css" href="css/modal.css">
+ 		<link rel="stylesheet" href="/openhouse/project/public/css/profile.css" type="text/css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- 		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
      	
     </head>
     <body>
@@ -27,16 +26,16 @@
 	      			</li>
 	    		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
-	    			  <li><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
+	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
               <li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
-              <li><a href="{{ url('/game') }}">GAMES</a></li>
+              <li><a href="{{ url('/games') }}">GAMES</a></li>
               <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
-              <li class="dropdown active">
+              <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-menu-left col-xs-12">
                     <li><a href="{{url('\profile')}}">PROFILE</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
+                    <li><a href="#">ADD TOKENS</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="{{url('logout')}}">LOGOUT</a></li>
                 </ul>
@@ -104,7 +103,7 @@
     				</div>
     				<div class="panel panel-footer trans col-lg-12">
     					<div class="pull-right">
-    					<a href="#" class="btn btn-primary goldbg gobolds blue">Edit Profile</a>
+              <button type="button" class="btn btn-primary goldbg gobolds blue" data-toggle="modal" data-target="#editProfile">Edit Profile</button>
     					<a href="#" class="btn btn-primary redbg gobolds blue">Change Password</a>
     				</div>
     				</div>
@@ -126,4 +125,28 @@
 
     	</div>
     </body>
+
+    <div id="editProfile" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+    <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      </div>
+
+    </div>
+  </div>
+
 </html>
