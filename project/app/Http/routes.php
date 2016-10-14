@@ -11,7 +11,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -37,7 +36,8 @@ Route::get('/game', function () {
 *	Working login and registration routes
 *	Stable
 */ 
-
+//Time_Usage in progress
+Route::get('/times','UserController@show_Time');
 // Default landing page
 Route::get('/', 'Auth\AuthController@getLogin');
 
