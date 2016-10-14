@@ -60,7 +60,8 @@ Route::controllers([
 Route::get('/dashboard'   , 'UserController@show_dashboard');
 Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
 Route::get('/profile'     , 'UserController@show_profile');
-Route::get('/tokens/{tokenCode}'      , 'TokenController@getTokenValue');
+Route::get('/game', 'UserController@show_games');
+Route::get('/tokens/{tokenCode}', 'TokenController@getTokenValue');
 
 
 
