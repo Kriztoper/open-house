@@ -133,22 +133,29 @@ class TokenController extends Controller
     * @return video view
     *
     */
-    public function buy_video(Request $request) {
-        $isVidBought = DB::table('uservideos')
-        ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
-        ->join('users', 'users.user_ID', '=', 'uservideos.userID')
-        ->where('users.user_ID', '=', Auth::user()->student_number)
-        ->where('videos.videoID', '=', $request->videoID)
-        ->get();
+    public function buy_video($videoID) {
+        $newValue = Auth::user()->token - 5;
+        if ($newValue >= 0) {
+            $isVidBought = DB::table('uservideos')
+            ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
+            ->join('users', 'users.user_ID', '=', 'uservideos.userID')
+            ->where('users.user_ID', '=', Auth::user()->student_number)
+            ->where('videos.videoID', '=', $videoID)
+            ->get();
 
-        if (empty($isVidBought)) {
-            DB::table('uservideos')
-            ->insert(['videoID' => $request->videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
-            $newValue = Auth::user()->token - 5;
-            DB::table('users')
-            ->where('student_number', Auth::user()->student_number)
-            ->update(['token'=>$newValue]);
-        } 
+            if (empty($isVidBought)) {
+                DB::table('uservideos')
+                ->insert(['videoID' => $videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
+                DB::table('users')
+                ->where('student_number', Auth::user()->student_number)
+                ->update(['token'=>$newValue]);
+                $path = DB::table('videos')
+                        ->where('videoID', $videoID)
+                        ->pluck('videoURL');
+                return redirect($path); //return to video
+            } 
+        }
+        return redirect('/videos'); //return to videos page
     }
 
     /**
@@ -158,11 +165,20 @@ class TokenController extends Controller
     * @return game view
     *
     */
-    public function buy_game(Request $request) {
+    public function buy_game($gameID) {
+        
         $newValue = Auth::user()->token - 5;
-        DB::table('users')
-        ->where('student_number', Auth::user()->student_number)
-        ->update(['token'=>$newValue]);
+        if ($newValue >= 0) {
+            DB::table('users')
+            ->where('student_number', Auth::user()->student_number)
+            ->update(['token'=>$newValue]);
+            $gamepath = DB::table('games')
+                        ->where('gameID', $gameID)
+                        ->pluck('gameURL');
+            return redirect($gamepath); //return to game proper
+        }
+        return redirect('/dashboard'); //return to dashboard
+
     }
 }
 ?>
