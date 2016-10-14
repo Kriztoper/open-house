@@ -115,6 +115,10 @@ Route::get('/profile'     , 'UserController@show_profile');
 Route::get('/game'		  , 'UserController@show_games');
 Route::post('/tokens'	  , 'UserController@add_token');
 
+/*the next two lines are temporary, used for testing*/
+Route::get('/buyVid/{videoID}', 'TokenController@buy_video');
+Route::get('/buyGame/{gameID}', 'TokenController@buy_game');
+
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
 
