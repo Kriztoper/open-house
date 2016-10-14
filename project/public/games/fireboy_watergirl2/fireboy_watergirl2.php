@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Detonate 2</title>
+		<title>Fireboy and Watergirl 2</title>
 	</head>
 	
 	<body>

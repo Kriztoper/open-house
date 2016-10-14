@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Detonate 2</title>
+		<title>Box Head 2 Play</title>
 	</head>
 	
 	<body>

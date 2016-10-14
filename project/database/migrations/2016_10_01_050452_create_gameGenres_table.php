@@ -13,6 +13,7 @@ class CreateGameGenresTable extends Migration
     public function up()
     {
         Schema::create('gameGenres', function (Blueprint $table) {
+            $table->increments('gameGenresID');
             $table->integer('gameID');
             $table->integer('genreID');
         });
