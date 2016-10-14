@@ -34,7 +34,7 @@
 	      			<li><a href="#">GAMES</a></li>
 	      			<li><a href="#">VIDEOS</a></li>
 	      			<!-- Change to user name -->
-<<<<<<< Updated upstream
+
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
@@ -45,9 +45,9 @@
           					<li><a href="{{url('logout')}}">LOGOUT</a></li>
         				</ul>
       				</li>
-=======
+
 	      			<li><a href="#">CARLO</a></li>
->>>>>>> Stashed changes
+
 	    		</ul>
   			</div>
 		</nav>

@@ -95,6 +95,14 @@ class UserController extends Controller
                     ->where('tokenName', $request->token_code)
                     ->pluck('isActive');
         if ($isActive == 1) {
+
+            $tokenValue = DB::table('tokens')->select('tokenValue')->where('tokenName', $request->token_code)->pluck('tokenValue');
+            $currentTokens = DB::table('users')->where('student_number', Auth::user()->student_number)->pluck('token');
+            $newValue = $currentTokens + $tokenValue;
+            DB::table('users')->where('student_number', Auth::user()->student_number)->update(['token'=>(int)$newValue]);
+            DB::table('tokens')->where('tokenName', $request->token_code)->update(['isActive'=>0]);
+
+
             $tokenValue = DB::table('tokens')
                             ->select('tokenValue')
                             ->where('tokenName', $request->token_code)
@@ -106,6 +114,7 @@ class UserController extends Controller
             DB::table('tokens')
             ->where('tokenName', $request->token_code)
             ->update(['isActive'=>0]);
+
         }
         
         return redirect('/dashboard');

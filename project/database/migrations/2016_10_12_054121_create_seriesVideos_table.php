@@ -13,6 +13,7 @@ class CreateSeriesVideosTable extends Migration
     public function up()
     {
         Schema::create('seriesVideo', function (Blueprint $table) {
+            $table->increments('seriesVideoID');
             $table->integer('seriesID');
             $table->integer('videoID');
         });
