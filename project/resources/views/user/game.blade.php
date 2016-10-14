@@ -278,19 +278,28 @@
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
+<<<<<<< HEAD
 			      		<img src="http://imgur.com/toJ9Srk.jpg" alt="...">
 			      		<div class="caption">
 			        		<h3>Chain Reaction</h3>
 			        		<p></p>
+=======
+			    		<a href="games/ChainReaction/ChainReaction.php">
+			      		<img src="http://i.imgur.com/ZSuclcE.png" alt="Chain Reaction">
+			      		<div class="caption">
+			        		<h3>Chain Reaction</h3>
+			        		<p>...</p>
+>>>>>>> 162643deaf95bed38b313d0b6011284448ef25b8
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			    		<a href="games/DotsTrix/DotsTrix.php">
+			      		<img src="http://i.imgur.com/jfNDKUy.jpg" alt="DotsTrix">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
+			        		<h3>DotsTrix</h3>
 			        		<p>...</p>
 			      		</div>
 			    	</div>
@@ -298,9 +307,10 @@
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			    		<a href="game/CoralizeQuest/CoralineQuest.php">
+			      		<img src="http://i.imgur.com/ihzdHIi.png" alt="Coraline Quest">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
+			        		<h3>Coraline Quest</h3>
 			        		<p>...</p>
 			      		</div>
 			    	</div>
