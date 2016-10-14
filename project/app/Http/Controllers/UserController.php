@@ -157,6 +157,5 @@ class UserController extends Controller
         DB::table('users')
         ->where('student_number', Auth::user()->student_number)
         ->update(['token'=>$newValue]);
-        }
     }
 }
