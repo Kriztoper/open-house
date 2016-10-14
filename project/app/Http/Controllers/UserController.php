@@ -133,35 +133,21 @@ class UserController extends Controller
             DB::table('users')
             ->where('student_number', Auth::user()->student_number)
             ->update(['token'=>$newValue]);
-            var_dump($newValue);
-            exit();
         } 
     }
 
     /**
     *
-    * checks whether game is bought otherwise updates token count and mark game as bought
+    * updates token count when buying game
     *
     * @return game view
     *
     */
     public function buy_game(Request $request) {
-        $isGameBought = DB::table('usergames')
-        ->join('users', 'users.user_ID', '=', 'usergames.userID')
-        ->join('games', 'games.gameID', '=', 'usergames.gameID')
-        ->where('users.user_ID', '=', Auth::user()->student_number)
-        ->where('games.gameID', '=', $request->gameID)
-        ->get();
-
-        if(empty($isGameBought)) {
-            DB::table('usergames')
-            ->insert(['gameID' => $request->gameID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
-            $newValue = Auth::user()->token - 5;
-            DB::table('users')
-            ->where('student_number', Auth::user()->student_number)
-            ->update(['token'=>$newValue]);
-            var_dump($newValue);
-            exit();
+        $newValue = Auth::user()->token - 5;
+        DB::table('users')
+        ->where('student_number', Auth::user()->student_number)
+        ->update(['token'=>$newValue]);
         }
     }
 }
