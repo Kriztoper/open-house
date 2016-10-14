@@ -62,18 +62,47 @@ Route::post('/addToken','AdminController@generateToken');
 *
 */
 Route::get('/series_list','VideosController@listSeries');
+<<<<<<< HEAD
 /* Route::get('/list_video/{id}','VideosController@listVideos');*/
 Route::get('/list_vid',function(){
    return view('list_vid'); 
 });
 Route::get('/watch_video/{id}','VideosController@watchVideos');
 Route::get('/videos','VideosController@listSeries');
+=======
+Route::get('/list_video/{id}','VideosController@listVideos');
+Route::get('/watch_video/{id}','VideosController@watchVideos');
+Route::get('/videos','VideosController@listSeries');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/hall_of_fame', function () {
+    return view('hall_of_fame');
+});
+
+
+Route::get('/game', function () {
+    return view('game');
+});
+
+>>>>>>> bfc48edfb0080afa3f82ea4c53cf89561b3d3770
 /*
 *	Author: Khalile Pujante
 *	Working login and registration routes
 *	Stable
 */ 
+<<<<<<< HEAD
 
+=======
+//Time_Usage in progress
+Route::get('/times','UserController@show_Time');
+>>>>>>> bfc48edfb0080afa3f82ea4c53cf89561b3d3770
 // Default landing page
 Route::get('/', 'Auth\AuthController@getLogin');
 
@@ -99,6 +128,13 @@ Route::get('/profile'     , 'UserController@show_profile');
 Route::get('/game'		  , 'UserController@show_games');
 Route::post('/tokens'	  , 'UserController@add_token');
 
+<<<<<<< HEAD
+=======
+/*the next two lines are temporary, used for testing*/
+Route::get('/buyVid/{videoID}', 'TokenController@buy_video');
+Route::get('/buyGame/{gameID}', 'TokenController@buy_game');
+
+>>>>>>> bfc48edfb0080afa3f82ea4c53cf89561b3d3770
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
 
