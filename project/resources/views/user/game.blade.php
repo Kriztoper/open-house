@@ -58,13 +58,13 @@
 				<div class="container">
 					<div class="single-item">
 						<button type="button" class="slick-prev">Previous</button>
-						<div class="slick-item"><a href="games/fourSquare/four.php"><img src="http://imgur.com/ZVzhqwU.jpg"></a></div>
-						<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="http://imgur.com/GiveJFP.jpg"></a></div>
-						<div class="slick-item"><a href="games/box_head_2_play/boxhead.php"><img src="http://imgur.com/mbgfGto.jpg"></a></div>
-						<div class="slick-item"><a href="games/detonate2/detonate2.php"><img src="http://imgur.com/pha8HJ8.jpg"></a></div>
-						<div class="slick-item"><a href="games/fireboy_watergirl2/fireboy_watergirl2.php"><img src="http://imgur.com/8lz3Zgg.jpg"></a></div>
-						<div class="slick-item"><a href="games/pandemic2/pandemic2.php"><img src="http://imgur.com/bv9I182.jpg"></a></div>
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><a href="games/fourSquare/four.php"><img src="/images/Featured Games/Feature1.jpg"></a></div>
+						<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
+						<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
+						<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
+						<div class="slick-item"><a href=""><img src="/images/Featured Games/chainReaction.png"></a></div>
+						<div class="slick-item"><a href=""><img src="/images/Featured Games/DotsTrix.png"></a></div>
+						<div class="slick-item"><img src="/images/Featured Games/killerCubes.png"></div>
 					</div>
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/box_head_2_play/boxhead.php">
-			      		<img src="http://imgur.com/GXbhBcM.jpg" alt="...">
+			      		<img src="images/Games/boxHead.png" alt="boxhead">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>BOXHEAD</h3>
@@ -88,7 +88,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/detonate2/detonate2.php">
-			      		<img src="http://imgur.com/sqkwOal.jpg" alt="...">
+			      		<img src="images/Games/detonateII.png" alt="...">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>DETONATE 2</h3>
@@ -143,7 +143,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/fireboy_watergirl2/fireboy_watergirl2.php">
-			      		<img src=http://imgur.com/OvnIHAO.jpg" alt="...">
+			      		<img src="/images/Games/lightTemple.jpg" alt="...">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>FIREBOY & WATERGIRL 2</h3>
@@ -155,7 +155,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/pandemic2/pandemic2.php">
-			      		<img src="http://imgur.com/0JXlcQM.jpg" alt="...">
+			      		<img src="/images/Games/pandemicII.png" alt="...">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>PANDEMIC 2</h3>
@@ -210,7 +210,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/fourSquare/four.php">
-			      			<img src="http://imgur.com/W7wpm5G.jpg" alt="4 Squares">
+			      			<img src="/images/Games/4square.jpg" alt="4 Squares">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>4 Squares</h3>
@@ -222,7 +222,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/Domineering/Domineering.php">
-			      		<img src="http://imgur.com/OUbMZpd.jpg" alt="Domineering">
+			      		<img src="/images/Games/domineering.jpg" alt="Domineering">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>Domineering</h3>
@@ -233,7 +233,7 @@
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://imgur.com/tDXAs0H.jpg" alt="Sungka">
+			      		<img src="/images/Games/mancala.png" alt="Mancala">
 			      		<div class="caption">
 			        		<h3>Sungka</h3>
 			        		<p></p>
@@ -255,7 +255,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/DotsTrix/DotsTrix.php">
-			      		<img src="http://i.imgur.com/jfNDKUy.jpg" alt="DotsTrix">
+			      		<img src="/images/Games/dotsTrix.jpg" alt="DotsTrix">
 			      		<div class="caption">
 			        		<h3>DotsTrix</h3>
 			        		<p></p>
@@ -266,7 +266,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="game/CoralizeQuest/CoralineQuest.php">
-			      		<img src="http://i.imgur.com/ihzdHIi.png" alt="Coraline Quest">
+			      		<img src="/images/Games/coraline.png" alt="Coraline Quest">
 			      		<div class="caption">
 			        		<h3>Coraline Quest</h3>
 			        		<p></p>
