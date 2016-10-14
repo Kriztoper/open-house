@@ -39,10 +39,10 @@
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
        					<ul class="dropdown-menu dropdown-menu-left col-xs-12">
-          					<li><a href="{{url('\profile')}}">PROFILE</a></li>
+          					<li><a href="{{url('/profile')}}">PROFILE</a></li>
           					<li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
           					<li role="separator" class="divider"></li>
-          					<li><a href="{{url('logout')}}">LOGOUT</a></li>
+          					<li><a href="{{url('/logout')}}">LOGOUT</a></li>
         				</ul>
       				</li>
 	    		</ul>
@@ -87,7 +87,6 @@
             		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 					<button type="submit" class="btn btn-primary">Submit</button>
-					</form>
 				</div>
 			</div>
 		</div>

@@ -30,20 +30,24 @@
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
 	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
-	      			<li><a href="{{url('hall_of_fame')}}">HALL OF FAME</a></li>
-	      			<li><a href="{{url('games')}}">GAMES</a></li>
-	      			<li><a href="{{url('series_list')}}">VIDEOS</a></li>
+	      			<li><a href="#">HALL OF FAME</a></li>
+	      			<li><a href="#">GAMES</a></li>
+	      			<li><a href="#">VIDEOS</a></li>
 	      			<!-- Change to user name -->
+<<<<<<< Updated upstream
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
        					<ul class="dropdown-menu dropdown-menu-left col-xs-12">
           					<li><a href="{{url('\profile')}}">PROFILE</a></li>
-          					<li><a href="{{url('add_token')}}">ADD TOKENS</a></li>
+          					<li><a href="#">ADD TOKENS</a></li>
           					<li role="separator" class="divider"></li>
           					<li><a href="{{url('logout')}}">LOGOUT</a></li>
         				</ul>
       				</li>
+=======
+	      			<li><a href="#">CARLO</a></li>
+>>>>>>> Stashed changes
 	    		</ul>
   			</div>
 		</nav>
@@ -51,14 +55,18 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1 class="page-header">
-					WATCH ANIME
+					WELCOME TO<br>KOMSAI OPENHOUSE
 				</h1>
 				<br>
 				<div class="container">
 					<div class="multiple-items">
-                        @foreach($series as $serie)
-                            <div class="slick-item"><a href="{{url('/list_video/'.$serie->seriesID)}}"><img src="{{url("/images/Anime Poster/".$serie->thumbnail.".jpg")}}"></a><h5>{{$serie->seriesName}}</h5></div>
-                        @endforeach
+						<div class="slick-item"><img src="http://yes-games.com/images/kartinki/dota2logo_250x150.jpg"></div>
+						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
+						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
+						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
+						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
+						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
+						<div class="slick-item"><img src="http://placehold.it/250x150"></div>
 					</div>
 				</div>
 			</div>
@@ -71,6 +79,7 @@
 				</ul>
 			</div>
 		</nav>
+    </div>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

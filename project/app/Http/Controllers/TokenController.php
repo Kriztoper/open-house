@@ -88,3 +88,4 @@ class TokenController extends Controller
         //
     }
 }
+?>
