@@ -76,10 +76,12 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/box_head_2_play/boxhead.php">
-			      		<img src="http://imgur.com/GXbhBcM.jpg" alt="...">
+			      		<img src="{{url("/images/games/thumbnail/boxHead.png")}}" alt="...">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>BOXHEAD</h3>
+			        		</br>
+			        		</br>
 			        		<p></p>
 			      		</div>
 			    	</div>
@@ -88,10 +90,11 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/detonate2/detonate2.php">
-			      		<img src="http://imgur.com/sqkwOal.jpg" alt="...">
+			      		<img src="{{url("/images/games/thumbnail/detonate2.png")}}" alt="...">
 			      		</a>
 			      		<div class="caption">
-			        		<h3>DETONATE 2</h3>
+			        		<h3>DETONATE2</h3>
+			        		</br>
 			        		<p></p>
 			      		</div>
 			    	</div>
@@ -99,7 +102,8 @@
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="/images/Games/animeFightingJam.png" alt="...">
+			    		<a href="games/anime_fighting_jam_wing/detonate2.php">
+			      		<img src="{{url("/images/games/thumbnail/animeFightingJam.png")}}" alt="...">
 			      		<div class="caption">
 			        		<h3>Anime Fighting Jam</h3>
 			        		<p></p>
@@ -109,7 +113,7 @@
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="/images/Games/combatTournament.png" alt="...">
+			      		<img src="{{url("/images/games/thumbnail/combatTournament.png")}}" alt="...">
 			      		<div class="caption">
 			        		<h3>Combat Tournament Legends</h3>
 			        		<p></p>
@@ -119,31 +123,30 @@
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="/images/Games/gunMayhem.png" alt="...">
+			      		<img src="{{url("/images/games/thumbnail/gunMayhem.png")}}" alt="...">
 			      		<div class="caption">
 			        		<h3>Gun Mayhem</h3>
 			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
-
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="/images/Games/gunBlood.jpg" alt="...">
+			      		<img src="{{url("/images/games/thumbnail/politicalDuel.png")}}" alt="...">
 			      		<div class="caption">
-			        		<h3>Gun Blood</h3>
+			        		<h3>Gun Mayhem</h3>
 			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 			</div>
 
-			<h2 class="page-header class">ADVENTURE</h2>
+			<h2 class="page-header class">STRATEGIC GAMES</h2>
 			<div class="row">
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/fireboy_watergirl2/fireboy_watergirl2.php">
-			      		<img src=http://imgur.com/OvnIHAO.jpg" alt="...">
+			      		<img src="{{url("/images/games/thumbnail/fireboyWatergirl2.png")}}" alt="...">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>FIREBOY & WATERGIRL 2</h3>
@@ -155,7 +158,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/pandemic2/pandemic2.php">
-			      		<img src="http://imgur.com/0JXlcQM.jpg" alt="...">
+			      		<img src="{{url("/images/games/thumbnail/pandemic2.png")}}" alt="...">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>PANDEMIC 2</h3>
@@ -166,7 +169,7 @@
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="/images/Games/learnToFly.png" alt="...">
+			      		<img src="{{url("/images/games/thumbnail/learnTofly.png")}}" alt="...">
 			      		<div class="caption">
 			        		<h3>Learn To Fly</h3>
 			        		<p></p>
@@ -210,7 +213,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/fourSquare/four.php">
-			      			<img src="http://imgur.com/W7wpm5G.jpg" alt="4 Squares">
+			      		<img src="{{url("/images/games/thumbnail/4square.png")}}" alt="4 Squares">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>4 Squares</h3>
@@ -222,7 +225,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/Domineering/Domineering.php">
-			      		<img src="http://imgur.com/OUbMZpd.jpg" alt="Domineering">
+			      		<img src="{{url("/images/games/thumbnail/domineering.png")}}" alt="Domineering">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>Domineering</h3>
@@ -244,7 +247,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/ChainReaction/ChainReaction.php">
-			      		<img src="/images/Games/chainReaction.jpg" alt="Chain Reaction">
+			      		<img src="{{url("/images/games/thumbnail/chainReaction.png")}}" alt="Chain Reaction">
 			      		<div class="caption">
 			        		<h3>Chain Reaction</h3>
 			        		<p></p>
@@ -266,7 +269,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="game/CoralizeQuest/CoralineQuest.php">
-			      		<img src="http://i.imgur.com/ihzdHIi.png" alt="Coraline Quest">
+			      		<img src="{{url("/images/games/thumbnail/coraline.png")}}" alt="Coraline Quest">
 			      		<div class="caption">
 			        		<h3>Coraline Quest</h3>
 			        		<p></p>
