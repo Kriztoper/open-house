@@ -1,5 +1,5 @@
 <html>
-    <head><title>game palace</title></head>
+    <head><title>MANCALA</title></head>
 <body>
 	<div style="float: left">
     	<form action="/game" method="get">

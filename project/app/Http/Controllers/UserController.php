@@ -103,12 +103,7 @@ class UserController extends Controller
         
         return redirect('/dashboard');
     }
-    public function show_Time(){
-        $timeConsumed= DB::table('time_Usage')->where('student_number','=',Auth::user()->student_number)->pluck('time_consumed');
 
-        return view('user.time')->with('timeConsumed',$timeConsumed);
-    
-    }
     /**
     * 
     * checks whether video is bought otherwise updates token count and mark video as bought
@@ -148,4 +143,3 @@ class UserController extends Controller
         ->update(['token'=>$newValue]);
     }
 }
-?>

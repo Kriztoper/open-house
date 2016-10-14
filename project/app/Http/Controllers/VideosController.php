@@ -92,5 +92,7 @@ class VideosController extends Controller
           $listOfVideos = DB::table('videos')->whereIn('videosID',$serVideo)->get();*/
         return view('watch_video',['videos'=>$videos]);
     }
+
+  
+
 }
-?>  

@@ -104,4 +104,3 @@ class RegistrationController extends Controller
         //
     }
 }
-?>
