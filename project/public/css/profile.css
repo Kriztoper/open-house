@@ -1,3 +1,4 @@
+
 html {
 	width: 100%;
 	padding: 0;
@@ -31,27 +32,6 @@ body {
          url('../fonts/montserrat-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
-.modal-header {
-	background-color: grey;	
-}
-
-.modal-body {
-	background-color: grey;
-}
-
-.modal-footer {
-	background-color: grey;	
-}
-
-.edit {
-	width: 400px;
-	background-color: none;
-}
-
-.gap {
-	margin-bottom: 10px;
 }
 
 .gobolds {

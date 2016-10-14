@@ -13,7 +13,7 @@ class CreateTokensTable extends Migration
     public function up()
     {
          Schema::create('tokens', function (Blueprint $table) {
-            $table->integer('tokenID');
+            $table->increments('tokenID');
             $table->boolean('isActive');
             $table->String('tokenName');
             $table->integer('tokenValue');
