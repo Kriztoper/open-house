@@ -33,6 +33,10 @@ body {
     font-style: normal;
 }
 
+.gap {
+	margin-bottom: 20px;
+}
+
 .back {
    position: fixed;
    right: 2.5%;
@@ -45,8 +49,8 @@ body {
 .jumbotron {
 	font-family: goboldregular;
 	font-size: 90px;
-	letter-spacing: 25px;
-	color: gold;
+	letter-spacing: 19px;
+	color: white;
 	background: none;
 }
 
@@ -54,12 +58,13 @@ body {
 	font-family: goboldregular;
 	font-size: 20px;
 	letter-spacing: 5px;
-	color: #80ffff;
+	color: white;
 }
 
 .pic {
 	margin: 10px;
 	margin-bottom: 50px;
+	text-align: center;
 }
 
 .pad {
@@ -78,7 +83,8 @@ body {
   	height: 100%;
   	min-width: 200px;
   	max-width:700px;
-  	padding: 40px;}
+  	padding: 20px;
+}
 
 #top-navbar {
 	background-color: transparent !important;
@@ -112,4 +118,14 @@ body {
 
 .white {
 	color: white;
+}
+
+a {
+    opacity: 0.7;
+    filter: alpha(opacity=50); 
+}
+
+a:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
 }

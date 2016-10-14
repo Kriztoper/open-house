@@ -2,36 +2,18 @@
 <html>
     <head>
         <title>Developers</title>
-       	<meta charset="utf-8">
-  		  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/openhouse/project/public/css/developers.css" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     	
+      
     </head>
   <body>
-  <!--
-    <div class="container-fluid">
-      <nav id="top-navbar" class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-              <img src="http://i.imgur.com/js8s2AR.png" style="margin: auto !important; position: center" width=80%/>
-            </a>
-          </div>
-          <ul id="tokens" class="nav navbar-nav">
-              <li>
-                <p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{'69'}}</span></p>
-              </li>
-          </ul>
-        </div>
-  
-        
-      </nav>
-  --> 
+
       <div class="back"><a href="#"><img src="http://i.imgur.com/T6dxHkR.png" width="50" height="50"></a></div>
-      <h1 class="jumbotron Absolute-Center"><nav>DEVELOPERS</nav></h1>
+      <h1 class="jumbotron Absolute-Center"><img src="http://i.imgur.com/i4LQ5Bi.png" class="gap">DEVELOPERS</h1>
 
       <div>
         <div class="Absolute-Center">
@@ -39,11 +21,11 @@
           <div class="pic col-md-12">
             <div>
 
-              <div class="col-md-5">
+              <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/ImJxxzf.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+              
 
               <div class="col-md-6 gob">
                 
@@ -63,11 +45,11 @@
         
           <div class="pic col-md-12">
             <div>
-              <div class="col-md-5">
+              <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/o3muWud.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+              
 
               <div class="col-md-6 gob">
                 
@@ -85,11 +67,11 @@
 
           <div class="pic col-md-12">
             <div>
-              <div class="col-md-5">
+              <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/1pbtTof.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+             
 
               <div class="col-md-6 gob">
                 
@@ -108,11 +90,10 @@
 
           <div class="pic col-md-12">
             <div>
-              <div class="col-md-5">
+              <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/P2bD7va.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
 
               <div class="col-md-6 gob">
                 
@@ -131,11 +112,11 @@
 
           <div class="pic col-md-12">
             <div>
-              <div class="col-md-5">
+              <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/RS2A2yO.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+              
 
               <div class="col-md-6 gob">
                 
@@ -154,11 +135,11 @@
 
           <div class="pic col-md-12">
             <div>
-              <div class="col-md-5">
+              <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/nrPYpv1.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+             
 
               <div class="col-md-6 gob">
                 
@@ -175,11 +156,11 @@
 
           <div class="pic col-md-12">
             <div>
-              <div class="col-md-5">
+              <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/tTrvdwY.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+              
 
               <div class="col-md-6 gob">
                 
@@ -198,12 +179,11 @@
 
           <div class="pic col-md-12">
             <div>
-              <div class="col-md-5">
+              <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/bHlKMUX.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
-
+              
               <div class="col-md-6 gob">
                 
                 <p class="pad">
@@ -219,12 +199,35 @@
 
           <div class="pic col-md-12">
             <div>
-              <div class="col-md-5">
+
+              <div class="col-md-5 dp">
+                <img src="http://i.imgur.com/E2iMJCH.jpg" width="200" class="img-circle" height="200">
+              </div>
+
+             
+
+              <div class="col-md-6 gob">
+                
+                <p class="pad">
+                  <a href="https://www.facebook.com/theOnlyRex"><img src="http://i.imgur.com/eZ77z46.png" width="50" height="50"></a> 
+                  <a href="https://twitter.com/the_OnlyRex"><img src="http://i.imgur.com/BzXX5xf.png" width="50" height="50"></a>
+                  <a href="https://www.instagram.com/rexolis/"><img src="http://i.imgur.com/cW6nHoy.png" width="50" height="50"></a>
+                  <img src="http://i.imgur.com/l5INYxC.gif" width="50" height="50">
+                </p>
+                <p>Rex Olis</p>
+                <p>Back End</p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="pic col-md-12">
+            <div>
+              <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/gX9w8Dr.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
-
+              
               <div class="col-md-6 gob">
                 
                 <p class="pad">
@@ -240,4 +243,118 @@
 
           <div class="pic col-md-12">
             <div>
-              <div class="col-md-5">
+              <div class="col-md-5 dp">
+                <img src="http://i.imgur.com/UaIQF4z.jpg" width="200" class="img-circle" height="200">
+              </div>
+
+              <div class="col-md-6 gob">
+                
+                <p class="pad">
+                  <a href="https://www.facebook.com/CallMeTailer"><img src="http://i.imgur.com/eZ77z46.png" width="50" height="50"></a>
+                  <a href="https://twitter.com/CallMeTailer"><img src="http://i.imgur.com/BzXX5xf.png" width="50" height="50"></a> 
+                  <a href="https://www.instagram.com/karlpujante/"><img src="http://i.imgur.com/cW6nHoy.png" width="50" height="50"></a>
+                  <img src="http://i.imgur.com/9Bsza6A.gif" width="50" height="50">
+                </p>
+                <p>Khalile Pujante</p>
+                <p>Front End</p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="pic col-md-12">
+            <div>
+              <div class="col-md-5 dp">
+                <img src="http://i.imgur.com/rEyL8Zm.jpg" width="200" class="img-circle" height="200">
+              </div>
+
+
+              <div class="col-md-6 gob">
+                
+                <p class="pad">
+                  <a href="https://www.facebook.com/albuenjan.rosello"><img src="http://i.imgur.com/eZ77z46.png" width="50" height="50"></a>
+                  <a href="https://twitter.com/albuenRosello03"><img src="http://i.imgur.com/BzXX5xf.png" width="50" height="50"></a>
+                  <img src="http://i.imgur.com/ASwbYdl.gif" width="50" height="50">
+                </p>
+                <p>Albuen Rosello</p>
+                <p>Back End</p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="pic col-md-12">
+            <div>
+              <div class="col-md-5 dp">
+                <img src="http://i.imgur.com/jyOQ6He.jpg" width="200" class="img-circle" height="200">
+              </div>
+
+     
+              <div class="col-md-6 gob">
+                
+                <p class="pad">
+                  <a href="https://www.facebook.com/charlotte.sacmar"><img src="http://i.imgur.com/eZ77z46.png" width="50" height="50"></a>
+                  <a href="https://twitter.com/charmooot"><img src="http://i.imgur.com/BzXX5xf.png" width="50" height="50"></a>
+                  <a href="https://www.instagram.com/charmooot/"><img src="http://i.imgur.com/cW6nHoy.png" width="50" height="50"></a>
+                  <img src="http://i.imgur.com/MUVn9O2.gif" width="50" height="50">
+                </p>
+                <p>Charlotte Sacmar</p>
+                <p>Front End</p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="pic col-md-12">
+            <div>
+              <div class="col-md-5 dp">
+                <img src="http://i.imgur.com/OmHr4E9.jpg" width="200" class="img-circle" height="200">
+              </div>
+
+           
+
+              <div class="col-md-6 gob">
+                
+                <p class="pad">
+                  <a href="https://www.facebook.com/valjamir.tingson"><img src="http://i.imgur.com/eZ77z46.png" width="50" height="50"></a>
+                  <a href="https://twitter.com/val_waray_klaro"><img src="http://i.imgur.com/BzXX5xf.png" width="50" height="50"></a>
+                  <a href="https://www.instagram.com/val_waray_klaro/"><img src="http://i.imgur.com/cW6nHoy.png" width="50" height="50"></a>
+                  <img src="http://i.imgur.com/0QCguSy.gif" width="50" height="50">
+                </p>
+                <p>Val Tingson</p>
+                <p>Back End</p>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="pic col-md-12">
+            <div>
+              <div class="col-md-5 dp">
+                <img src="http://i.imgur.com/pEbA65z.jpg" width="200" class="img-circle" height="200">
+              </div>
+
+            
+
+              <div class="col-md-6 gob">
+                
+                <p class="pad">
+                  <a href="https://www.facebook.com/carlo.valleramos"><img src="http://i.imgur.com/eZ77z46.png" width="50" height="50"></a>
+                  <a href="https://twitter.com/CarloValleramos"><img src="http://i.imgur.com/BzXX5xf.png" width="50" height="50"></a>
+                  <a href="https://www.instagram.com/carlovalleramos/"><img src="http://i.imgur.com/cW6nHoy.png" width="50" height="50"></a>
+                  <img src="http://i.imgur.com/sgUvHGO.gif" width="50" height="50">
+                </p>
+                <p>Carlo Valleramos</p>
+                <p>Front End</p>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      
+      </div>
+
+    </div>
+  </body>
+</html>
