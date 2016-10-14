@@ -46,7 +46,8 @@ body {
 
 #featured {
 	font-size: 60pt;
-	margin-top: 10%;
+	margin-top: 115px;
+	margin-bottom: 130px;
 	color: white !important;
 	border-color: transparent !important;
 	line-height: 120%;
@@ -66,4 +67,16 @@ body {
 	background-image: url(../images/backgrounds/vids-main-bg.jpg);
 	background-attachment: fixed;
 	background-color: #CCCCCC !important;
+}
+
+.games {
+	height: 750px;
+	background-size: 100%;
+	background-image: url(../images/backgrounds/games-main-bg.jpg);
+	background-attachment: fixed;
+	background-color: #CCCCCC !important;
+}
+
+.headers {
+	margin-top: 50px;
 }

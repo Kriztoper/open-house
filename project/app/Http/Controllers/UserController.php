@@ -103,12 +103,7 @@ class UserController extends Controller
         
         return redirect('/dashboard');
     }
-    public function show_Time(){
-        $timeConsumed= DB::table('time_Usage')->where('student_number','=',Auth::user()->student_number)->pluck('time_consumed');
 
-        return view('user.time')->with('timeConsumed',$timeConsumed);
-    
-    }
     /**
     * 
     * checks whether video is bought otherwise updates token count and mark video as bought
@@ -117,25 +112,21 @@ class UserController extends Controller
     *
     */
     public function buy_video(Request $request) {
-        $newValue = Auth::user()->token - 5;
-        if (Auth::user()->token > 0 && $newValue >= 0) {
-            $isVidBought = DB::table('uservideos')
-            ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
-            ->join('users', 'users.user_ID', '=', 'uservideos.userID')
-            ->where('users.user_ID', '=', Auth::user()->student_number)
-            ->where('videos.videoID', '=', $request->videoID)
-            ->get();
+        $isVidBought = DB::table('uservideos')
+        ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
+        ->join('users', 'users.user_ID', '=', 'uservideos.userID')
+        ->where('users.user_ID', '=', Auth::user()->student_number)
+        ->where('videos.videoID', '=', $request->videoID)
+        ->get();
 
-            if (empty($isVidBought)) {
-                DB::table('uservideos')
-                ->insert(['videoID' => $request->videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
-                DB::table('users')
-                ->where('student_number', Auth::user()->student_number)
-                ->update(['token'=>$newValue]);
-                return redirect(''); //return to video
-            } 
-        }
-        return redirect('') //return to videos page
+        if (empty($isVidBought)) {
+            DB::table('uservideos')
+            ->insert(['videoID' => $request->videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
+            $newValue = Auth::user()->token - 5;
+            DB::table('users')
+            ->where('student_number', Auth::user()->student_number)
+            ->update(['token'=>$newValue]);
+        } 
     }
 
     /**
@@ -146,16 +137,9 @@ class UserController extends Controller
     *
     */
     public function buy_game(Request $request) {
-        
         $newValue = Auth::user()->token - 5;
-        if (Auth::user()->token >= 0) {
-            DB::table('users')
-            ->where('student_number', Auth::user()->student_number)
-            ->update(['token'=>$newValue]);
-            return redirect(''); //return to game proper
-        }
-        return redirect(''); //return to dashboard
-
+        DB::table('users')
+        ->where('student_number', Auth::user()->student_number)
+        ->update(['token'=>$newValue]);
     }
 }
-?>
