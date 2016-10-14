@@ -64,7 +64,7 @@
 						<div class="slick-item"><a href="games/detonate2/detonate2.php"><img src="http://imgur.com/pha8HJ8.jpg"></a></div>
 						<div class="slick-item"><a href="games/fireboy_watergirl2/fireboy_watergirl2.php"><img src="http://imgur.com/8lz3Zgg.jpg"></a></div>
 						<div class="slick-item"><a href="games/pandemic2/pandemic2.php"><img src="http://imgur.com/bv9I182.jpg"></a></div>
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="{{url("/images/games/featured/killerCubes.jpg")}}"></div>
 					</div>
 				</div>
 			</div>
