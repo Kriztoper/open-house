@@ -15,7 +15,6 @@
 
 </head>
 <body>
-
 	<nav id="top-navbar" class="navbar navbar-fixed-top">
 		<div class="container-fluid">
    			<div class="navbar-header">
@@ -48,6 +47,14 @@
 	</nav>
 
 	<div class="container-fluid videos">
+		<div class="container">
+				<h1 id="featured" class="page-header">FEATURED VIDEOS</h1>
+				<div class="single-item">
+				@foreach($featuredContent as $featured)
+                    <div class="slick-item"><a href="{{url('/list_video/'.$featured->seriesID)}}"><img src="{{url("../images/Anime Poster/".$featured->thumbnail.".jpg")}}"></a><h5>{{$featured->seriesName}}</h5></div>
+                @endforeach
+			</div>
+		</div>
 	</div>
 			
 		
