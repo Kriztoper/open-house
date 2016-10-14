@@ -11,7 +11,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 /**
 *   Admin for adding videos and genre to database
 *   This will be removed after inserting everything to the database.
@@ -50,6 +49,7 @@ Route::post('/addToken','AdminController@generateToken');
 Route::get('/series_list','VideosController@listSeries');
 Route::get('/list_video/{id}','VideosController@listVideos');
 Route::get('/watch_video/{id}','VideosController@watchVideos');
+Route::get('/videos','VideosController@listSeries');
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -62,9 +62,6 @@ Route::get('/hall_of_fame', function () {
     return view('hall_of_fame');
 });
 
-Route::get('/videos', function () {
-    return view('videos');
-});
 
 Route::get('/game', function () {
     return view('game');
@@ -75,6 +72,7 @@ Route::get('/game', function () {
 *	Working login and registration routes
 *	Stable
 */ 
+
 // Default landing page
 Route::get('/', 'Auth\AuthController@getLogin');
 
@@ -92,29 +90,15 @@ Route::post('/register', 'Auth\AuthController@postRegister');
 Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);
-Route::get('/videos','VideosController@listSeries');
-Route::group(['middleware' => 'auth'], function () {
-    // place your route definitions here
-    Route::get('/dashboard'   , 'UserController@show_dashboard');
-	Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
-	Route::get('/profile'     , 'UserController@show_profile');
-	Route::get('/developers'  , 'UserController@show_developers');
-	Route::get('/game'        , 'UserController@show_games');
-	Route::post('/tokens'     , 'UserController@add_token');
-	//Route::get('/videos'      , 'UserController@show_videos');
-});
-/** ?>
 
 // Routes for user dashboard
 Route::get('/dashboard'   , 'UserController@show_dashboard');
 Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
 Route::get('/profile'     , 'UserController@show_profile');
-Route::get('/game', 'UserController@show_games');
-Route::get('/tokens/{tokenCode}', 'TokenController@getTokenValue');
-
-
+Route::get('/game'		  , 'UserController@show_games');
+Route::post('/tokens'	  , 'UserController@add_token');
 
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
 
-?> */
+?>

@@ -13,7 +13,8 @@ class CreateUserVideosTable extends Migration
     public function up()
     {
         Schema::create('userVideos', function (Blueprint $table) {
-            $table->increments('videoID');
+            $table->increments('userVideosID');
+            $table->integer('videoID');
             $table->integer('userID');
             $table->boolean('isBought');
         });

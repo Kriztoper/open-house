@@ -19,6 +19,7 @@ class CreateGamesTable extends Migration
            $table->integer('scoreID');
            $table->String('gameURL');
            $table->String('thumbnail');
+           $table->String('fthumbnail');
         });
     }
 
