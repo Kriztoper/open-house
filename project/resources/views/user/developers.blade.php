@@ -25,7 +25,7 @@
                 <img src="http://i.imgur.com/ImJxxzf.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+              
 
               <div class="col-md-6 gob">
                 
@@ -49,7 +49,7 @@
                 <img src="http://i.imgur.com/o3muWud.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+              
 
               <div class="col-md-6 gob">
                 
@@ -71,7 +71,7 @@
                 <img src="http://i.imgur.com/1pbtTof.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+             
 
               <div class="col-md-6 gob">
                 
@@ -94,7 +94,6 @@
                 <img src="http://i.imgur.com/P2bD7va.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
 
               <div class="col-md-6 gob">
                 
@@ -117,7 +116,7 @@
                 <img src="http://i.imgur.com/RS2A2yO.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+              
 
               <div class="col-md-6 gob">
                 
@@ -140,7 +139,7 @@
                 <img src="http://i.imgur.com/nrPYpv1.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+             
 
               <div class="col-md-6 gob">
                 
@@ -161,7 +160,7 @@
                 <img src="http://i.imgur.com/tTrvdwY.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+              
 
               <div class="col-md-6 gob">
                 
@@ -184,8 +183,7 @@
                 <img src="http://i.imgur.com/bHlKMUX.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
-
+              
               <div class="col-md-6 gob">
                 
                 <p class="pad">
@@ -201,11 +199,12 @@
 
           <div class="pic col-md-12">
             <div>
+
               <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/E2iMJCH.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+             
 
               <div class="col-md-6 gob">
                 
@@ -228,8 +227,7 @@
                 <img src="http://i.imgur.com/gX9w8Dr.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
-
+              
               <div class="col-md-6 gob">
                 
                 <p class="pad">
@@ -248,8 +246,6 @@
               <div class="col-md-5 dp">
                 <img src="http://i.imgur.com/UaIQF4z.jpg" width="200" class="img-circle" height="200">
               </div>
-
-              <div class="col-md-1"></div>
 
               <div class="col-md-6 gob">
                 
@@ -272,7 +268,6 @@
                 <img src="http://i.imgur.com/rEyL8Zm.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
 
               <div class="col-md-6 gob">
                 
@@ -294,8 +289,7 @@
                 <img src="http://i.imgur.com/jyOQ6He.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
-
+     
               <div class="col-md-6 gob">
                 
                 <p class="pad">
@@ -317,7 +311,7 @@
                 <img src="http://i.imgur.com/OmHr4E9.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+           
 
               <div class="col-md-6 gob">
                 
@@ -340,11 +334,11 @@
                 <img src="http://i.imgur.com/pEbA65z.jpg" width="200" class="img-circle" height="200">
               </div>
 
-              <div class="col-md-1"></div>
+            
 
               <div class="col-md-6 gob">
                 
-                <p class="pad dp">
+                <p class="pad">
                   <a href="https://www.facebook.com/carlo.valleramos"><img src="http://i.imgur.com/eZ77z46.png" width="50" height="50"></a>
                   <a href="https://twitter.com/CarloValleramos"><img src="http://i.imgur.com/BzXX5xf.png" width="50" height="50"></a>
                   <a href="https://www.instagram.com/carlovalleramos/"><img src="http://i.imgur.com/cW6nHoy.png" width="50" height="50"></a>
