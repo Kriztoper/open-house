@@ -17,7 +17,10 @@
      <h1>Admin Page</h1>
      <p><a href={{url('/adminSeries')}}>Series</a>
         <a href={{url('/adminGenre')}}>Genre</a>
-        <a href={{url('/adminSortGenre')}}>Sort Genre</a>
+        <a href={{url('/adminSortGenre')}}>Series Genre</a>
+        <a href={{url('/adminGame')}}>Game</a>
+        <a href={{url('/adminToken')}}>Token</a>
+        <a href={{url('/adminGameGenre')}}>Games Genre</a>
      </p>
 </body>
 </html>

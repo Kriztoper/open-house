@@ -97,11 +97,8 @@ class AdminController extends Controller
     public function gameGenre(){
        // copy genre and edit it for game.
     }
-    public function token(){
+    public function generateToken(){
        //Put bart's code here...
-    }
-    public function success(){
-        return view('success');
     }
     
 }

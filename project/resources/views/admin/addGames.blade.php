@@ -14,9 +14,40 @@
 
 </head>
 <body>
-     <h1>Admin Page</h1>
-     @foreach($videos as $vids)
-     <p><a href={{url('/adminSeries')}}>{{$vids}}</a></p>
-     @endforeach
+     <div class="log">
+          <img id="logo" src="http://i.imgur.com/i4LQ5Bi.png" />
+      </div>
+      <div class="row">
+        <div class="Absolute-Center is-Responsive">
+          <form class="form-horizontal" role="form" method="POST" action="{{url('/adminsSeries')}}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="gameName" placeholder="Game Name" value="{{ old('gameName') }}">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="gameDesc" placeholder="Game Description" value="{{ old('gameDesc') }}">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="thumbnail" placeholder="Image Name" value="{{ old('thumbnail') }}">
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <button type="submit" id="reg" class="btn btn-primary btn-block">Submit</button>
+              </div>
+            </div>
+          </form> 
+        </div>    
+      </div>
 </body>
 </html>
