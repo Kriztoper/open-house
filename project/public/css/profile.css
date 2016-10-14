@@ -33,6 +33,22 @@ body {
     font-style: normal;
 }
 
+.modal-header {
+	background-color: grey;	
+}
+
+.modal-body {
+	background-color: grey;
+}
+
+.modal-footer {
+	background-color: grey;	
+}
+
+.edit {
+	width: 400px;
+	background-color: none;
+}
 
 .gap {
 	margin-bottom: 10px;
@@ -72,14 +88,33 @@ body {
 	background: none;
 }
 
+.p{
+	opacity: 0.9;
+}
+
+.greybg{
+	background: rgb(60, 60, 60);
+}
+
 .redbg{
 	background: red;
+}
+
+.redfont{
+	color: red;
 }
 
 .goldbg{
 	background: gold;
 }
 
+.gold {
+	color: gold;
+}
+
+.white {
+	color: white;
+}
 .cyan {
 	color: cyan;
 }
@@ -90,21 +125,35 @@ body {
 
 
 
+.navbar-brand {
+	padding: 0px 0px !important;
+	padding-top: 10px !important;
+}
+
+.page-header {
+	font-family: goboldregular;
+	color: white !important;
+	border-color: transparent !important;
+	letter-spacing: 5pt;
+	line-height: 120%;
+}
+
 #top-navbar {
 	background-color: transparent !important;
 	border-color: transparent !important;
 }
 
-.navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+.navbar-default .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
     background-color: #BA002c;
     color: white;
 }
 
-.navbar-fixed-top .navbar-nav > li > a {
-	font-family: montserratregular;
+.navbar-default .navbar-nav > li > a {
+	margin-right: 10px;
+	font-family: goboldregular;
 	color: white;
-	font-size: 10pt;
-	/*letter-spacing: 2pt;*/
+	font-size: 15pt;
+	letter-spacing: 2pt;
 }
 
 .navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
@@ -113,43 +162,19 @@ body {
 }
 
 .navbar-fixed-bottom .navbar-nav > li > a {
+	margin-right: 10px;
 	font-family: montserratregular;
 	font-size: 8pt;
 	font-weight: bold;
 	color: darkgray;
-	padding-top: 5px !important;
-    padding-bottom: 5px !important;
-	height: 30px !important;
-}
-
-.navbar {
-	min-height: 30px !important;
 }
 
 .navbar-fixed-bottom {
 	background-color: #BA002c;
 }
 
-.dropdown-menu > li > a {
-	font-family: montserratregular;
-	letter-spacing: 2pt;
-	font-size: 8pt;
-	color: black;
-}
-
-.redfont{
-	color: red;
-}
-.gold {
-	color: gold;
-}
-
 .red {
 	color: #BA002c;
-}
-
-.white {
-	color: white;
 }
 
 #owl-demo .item{

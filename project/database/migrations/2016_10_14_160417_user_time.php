@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsergamesTable extends Migration
+class UserTime extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateUsergamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('usergames', function(Blueprint $table) {
-            $table->increments('gameID');
-            $table->integer('userID');
-            $table->boolean('isBought');
+        Schema::create('time_Usage', function (Blueprint $table) {
+            $table->integer('student_number')->unique();
+            $table->integer('time_consumed');
         });
     }
 
@@ -26,6 +25,6 @@ class CreateUsergamesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('usergames');
+         Schema::drop('time_Usage');
     }
 }

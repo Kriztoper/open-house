@@ -84,42 +84,31 @@ class UserController extends Controller
     /**
      * add tokens based on code input of the user
      *
-     * @return dashboard view
+     * @return view
      */
     public function add_token(Request $request)
     {
         // add some logic here for token generation
         // $request->token_code to get the token code input of the user from the modal
 
-        $isActive = DB::table('tokens')
-                    ->where('tokenName', $request->token_code)
-                    ->pluck('isActive');
+        $isActive = DB::table('tokens')->where('tokenName', $request->token_code)->pluck('isActive');
         if ($isActive == 1) {
-
             $tokenValue = DB::table('tokens')->select('tokenValue')->where('tokenName', $request->token_code)->pluck('tokenValue');
             $currentTokens = DB::table('users')->where('student_number', Auth::user()->student_number)->pluck('token');
             $newValue = $currentTokens + $tokenValue;
             DB::table('users')->where('student_number', Auth::user()->student_number)->update(['token'=>(int)$newValue]);
             DB::table('tokens')->where('tokenName', $request->token_code)->update(['isActive'=>0]);
 
-
-            $tokenValue = DB::table('tokens')
-                            ->select('tokenValue')
-                            ->where('tokenName', $request->token_code)
-                            ->pluck('tokenValue'); 
-            $newValue = Auth::user()->token + $tokenValue;
-            DB::table('users')
-            ->where('student_number', Auth::user()->student_number)
-            ->update(['token'=>(int)$newValue]);
-            DB::table('tokens')
-            ->where('tokenName', $request->token_code)
-            ->update(['isActive'=>0]);
-
         }
         
         return redirect('/dashboard');
     }
+    public function show_Time(){
+        $timeConsumed= DB::table('time_Usage')->where('student_number','=',Auth::user()->student_number)->pluck('time_consumed');
 
+        return view('user.time')->with('timeConsumed',$timeConsumed);
+    
+    }
     /**
     * 
     * checks whether video is bought otherwise updates token count and mark video as bought
@@ -159,3 +148,4 @@ class UserController extends Controller
         ->update(['token'=>$newValue]);
     }
 }
+?>

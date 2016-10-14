@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
 
 </head>
@@ -26,7 +27,7 @@
   				</div>
     			<ul id="tokens" class="nav navbar-nav">
               		<li>
-                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{'69'}}</span></p>
+                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span></p>
               		</li>
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
@@ -38,10 +39,10 @@
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
        					<ul class="dropdown-menu dropdown-menu-left col-xs-12">
-          					<li><a href="{{url('\profile')}}">PROFILE</a></li>
+          					<li><a href="{{url('/profile')}}">PROFILE</a></li>
           					<li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
           					<li role="separator" class="divider"></li>
-          					<li><a href="{{url('logout')}}">LOGOUT</a></li>
+          					<li><a href="{{url('/logout')}}">LOGOUT</a></li>
         				</ul>
       				</li>
 	    		</ul>
@@ -54,8 +55,13 @@
 				<h3 class="page-header">WELCOME TO</h3>
 				<h1 class="page-header">KOMSAI OPENHOUSE</h1>
 			</div>
-			<p id="quote">We can't always make the right decision, but we can make every decision right.</p>
-			<p id="author">-Google</p>
+			<div id="rotate">
+				<p class="quote">There's no place like <strong>127.0.0.1</strong></p>
+				<p class="quote">That’s what’s cool about working with computers.  They don’t argue, they remember everything, and they don’t drink all your beer.</p>
+				<p class="quote">The function of good software is to make the complex appear to be simple.</p>
+				<p class="quote">Any fool can use a computer.  Many do.</p>
+				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
+			</div>
 		</div>
 
 		<nav class="navbar navbar-fixed-bottom">
@@ -81,7 +87,6 @@
             		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 					<button type="submit" class="btn btn-primary">Submit</button>
-					</form>
 				</div>
 			</div>
 		</div>
@@ -92,5 +97,6 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
 	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/bodySlide.js"></script>
 </body>
 </html>

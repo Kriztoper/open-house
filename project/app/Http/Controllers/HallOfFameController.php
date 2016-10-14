@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use App\token;
-//use App\User;
 
-class TokenController extends Controller
+class HallOfFameController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -88,4 +85,3 @@ class TokenController extends Controller
         //
     }
 }
-?>
