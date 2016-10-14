@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'goboldregular';
+    src: url('../fonts/gobold_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gobold_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+  background: url("http://imgur.com/k94UPQK.png") no-repeat center fixed;
+  background-size: cover;
+  /*overflow: hidden;*/
+  color: white;
+  font-family: 'goboldregular';
+}
+
+#top-navbar {
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+    background-color: #BA002c;
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+	font-family: goboldregular;
+	color: white;
+	font-size: 15pt;
+	letter-spacing: 2pt;
+}
+
+.panel{
+	border-color: #BA002c;
+	font-size: 15pt;
+}
+
+.panel > .panel-heading {
+    background-color: #BA002c;
+    color: white;
+}
+
+.black{
+	color: black;
+}
+
+.row{
+	margin-top: 70px;
+}
+
+.try{
+	background-color: white;
+}

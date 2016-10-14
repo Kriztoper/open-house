@@ -39,6 +39,11 @@ class UserController extends Controller
         return view('user.profile');
     }
 
+    public function show_games()
+    {
+        return view('user.game');
+    }
+
     /**
      * Show hall of fame
      *
