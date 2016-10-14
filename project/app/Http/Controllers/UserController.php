@@ -34,11 +34,11 @@ class UserController extends Controller
      *
      * @return view
      */
+    
     public function show_profile()
     {
         return view('user.profile');
     }
-
     /**
      * Show hall of fame
      *
