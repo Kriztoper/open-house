@@ -1,7 +1,31 @@
+html {
+	width: 100%;
+	padding: 0;
+	background-color: white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-image: url(../images/backgrounds/vids-list-bg.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+body {
+	background-color: transparent !important;
+	font-family: montserratregular;
+}
+
 @font-face {
     font-family: 'lemonmilkregular';
     src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
          url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -11,7 +35,9 @@
 }
 
 .page-header{
-	font-family: 'lemonmilkregular';
+	font-family: lemonmilkregular;
+	color: white !important;
+	border-color: transparent !important;
 }
 
 .panel-default > .panel-heading {
@@ -51,4 +77,8 @@
 
 .eps{
 	font-size: 15pt;
+}
+
+.transparent {
+	background-color: transparent !important;
 }

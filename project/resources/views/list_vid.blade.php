@@ -47,7 +47,7 @@
   			</div>
 		</nav>
 			
-		<div class="jumbotron">
+		<div class="jumbotron transparent">
 			<div class="container">
 				<h1 class="page-header">WATCH ANIME</h1><br>
 				<div class="panel panel-default">
