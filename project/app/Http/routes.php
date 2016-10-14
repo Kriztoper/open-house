@@ -25,9 +25,10 @@ Route::get('/hall_of_fame', function () {
 });
 
 
-Route::get('/game', function () {
+/*Route::get('/game', function () {
     return view('game');
-});
+});*/
+Route::get('/game','GamesController@listGames');
 /**
 * Admin Routes
 */
@@ -56,7 +57,7 @@ Route::post('/adminsSeries','AdminController@saveSeries');
 Route::post('/adminsGenre','AdminController@saveGenre');
 Route::post('/adminSortsGenre','AdminController@sortGenre');
 Route::post('/addToken','AdminController@generateToken');
-
+Route::get('/playGame/{id}','GamesController@playGame');
 /**
 *   Routes for list of videos and watching videos from database
 *
@@ -94,7 +95,7 @@ Route::controllers([
 Route::get('/dashboard'   , 'UserController@show_dashboard');
 Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
 Route::get('/profile'     , 'UserController@show_profile');
-Route::get('/game'		  , 'UserController@show_games');
+/*Route::get('/game'		  , 'UserController@show_games');*/
 Route::post('/tokens'	  , 'UserController@add_token');
 
 //	Admin

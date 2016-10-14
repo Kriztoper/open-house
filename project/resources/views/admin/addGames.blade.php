@@ -39,6 +39,16 @@
                 <input type="text" class="form-control" name="thumbnail" placeholder="Image Name" value="{{ old('thumbnail') }}">
               </div>
             </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="fthumbnail" placeholder="Image Name 950" value="{{ old('fthumbnail') }}">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="className" placeholder="Class for jar(jar files only)" value="{{ old('className') }}">
+              </div>
+            </div>
 
 
             <div class="form-group">

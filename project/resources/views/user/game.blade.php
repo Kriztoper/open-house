@@ -58,13 +58,16 @@
 				<div class="container">
 					<div class="single-item">
 						<button type="button" class="slick-prev">Previous</button>
-						<div class="slick-item"><a href="games/fourSquare/four.php"><img src="/images/Featured Games/Feature1.jpg"></a></div>
+						@foreach($featuredContent as $featured)
+							<div class="slick-item"><a href="{{url('/playGame/'.$featured->gameID)}}"><img src="{{url('/'.$featured->fthumbnail)}}"></a></div>
+						@endforeach
+						<!-- <div class="slick-item"><a href="games/fourSquare/four.php"><img src="/images/Featured Games/Feature1.jpg"></a></div>
 						<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
 						<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
 						<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
 						<div class="slick-item"><a href=""><img src="/images/Featured Games/chainReaction.png"></a></div>
 						<div class="slick-item"><a href=""><img src="/images/Featured Games/DotsTrix.png"></a></div>
-						<div class="slick-item"><img src="/images/Featured Games/killerCubes.png"></div>
+						<div class="slick-item"><img src="/images/Featured Games/killerCubes.png"></div> -->
 					</div>
 				</div>
 			</div>
@@ -73,7 +76,20 @@
 		<div class="jumbotron">
 			<h2 class="page-header class">ACTION</h2>
 			<div class="row">
-			  	<div class="col-md-2">
+				@foreach($action as $actions)
+					<div class="col-md-2">
+			    		<div class="thumbnail">
+			    			<a href="{{url('/playGame/'.$actions->gameID)}}">
+			      				<img src="{{url('/'.$actions->thumbnail)}}" alt="{{$actions->gameName}}">
+			      			</a>
+			      			<div class="caption">
+			        			<h3>{{$actions->gameName}}</h3>
+			        			<p>{{$actions->gameDesc}}</p>
+			      			</div>
+			    		</div>
+			  		</div>
+				@endforeach
+			  	<<!-- div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/box_head_2_play/boxhead.php">
 			      		<img src="images/Games/boxHead.png" alt="boxhead">
@@ -135,12 +151,25 @@
 			        		<p></p>
 			      		</div>
 			    	</div>
-			  	</div>
+			  	</div> -->
 			</div>
 
 			<h2 class="page-header class">ADVENTURE</h2>
 			<div class="row">
-			  	<div class="col-md-2">
+				@foreach($adventure as $adventures)
+					<div class="col-md-2">
+			    		<div class="thumbnail">
+			    			<a href="{{url('/playGame/'.$adventures->gameID)}}">
+			      				<img src="{{url('/'.$adventures->thumbnail)}}" alt="{{$adventures->gameName}}">
+			      			</a>
+			      			<div class="caption">
+			        			<h3>{{$adventure->gameName}}</h3>
+			        			<p></p>
+			      			</div>
+			    		</div>
+			  		</div>
+				@endforeach
+			  	<!-- <div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/fireboy_watergirl2/fireboy_watergirl2.php">
 
@@ -204,12 +233,25 @@
 			        		<p></p>
 			      		</div>
 			    	</div>
-			  	</div>
+			  	</div> -->
 			</div>
 
 			<h2 class="page-header class">BOARD GAMES</h2>
 			<div class="row">
-			  	<div class="col-md-2">
+				@foreach($boardGames as $boardGame)
+					<div class="col-md-2">
+			    		<div class="thumbnail">
+			    			<a href="{{url('/playGame/'.$boardGame->gameID)}}">
+			      				<img src="{{url('/'.$boardGame->thumbnail)}}" alt="{{$boardGame->gameName}}">
+			      			</a>
+			      			<div class="caption">
+			        			<h3>{{$boardGame->gameName}}</h3>
+			        			<p></p>
+			      			</div>
+			    		</div>
+			  		</div>
+				@endforeach
+			  	<!-- <div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/fourSquare/four.php">
 			      			<img src="/images/Games/4square.jpg" alt="4 Squares">
@@ -278,7 +320,7 @@
 			        		<p></p>
 			      		</div>
 			    	</div>
-			  	</div>
+			  	</div> -->
 			</div>
 		</div>
 
