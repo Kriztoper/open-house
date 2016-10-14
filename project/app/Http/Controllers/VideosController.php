@@ -90,7 +90,4 @@ class VideosController extends Controller
         $videos = DB::table('videos')->where('videoID',$id)->first();
         return view('watch_video',['videos'=>$videos]);
     }
-
-  
-
 }

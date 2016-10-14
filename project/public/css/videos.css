@@ -27,12 +27,6 @@ body {
     font-style: normal;
 }
 
-.navbar-brand {
-	/*padding: 0px 0px !important;*/
-	/*padding-top: 10px !important;*/
-	color: #ff8c24;
-}
-
 .jumbotron {
 	background-color: transparent;
 }
@@ -64,7 +58,6 @@ body {
 }
 
 .videos {
+	height: 700px;
 	background-color: #CCCCCC !important;
-	background: url(http://i.imgur.com/kQ3naS0.jpg);
-	background-repeat: no-repeat;
 }
