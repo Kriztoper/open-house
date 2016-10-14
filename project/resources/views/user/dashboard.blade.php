@@ -50,6 +50,7 @@
 		</nav>
 			
 		<div class="jumbotron">
+
 			<div id="welcome" class="container">
 				<h3 class="page-header">WELCOME TO</h3>
 				<h1 class="page-header">KOMSAI OPENHOUSE</h1>

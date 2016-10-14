@@ -80,7 +80,7 @@
 			      		</a>
 			      		<div class="caption">
 			        		<h3>BOXHEAD</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -92,47 +92,47 @@
 			      		</a>
 			      		<div class="caption">
 			        		<h3>DETONATE 2</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="/images/Games/animeFightingJam.png" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Anime Fighting Jam</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="/images/Games/combatTournament.png" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Combat Tournament Legends</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="/images/Games/gunMayhem.png" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Gun Mayhem</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="/images/Games/gunBlood.jpg" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Gun Blood</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -143,11 +143,11 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/fireboy_watergirl2/fireboy_watergirl2.php">
-			      		<img src=http://imgur.com/OvnIHAO.jpg" alt="...">
+			      		<img src="http://imgur.com/OvnIHAO.jpg" alt="...">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>FIREBOY & WATERGIRL 2</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -159,7 +159,27 @@
 			      		</a>
 			      		<div class="caption">
 			        		<h3>PANDEMIC 2</h3>
-			        		<p>...</p>
+			        		<p></p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="/images/Games/learnToFly.png" alt="...">
+			      		<div class="caption">
+			        		<h3>Learn To Fly</h3>
+			        		<p></p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="/images/Games/shootTheApple.png" alt="...">
+			      		<div class="caption">
+			        		<h3>Shoot The Apple</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -169,37 +189,17 @@
 			      		<img src="http://placehold.it/250x250" alt="...">
 			      		<div class="caption">
 			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
 
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<img src="/images/Games/PlayingWithFire2.png" alt="...">
 			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
+			        		<h3>Playing with Fire 2</h3>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -244,10 +244,10 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/ChainReaction/ChainReaction.php">
-			      		<img src="http://i.imgur.com/ZSuclcE.png" alt="Chain Reaction">
+			      		<img src="/images/Games/chainReaction.jpg" alt="Chain Reaction">
 			      		<div class="caption">
 			        		<h3>Chain Reaction</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -258,7 +258,7 @@
 			      		<img src="http://i.imgur.com/jfNDKUy.jpg" alt="DotsTrix">
 			      		<div class="caption">
 			        		<h3>DotsTrix</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -266,10 +266,11 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="game/CoralizeQuest/CoralineQuest.php">
-			      		<img src="http://i.imgur.com/ihzdHIi.png" alt="Coraline Quest">
+			      			<img src="http://i.imgur.com/ihzdHIi.png" alt="Coraline Quest">
+			      		</a>
 			      		<div class="caption">
 			        		<h3>Coraline Quest</h3>
-			        		<p>...</p>
+			        		<p></p>
 			      		</div>
 			    	</div>
 			  	</div>
@@ -290,6 +291,7 @@
 	            		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
 					</div>
 				</div>
 			</div>
