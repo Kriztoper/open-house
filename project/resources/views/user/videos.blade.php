@@ -55,9 +55,13 @@
 				<br>
 				<div class="container">
 					<div class="single-item">
-						@foreach($featuredContent as $featured)
-                            <div class="slick-item"><a href="{{url('/list_video/'.$featured->seriesID)}}"><img src="{{url("/images/Anime Poster/".$featured->thumbnail.".jpg")}}"></a><h5>{{$featured->seriesName}}</h5></div>
-                        @endforeach
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
 					</div>
 				</div>
 			</div>
@@ -66,36 +70,128 @@
 		<div class="jumbotron">
 			<h2 class="page-header class">ANIME</h2>
 			<div class="row">
-			  	@foreach($anime as $animeVids)
-			  		<div class="col-md-2">
-			  			<a href="{{url('/list_video/'.$animeVids->seriesID)}}">
-			    			<div class="thumbnail">
-			      				<img src="{{url("/images/Anime Poster/".$animeVids->thumbnail.".jpg")}}" alt="...">
-			      				<div class="caption">
-			        				<h3>{{$animeVids->seriesName}}</h3>
-			        				<p>{{$animeVids->seriesDesc}}</p>
-			      				</div>
-			    			</div>
-			    		</a>
-			  	   	</div>
-			  	@endforeach
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
 			</div>
 
 			<h2 class="page-header class">K-DRAMA</h2>
 			<div class="row">
-				@foreach($kDrama as $korean)
-			  		<div class="col-md-2">
-			  			<a href="{{url('/list_video/'.$korean->seriesID)}}".>
-			    			<div class="thumbnail">
-			      				<img src="{{url("/images/Anime Poster/".$korean->thumbnail.".jpg")}}" alt="...">
-			      				<div class="caption">
-			        				<h3>{{$korean->seriesName}}</h3>
-			        				<p>{{$korean->seriesDesc}}</p>
-			      				</div>
-			    			</div>
-			    		</a>
-			  	   	</div>
-			  	@endforeach
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
+
+			  	<div class="col-md-2">
+			    	<div class="thumbnail">
+			      		<img src="http://placehold.it/250x250" alt="...">
+			      		<div class="caption">
+			        		<h3>Thumbnail label</h3>
+			        		<p>...</p>
+			      		</div>
+			    	</div>
+			  	</div>
 			</div>
 		</div>
 

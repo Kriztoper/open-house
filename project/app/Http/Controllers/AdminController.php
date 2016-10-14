@@ -51,8 +51,10 @@ class AdminController extends Controller
             $videos->save();
             $seriesVideo[] = array('seriesID'=>$series->seriesID,'videoID' =>$videos->id);   
         }
-        seriesVideo::insert($seriesVideo);
-        DB::table('seriesVideo')->insert($seriesVideo);
+        if(count($seriesVideo)){
+            seriesVideo::insert($seriesVideo);
+            DB::table('seriesVideo')->insert($seriesVideo);
+        }
         return view('admin.addSeries');
     }
     /**
