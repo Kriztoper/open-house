@@ -87,22 +87,4 @@ class TokenController extends Controller
     {
         //
     }
-
-    public function getTokenValue($tokenCode) {
-        /**
-        * add token to user
-        *
-        * @return profile;
-        **/
-        $isActiveRS = DB::table('tokens')->select('tokenValue')->where('isActive', 1)->where('tokenName', $tokenCode)->get();
-        if (!empty($isActiveRS)) {
-            $tokenValue = DB::table('tokens')->select('tokenValue')->where('tokenName', $tokenCode)->pluck('tokenValue');
-            //$tokenValue = $tokenValueRS[0];
-            $currentTokens = DB::table('users')->where('student_number', Auth::user()->student_number)->pluck('token');
-            $newValue = $currentTokens + $tokenValue;
-            DB::table('users')->where('student_number', Auth::user()->student_number)->update(['token'=>(int)$newValue]);
-            DB::table('tokens')->where('tokenName', $tokenCode)->update(['isActive'=>0]);
-        }
-        return redirect('/profile');
-    }
 }
