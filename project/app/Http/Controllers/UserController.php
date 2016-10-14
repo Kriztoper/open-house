@@ -103,4 +103,43 @@ class UserController extends Controller
         
         return redirect('/dashboard');
     }
+
+    /**
+    * 
+    * checks whether video is bought otherwise updates token count and mark video as bought
+    *
+    * @return video view
+    *
+    */
+    public function buy_video(Request $request) {
+        $isVidBought = DB::table('uservideos')
+        ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
+        ->join('users', 'users.user_ID', '=', 'uservideos.userID')
+        ->where('users.user_ID', '=', Auth::user()->student_number)
+        ->where('videos.videoID', '=', $request->videoID)
+        ->get();
+
+        if (empty($isVidBought)) {
+            DB::table('uservideos')
+            ->insert(['videoID' => $request->videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
+            $newValue = Auth::user()->token - 5;
+            DB::table('users')
+            ->where('student_number', Auth::user()->student_number)
+            ->update(['token'=>$newValue]);
+        } 
+    }
+
+    /**
+    *
+    * updates token count when buying game
+    *
+    * @return game view
+    *
+    */
+    public function buy_game(Request $request) {
+        $newValue = Auth::user()->token - 5;
+        DB::table('users')
+        ->where('student_number', Auth::user()->student_number)
+        ->update(['token'=>$newValue]);
+    }
 }
