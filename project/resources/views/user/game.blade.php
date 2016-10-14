@@ -143,11 +143,9 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/fireboy_watergirl2/fireboy_watergirl2.php">
-<<<<<<< HEAD
+
 			      		<img src="/images/Games/lightTemple.jpg" alt="...">
-=======
 			      		<img src="http://imgur.com/OvnIHAO.jpg" alt="...">
->>>>>>> 6c94bbc607ab97dda97b881dc14015e4790bdbf5
 			      		</a>
 			      		<div class="caption">
 			        		<h3>FIREBOY & WATERGIRL 2</h3>
@@ -270,12 +268,11 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="game/CoralizeQuest/CoralineQuest.php">
-<<<<<<< HEAD
+
 			      		<img src="/images/Games/coraline.png" alt="Coraline Quest">
-=======
+
 			      			<img src="http://i.imgur.com/ihzdHIi.png" alt="Coraline Quest">
 			      		</a>
->>>>>>> 6c94bbc607ab97dda97b881dc14015e4790bdbf5
 			      		<div class="caption">
 			        		<h3>Coraline Quest</h3>
 			        		<p></p>

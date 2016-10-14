@@ -49,11 +49,10 @@ class AdminController extends Controller
             $videos->videoDesc = "Episode ".($i+1)." of the series:".$series->seriesName;
             $videos->videoURL = $vids[$i];
             $videos->save();
-            $seriesVideo[] = array('seriesID'=>$series->seriesID,'videoID' =>$videos->id);   
-        }
-        if(count($seriesVideo)){
-            seriesVideo::insert($seriesVideo);
-            DB::table('seriesVideo')->insert($seriesVideo);
+            $seriesVideo = new seriesVideo;
+            $seriesVideo->seriesID = $series->id;
+            $seriesVideo->videoID = $videos->id;
+            $seriesVideo->save();
         }
         return view('admin.addSeries');
     }
@@ -122,7 +121,7 @@ class AdminController extends Controller
         $game->gameName = $request->gameName;
         $game->gameDesc = $request->gameDesc;
         $game->thumbnail = $request->thumbnail;
-        $game->fthumbnail = "".$request->thumbnail." 950";
+        $game->fthumbnail = "".$request->fthumbnail." 950";
         $games= glob("games/".$request->gameName."/*.swf" );
         if(count($games)<1){
             $games=glob("games/".$request->gameName."/*.jar" );

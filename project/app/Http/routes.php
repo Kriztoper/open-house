@@ -63,6 +63,7 @@ Route::post('/addToken','AdminController@generateToken');
 */
 Route::get('/series_list','VideosController@listSeries');
 Route::get('/list_video/{id}','VideosController@listVideos');
+
 Route::get('/watch_video/{id}','VideosController@watchVideos');
 Route::get('/videos','VideosController@listSeries');
 /*
