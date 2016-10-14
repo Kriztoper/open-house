@@ -1,17 +1,54 @@
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .panel-default{
 	border-color: #3c3c3c;
+}
+
+.page-header{
+	font-family: 'lemonmilkregular';
 }
 
 .panel-default > .panel-heading {
 	background-color: #3c3c3c;
 	border-color: #3c3c3c;
-	height: 350px;
+	height: 380px;
 }
 
 .pic{
 	background-color: white;
-	height: 90%;
+	height: 85%;
 	width: 30%;
 	margin-left: 100px;
 	margin-top: 25px;
+}
+
+.name{
+	margin-top: 25px;	
+	color: #ff8226;
+	font-family: 'lemonmilkregular';
+	font-size: 35pt;
+}
+
+.desc{
+	color: white;
+	font-size: 20pt;
+}
+
+.panel-default > .panel-body {
+	margin-left: 100px;
+}
+
+.eps-head{
+	color: #ff8226;
+	font-size: 20pt;
+}
+
+.eps{
+	font-size: 15pt;
 }
