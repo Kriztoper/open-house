@@ -19,7 +19,7 @@
       </div>
       <div class="row">
         <div class="Absolute-Center is-Responsive">
-          <form class="form-horizontal" role="form" method="POST" action="{{url('/adminsSeries')}}">
+          <form class="form-horizontal" role="form" method="POST" action="{{url('/adminGame')}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group">

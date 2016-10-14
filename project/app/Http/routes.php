@@ -1,3 +1,4 @@
+
 <?php
 
 /*
@@ -26,7 +27,7 @@ Route::get('/adminGenre',function(){
    return view('admin.addGenre'); 
 });
 Route::get('/adminGame',function(){
-	return view('admin.addGame');
+	return view('admin.addGames');
 });
 Route::get('/adminToken',function(){
 	return view('admin.addToken');
@@ -35,9 +36,12 @@ Route::get('/adminToken',function(){
 //Route::get('/admin', 'AdminController@show_dashboard');
 Route::get('/adminSortGenre','AdminController@getGenre');
 Route::get('/adminGameGenre','AdminController@getGameGenre');
+Route::post('/adminGameGenre','AdminController@sortGameGenre');
+Route::post('/adminGame','AdminController@addGame');
 Route::post('/adminsSeries','AdminController@saveSeries');
 Route::post('/adminsGenre','AdminController@saveGenre');
 Route::post('/adminSortsGenre','AdminController@sortGenre');
+Route::post('/addToken','AdminController@generateToken');
 
 /**
 *   Routes for list of videos and watching videos from database
@@ -46,6 +50,26 @@ Route::post('/adminSortsGenre','AdminController@sortGenre');
 Route::get('/series_list','VideosController@listSeries');
 Route::get('/list_video/{id}','VideosController@listVideos');
 Route::get('/watch_video/{id}','VideosController@watchVideos');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/hall_of_fame', function () {
+    return view('hall_of_fame');
+});
+
+Route::get('/videos', function () {
+    return view('videos');
+});
+
+Route::get('/game', function () {
+    return view('game');
+});
+
 /*
 *	Author: Khalile Pujante
 *	Working login and registration routes
@@ -79,4 +103,18 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/tokens'     , 'UserController@add_token');
 	//Route::get('/videos'      , 'UserController@show_videos');
 });
-?>
+/** ?>
+
+// Routes for user dashboard
+Route::get('/dashboard'   , 'UserController@show_dashboard');
+Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
+Route::get('/profile'     , 'UserController@show_profile');
+Route::get('/game', 'UserController@show_games');
+Route::get('/tokens/{tokenCode}', 'TokenController@getTokenValue');
+
+
+
+//	Admin
+Route::get('/admin', 'AdminController@show_dashboard');
+
+?> */
