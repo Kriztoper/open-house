@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function show_profile()
     {
-        return view('user.profile');
+        return view('user.hall_of_fame');
     }
 
     /**
@@ -46,12 +46,7 @@ class UserController extends Controller
      */
     public function show_hall_of_fame()
     {
-        return view('user.hall_of_fame');
-    }
-
-     public function show_games()
-    {
-        return view('user.game');
+        return view('user.profile');
     }
 
     /**
@@ -63,4 +58,6 @@ class UserController extends Controller
     {
         return view('user.developers');
     }
+}
+
 }

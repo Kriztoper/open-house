@@ -13,9 +13,10 @@ class CreateVideosTable extends Migration
     public function up()
     {
         Schema::create('videos', function (Blueprint $table) {
-           $table->integer('videoID');
+           $table->increments('videoID');
            $table->String('videoName');
            $table->String('videoDesc');
+           $table->String('videoURL');
         });
     }
 
@@ -26,6 +27,7 @@ class CreateVideosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('videos');
+        Schema::dropIfExists('videos');
+        Schema::dropIfExists('video');
     }
 }
