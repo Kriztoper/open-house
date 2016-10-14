@@ -27,7 +27,7 @@
   				</div>
     			<ul id="tokens" class="nav navbar-nav">
               		<li>
-                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{'69'}}</span></p>
+                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span></p>
               		</li>
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
@@ -143,7 +143,7 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="games/fireboy_watergirl2/fireboy_watergirl2.php">
-			      		<img src=http://imgur.com/OvnIHAO.jpg" alt="...">
+			      		<img src="http://imgur.com/OvnIHAO.jpg" alt="...">
 			      		</a>
 			      		<div class="caption">
 			        		<h3>FIREBOY & WATERGIRL 2</h3>
@@ -266,7 +266,8 @@
 			  	<div class="col-md-2">
 			    	<div class="thumbnail">
 			    		<a href="game/CoralizeQuest/CoralineQuest.php">
-			      		<img src="http://i.imgur.com/ihzdHIi.png" alt="Coraline Quest">
+			      			<img src="http://i.imgur.com/ihzdHIi.png" alt="Coraline Quest">
+			      		</a>
 			      		<div class="caption">
 			        		<h3>Coraline Quest</h3>
 			        		<p></p>
@@ -290,6 +291,7 @@
 	            		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
 					</div>
 				</div>
 			</div>
