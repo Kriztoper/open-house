@@ -61,9 +61,12 @@ Route::post('/addToken','AdminController@generateToken');
 *   Routes for list of videos and watching videos from database
 *
 */
-Route::get('/series_list','VideosController@listSeries');
-Route::get('/list_video/{id}','VideosController@listVideos');
-Route::get('/watch_video/{id}','VideosController@watchVideos');
+//Route::get('/series_list','VideosController@listSeries');
+/* Route::get('/list_video/{id}','VideosController@listVideos');*/
+Route::get('/list_vid', function () {
+    return view('list_vid');
+});
+//Route::get('/watch_video/{id}','VideosController@watchVideos');
 Route::get('/videos','VideosController@listSeries');
 
 Route::get('/dashboard', function () {
