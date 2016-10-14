@@ -11,7 +11,45 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+/**
+*   Admin for adding videos and genre to database
+*   This will be removed after inserting everything to the database.
+*
+*/
+Route::get('/admin',function(){
+   return view('admin.adminPage'); 
+});
+Route::get('/adminSeries',function(){
+    return view('admin.addSeries');
+});
+Route::get('/adminGenre',function(){
+   return view('admin.addGenre'); 
+});
+Route::get('/adminGame',function(){
+	return view('admin.addGames');
+});
+Route::get('/adminToken',function(){
+	return view('admin.addToken');
+});
 
+//Route::get('/admin', 'AdminController@show_dashboard');
+Route::get('/adminSortGenre','AdminController@getGenre');
+Route::get('/adminGameGenre','AdminController@getGameGenre');
+Route::post('/adminGameGenre','AdminController@sortGameGenre');
+Route::post('/adminGame','AdminController@addGame');
+Route::post('/adminsSeries','AdminController@saveSeries');
+Route::post('/adminsGenre','AdminController@saveGenre');
+Route::post('/adminSortsGenre','AdminController@sortGenre');
+Route::post('/addToken','AdminController@generateToken');
+
+/**
+*   Routes for list of videos and watching videos from database
+*
+*/
+Route::get('/series_list','VideosController@listSeries');
+Route::get('/list_video/{id}','VideosController@listVideos');
+Route::get('/watch_video/{id}','VideosController@watchVideos');
+Route::get('/videos','VideosController@listSeries');
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -24,9 +62,6 @@ Route::get('/hall_of_fame', function () {
     return view('hall_of_fame');
 });
 
-Route::get('/videos', function () {
-    return view('videos');
-});
 
 Route::get('/game', function () {
     return view('game');
@@ -62,6 +97,9 @@ Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
 Route::get('/profile'     , 'UserController@show_profile');
 Route::get('/game'		  , 'UserController@show_games');
 Route::post('/tokens'	  , 'UserController@add_token');
+/*the next two lines are temporary, used for testing*/
+Route::get('/buyVid/{videoID}', 'UserController@buy_video');
+Route::get('/buyGame/{gameID}', 'UserController@buy_game');
 
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');

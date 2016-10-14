@@ -25,7 +25,7 @@
   				</div>
     			<ul id="tokens" class="nav navbar-nav">
               		<li>
-                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{'69'}}</span></p>
+                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span></p>
               		</li>
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
@@ -55,13 +55,9 @@
 				<br>
 				<div class="container">
 					<div class="single-item">
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
-						<div class="slick-item"><img src="http://placehold.it/950x250"></div>
+						@foreach($featuredContent as $featured)
+                            <div class="slick-item"><a href="{{url('/list_video/'.$featured->seriesID)}}"><img src="{{url("/images/Anime Poster/".$featured->thumbnail.".jpg")}}"></a><h5>{{$featured->seriesName}}</h5></div>
+                        @endforeach
 					</div>
 				</div>
 			</div>
@@ -70,128 +66,36 @@
 		<div class="jumbotron">
 			<h2 class="page-header class">ANIME</h2>
 			<div class="row">
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
+			  	@foreach($anime as $animeVids)
+			  		<div class="col-md-2">
+			  			<a href="{{url('/list_video/'.$animeVids->seriesID)}}">
+			    			<div class="thumbnail">
+			      				<img src="{{url("/images/Anime Poster/".$animeVids->thumbnail.".jpg")}}" alt="...">
+			      				<div class="caption">
+			        				<h3>{{$animeVids->seriesName}}</h3>
+			        				<p>{{$animeVids->seriesDesc}}</p>
+			      				</div>
+			    			</div>
+			    		</a>
+			  	   	</div>
+			  	@endforeach
 			</div>
 
 			<h2 class="page-header class">K-DRAMA</h2>
 			<div class="row">
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
-
-			  	<div class="col-md-2">
-			    	<div class="thumbnail">
-			      		<img src="http://placehold.it/250x250" alt="...">
-			      		<div class="caption">
-			        		<h3>Thumbnail label</h3>
-			        		<p>...</p>
-			      		</div>
-			    	</div>
-			  	</div>
+				@foreach($kDrama as $korean)
+			  		<div class="col-md-2">
+			  			<a href="{{url('/list_video/'.$korean->seriesID)}}".>
+			    			<div class="thumbnail">
+			      				<img src="{{url("/images/Anime Poster/".$korean->thumbnail.".jpg")}}" alt="...">
+			      				<div class="caption">
+			        				<h3>{{$korean->seriesName}}</h3>
+			        				<p>{{$korean->seriesDesc}}</p>
+			      				</div>
+			    			</div>
+			    		</a>
+			  	   	</div>
+			  	@endforeach
 			</div>
 		</div>
 
