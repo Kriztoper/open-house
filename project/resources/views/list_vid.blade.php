@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
-
+    <link rel="stylesheet" type="text/css" href="css/list_vid.css">
 </head>
 <body>
 
@@ -50,13 +50,13 @@
 			
 		<div class="jumbotron">
 			<div class="container">
-				<h1 class="page-header">
-					WATCH ANIME
-                    @foreach($videos as $vids)
-                        <p><a href="{{url('/watch_video/'.$vids->videoID)}}">{{$vids->videoName}}</a></p>
-                    @endforeach
-				</h1>
-				<br>
+				<h1 class="page-header">WATCH ANIME</h1><br>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="pic col-md-4"></div>
+					</div>
+					<div class="panel-body">Panel Content</div>
+				</div>
 			</div>
 		</div>
 
@@ -73,6 +73,5 @@
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 
-  	 
 </body>
 </html>

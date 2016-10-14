@@ -27,26 +27,31 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .jumbotron {
 	background-color: transparent;
 }
 
 .page-header {
-	margin-top: 5%;
-	font-family: montserratregular;
-	color: #233D4E !important;
+	font-family: lemonmilkregular;
 	border-color: transparent !important;
-	/*letter-spacing: 5pt;*/
-	line-height: 120%;
 }
 
 #featured {
-	margin-top: 5%;
-	font-family: montserratregular;
+	font-size: 60pt;
+	margin-top: 115px;
+	margin-bottom: 130px;
 	color: white !important;
 	border-color: transparent !important;
-	/*letter-spacing: 5pt;*/
 	line-height: 120%;
+	letter-spacing: 2pt !important;
 }
 
 .slick-item img {
@@ -58,6 +63,20 @@ body {
 }
 
 .videos {
-	height: 700px;
+	height: 750px;
+	background-image: url(../images/backgrounds/vids-main-bg.jpg);
+	background-attachment: fixed;
 	background-color: #CCCCCC !important;
+}
+
+.games {
+	height: 750px;
+	background-size: 100%;
+	background-image: url(../images/backgrounds/games-main-bg.jpg);
+	background-attachment: fixed;
+	background-color: #CCCCCC !important;
+}
+
+.headers {
+	margin-top: 50px;
 }

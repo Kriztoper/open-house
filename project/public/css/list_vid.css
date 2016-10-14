@@ -1,0 +1,17 @@
+.panel-default{
+	border-color: #3c3c3c;
+}
+
+.panel-default > .panel-heading {
+	background-color: #3c3c3c;
+	border-color: #3c3c3c;
+	height: 350px;
+}
+
+.pic{
+	background-color: white;
+	height: 90%;
+	width: 30%;
+	margin-left: 100px;
+	margin-top: 25px;
+}

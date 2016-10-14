@@ -94,4 +94,3 @@ class GamesController extends Controller
   
 
 }
-?>
