@@ -165,3 +165,4 @@ class TokenController extends Controller
         ->update(['token'=>$newValue]);
     }
 }
+?>

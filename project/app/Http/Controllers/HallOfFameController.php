@@ -6,13 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Kris\LaravelFormBuilder\FormBuilderTrait;
-use App\Forms\RegisterForm;
-use App\User;
 
-class RegistrationController extends Controller
+class HallOfFameController extends Controller
 {
-    use FormBuilderTrait;
     /**
      * Display a listing of the resource.
      *
@@ -28,35 +24,20 @@ class RegistrationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   public function create()
+    public function create()
     {
-        $form = $this->form('App\Forms\RegisterForm', [
-            'method' => 'POST',
-            'url' => url('\register')
-        ]);
-
-        return view('register', ['form' => $form] );
+        //
     }
 
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        $form = $this->form(\App\Forms\RegisterForm::class);
-
-        if (!$form->isValid()) {
-            return redirect()->back()->withErrors($form->getErrors())->withInput();
-        }
-
-        $data = $request->all();
-        $data['password'] = bcrypt($data['password']);
-        $user = User::create($data);
-
-        return \Redirect::to('/success');
-        // Do saving and other things...
-    }
-
-    public function success(){
-        return view('success');
+        //
     }
 
     /**
@@ -67,7 +48,7 @@ class RegistrationController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
@@ -104,4 +85,3 @@ class RegistrationController extends Controller
         //
     }
 }
-?>

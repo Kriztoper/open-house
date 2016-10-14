@@ -27,12 +27,6 @@ body {
     font-style: normal;
 }
 
-.navbar-brand {
-	/*padding: 0px 0px !important;*/
-	/*padding-top: 10px !important;*/
-	color: #ff8c24;
-}
-
 .jumbotron {
 	background-color: transparent;
 }
@@ -55,66 +49,6 @@ body {
 	line-height: 120%;
 }
 
-/*-------NAVBAR SHIT----------*/
-
-#top-navbar {
-	background-color: #233D4E !important;
-	border-color: #233D4E !important;
-}
-
-.navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
-    background-color: #BA002c;
-    color: white;
-}
-
-.navbar-fixed-top .navbar-nav > li > a {
-	font-family: montserratregular;
-	color: white;
-	font-size: 10pt;
-	/*letter-spacing: 2pt;*/
-}
-
-.navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
-    background-color: transparent;
-    color: white;
-}
-
-.navbar-fixed-bottom .navbar-nav > li > a {
-	margin-right: 10px;
-	font-family: montserratregular;
-	font-size: 8pt;
-	font-weight: bold;
-	color: darkgray;
-}
-
-.navbar-fixed-bottom {
-	background-color: #BA002c;
-}
-
-.dropdown-menu > li > a {
-	font-family: montserratregular;
-	letter-spacing: 2pt;
-	font-size: 8pt;
-	color: black;
-}
-
-.redfont{
-	color: red;
-}
-.gold {
-	color: gold;
-}
-
-.red {
-	color: #BA002c;
-}
-
-.white {
-	color: white;
-}
-
-/*-------END OF NAVBAR SHIT---------*/
-
 .slick-item img {
 	margin: auto !important;
 }
@@ -124,7 +58,6 @@ body {
 }
 
 .videos {
+	height: 700px;
 	background-color: #CCCCCC !important;
-	background: url(http://i.imgur.com/kQ3naS0.jpg);
-	background-repeat: no-repeat;
 }

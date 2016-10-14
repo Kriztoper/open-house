@@ -12,11 +12,7 @@ class token extends Model
     * @var string
     */
     protected $table = 'tokens';
-    /**
-    *  The updated at and created at are not enabled
-    *
-    */
-    public $timestamps = false;
+
     /**
     * The attributes that are mass assignable.
     *
