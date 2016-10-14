@@ -16,12 +16,11 @@
 </head>
 <body>
 
-	<div class="container-fluid">
+	<div class="container">
 		<nav id="top-navbar" class="navbar navbar-fixed-top">
 			<div class="container-fluid">
     			<div class="navbar-header">
      				<a class="navbar-brand" href="#">
-     					{{-- <img src="http://i.imgur.com/js8s2AR.png" style="margin: auto !important; position: center" width=80%/> --}}
      					<img src="http://i.imgur.com/js8s2AR.png?2" alt="OpenHouse">
      				</a>
   				</div>
@@ -54,6 +53,8 @@
 				<h3 class="page-header">WELCOME TO</h3>
 				<h1 class="page-header">KOMSAI OPENHOUSE</h1>
 			</div>
+			<p id="quote">We can't always make the right decision, but we can make every decision right.</p>
+			<p id="author">-Google</p>
 		</div>
 
 		<nav class="navbar navbar-fixed-bottom">
@@ -72,7 +73,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">KOMSAY OPENHOUSE TOKEN GENERATOR</h4>
+					<h4 class="modal-title">KOMSAI OPENHOUSE TOKEN GENERATOR</h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
@@ -88,35 +89,6 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
-	<script type="text/javascript" src="slick/slick.min.js"></script>
-
-  	 <script type="text/javascript">
-    	$('.multiple-items').slick({
- 			centerMode: true,
-			centerPadding: '60px',
-			slidesToShow: 3,																											
-			responsive: [
-			    {
-			      	breakpoint: 768,
-			      	settings: {
-			        	arrows: false,
-			        	centerMode: true,
-			        	centerPadding: '40px',
-			        	slidesToShow: 3
-			      	}
-			    },
-			    {
-			      	breakpoint: 480,
-			      	settings: {
-			        	arrows: false,
-			        	centerMode: true,
-			        	centerPadding: '40px',
-			        	slidesToShow: 1
-			      	}
-			    	}
-			  	],
-  			dots: true
-		});
-    </script>
+	<script type="text/javascript" src="slick/slick.min.js"></script
 </body>
 </html>
