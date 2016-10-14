@@ -6,7 +6,7 @@
 	
 	<body>
 		<div align="center">
-    			<embed src="detonate2.swf" width="800" height="600">
+    			<embed src="detonate2.swf" width="450" height="550">
 			    </embed>
 		</div>	
 	</body>
