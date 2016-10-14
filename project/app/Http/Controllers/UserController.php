@@ -117,7 +117,8 @@ class UserController extends Controller
     *
     */
     public function buy_video(Request $request) {
-        if (Auth::user()->token > 0) {
+        $newValue = Auth::user()->token - 5;
+        if (Auth::user()->token > 0 && $newValue >= 0) {
             $isVidBought = DB::table('uservideos')
             ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
             ->join('users', 'users.user_ID', '=', 'uservideos.userID')
@@ -128,12 +129,13 @@ class UserController extends Controller
             if (empty($isVidBought)) {
                 DB::table('uservideos')
                 ->insert(['videoID' => $request->videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
-                $newValue = Auth::user()->token - 5;
                 DB::table('users')
                 ->where('student_number', Auth::user()->student_number)
                 ->update(['token'=>$newValue]);
+                return redirect(''); //return to video
             } 
         }
+        return redirect('') //return to videos page
     }
 
     /**
@@ -144,12 +146,16 @@ class UserController extends Controller
     *
     */
     public function buy_game(Request $request) {
-        if (Auth::user()->token > 0) {
-            $newValue = Auth::user()->token - 5;
+        
+        $newValue = Auth::user()->token - 5;
+        if (Auth::user()->token >= 0) {
             DB::table('users')
             ->where('student_number', Auth::user()->student_number)
             ->update(['token'=>$newValue]);
+            return redirect(''); //return to game proper
         }
+        return redirect(''); //return to dashboard
+
     }
 }
 ?>
