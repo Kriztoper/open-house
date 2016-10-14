@@ -100,6 +100,6 @@ class UserController extends Controller
             DB::table('tokens')->where('tokenName', $request->token_code)->update(['isActive'=>0]);
         }
         
-        return view('user.dashboard');
+        return redirect('/dashboard');
     }
 }

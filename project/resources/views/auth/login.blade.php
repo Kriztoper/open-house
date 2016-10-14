@@ -85,6 +85,6 @@
         </form>
       </div>
     </div></center>
-    <img id="btm" src="http://imgur.com/JVf2N1A.gif"/>
+    <img id="btm" src="http://imgur.com/fMxf0dl.gif"/>
   </body>
 </html>
