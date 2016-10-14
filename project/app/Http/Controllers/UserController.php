@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -34,11 +36,11 @@ class UserController extends Controller
      *
      * @return view
      */
-    
     public function show_profile()
     {
         return view('user.profile');
     }
+
     /**
      * Show hall of fame
      *
@@ -84,10 +86,20 @@ class UserController extends Controller
      *
      * @return view
      */
-     public function add_token(Request $request)
+    public function add_token(Request $request)
     {
         // add some logic here for token generation
         // $request->token_code to get the token code input of the user from the modal
+
+        $isActive = DB::table('tokens')->where('tokenName', $request->token_code)->pluck('isActive');
+        if ($isActive == 1) {
+            $tokenValue = DB::table('tokens')->select('tokenValue')->where('tokenName', $request->token_code)->pluck('tokenValue');
+            $currentTokens = DB::table('users')->where('student_number', Auth::user()->student_number)->pluck('token');
+            $newValue = $currentTokens + $tokenValue;
+            DB::table('users')->where('student_number', Auth::user()->student_number)->update(['token'=>(int)$newValue]);
+            DB::table('tokens')->where('tokenName', $request->token_code)->update(['isActive'=>0]);
+        }
+        
         return view('user.dashboard');
     }
 }
