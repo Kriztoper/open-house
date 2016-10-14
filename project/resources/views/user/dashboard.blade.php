@@ -49,53 +49,10 @@
 		</nav>
 			
 		<div class="jumbotron">
-<<<<<<< HEAD
-			<div class="container">
-				<h1 class="page-header">
-					WELCOME TO<br>KOMSAI OPENHOUSE
-				</h1>
-				<br>
-				<div class="container">
-					<div class="multiple-items">
-						<div class="slick-item">
-								<img src="http://imgur.com/CutHNSI.jpg">
-								<p>{{ strtoupper("Chain Reaction" ) }}</p>
-						</div>
-						<div class="slick-item">
-								<img src="http://imgur.com/7BtwEFo.jpg">
-								<p>{{ strtoupper("Assasination Classroom") }}</p>
-						</div>
-						<div class="slick-item">
-								<img src="http://imgur.com/7OvTKyv.jpg">
-								<p>{{ strtoupper("Domineering") }}</p>
-						</div>
-						<div class="slick-item">
-								<img src="http://imgur.com/z5C1fyC.jpg">
-								<p>{{ strtoupper("4 Square") }}</p>
-						</div>
-						<div class="slick-item">
-								<img src="http://imgur.com/rwaV9D3.png">
-								<p>{{ strtoupper("White Album 2") }}</p>
-						</div>
-						<div class="slick-item">
-								<img src="http://imgur.com/1rO45FV.jpg">
-								<p>{{ strtoupper("BoxHead 2Play") }}</p>
-						</div>
-						<div class="slick-item">
-								<img src="http://imgur.com/9yKJw2j.jpg">
-								<p>{{ strtoupper("Charlotte") }}</p>
-						</div>
-						<div class="slick-item">
-								<img src="http://imgur.com/IWC0ekz.png">
-								<p>{{ strtoupper("Kimi no na wa") }}</p>
-						</div>
-					</div>
-				</div>
-=======
+
 			<div id="welcome" class="container">
 				<h3 class="page-header">WELCOME TO</h3>
 				<h1 class="page-header">KOMSAI OPENHOUSE</h1>
->>>>>>> c5a41dd1442b7d30c9e4d8573a69327e0410c5f9
 			</div>
 			<p id="quote">We can't always make the right decision, but we can make every decision right.</p>
 			<p id="author">-Google</p>
