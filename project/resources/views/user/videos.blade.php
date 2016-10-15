@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/content.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" href="/css/modal.css" type="text/css">
 
 </head>
 <body>
