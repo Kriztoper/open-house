@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->integer('rand_num');
             $table->integer('token');
             $table->integer('image_ID');
+            $table->float('numOfHours');
         });
     }
 
@@ -35,5 +36,6 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::drop('users');
+        Schema::dropIfExists('users');
     }
 }

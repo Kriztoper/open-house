@@ -16,6 +16,7 @@ class CreateScoresTable extends Migration
             $table->increments('scoreID');
             $table->integer('gameID');
             $table->integer('userID');
+            $table->integer('score'); 
         });
     }
 
@@ -27,5 +28,6 @@ class CreateScoresTable extends Migration
     public function down()
     { 
         Schema::drop('scores');
+        Schema::dropIfExists('scores');
     }
 }
