@@ -54,7 +54,7 @@
 					@foreach($featuredContent as $featured)
                         <div class="slick-item">
                         	<a href="{{url('/list_video/'.$featured->seriesID)}}">
-                        		<img src="{{url("/images/Anime Poster/".$featured->thumbnail.".jpg")}}">
+                        		<img src="{{url("/images/Anime Poster/".$featured->fthumbnail.".jpg")}}">
                         	</a>
                         </div>
                     @endforeach

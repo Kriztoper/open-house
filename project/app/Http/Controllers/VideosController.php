@@ -74,15 +74,16 @@ class VideosController extends Controller
     /**
     *   List all videos of a series (episodes)
     */
-    // public function listVideos($id){
-    //     $seriesVideo = DB::table('seriesVideo')->where('seriesID', $id)->get();
-    //     foreach($seriesVideo as $serVid){
-    //         $serVideo[] = $serVid->videoID;
-    //     }
-    //     $videos = DB::table('videos')->whereIn('videoID',$serVideo)->get();
+     public function listVideos($id){
+         $seriesVideo = DB::table('seriesVideo')->where('seriesID', $id)->get();
+         $series = DB::table('series')->where('seriesID',$id)->first();
+         foreach($seriesVideo as $serVid){
+             $serVideo[] = $serVid->videoID;
+         }
+         $videos = DB::table('videos')->whereIn('videoID',$serVideo)->get();
         
-    //     return view('list_video',['videos'=>$videos]);
-    // }
+         return view('list_vid',['videos'=>$videos, 'series'=>$series]);
+    }
     /**
     *   Return the video(episode) clicked by the user.
     */
