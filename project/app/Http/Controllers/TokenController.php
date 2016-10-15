@@ -154,7 +154,7 @@ class TokenController extends Controller
                 return redirect($path); //return to video
             } 
         }
-        return redirect('/videos'); //return to videos page
+        return views('/list_vid/'.$videoID); //return to videos page
     }
 
     /**

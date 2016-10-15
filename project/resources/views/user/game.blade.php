@@ -78,7 +78,7 @@
 				</div>
 				<h2 class="page-header headers">STRATEGY</h2>
 				<div class="row">
-					@foreach($strategy as $strats)
+					@foreach($Strategy as $strats)
 			  		<div class="col-md-2">
 			  			<div class="thumbnail">
 			  				<a href="{{url('playGame/'.$strats->gameID)}}">

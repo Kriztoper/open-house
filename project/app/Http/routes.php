@@ -133,7 +133,9 @@ Route::post('/tokens'	  , 'UserController@add_token');
 Route::get('/buyVid/{videoID}', 'TokenController@buy_video');
 Route::get('/buyGame/{gameID}', 'TokenController@buy_game');
 
-
+Route::get('/developers',function(){
+    return view('user.developers');
+});
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
 
