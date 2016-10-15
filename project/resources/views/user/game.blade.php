@@ -51,7 +51,7 @@
 		<div class="container">
 				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
 				<div class="single-item">
-					<div class="slick-item"><a href="games/fourSquare/four.php"><img src="/images/Featured Games/Feature1.jpg"></a></div>
+					<div class="slick-item"><a href="{{ url('/buyGame/1') }}"><img src="/images/Featured Games/4square.png"></a></div>
 					<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
 					<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
 					<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
