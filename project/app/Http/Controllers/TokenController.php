@@ -87,4 +87,97 @@ class TokenController extends Controller
     {
         //
     }
+
+    /**
+     * add tokens based on code input of the user
+     *
+     * @return dashboard view
+     */
+    public function add_token(Request $request)
+    {
+        // add some logic here for token generation
+        // $request->token_code to get the token code input of the user from the modal
+
+        $isActive = DB::table('tokens')
+                    ->where('tokenName', $request->token_code)
+                    ->pluck('isActive');
+        if ($isActive == 1) {
+
+            $tokenValue = DB::table('tokens')->select('tokenValue')->where('tokenName', $request->token_code)->pluck('tokenValue');
+            $currentTokens = DB::table('users')->where('student_number', Auth::user()->student_number)->pluck('token');
+            $newValue = $currentTokens + $tokenValue;
+            DB::table('users')->where('student_number', Auth::user()->student_number)->update(['token'=>(int)$newValue]);
+            DB::table('tokens')->where('tokenName', $request->token_code)->update(['isActive'=>0]);
+
+            $tokenValue = DB::table('tokens')
+                            ->select('tokenValue')
+                            ->where('tokenName', $request->token_code)
+                            ->pluck('tokenValue'); 
+            $newValue = Auth::user()->token + $tokenValue;
+            DB::table('users')
+            ->where('student_number', Auth::user()->student_number)
+            ->update(['token'=>(int)$newValue]);
+            DB::table('tokens')
+            ->where('tokenName', $request->token_code)
+            ->update(['isActive'=>0]);
+        }
+        
+        return redirect('/dashboard');
+    }
+
+    /**
+    * 
+    * checks whether video is bought otherwise updates token count and mark video as bought
+    *
+    * @return video view
+    *
+    */
+    public function buy_video($videoID) {
+        $newValue = Auth::user()->token - 5;
+        if ($newValue >= 0) {
+            $isVidBought = DB::table('uservideos')
+            ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
+            ->join('users', 'users.user_ID', '=', 'uservideos.userID')
+            ->where('users.user_ID', '=', Auth::user()->student_number)
+            ->where('videos.videoID', '=', $videoID)
+            ->get();
+
+            if (empty($isVidBought)) {
+                DB::table('uservideos')
+                ->insert(['videoID' => $videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
+                DB::table('users')
+                ->where('student_number', Auth::user()->student_number)
+                ->update(['token'=>$newValue]);
+                $path = DB::table('videos')
+                        ->where('videoID', $videoID)
+                        ->pluck('videoURL');
+                return redirect($path); //return to video
+            } 
+        }
+        return redirect('/videos'); //return to videos page
+    }
+
+    /**
+    *
+    * updates token count when buying game
+    *
+    * @return game view
+    *
+    */
+    public function buy_game($gameID) {
+        
+        $newValue = Auth::user()->token - 5;
+        if ($newValue >= 0) {
+            DB::table('users')
+            ->where('student_number', Auth::user()->student_number)
+            ->update(['token'=>$newValue]);
+            $gamepath = DB::table('games')
+                        ->where('gameID', $gameID)
+                        ->pluck('gameURL');
+            return redirect($gamepath); //return to game proper
+        }
+        return redirect('/dashboard'); //return to dashboard
+
+    }
 }
+?>

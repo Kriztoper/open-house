@@ -122,6 +122,8 @@ class AdminController extends Controller
         $game->gameDesc = $request->gameDesc;
         $game->thumbnail = "images/Games/".$request->thumbnail.".png";
         $game->fthumbnail = "images/Featured Games/".$request->fthumbnail.".png";
+        $game->thumbnail = $request->thumbnail;
+        $game->fthumbnail = "".$request->fthumbnail." 950";
         $games= glob("games/".$request->gameName."/*.swf" );
         if(count($games)<1){
             $games=glob("games/".$request->gameName."/*.jar" );

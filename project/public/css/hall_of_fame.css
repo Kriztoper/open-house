@@ -35,9 +35,50 @@ body {
     font-style: normal;
 }
 
+h1 {
+	font-size: 60px;
+	color: white;
+	font-family: goboldregular;
+	letter-spacing: 20px;
+	margin-top: 90px;
+}
+
+p {
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 0px;
+}
+
+.carousel {
+	margin: auto;
+  	top: 0; left: 0; bottom: 0; right: 0;
+	width: 100%; 
+  	height: 100%;
+  	padding-top: 0px;
+  	padding-bottom: 60px;
+  	margin-top: 5px;	
+}
+
+.item {
+  	min-width: 200px;
+  	max-width: 400px;
+  	margin: auto;
+}
+
+.thumb {
+	margin: auto;
+  	top: 0; left: 0; bottom: 0; right: 0;
+	width: 400px; 
+  	height: 300px;
+}
 
 .champ {
-	font-size: 25px;
+	width: 400px;
+	height: 420px;
+	font-size: 20px;
+	color: white;
+	font-family: goboldregular;
+	letter-spacing: 5px;
 }
 
 .Absolute-Center {
@@ -50,44 +91,21 @@ body {
   	padding: 40px;
 }
 
-.navbar-brand {
-	padding: 0px 0px !important;
-	padding-top: 10px !important;
-}
-
-.jumbotron {
-	background-color: transparent;
-}
-
-.page-header {
-	font-family: goboldregular;
-	color: white !important;
-	border-color: transparent !important;
-	letter-spacing: 5pt;
-	line-height: 120%;
-}
-
 #top-navbar {
 	background-color: transparent !important;
 	border-color: transparent !important;
 }
 
-.navbar-default .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+.navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
     background-color: #BA002c;
     color: white;
 }
 
-.mons {
-	font-family: monsterratregular;
-	letter-spacing: 5px;
-}
-
-.navbar-default .navbar-nav > li > a {
-	margin-right: 10px;
-	font-family: goboldregular;
+.navbar-fixed-top .navbar-nav > li > a {
+	font-family: montserratregular;
 	color: white;
-	font-size: 15pt;
-	letter-spacing: 2pt;
+	font-size: 10pt;
+	/*letter-spacing: 2pt;*/
 }
 
 .navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
@@ -96,19 +114,36 @@ body {
 }
 
 .navbar-fixed-bottom .navbar-nav > li > a {
-	margin-right: 10px;
 	font-family: montserratregular;
 	font-size: 8pt;
 	font-weight: bold;
 	color: darkgray;
+	padding-top: 5px !important;
+    padding-bottom: 5px !important;
+	height: 30px !important;
+}
+
+.navbar {
+	min-height: 30px !important;
 }
 
 .navbar-fixed-bottom {
 	background-color: #BA002c;
 }
 
-.red {
-	color: #BA002c;
+.dropdown-menu > li > a {
+	font-family: montserratregular;
+	letter-spacing: 2pt;
+	font-size: 8pt;
+	color: black;
+}
+
+.redfont{
+	color: red;
+}
+
+.gold {
+	color: gold;
 }
 
 .white {
@@ -125,6 +160,7 @@ body {
   border-radius: 3px;
   text-align: center;
 }
+
 .customNavigation{
   text-align: center;
 }
@@ -136,24 +172,4 @@ body {
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-
-.gold {
-	color: gold;
-}
-
-.redfont{
-	color: red;
-}
-
-.tablePos {
-	position: fixed;
-	top: 17%;
-	left: 20%;
-}
-
-td::hover{
-	opacity: 0.5;
-    filter: alpha(opacity=50);
 }
