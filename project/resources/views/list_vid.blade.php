@@ -16,7 +16,7 @@
 <body>
 
 	<div class="container-fluid">
-		<nav id="top-navbar" class="navbar navbar-fixed-top">
+		<nav class="navbar navbar-fixed-top">
 			<div class="container-fluid">
     			<div class="navbar-header">
      				<a class="navbar-brand" href="#">
@@ -86,6 +86,21 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
 	<script type="text/javascript" src="slick/slick.min.js"></script>
+
+	<script>
+    	jQuery(document).ready(function($) {
+  			$(window).scroll(function() {
+    			var scrollPos = $(window).scrollTop(),
+        		navbar = $('.navbar-fixed-top');
+
+    			if (scrollPos > 20) {
+      				navbar.addClass('change-color');
+    			} else {
+     				navbar.removeClass('change-color');
+    			}
+  			});
+		});
+    </script>
 
 </body>
 </html>

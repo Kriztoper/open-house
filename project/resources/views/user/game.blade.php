@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<nav id="top-navbar" class="navbar navbar-fixed-top">
+	<nav class="navbar navbar-fixed-top">
 		<div class="container-fluid">
     		<div class="navbar-header">
     			<a class="navbar-brand" href="#">
@@ -117,6 +117,20 @@
     	$('.single-item').slick({
     		dots: true
     	});
+    </script>
+    <script>
+    	jQuery(document).ready(function($) {
+  			$(window).scroll(function() {
+    			var scrollPos = $(window).scrollTop(),
+        		navbar = $('.navbar-fixed-top');
+
+    			if (scrollPos > 20) {
+      				navbar.addClass('change-color');
+    			} else {
+     				navbar.removeClass('change-color');
+    			}
+  			});
+		});
     </script>
 </body>
 </html>
