@@ -9,11 +9,7 @@ use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
 use App\Forms\RegisterForm;
 use ValidatesRequests;
-use App\User;
-use App\series;
-use App\seriesVideo;
-use App\videos;
-use App\userVideo;
+use App\game;
 
 class GamesController extends Controller
 {
@@ -22,47 +18,44 @@ class GamesController extends Controller
     {
         //
     }
-    public function listGames(){
-        $featuredContent = DB::table('games')
-        
-    }
     public function playGame($id){
-        
-
+        $games = DB::table('games')->where('gameID',$id)->first();
+        return view('user.playgame',['game'=>$games]);
     }
     public function buyGame(){
         
 
     } 
 
-    public function listSeries()
+
+    public function listGames()
     {
 
         //$user = Auth::user();
         
-        $anime = DB::table('series')
-                  ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                  ->join('genres','seriesGenres.genreID','=','genres.genreID')
-                  ->select('series.*')
-                  ->where('genres.genreName','Anime')
+        $action = DB::table('games')
+                  ->join('gameGenres','gameGenres.gameID','=','games.gameID')
+                  ->join('genres','gameGenres.genreID','=','genres.genreID')
+                  ->select('games.*')
+                  ->where('genres.genreName','Action')
                   ->get();
-         $featuredContent = DB::table('series')
-                  ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                  ->join('genres','seriesGenres.genreID','=','genres.genreID')
-                  ->select('series.*')
+         $featuredContent = DB::table('games')
+                  ->join('gameGenres','gameGenres.gameID','=','games.gameID')
+                  ->join('genres','gameGenres.genreID','=','genres.genreID')
+                  ->select('games.*')
                   ->where('genres.genreName','Featured Content')
                   ->get();
-         $kDrama = DB::table('series')
-                  ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                  ->join('genres','seriesGenres.genreID','=','genres.genreID')
-                  ->select('series.*')
-                  ->where('genres.genreName','K-Drama')
+         $adventure = DB::table('games')
+                  ->join('gameGenres','gameGenres.gameID','=','games.gameID')
+                  ->join('genres','gameGenres.genreID','=','genres.genreID')
+                  ->select('games.*')
+                  ->where('genres.genreName','Adventure')
                   ->get();
-         $mostBought = DB::table('series')
-                  ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                  ->join('genres','seriesGenres.genreID','=','genres.genreID')
-                  ->select('series.*')
-                  ->where('genres.genreName','Most Bought')
+         $boardGames = DB::table('games')
+                  ->join('gameGenres','gameGenres.gameID','=','games.gameID')
+                  ->join('genres','gameGenres.genreID','=','genres.genreID')
+                  ->select('games.*')
+                  ->where('genres.genreName','Board Games')
                   ->get();
         /*$popularSeries = DB::table('series')
                         ->join('seriesVideo','series.seriesID','=','seriesVideo.seriesID')
@@ -70,27 +63,8 @@ class GamesController extends Controller
                         ->select('series.*')
                         ->get();*/
        
-        return view('user.videos',['anime' => $anime,'featuredContent' => $featuredContent,'kDrama' => $kDrama,'mostBought' =>  $mostBought]);
+        return view('user.game',['action' => $action,'featuredContent' => $featuredContent,'adventure' => $adventure,'boardGames' =>  $boardGames]);
     }
-    /**
-    *   List all videos of a series (episodes)
-    */
-    public function listVideos($id){
-        $seriesVideo = DB::table('seriesVideo')->where('seriesID', $id)->get();
-        foreach($seriesVideo as $serVid){
-            $serVideo[] = $serVid->videoID;
-        }
-        $videos = DB::table('videos')->whereIn('videoID',$serVideo)->get();
-        
-        return view('list_video',['videos'=>$videos]);
-    }
-    /**
-    *   Return the video(episode) clicked by the user.
-    */
-    public function watchVideos($id){
-        $videos = DB::table('videos')->where('videoID',$id)->first();
-        return view('watch_video',['videos'=>$videos]);
-    }
-  
+
 
 }
