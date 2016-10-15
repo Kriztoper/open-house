@@ -20,6 +20,8 @@ class CreateGamesTable extends Migration
            $table->String('gameURL');
            $table->String('thumbnail');
            $table->String('fthumbnail');
+           $table->String('className');
+           $table->boolean('isJar');
         });
     }
 

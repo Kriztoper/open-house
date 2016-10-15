@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<nav id="top-navbar" class="navbar navbar-fixed-top">
+	<nav class="navbar navbar-fixed-top">
 		<div class="container-fluid">
     		<div class="navbar-header">
     			<a class="navbar-brand" href="#">
@@ -51,7 +51,7 @@
 		<div class="container">
 				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
 				<div class="single-item">
-					<div class="slick-item"><a href="games/fourSquare/four.php"><img src="/images/Featured Games/Feature1.jpg"></a></div>
+					<div class="slick-item"><a href="games/fourSquare/four.php"><img src="/images/Featured Games/Feature1.png"></a></div>
 					<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
 					<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
 					<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
@@ -117,6 +117,20 @@
     	$('.single-item').slick({
     		dots: true
     	});
+    </script>
+    <script>
+    	jQuery(document).ready(function($) {
+  			$(window).scroll(function() {
+    			var scrollPos = $(window).scrollTop(),
+        		navbar = $('.navbar-fixed-top');
+
+    			if (scrollPos > 20) {
+      				navbar.addClass('change-color');
+    			} else {
+     				navbar.removeClass('change-color');
+    			}
+  			});
+		});
     </script>
 </body>
 </html>
