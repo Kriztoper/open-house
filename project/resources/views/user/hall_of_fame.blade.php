@@ -92,7 +92,7 @@
           <p class="name para">CARLO</p>
         </div>
 
-        <h1>Most Watched Videos</h1>
+        <h1>Most Videos Watched</h1>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -151,7 +151,7 @@
                     <p class="para">
                       <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="50" height="50">
                     </p class="para">
-                    <p>Carlo</p>
+                    <p class="para">Carlo</p>
                     <p class="para">
                       <img src="http://i.imgur.com/EJ9EFSR.jpg" width="250" height="250">  
                     </p>

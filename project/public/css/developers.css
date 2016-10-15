@@ -3,7 +3,7 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url(http://i.imgur.com/DnZN4KY.png);
+	background-image: url(http://i.imgur.com/a67ps11.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	-moz-background-size: cover;
@@ -50,7 +50,7 @@ body {
 	font-family: goboldregular;
 	font-size: 70px;
 	letter-spacing: 30px;
-	color: white;
+	color: #333333;
 	background: none;
 }
 
