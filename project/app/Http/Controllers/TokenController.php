@@ -176,7 +176,7 @@ class TokenController extends Controller
                         ->pluck('gameURL');
             return redirect($gamepath); //return to game proper
         }
-        return redirect('/dashboard'); //return to dashboard
+        return redirect('/game'); //return to game listing
 
     }
 }
