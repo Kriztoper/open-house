@@ -66,15 +66,39 @@
 			<div class="container">
 				<h2 class="page-header headers">ACTION</h2>
 				<div class="row">
-			  		{{-- INSERT STUFF HERE --}}
+			  		@foreach($action as $actions)
+			  		<div class="col-md-2">
+			  			<div class="thumbnail">
+			  				<a href="{{url('playGame/'.$actions->gameID)}}">
+			  					<img src="{{url('/'.$actions->thumbnail)}}" alt="{{$actions->gameName}}">
+			  				</a>
+			  			</div>
+			  		</div>
+			  		@endforeach
 				</div>
 				<h2 class="page-header headers">STRATEGY</h2>
 				<div class="row">
-					{{-- INSERT STUFF HERE --}}
+					@foreach($strategy as $strats)
+			  		<div class="col-md-2">
+			  			<div class="thumbnail">
+			  				<a href="{{url('playGame/'.$strats->gameID)}}">
+			  					<img src="{{url('/'.$strats->thumbnail)}}" alt="{{$strats->gameName}}">
+			  				</a>
+			  			</div>
+			  		</div>
+			  		@endforeach
 				</div>
 				<h2 class="page-header headers">BOARD GAMES</h2>
 				<div class="row">
-					{{-- INSERT STUFF HERE --}}
+					@foreach($boardGames as $boardGame)
+			  		<div class="col-md-2">
+			  			<div class="thumbnail">
+			  				<a href="{{url('playGame/'.$boardGame->gameID)}}">
+			  					<img src="{{url('/'.$boardGame->thumbnail)}}" alt="{{$boardGame->gameName}}">
+			  				</a>
+			  			</div>
+			  		</div>
+			  		@endforeach
 				</div>
 			</div>
 		</div>

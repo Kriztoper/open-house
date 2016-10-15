@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="css/list_vid.css">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/list_vid.css')}}">
 </head>
 <body>
 
@@ -52,21 +52,19 @@
 				<h1 class="page-header">WATCH ANIME</h1><br>
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<div class="pic col-md-4"></div>
+						<div class="pic col-md-4" style=><img src="{{url('images/Anime Poster/'.$series->fthumbnail.'.jpg')}}" alt="OpenHouse" style="height:100%; width:110%; margin-left:-15px;"></div>
 						<div class="col-md-6">
-							<div class="name">LEMON MILK</div>
-							<div class="desc">THRILLER | COMEDY | ROMANCE</div>
+							<div class="name">{{$series->seriesName}}</div>
+							<div class="desc">{{$series->seriesDesc}}</div>
 						</div>
 					</div>
 					<div class="panel-body">
 						<h2 class="eps-head">LIST OF EPISODES</h2>
 						<ul class="eps">
-							<li><a href="">EPISODE 1</a></li>
-							<li><a href="">EPISODE 2</a></li>
-							<li><a href="">EPISODE 3</a></li>
-							<li><a href="">EPISODE 4</a></li>
-							<li><a href="">EPISODE 5</a></li>
-							<li><a href="">EPISODE 6</a></li>
+							@foreach ($videos as $video)
+							<li><a class="confirm" href="{{url('/buyVid/'.$video->videoID)}}">{{$video->videoName}}</a></li>
+							@endforeach
+							
 						</ul>
 					</div>
 				</div>
@@ -99,6 +97,11 @@
      				navbar.removeClass('change-color');
     			}
   			});
+		});
+		$(function() {
+    		$('.confirm').click(function() {
+        	return window.confirm("Buy this video?");
+    	});
 		});
     </script>
 

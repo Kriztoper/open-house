@@ -45,11 +45,11 @@ class GamesController extends Controller
                   ->select('games.*')
                   ->where('genres.genreName','Featured Content')
                   ->get();
-         $adventure = DB::table('games')
+         $strategy = DB::table('games')
                   ->join('gameGenres','gameGenres.gameID','=','games.gameID')
                   ->join('genres','gameGenres.genreID','=','genres.genreID')
                   ->select('games.*')
-                  ->where('genres.genreName','Adventure')
+                  ->where('genres.genreName','Strategy')
                   ->get();
          $boardGames = DB::table('games')
                   ->join('gameGenres','gameGenres.gameID','=','games.gameID')
@@ -63,7 +63,7 @@ class GamesController extends Controller
                         ->select('series.*')
                         ->get();*/
        
-        return view('user.game',['action' => $action,'featuredContent' => $featuredContent,'adventure' => $adventure,'boardGames' =>  $boardGames]);
+        return view('user.game',['action' => $action,'featuredContent' => $featuredContent,'Strategy' => $strategy,'boardGames' =>  $boardGames]);
     }
 
 
