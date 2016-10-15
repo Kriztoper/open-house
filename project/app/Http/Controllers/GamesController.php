@@ -27,7 +27,10 @@ class GamesController extends Controller
 
     } 
 
-
+    /**
+    * List all games with a set of genre
+    *
+    */
     public function listGames()
     {
 

@@ -16,6 +16,9 @@ Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('/developers',function(){
+    return view('user.developers');
+});
 // Authentication routes...
 Route::get('/'          , 'Auth\AuthController@getLogin');
 Route::get('/login'     , 'Auth\AuthController@getLogin');
@@ -65,9 +68,7 @@ Route::get('/times'           , 'UserController@show_Time');
 Route::get('/buyVid/{videoID}', 'TokenController@buy_video');
 Route::get('/buyGame/{gameID}', 'TokenController@buy_game');
 
-Route::get('/developers',function(){
-    return view('user.developers');
-});
+
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
 

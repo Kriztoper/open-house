@@ -27,6 +27,8 @@ class AdminController extends Controller
     /**
     *
     *   Add series to the database from the form.
+    *
+    *   @return view addSeries
     */
     public function saveSeries(Request $request){
         $series = new Series;
@@ -60,6 +62,7 @@ class AdminController extends Controller
     *
     *
     *   Create a new Genre for videos
+     *   @return view addGenre
     */
     
     public function saveGenre(Request $request){
@@ -73,6 +76,7 @@ class AdminController extends Controller
     /**
     *   Get all genre from the database and sends the view to seriesGenre
     *
+     *   @return view sortGenre
     */
     public function getGenre(){
         $genres = DB::table('genres')->get();
@@ -81,7 +85,8 @@ class AdminController extends Controller
     }
     /**
     *
-    *   Set the genre of a se from the forms
+    *   Set the genre of a video from the forms
+     *   @return view sortGenre
     */
     
     public function sortGenre(Request $request){
@@ -98,6 +103,7 @@ class AdminController extends Controller
     }
     /**
     *   Add genres to the games from the list of genre(tags)
+    * *   @return view sortGameGenre
     *   
     */
     public function sortGameGenre(Request $request){
@@ -115,6 +121,7 @@ class AdminController extends Controller
     /**
     *   Add Game into database
     *
+     *   @return view addGames
     */
     public function addGame(Request $request){
         $game = new game;
@@ -141,12 +148,23 @@ class AdminController extends Controller
         
         return view('admin.addGames');
     }
+    /**
+    *   Assigns a genre to a game  
+    *   @return view addSeries 
+    */
     public function getGameGenre(){
         $genres = DB::table('genres')->get();
         
         return view('admin.sortGameGenre',['genres' => $genres]);
 
     }
+    /**
+    *   Randomly generate an 8 character code 
+    *   @param token_number - number of tokens
+    *   @param token_Value - value of the token
+    *   @return view addToken
+    *
+    */
     public function generateToken(Request $request){
        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
        $randString = '';
