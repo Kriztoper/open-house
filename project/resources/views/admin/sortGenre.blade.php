@@ -19,7 +19,7 @@
       </div>
       <div class="row">
         <div class="Absolute-Center is-Responsive">
-          <form class="form-horizontal" role="form" method="POST" action="{{url('/adminsGenre')}}">
+          <form class="form-horizontal" role="form" method="POST" action="{{url('/adminSortsGenre')}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group">
@@ -27,13 +27,13 @@
                 <input type="text" class="form-control" name="seriesName" placeholder="Series Name" value="{{ old('seriesName') }}">
               </div>
             </div>
-            
+            @foreach ($genres as $gen)
             <div class="form-group">
-              <div class="col-md-12">
-                <input type="checkbox" class="form-control" name="Comedy" placeholder="Series Name" value="1">
+              <div class="col-md-5">
+                <input type="checkbox" class="form-control" name="values[]" value="{{$gen->genreID}}">{{$gen->genreName}}<br/>
               </div>
             </div>
-            
+            @endforeach            
             <div class="form-group">
               <div class="col-md-12">
                 <button type="submit" id="reg" class="btn btn-primary btn-block">Submit</button>

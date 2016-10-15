@@ -13,6 +13,7 @@ class CreateVideosGenresTable extends Migration
     public function up()
     {
         Schema::create('videosGenres', function (Blueprint $table) {
+            $table->increments('videoGenreID');
             $table->integer('videoID');
             $table->integer('genreID');
         });
@@ -25,6 +26,7 @@ class CreateVideosGenresTable extends Migration
      */
     public function down()
     {
-        Schema::drop('videosGenres');
+        Schema::dropIfExists('videosGenres');
+        Schema::dropIfExists('  seriesGenres');
     }
 }

@@ -17,6 +17,7 @@ class CreateSeriesTable extends Migration
             $table->String('seriesName');
             $table->String('seriesDesc');
             $table->String('thumbnail');
+            $table->String('fthumbnail');
         });
     }
 

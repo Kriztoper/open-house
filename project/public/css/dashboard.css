@@ -5,6 +5,8 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 	background: url(../images/backgrounds/dash-bg.jpg);
 	background-size: 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 body {
@@ -64,71 +66,15 @@ body {
 	margin: 0;
 }
 
-/*-------NAVBAR SHIT----------*/
-
-#top-navbar {
-	background-color: transparent !important;
-	border-color: transparent !important;
-}
-
-.navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
-    background-color: #BA002c;
-    color: white;
-}
-
-.navbar-fixed-top .navbar-nav > li > a {
-	font-family: montserratregular;
+.quote {
+	text-align: center;
+	font-style: italic;
+	font-size: 10pt !important;
 	color: white;
-	font-size: 10pt;
-	/*letter-spacing: 2pt;*/
+	margin-top: 150px;
+	padding-left: 250px; 
+	padding-right: 250px; 
 }
-
-.navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
-    background-color: transparent;
-    color: white;
-}
-
-.navbar-fixed-bottom .navbar-nav > li > a {
-	font-family: montserratregular;
-	font-size: 8pt;
-	font-weight: bold;
-	color: darkgray;
-	padding-top: 5px !important;
-    padding-bottom: 5px !important;
-	height: 30px !important;
-}
-
-.navbar {
-	min-height: 30px !important;
-}
-
-.navbar-fixed-bottom {
-	background-color: #BA002c;
-}
-
-.dropdown-menu > li > a {
-	font-family: montserratregular;
-	letter-spacing: 2pt;
-	font-size: 8pt;
-	color: black;
-}
-
-.redfont{
-	color: red;
-}
-.gold {
-	color: gold;
-}
-
-.red {
-	color: #BA002c;
-}
-
-.white {
-	color: white;
-}
-
-/*-------END OF NAVBAR SHIT---------*/
 
 .slick-item img {
 	margin: auto !important;

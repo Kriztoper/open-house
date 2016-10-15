@@ -13,7 +13,7 @@ class CreateScoresTable extends Migration
     public function up()
     {
         Schema::create('scores', function (Blueprint $table) {
-            $table->integer('scoreID');
+            $table->increments('scoreID');
             $table->integer('gameID');
             $table->integer('userID');
             $table->integer('score'); 

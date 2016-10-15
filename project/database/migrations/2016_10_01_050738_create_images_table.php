@@ -13,7 +13,7 @@ class CreateImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->integer('imageID');
+            $table->increments('imageID');
             $table->String('imageURL');
         });
     }
