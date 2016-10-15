@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/profile.css" type="text/css">
+    <link rel="stylesheet" href="/css/navbar.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       
@@ -48,7 +49,7 @@
     <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
-      <div class="modal-content">
+      <div class="modal-content bg2">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">KOMSAI OPENHOUSE TOKEN GENERATOR</h4>
@@ -124,13 +125,14 @@
         </div>
 
       </div>
+
     </body>
 
     <div id="editProfile" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
     <!-- Modal content-->
-      <div class="modal-content goldbg">
+      <div class="modal-content bg modalSize">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Profile</h4>

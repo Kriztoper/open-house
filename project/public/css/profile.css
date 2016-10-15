@@ -33,6 +33,21 @@ body {
     font-style: normal;
 }
 
+h4 {
+	color: white;
+}
+
+.modalSize {
+	width: 500px;
+}
+
+.bg2 {
+	background-image: url(http://i.imgur.com/GzNK8IN.jpg);
+}
+
+.bg {
+	background-image: url(http://i.imgur.com/96b2zUb.jpg);
+}
 
 .gap {
 	margin-bottom: 10px;
