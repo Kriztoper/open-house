@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
 
 </head>
@@ -54,8 +55,16 @@
 				<h3 class="page-header">WELCOME TO</h3>
 				<h1 class="page-header">KOMSAI OPENHOUSE</h1>
 			</div>
-			<p id="quote">We can't always make the right decision, but we can make every decision right.</p>
-			<p id="author">-Google</p>
+			<div id="rotate">
+				<p class="quote">There's no place like <strong>127.0.0.1</strong></p>
+				<p class="quote">That’s what’s cool about working with computers.  They don’t argue, they remember everything, and they don’t drink all your beer.</p>
+				<p class="quote">Controlling complexity is the essence of computer programming.</p>
+				<p class="quote">The function of good software is to make the complex appear to be simple.</p>
+				<p class="quote">Any fool can use a computer.  Many do.</p>
+				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
+				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
+				<p class="quote">The trouble with programmers is that you can never tell what a programmer is doing until it’s too late.</p>
+			</div>
 		</div>
 
 		<nav class="navbar navbar-fixed-bottom">
@@ -90,6 +99,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
-	<script type="text/javascript" src="slick/slick.min.js"></script
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/bodyslide.js"></script>
 </body>
 </html>
