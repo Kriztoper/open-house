@@ -116,5 +116,12 @@ class UserController extends Controller
     * @return video view
     *
     */
+
+    public function save_Profile(Request $request)
+    {
+        Auth::user()->update($request->all());
+        return Redirect::to('/profile');
+    }
 }
+
 ?>

@@ -62,6 +62,7 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
           <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
     </div>
@@ -142,14 +143,17 @@
         </div>
 
         <div class="modal-body">
-          <input type="text" class="form-control gap" placeholder="Enter First Name..."/>
-          <input type="text" class="form-control gap" placeholder="Enter Last Name..."/>
-          <input type="text" class="form-control gap" placeholder="Enter Student Number..."/>
+          <form class="form-horizontal" role="form" method="POST" action="{{ url('/save_profile') }}">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="text" class="form-control gap" name="first_name" placeholder="Enter First Name...">
+          <input type="text" class="form-control gap" name="last_name" placeholder="Enter Last Name...">
+          <input type="text" class="form-control gap" name="student_number" placeholder="Enter Student Number...">
         </div>
 
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
       </div>
       </div>
 
