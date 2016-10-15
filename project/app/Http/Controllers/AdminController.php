@@ -169,8 +169,21 @@ class AdminController extends Controller
     public function success(){
         return view('success');
     }
-    
+
+    //routes for views
     public function show_dashboard(){
         return view('admin.adminPage');
+    }
+    public function show_add_series(){
+        return view('admin.addSeries');
+    }
+    public function show_add_genres(){
+        return view('admin.addGenre'); 
+    }
+    public function show_add_games(){
+        return view('admin.addGames');
+    }
+    public function show_add_token(){
+        return view('admin.addToken');
     }
 }
