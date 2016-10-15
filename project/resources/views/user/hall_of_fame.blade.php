@@ -37,7 +37,7 @@
               <li><a href="{{ url('/game') }}">GAMES</a></li>
               <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button"> {{ strtoupper(Auth::user()->first_name) }}
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-menu-left col-xs-12">
                     <li><a href="{{url('/profile')}}">PROFILE</a></li>
@@ -52,30 +52,32 @@
 
     <!-- Modal for token -->
     <div id="myModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content bg2">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">KOMSAY OPENHOUSE TOKEN GENERATOR</h4>
-          </div>
-          <div class="modal-body">
-            <form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
-                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content bg2">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">KOMSAI OPENHOUSE TOKEN GENERATOR</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
     <nav class="navbar navbar-fixed-bottom">
       <div class="container-fluid">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{ url('/developers') }}">ABOUT THE DEVELOPERS</a></li>
+        <ul class="nav navbar-nav navbar-right navbar-xs">
+          <li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
         </ul>
       </div>
     </nav>
+    
   </div>
 
     <div>
