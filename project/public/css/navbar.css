@@ -1,13 +1,18 @@
 /*-------NAVBAR SHIT----------*/
 
-#top-navbar {
-	background-color: transparent !important;
-	border-color: transparent !important;
+.navbar-fixed-top {
+	background: transparent;
+  	border: none;
+  	transition: 0.2s all linear;	
+}
+
+.navbar-fixed-top.change-color {
+	background-color: #2E3146;
 }
 
 .navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
     background-color: #BA002c;
-    color: white;
+    color: #2E3146;
 }
 
 .navbar-fixed-top .navbar-nav > li > a {
