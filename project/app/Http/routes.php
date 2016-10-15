@@ -11,7 +11,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -59,33 +58,12 @@ Route::get('/playGame/{id}','GamesController@playGame');
 *   Routes for list of videos and watching videos from database
 *
 */
-Route::get('/series_list','VideosController@listSeries');
 
 /* Route::get('/list_video/{id}','VideosController@listVideos');*/
-Route::get('/list_vid',function(){
-   return view('list_vid'); 
-});
-Route::get('/watch_video/{id}','VideosController@watchVideos');
+
 Route::get('/videos','VideosController@listSeries');
-
-Route::get('/list_video/{id}','VideosController@listVideos');
-
+Route::get('/list_vid/{id}','VideosController@listVideos');
 Route::get('/watch_video/{id}','VideosController@watchVideos');
-Route::get('/videos','VideosController@listSeries');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
-Route::get('/hall_of_fame', function () {
-    return view('hall_of_fame');
-});
-
-
 /*
 Route::get('/game', function () {
     return view('game');

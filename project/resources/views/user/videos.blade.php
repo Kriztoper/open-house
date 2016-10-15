@@ -53,7 +53,7 @@
 				<div class="single-item">
 					@foreach($featuredContent as $featured)
                         <div class="slick-item">
-                        	<a href="{{url('/list_video/'.$featured->seriesID)}}">
+                        	<a href="{{url('/list_vid/'.$featured->seriesID)}}">
                         		<img src="{{url("/images/Anime Poster/".$featured->thumbnail.".jpg")}}">
                         	</a>
                         </div>
@@ -68,7 +68,7 @@
 				<div class="row">
 			  		@foreach($anime as $animeVids)
 			  			<div class="col-md-2">
-			  				<a href="{{url('/list_video/'.$animeVids->seriesID)}}">
+			  				<a href="{{url('/list_vid/'.$animeVids->seriesID)}}">
 			    				<div class="thumbnail">
 			      					<img src="{{url("/images/Anime Poster/".$animeVids->thumbnail.".jpg")}}" alt="...">
 			      					<div class="caption">
@@ -84,7 +84,7 @@
 				<div class="row">
 					@foreach($kDrama as $korean)
 			  			<div class="col-md-2">
-			  				<a href="{{url('/list_video/'.$korean->seriesID)}}".>
+			  				<a href="{{url('/list_vid/'.$korean->seriesID)}}".>
 			    				<div class="thumbnail">
 			      					<img src="{{url("/images/Anime Poster/".$korean->thumbnail.".jpg")}}" alt="...">
 			      					<div class="caption">
