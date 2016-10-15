@@ -25,7 +25,7 @@
   				</div>
     			<ul id="tokens" class="nav navbar-nav">
               		<li>
-                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{'69'}}</span></p>
+                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span></p>
               		</li>
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
@@ -49,16 +49,6 @@
 
 		<div class="container-fluid videos">
 			<div class="container">
-				<h1 class="page-header">
-					FEATURED VIDEOS
-				</h1>
-				<br>
-				<div class="container">
-					<div class="single-item">
-						@foreach($featuredContent as $featured)
-                            <div class="slick-item"><a href="{{url('/list_video/'.$featured->seriesID)}}"><img src="{{url("/images/Anime Poster/".$featured->fthumbnail.".jpg")}}"></a></div>
-                        @endforeach
-					</div>
 				<h1 id="featured" class="page-header">FEATURED VIDEOS</h1>
 				<div class="single-item">
 					@foreach($featuredContent as $featured)
@@ -71,41 +61,7 @@
 				</div>
 			</div>
 		</div>
-    </div>
-		<div class="jumbotron">
-			<h2 class="page-header class">ANIME</h2>
-			<div class="row">
-			  	@foreach($anime as $animeVids)
-			  		<div class="col-md-2">
-			  			<a href="{{url('/list_video/'.$animeVids->seriesID)}}">
-			    			<div class="thumbnail">
-			      				<img src="{{url("/images/Anime Poster/".$animeVids->thumbnail.".jpg")}}" alt="...">
-			      				<div class="caption">
-			        				<h3>{{$animeVids->seriesName}}</h3>
-			        				<p>{{$animeVids->seriesDesc}}</p>
-			      				</div>
-			    			</div>
-			    		</a>
-			  	   	</div>
-			  	@endforeach
-			</div>
 
-			<h2 class="page-header class">K-DRAMA</h2>
-			<div class="row">
-				@foreach($kDrama as $korean)
-			  		<div class="col-md-2">
-			  			<a href="{{url('/list_video/'.$korean->seriesID)}}".>
-			    			<div class="thumbnail">
-			      				<img src="{{url("/images/Anime Poster/".$korean->thumbnail.".jpg")}}" alt="...">
-			      				<div class="caption">
-			        				<h3>{{$korean->seriesName}}</h3>
-			        				<p>{{$korean->seriesDesc}}</p>
-			      				</div>
-			    			</div>
-			    		</a>
-			  	   	</div>
-			  	@endforeach
-            </div>
 		<div class="container-fluid more-content">
 			<div class="container">
 				<h2 class="page-header headers">ANIME</h2>
@@ -157,7 +113,6 @@
 	            		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 						<button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
 					</div>
 				</div>
 			</div>
@@ -170,7 +125,7 @@
 				</ul>
 			</div>
 		</nav>
-    </div>
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
