@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<nav id="top-navbar" class="navbar navbar-fixed-top">
+	<nav class="navbar navbar-fixed-top">
 		<div class="container-fluid">
     		<div class="navbar-header">
     			<a class="navbar-brand" href="#">
@@ -44,14 +44,6 @@
        				</ul>
     			</li>
 	   		</ul>
-
-			<nav class="navbar navbar-fixed-bottom">
-				<div class="container-fluid">
-					<ul class="nav navbar-nav navbar-right navbar-xs">
-						<li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
-					</ul>
-				</div>
-			</nav>
   		</div>
 	</nav>
 
@@ -59,7 +51,7 @@
 		<div class="container">
 				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
 				<div class="single-item">
-					<div class="slick-item"><a href="{{ url('/buyGame/1') }}"><img src="/images/Featured Games/4square.png"></a></div>
+					<div class="slick-item"><a href="games/fourSquare/fourSquare.php"><img src="/images/Featured Games/Feature1.png"></a></div>
 					<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
 					<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
 					<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
@@ -132,7 +124,13 @@
 			</div>
 		</div>
 	</div>
-	
+	<nav class="navbar navbar-fixed-bottom">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">ABOUT THE DEVELOPERS</a></li>
+			</ul>
+		</div>
+	</nav>
 
    	<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -143,6 +141,20 @@
     	$('.single-item').slick({
     		dots: true
     	});
+    </script>
+    <script>
+    	jQuery(document).ready(function($) {
+  			$(window).scroll(function() {
+    			var scrollPos = $(window).scrollTop(),
+        		navbar = $('.navbar-fixed-top');
+
+    			if (scrollPos > 20) {
+      				navbar.addClass('change-color');
+    			} else {
+     				navbar.removeClass('change-color');
+    			}
+  			});
+		});
     </script>
 </body>
 </html>

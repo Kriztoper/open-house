@@ -50,10 +50,13 @@
 		@if ($game->isJar==0)
 			<div align="center">
     			<embed src="{{$game->gameURL}}" width="800" height="600"></embed>
+    			{{$game->gameURL}}
+
 			</div>		
 		@elseif	($game->isJar==1)	
 			<div style="width=565px;margin:0 auto;">
     			<applet code="{{$game->className}}" archive="{{$game->gameURL}}" width = "800" height="600">
+    			{{$game->gameURL}}
     			</applet>
     		</div> 
 		@endif
@@ -70,7 +73,7 @@
 	<div id="myModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
-			<div class="modal-content bg2">
+			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">KOMSAI OPENHOUSE TOKEN GENERATOR</h4>

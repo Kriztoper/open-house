@@ -62,6 +62,7 @@
 				<p class="quote">The function of good software is to make the complex appear to be simple.</p>
 				<p class="quote">Any fool can use a computer.  Many do.</p>
 				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
+				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
 				<p class="quote">The trouble with programmers is that you can never tell what a programmer is doing until it’s too late.</p>
 			</div>
 		</div>

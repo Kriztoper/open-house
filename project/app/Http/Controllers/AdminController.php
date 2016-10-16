@@ -135,7 +135,7 @@ class AdminController extends Controller
             if(count($games)>=1){
                 $game->className = $request->className;
                 $game->isJar =1;
-            }
+            } 
         }
         else{
             $game->className = "NONE";

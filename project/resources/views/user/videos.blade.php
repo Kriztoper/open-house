@@ -16,6 +16,7 @@
 
 </head>
 <body>
+
 	<nav class="navbar navbar-fixed-top">
 			<div class="container-fluid">
     			<div class="navbar-header">
@@ -44,13 +45,6 @@
         				</ul>
       				</li>
 	    		</ul>
-	    		<nav class="navbar navbar-fixed-bottom">
-					<div class="container-fluid">
-						<ul class="nav navbar-nav navbar-right navbar-xs">
-							<li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
-						</ul>
-					</div>
-				</nav>
   			</div>
 		</nav>
 
@@ -126,7 +120,15 @@
 				</div>
 			</div>
 		</div>
-	
+		
+		<nav class="navbar navbar-fixed-bottom">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">ABOUT THE DEVELOPERS</a></li>
+				</ul>
+			</div>
+		</nav>
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
