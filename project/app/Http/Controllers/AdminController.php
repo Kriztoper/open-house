@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\series;
-use App\seriesVideo;
-use App\genres;
-use App\seriesGenre;
-use App\videos;
+use App\Series;
+use App\SeriesVideo;
+use App\Genre;
+use App\SeriesGenre;
+use App\Video;
 use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
 use App\Forms\RegisterForm;
 use App\User;
-use App\token;
-use App\game;
-use App\gameGenre;
+use App\Token;
+use App\Game;
+use App\GameGenre;
 use Input;
 use Illuminate\Support\Facades\DB;
 
@@ -31,13 +31,11 @@ class AdminController extends Controller
     *   @return view addSeries
     */
     public function saveSeries(Request $request){
-        $series = new Series;
-        $series->seriesName = $request->seriesName;
-        $series->seriesDesc = $request->seriesDesc;
-        $series->thumbnail = $request->thumbnail;
-        $series->fthumbnail = "".$request->thumbnail." 950";
-        $series->save();
-        
+        //creating new series in series table
+        $data = $request->all();
+        $data['fthumbnail'] = "".$request->thumbnail." 950";
+        $series = Series::create($data);
+        //get all series with the said extentions
         $vids= glob("vids/".$request->seriesName."/*.mp4" );
         if(count($vids)<1){
             $vids=glob("vids/".$request->seriesName."/*.flv" );
@@ -45,16 +43,15 @@ class AdminController extends Controller
                 $vids=glob("vids/".$request->seriesName."/*.mkv");
             }
         }
+        //get all videos of the series
         for($i=0;$i<count($vids);$i++){
-              $videos = new videos;
-            $videos->videoName = $series->seriesName." Episode ".($i+1);
-            $videos->videoDesc = "Episode ".($i+1)." of the series:".$series->seriesName;
-            $videos->videoURL = $vids[$i];
-            $videos->save();
-            $seriesVideo = new seriesVideo;
-            $seriesVideo->seriesID = $series->id;
-            $seriesVideo->videoID = $videos->id;
-            $seriesVideo->save();
+            $video_data['videoName'] = $series->seriesName." Episode ".($i+1);
+            $video_data['videoDesc'] = "Episode ".($i+1)." of the series:".$series->seriesName;
+            $video_data['videoURL'] = $vids[$i];
+            $video = Video::create($video_data);
+            $seriesVideo_data['seriesID'] = $series->id;
+            $seriesVideo_data['videoID'] = $video->id;
+            $series_video = SeriesVideo::create($seriesVideo_data);
         }
         return view('admin.addSeries');
     }
@@ -64,14 +61,10 @@ class AdminController extends Controller
     *   Create a new Genre for videos
      *   @return view addGenre
     */
-    
     public function saveGenre(Request $request){
-        $genres = new genres;
-        $genres->genreName = $request->genreName;
-        $genres->genreDesc = $request->genreDesc;
-        $genres->save();
-        $data = ['videos' => $genres->genreName ];
-        return view('admin.addGenre',$data);
+        $data = $request->all();
+        Genre::create($data);
+        return view('admin.addGenre');
     }
     /**
     *   Get all genre from the database and sends the view to seriesGenre
@@ -79,8 +72,7 @@ class AdminController extends Controller
      *   @return view sortGenre
     */
     public function getGenre(){
-        $genres = DB::table('genres')->get();
-        
+        $genres = Genre::all();
         return view('admin.sortGenre',['genres' => $genres]);
     }
     /**
@@ -142,6 +134,8 @@ class AdminController extends Controller
             $game->isJar = 0;
         }
         $game->gameURL = $games[0];
+        $game->width = $request->width;
+        $game->height = $request->height;
         $game->save();
         
 
@@ -201,7 +195,7 @@ class AdminController extends Controller
     public function show_add_games(){
         return view('admin.addGames');
     }
-    public function show_add_token(){
+    public function show_add_tokens(){
         return view('admin.addToken');
     }
 }

@@ -146,7 +146,7 @@ class UserController extends Controller
 
         }
         
-        return redirect('/dashboard');
+        return redirect()->back();
     }
     public function show_Time(){
         $timeConsumed= DB::table('time_Usage')->where('student_number','=',Auth::user()->student_number)->pluck('time_consumed');

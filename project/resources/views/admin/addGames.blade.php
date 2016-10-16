@@ -49,6 +49,16 @@
                 <input type="text" class="form-control" name="className" placeholder="Class for jar(jar files only)" value="{{ old('className') }}">
               </div>
             </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="number" class="form-control" name="width" placeholder="Width of the game" value="{{ old('width') }}">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="number" class="form-control" name="height" placeholder="Height of the game" value="{{ old('height') }}">
+              </div>
+            </div>
 
 
             <div class="form-group">

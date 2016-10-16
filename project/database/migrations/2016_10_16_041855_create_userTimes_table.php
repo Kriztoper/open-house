@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UserTime extends Migration
+class CreateUserTimesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,7 @@ class UserTime extends Migration
      */
     public function up()
     {
-        Schema::create('time_Usage', function (Blueprint $table) {
-            $table->integer('student_number')->unique();
-            $table->integer('time_consumed');
-        });
+        //
     }
 
     /**
@@ -25,6 +22,6 @@ class UserTime extends Migration
      */
     public function down()
     {
-         Schema::drop('time_Usage');
+        //
     }
 }

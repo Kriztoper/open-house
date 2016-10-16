@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-fixed-top">
+	<nav id="top-navbar" class="navbar navbar-fixed-top">
 		<div class="container-fluid">
     		<div class="navbar-header">
     			<a class="navbar-brand" href="#">
@@ -44,6 +44,14 @@
        				</ul>
     			</li>
 	   		</ul>
+
+			<nav class="navbar navbar-fixed-bottom">
+				<div class="container-fluid">
+					<ul class="nav navbar-nav navbar-right navbar-xs">
+						<li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
+					</ul>
+				</div>
+			</nav>
   		</div>
 	</nav>
 
@@ -51,13 +59,9 @@
 		<div class="container">
 				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
 				<div class="single-item">
-					<div class="slick-item"><a href="games/fourSquare/four.php"><img src="/images/Featured Games/Feature1.png"></a></div>
-					<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/chainReaction.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/DotsTrix.png"></a></div>
-					<div class="slick-item"><img src="/images/Featured Games/killerCubes.png"></div>
+					@foreach($featured as $feat)
+						<div class="slick-item confirm"><a href="{{ url('/buyGame/'.$feat->gameID) }}"><img src="{{url('/'.$feat->fthumbnail)}}" alt="{{$feat->gameName}}"></a></div>
+					@endforeach
 				</div>
 			</div>
 	</div>
@@ -67,9 +71,9 @@
 				<h2 class="page-header headers">ACTION</h2>
 				<div class="row">
 			  		@foreach($action as $actions)
-			  		<div class="col-md-2">
+			  		<div class="col-md-2 confirm">
 			  			<div class="thumbnail">
-			  				<a href="{{url('playGame/'.$actions->gameID)}}">
+			  				<a href="{{url('buyGame/'.$actions->gameID)}}">
 			  					<img src="{{url('/'.$actions->thumbnail)}}" alt="{{$actions->gameName}}">
 			  				</a>
 			  			</div>
@@ -79,9 +83,9 @@
 				<h2 class="page-header headers">STRATEGY</h2>
 				<div class="row">
 					@foreach($Strategy as $strats)
-			  		<div class="col-md-2">
+			  		<div class="col-md-2 confirm">
 			  			<div class="thumbnail">
-			  				<a href="{{url('playGame/'.$strats->gameID)}}">
+			  				<a href="{{url('buyGame/'.$strats->gameID)}}">
 			  					<img src="{{url('/'.$strats->thumbnail)}}" alt="{{$strats->gameName}}">
 			  				</a>
 			  			</div>
@@ -91,9 +95,9 @@
 				<h2 class="page-header headers">BOARD GAMES</h2>
 				<div class="row">
 					@foreach($boardGames as $boardGame)
-			  		<div class="col-md-2">
+			  		<div class="col-md-2 confirm">
 			  			<div class="thumbnail">
-			  				<a href="{{url('playGame/'.$boardGame->gameID)}}">
+			  				<a href="{{url('buyGame/'.$boardGame->gameID)}}">
 			  					<img src="{{url('/'.$boardGame->thumbnail)}}" alt="{{$boardGame->gameName}}">
 			  				</a>
 			  			</div>
@@ -124,13 +128,7 @@
 			</div>
 		</div>
 	</div>
-	<nav class="navbar navbar-fixed-bottom">
-		<div class="container-fluid">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">ABOUT THE DEVELOPERS</a></li>
-			</ul>
-		</div>
-	</nav>
+	
 
    	<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -141,20 +139,10 @@
     	$('.single-item').slick({
     		dots: true
     	});
-    </script>
-    <script>
-    	jQuery(document).ready(function($) {
-  			$(window).scroll(function() {
-    			var scrollPos = $(window).scrollTop(),
-        		navbar = $('.navbar-fixed-top');
-
-    			if (scrollPos > 20) {
-      				navbar.addClass('change-color');
-    			} else {
-     				navbar.removeClass('change-color');
-    			}
-  			});
-		});
+    	$(function() {
+    		$('.confirm').click(function() {
+        	return window.confirm("Buy this game?");
+    	});
     </script>
 </body>
 </html>
