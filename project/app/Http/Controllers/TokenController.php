@@ -91,7 +91,7 @@ class TokenController extends Controller
     /**
      * add tokens based on code input of the user
      *
-     * @return dashboard view
+     * @return curretnt page where the request was made
      */
     public function add_token(Request $request)
     {
@@ -122,7 +122,7 @@ class TokenController extends Controller
             ->update(['isActive'=>0]);
         }
         
-        return redirect('/dashboard');
+        return Redirect::back();
     }
 
     /**
