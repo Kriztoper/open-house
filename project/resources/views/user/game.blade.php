@@ -27,6 +27,7 @@
            		<li>
                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span></p>
            		</li>
+
        		</ul>
 	   		<ul id="links" class="nav navbar-nav navbar-right">
 	  			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
@@ -34,15 +35,14 @@
 	   			<li><a href="{{ url('/game') }}">GAMES</a></li>
 	   			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
 	   			<li class="dropdown">
-       				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
-       				<span class="caret"></span></a>
-    				<ul class="dropdown-menu dropdown-menu-left col-xs-12">
-       					<li><a href="{{url('/profile')}}">PROFILE</a></li>
-       					<li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
-       					<li role="separator" class="divider"></li>
-       					<li><a href="{{url('/logout')}}">LOGOUT</a></li>
-       				</ul>
-    			</li>
+        			<a class="dropdown-toggle" data-toggle="dropdown" role="button"> {{ strtoupper(Auth::user()->first_name) }}
+        			<span class="caret"></span></a>
+       				<ul class="dropdown-menu dropdown-menu-right">
+          				<li class="pull-right"><a href="{{url('/profile')}}">PROFILE</a></li>
+          				<li class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
+          				<li class="pull-right"><a href="{{url('/logout')}}">LOGOUT</a></li>
+        			</ul>
+      			</li>
 	   		</ul>
   		</div>
 	</nav>
