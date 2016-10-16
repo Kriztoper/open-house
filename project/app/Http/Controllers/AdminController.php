@@ -142,6 +142,8 @@ class AdminController extends Controller
             $game->isJar = 0;
         }
         $game->gameURL = $games[0];
+        $game->width = $request->width;
+        $game->height = $request->height;
         $game->save();
         
 
