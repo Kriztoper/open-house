@@ -126,7 +126,6 @@ class AdminController extends Controller
                 $data['className'] = $request->className;
                 $data['isJar']     = 1 ;
             }
-        }
         else{
             $data['className'] = 'NONE';
             $data['isJar']     = 0 ;

@@ -1,12 +1,8 @@
 /*-------NAVBAR SHIT----------*/
 
 .navbar-fixed-top {
-	background: transparent;
+	background: #2E3146;
   	border: none;	
-}
-
-.navbar-fixed-top.change-color {
-	background-color: #2E3146;
 }
 
 .navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
@@ -44,10 +40,6 @@
 	background-color: #BA002c;
 }
 
-.dropdown-menu > li {
-	text-align: right !important;
-}
-
 .dropdown-menu > li > a {
 	font-family: montserratregular;
 	letter-spacing: 2pt;
@@ -72,3 +64,5 @@
 
 
 /*-------END OF NAVBAR SHIT---------*/
+
+
