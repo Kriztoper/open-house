@@ -178,7 +178,7 @@ class TokenController extends Controller
                         ->join('games', 'games.gameID', '=', 'usergames.gameID')
                         ->join('users', 'users.student_number', '=', 'userGames.userID')
                         ->where('users.student_number', '=', Auth::user()->student_number)
-                        ->where('videos.videoID', '=', $videoID)
+                        ->where('games.gameID', '=', $gameID)
                         ->get();
         if (empty($isGameBought)) {
             $newValue = Auth::user()->token - 5;
@@ -196,7 +196,7 @@ class TokenController extends Controller
         $gamepath = DB::table('games')
                     ->where('gameID', $gameID)
                     ->pluck('gameURL');
-        return redirect($gamepath);
+        return redirect('/playGame/'.$gameID);
     }
 }
 ?>

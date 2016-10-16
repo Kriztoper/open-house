@@ -203,7 +203,7 @@ class AdminController extends Controller
     public function show_add_games(){
         return view('admin.addGames');
     }
-    public function show_add_token(){
+    public function show_add_tokens(){
         return view('admin.addToken');
     }
 }

@@ -66,7 +66,7 @@ class GamesController extends Controller
                         ->select('series.*')
                         ->get();*/
        
-        return view('user.game',['action' => $action,'featuredContent' => $featuredContent,'Strategy' => $strategy,'boardGames' =>  $boardGames]);
+        return view('user.game',['action' => $action,'featured' => $featuredContent,'Strategy' => $strategy,'boardGames' =>  $boardGames]);
     }
 
 

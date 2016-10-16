@@ -59,13 +59,9 @@
 		<div class="container">
 				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
 				<div class="single-item">
-					<div class="slick-item"><a href="{{ url('/buyGame/1') }}"><img src="/images/Featured Games/4square.png"></a></div>
-					<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/chainReaction.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/DotsTrix.png"></a></div>
-					<div class="slick-item"><img src="/images/Featured Games/killerCubes.png"></div>
+					@foreach($featured as $feat)
+						<div class="slick-item"><a href="{{ url('/buyGame/'.$feat->gameID) }}"><img src="{{url('/'.$feat->fthumbnail)}}" alt="{{$feat->gameName}}"></a></div>
+					@endforeach
 				</div>
 			</div>
 	</div>
@@ -77,7 +73,7 @@
 			  		@foreach($action as $actions)
 			  		<div class="col-md-2">
 			  			<div class="thumbnail">
-			  				<a href="{{url('playGame/'.$actions->gameID)}}">
+			  				<a href="{{url('buyGame/'.$actions->gameID)}}">
 			  					<img src="{{url('/'.$actions->thumbnail)}}" alt="{{$actions->gameName}}">
 			  				</a>
 			  			</div>
@@ -89,7 +85,7 @@
 					@foreach($Strategy as $strats)
 			  		<div class="col-md-2">
 			  			<div class="thumbnail">
-			  				<a href="{{url('playGame/'.$strats->gameID)}}">
+			  				<a href="{{url('buyGame/'.$strats->gameID)}}">
 			  					<img src="{{url('/'.$strats->thumbnail)}}" alt="{{$strats->gameName}}">
 			  				</a>
 			  			</div>
@@ -101,7 +97,7 @@
 					@foreach($boardGames as $boardGame)
 			  		<div class="col-md-2">
 			  			<div class="thumbnail">
-			  				<a href="{{url('playGame/'.$boardGame->gameID)}}">
+			  				<a href="{{url('buyGame/'.$boardGame->gameID)}}">
 			  					<img src="{{url('/'.$boardGame->thumbnail)}}" alt="{{$boardGame->gameName}}">
 			  				</a>
 			  			</div>
