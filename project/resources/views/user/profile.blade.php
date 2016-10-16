@@ -81,8 +81,10 @@
         
         <div class="profBody">
           <div class="panel panel-info trans">
+
             <div class="panel-heading">
               <h1 class="panel-title gobolds black">User Profile</h1>
+
             </div>
             <div class="panel panel-body trans">
               <div class="col-lg-3">
@@ -138,7 +140,8 @@
       <div class="modal-dialog">
 
     <!-- Modal content-->
-      <div class="modal-content modalSize bg">
+      <div class="modal-content modalSize bg" data-backdrop="static" data-keyboard="false">
+
         <div id="head" class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Profile</h4>

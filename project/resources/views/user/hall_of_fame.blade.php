@@ -99,6 +99,7 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
   <!-- Wrapper for slides -->
+
           <div class="carousel-inner" role="listbox">
             
             <div class="item active mid">
@@ -125,120 +126,80 @@
             <span class="sr-only">Next</span>
           </a>
 
-
         </div>
 
         <h1>Most Active Players</h1>
        
-       <div id="myCarousel" class="carousel slide" data-ride="carousel">
+       <div id="myCarousel2" class="carousel slide" data-ride="carousel">
 
-  <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
-            
-            <div class="item active">
-              <div>
-                <ul>
 
-                  <li class="lista">
-                    <p class="para">
-                      <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="50" height="50">
-                    </p>
-                    <p class="para">Carlo</p>
-                    <p class="para">
-                      <img src="http://i.imgur.com/Vu9xKxJ.jpg" width="250" height="250">  
-                    </p>
-                  </li>
+            <?php
 
-                  <li class="lista">
-                    <p class="para">
-                      <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="50" height="50">
-                    </p class="para">
-                    <p class="para">Carlo</p>
-                    <p class="para">
-                      <img src="http://i.imgur.com/EJ9EFSR.jpg" width="250" height="250">  
-                    </p>
-                  </li>
+              $games = array(
+                "http://i.imgur.com/Vu9xKxJ.jpg", "http://i.imgur.com/EJ9EFSR.jpg", "http://i.imgur.com/wxZh1iY.png", "http://i.imgur.com/nXlQlbu.png",
+                "http://i.imgur.com/TJvEOkL.png", "http://i.imgur.com/LXiHOJS.png", "http://i.imgur.com/rPi6nTV.png", "http://i.imgur.com/X06IfC8.png",
+                "http://i.imgur.com/zxhsW6o.png", "http://i.imgur.com/dKrDe2s.png", "http://i.imgur.com/soEeCsI.png", "http://i.imgur.com/9VjzTu7.png",
+                "http://i.imgur.com/1b4S6vn.png", "http://i.imgur.com/PgtXxlZ.png", "http://i.imgur.com/RBUf7CZ.png", "http://i.imgur.com/pBBi14k.png",
+                "http://i.imgur.com/AOfiBJd.png", "http://i.imgur.com/ij7nYFB.png", "http://i.imgur.com/tzX1kGl.png", "http://i.imgur.com/49Simlx.png",
+                "http://i.imgur.com/UfsnYJQ.png", "http://i.imgur.com/VTUbzHX.png", "http://i.imgur.com/dvFvPIa.png", "http://i.imgur.com/m0UfI88.png",
+                "http://i.imgur.com/fICe2B5.jpg", "http://i.imgur.com/kN7CEzt.png", "http://i.imgur.com/EBG3AhZ.png", "http://i.imgur.com/rubf4d2.png",
+                "http://i.imgur.com/ByLhtZt.png", "http://i.imgur.com/FLxj6lJ.png", "http://i.imgur.com/797olpD.png", "http://i.imgur.com/znnRKYn.png",
+                "http://i.imgur.com/dWX7t1i.png", "http://i.imgur.com/rOkBOfu.png");
 
-                  <li class="lista">
-                    <p class="para">
-                      <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="50" height="50">
-                    </p>
-                    <p class="para">Carlo</p>
-                    <p class="para">
-                      <img src="http://i.imgur.com/Vu9xKxJ.jpg" width="250" height="250">  
-                    </p>
-                  </li>
+              $names = array(
+                "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", 
+                "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo",
+                "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo");
+
+              $avatars = array(
+                "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
+                "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
+                "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
+                "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
+                "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
+                "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
+                "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
+                "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg",
+                "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg");
+
+              for ($i=0; $i < count($games); ) { 
+                # code...
+                if ($i == 0) {
+                  echo '<div class="item trans active"><div><ul>';
+                  # code...
+                }
+                else{
+                  echo '<div class="item trans"><div><ul>';  
+                }
+
+                for ($k=0; $k < 4; $k++) { 
+                  # code...
+
+                  if($i == 32){
+                    $k = 2;
+                  }
                   
-                  <li class="lista">
-                    <p class="para">
-                      <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="50" height="50">
-                    </p>
-                    <p class="para">Carlo</p>
-                    <p class="para">
-                      <img src="http://i.imgur.com/EJ9EFSR.jpg" width="250" height="250">  
-                    </p>
-                  </li>
+                  echo '<li class="lista">';
+                  echo '<p class="para"><img src="'.$avatars[$i].'" class="img-circle" width="50" height="50"></p>';
+                  echo '<p class="para">'.$names[$i].'</p>';
+                  echo '<p class="para"><img src="'.$games[$i].'" width="250" height="250"></p></li>';
 
-                </ul>
-              </div>
-            </div>
+                  $i++;
 
-            <div class="item">
-              <div>
-                <ul>
+                }
+                echo '</ul></div></div>';
+              }
 
-                  <li class="lista">
-                    <p class="para">
-                      <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="50" height="50">
-                    </p>
-                    <p class="para">Carlo</p>
-                    <p class="para">
-                      <img src="http://i.imgur.com/Vu9xKxJ.jpg" width="250" height="250">  
-                    </p>
-                  </li>
-
-                  <li class="lista">
-                    <p class="para">
-                      <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="50" height="50">
-                    </p>
-                    <p class="para">Carlo</p>
-                    <p class="para">
-                      <img src="http://i.imgur.com/EJ9EFSR.jpg" width="250" height="250">  
-                    </p>
-                  </li>
-
-                  <li class="lista">
-                    <p class="para">
-                      <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="50" height="50">
-                    </p>
-                    <p class="para">Carlo</p>
-                    <p class="para">
-                      <img src="http://i.imgur.com/Vu9xKxJ.jpg" width="250" height="250">  
-                    </p>
-                  </li>
-                  
-                  <li class="lista">
-                    <p class="para">
-                      <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="50" height="50">
-                    </p>
-                    <p class="para">Carlo</p>
-                    <p class="para">
-                      <img src="http://i.imgur.com/EJ9EFSR.jpg" width="250" height="250">  
-                    </p>
-                  </li>
-
-                </ul>
-              </div>  
-            </div>
+            ?>
 
           </div>
 
-  <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
@@ -263,6 +224,8 @@
           }
         });
     });
+
+      $('[id^="myCarousel"]').carousel();
     </script>      
     <?php $error = Session::get('error'); ?>
   @if(count($error)>0)
