@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\series;
-use App\seriesVideo;
-use App\genres;
-use App\seriesGenre;
-use App\videos;
+use App\Series;
+use App\SeriesVideo;
+use App\Genres;
+use App\SeriesGenre;
+use App\Video;
 use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
 use App\Forms\RegisterForm;
 use App\User;
-use App\token;
-use App\game;
-use App\gameGenre;
+use App\Token;
+use App\Game;
+use App\GameGenre;
 use Input;
 use Illuminate\Support\Facades\DB;
 

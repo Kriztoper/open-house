@@ -137,13 +137,13 @@
       <div class="modal-dialog">
 
     <!-- Modal content-->
-      <div class="modal-content bg modalSize">
-        <div class="modal-header">
+      <div class="modal-content modalSize bg">
+        <div id="head" class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Profile</h4>
         </div>
 
-        <div class="modal-body">
+        <div id="bud" class="modal-body">
           <form class="form-horizontal" role="form" method="POST" action="{{ url('/save_profile') }}">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <input type="text" class="form-control gap" name="first_name" placeholder="Enter First Name...">
@@ -160,5 +160,7 @@
 
     </div>
   </div>
+
+  
 
 </html>

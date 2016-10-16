@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
 use App\Forms\RegisterForm;
 use ValidatesRequests;
-use App\game;
+use App\Game;
 
 class GamesController extends Controller
 {
