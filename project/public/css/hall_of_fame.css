@@ -4,7 +4,7 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: url(http://i.imgur.com/GGoHfbW.jpg);
+	background: url(http://i.imgur.com/qqCLisG.jpg);
 	background-size: 100%;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -13,7 +13,7 @@ html {
 
 body {
 	background-color: transparent;
-	font-family: montserratregular;
+	font-family: lemonmilkregular;
 }
 
 @font-face {
@@ -32,10 +32,18 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h1 {
 	font-size: 40px;
-	color: black;
-	font-family: goboldregular;
+	color: white;
+	font-family: lemonmilkregular;
 	letter-spacing: 10px;
 	margin-top: 90px;
 	margin-bottom: 20px;
@@ -52,7 +60,7 @@ h1 {
 	text-align: center;
 	margin-bottom: 7px;
 	margin-top: 0px;
-	color: black;
+	color: white;
 	font-size: 20px;
 }
 
@@ -72,8 +80,8 @@ h1 {
 }
 
 .name {
-	font-family: goboldregular;
-	color: black;
+	font-family: lemonmilkregular;
+	color: white;
 	letter-spacing: 10px;
 	margin-top: 20px;
 	font-size: 30px;

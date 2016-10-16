@@ -3,7 +3,7 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url(http://i.imgur.com/TKRM2C1.gif);
+	background-image: url(http://i.imgur.com/9aL99EK.gif);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	-moz-background-size: cover;
@@ -41,8 +41,12 @@ body {
    position: fixed;
    right: 2.5%;
    bottom: 3%;
-   color: white;
-   opacity: 0.5;
+   filter: alpha(opacity=50);
+}
+
+.back:hover {
+	opacity: 1.0;
+    filter: alpha(opacity=100);
 }
 
 

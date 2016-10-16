@@ -93,7 +93,7 @@
           <p class="name para">CARLO</p>
         </div>
 
-        <h1>Most Videos Watched</h1>
+        <h1>Most Active Viewer</h1>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
