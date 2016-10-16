@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class userVideo extends Model
+class UserVideo extends Model
 {
     //
 }
