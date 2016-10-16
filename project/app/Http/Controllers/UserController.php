@@ -101,7 +101,7 @@ class UserController extends Controller
 
         }
         
-        return redirect('/dashboard');
+        return redirect()->back();
     }
     public function show_Time(){
         $timeConsumed= DB::table('time_Usage')->where('student_number','=',Auth::user()->student_number)->pluck('time_consumed');
@@ -116,5 +116,12 @@ class UserController extends Controller
     * @return video view
     *
     */
+
+    public function save_Profile(Request $request)
+    {
+        Auth::user()->update($request->all());
+        return Redirect::to('/profile');
+    }
 }
+
 ?>

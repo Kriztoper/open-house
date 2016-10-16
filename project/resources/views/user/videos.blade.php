@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/content.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" href="/css/modal.css" type="text/css">
 
 </head>
 <body>
@@ -105,14 +106,16 @@
 				<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">KOMSAY OPENHOUSE TOKEN GENERATOR</h4>
+						<img id="modal-logo" src="http://i.imgur.com/i4LQ5Bi.png" />
+						<img src="http://i.imgur.com/2ggNleD.jpg" />
+						<h4 class="modal-title"><strong>KOMSAI OPENHOUSE TOKEN GENERATOR</strong></h4>
 					</div>
 					<div class="modal-body">
 						<form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
 	            		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<center><button type="submit" class="btn btn-primary" id="modal-button">Get Tokens!!</button></center>
+						</form>
 					</div>
 				</div>
 			</div>

@@ -30,11 +30,12 @@ Route::get('/register'  , 'Auth\AuthController@getRegister');
 Route::post('/register' , 'Auth\AuthController@postRegister');
 
 // Routes for normal user
-Route::get('/dashboard'   , 'UserController@show_dashboard');
-Route::get('/hall_of_fame', 'UserController@show_hall_of_fame');
-Route::get('/profile'     , 'UserController@show_profile');
-Route::post('/tokens'	  , 'UserController@add_token');
-Route::get('/game'        , 'GamesController@listGames');
+Route::get('/dashboard'    , 'UserController@show_dashboard');
+Route::get('/hall_of_fame' , 'UserController@show_hall_of_fame');
+Route::get('/profile'      , 'UserController@show_profile');
+Route::post('/tokens'	   , 'UserController@add_token');
+Route::get('/game'         , 'GamesController@listGames');
+Route::post('/save_profile', 'UserController@save_Profile');
 
 // Admin routes
 Route::get('/admin'           , 'AdminController@show_dashboard');

@@ -1,9 +1,63 @@
+.modal{
+	padding-left:0px;
+	top: 13%;
+}
 
 .modal-body>form>input{
-	width:85%;
 	display:inline-block;
+	text-align: center;
+	border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-header{
+	padding:0px;
+	background-color: #222;
+	border-bottom: none;
+}
+
+.modal-header>img{
+	width:100%;
+}
+
+.modal-header>#modal-logo{	
+	height: 50%;
+	width:50%;
+	margin-left: 24%;
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.modal-header>div{
+	height: 50%;
+}
+
+.modal-header>h4{
+	color: white;
+	display: block;
+	padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .modal-title {
     font-family: montserratregular;
+	text-align: center;   	
+}
+
+.modal-body{
+	background-color: #ec462e;
+	border: solid 1px #ec462e;
+}
+
+#modal-button{
+	background-color: #ec462e;
+	border: solid 2px white;
+	color: white;
+	width: 30%;
+	border-radius: 20px;
+}
+.bg2 {
+	background-image: url(http://i.imgur.com/GzNK8IN.jpg);
+	color: white;
 }

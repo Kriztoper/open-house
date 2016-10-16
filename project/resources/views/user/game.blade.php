@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-fixed-top">
+	<nav id="top-navbar" class="navbar navbar-fixed-top">
 		<div class="container-fluid">
     		<div class="navbar-header">
     			<a class="navbar-brand" href="#">
@@ -51,7 +51,7 @@
 		<div class="container">
 				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
 				<div class="single-item">
-					<div class="slick-item"><a href="games/fourSquare/four.php"><img src="/images/Featured Games/Feature1.png"></a></div>
+					<div class="slick-item"><a href="{{ url('/buyGame/1') }}"><img src="/images/Featured Games/4square.png"></a></div>
 					<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
 					<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
 					<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
@@ -110,20 +110,20 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">KOMSAY OPENHOUSE TOKEN GENERATOR</h4>
+					<img id="modal-logo" src="http://i.imgur.com/i4LQ5Bi.png" />
+					<img src="http://i.imgur.com/2ggNleD.jpg" />
+					<h4 class="modal-title"><strong>KOMSAI OPENHOUSE TOKEN GENERATOR</strong></h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
-	           		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+            		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
+					<center><button type="submit" class="btn btn-primary" id="modal-button">Get Tokens!!</button></center>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<nav class="navbar navbar-fixed-bottom">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav navbar-right">
@@ -141,20 +141,6 @@
     	$('.single-item').slick({
     		dots: true
     	});
-    </script>
-    <script>
-    	jQuery(document).ready(function($) {
-  			$(window).scroll(function() {
-    			var scrollPos = $(window).scrollTop(),
-        		navbar = $('.navbar-fixed-top');
-
-    			if (scrollPos > 20) {
-      				navbar.addClass('change-color');
-    			} else {
-     				navbar.removeClass('change-color');
-    			}
-  			});
-		});
     </script>
 </body>
 </html>

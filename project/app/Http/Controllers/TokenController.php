@@ -91,7 +91,7 @@ class TokenController extends Controller
     /**
      * add tokens based on code input of the user
      *
-     * @return dashboard view
+     * @return curretnt page where the request was made
      */
     public function add_token(Request $request)
     {
@@ -122,7 +122,7 @@ class TokenController extends Controller
             ->update(['isActive'=>0]);
         }
         
-        return redirect('/dashboard');
+        return Redirect::back();
     }
 
     /**
@@ -133,27 +133,37 @@ class TokenController extends Controller
     *
     */
     public function buy_video($videoID) {
-        $newValue = Auth::user()->token - 5;
-        if ($newValue >= 0) {
-            $isVidBought = DB::table('uservideos')
+        $isVidBought = DB::table('uservideos')
             ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
             ->join('users', 'users.student_number', '=', 'uservideos.userID')
+
+            ->where('users.student_number', '=', Auth::user()->student_number)
             ->where('videos.videoID', '=', $videoID)
             ->get();
-
-            if (empty($isVidBought)) {
+        
+        if (empty($isVidBought)) {
+            $newValue = Auth::user()->token - 5;
+            if ($newValue >= 0) {
                 DB::table('uservideos')
                 ->insert(['videoID' => $videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
                 DB::table('users')
                 ->where('student_number', Auth::user()->student_number)
                 ->update(['token'=>$newValue]);
                 $path = DB::table('videos')
-                        ->where('videoID', $videoID)
-                        ->pluck('videoURL');
-                return redirect($path); //return to video
-            } 
+                    ->where('videoID', $videoID)
+                    ->pluck('videoURL');
+                return redirect($path);
+            }
+            $series = DB::table('series')
+                  ->join ('seriesvideo','seriesvideo.seriesID','=','series.seriesID')
+                  ->join ('videos','videos.videoID','=','seriesvideo.videoID')
+                  ->first();
+            return redirect('/list_video/'.$series->seriesID);   
         }
-        return views('/list_vid/'.$videoID); //return to videos page
+        $path = DB::table('videos')
+                ->where('videoID', $videoID)
+                ->pluck('videoURL');
+        return redirect($path);
     }
 
     /**
@@ -164,19 +174,29 @@ class TokenController extends Controller
     *
     */
     public function buy_game($gameID) {
-        
-        $newValue = Auth::user()->token - 5;
-        if ($newValue >= 0) {
-            DB::table('users')
-            ->where('student_number', Auth::user()->student_number)
-            ->update(['token'=>$newValue]);
-            $gamepath = DB::table('games')
-                        ->where('gameID', $gameID)
-                        ->pluck('gameURL');
-            return redirect($gamepath); //return to game proper
+        $isGameBought = DB::table('usergames')
+                        ->join('games', 'games.gameID', '=', 'usergames.gameID')
+                        ->join('users', 'users.student_number', '=', 'userGames.userID')
+                        ->where('users.student_number', '=', Auth::user()->student_number)
+                        ->where('videos.videoID', '=', $videoID)
+                        ->get();
+        if (empty($isGameBought)) {
+            $newValue = Auth::user()->token - 5;
+            if ($newValue >= 0) {
+                DB::table('users')
+                    ->where('student_number', Auth::user()->student_number)
+                    ->update(['token'=>$newValue]);
+                $gamepath = DB::table('games')
+                            ->where('gameID', $gameID)
+                            ->pluck('gameURL');
+                return redirect($gamepath); //return to game proper
+            }
+            return redirect('/game'); //return to game listing
         }
-        return redirect('/dashboard'); //return to dashboard
-
+        $gamepath = DB::table('games')
+                    ->where('gameID', $gameID)
+                    ->pluck('gameURL');
+        return redirect($gamepath);
     }
 }
 ?>

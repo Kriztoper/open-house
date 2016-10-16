@@ -3,7 +3,7 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url(http://i.imgur.com/gK6iSXP.jpg);
+	background-image: url(http://i.imgur.com/a67ps11.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	-moz-background-size: cover;
@@ -42,7 +42,7 @@ body {
    right: 2.5%;
    bottom: 3%;
    color: white;
-   opacity: 0.2;
+   opacity: 0.5;
 }
 
 
@@ -50,7 +50,7 @@ body {
 	font-family: goboldregular;
 	font-size: 70px;
 	letter-spacing: 30px;
-	color: white;
+	color: #333333;
 	background: none;
 }
 
@@ -58,7 +58,7 @@ body {
 	font-family: goboldregular;
 	font-size: 20px;
 	letter-spacing: 5px;
-	color: white;
+	color: #333333;
 }
 
 .pic {
