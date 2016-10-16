@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Series;
 use App\SeriesVideo;
-use App\Genres;
+use App\Genre;
 use App\SeriesGenre;
 use App\Video;
 use App\Http\Controllers\Controller;
@@ -31,13 +31,11 @@ class AdminController extends Controller
     *   @return view addSeries
     */
     public function saveSeries(Request $request){
-        $series = new Series;
-        $series->seriesName = $request->seriesName;
-        $series->seriesDesc = $request->seriesDesc;
-        $series->thumbnail = $request->thumbnail;
-        $series->fthumbnail = "".$request->thumbnail." 950";
-        $series->save();
-        
+        //creating new series in series table
+        $data = $request->all();
+        $data['fthumbnail'] = "".$request->thumbnail." 950";
+        $series = Series::create($data);
+        //get all series with the said extentions
         $vids= glob("vids/".$request->seriesName."/*.mp4" );
         if(count($vids)<1){
             $vids=glob("vids/".$request->seriesName."/*.flv" );
@@ -45,16 +43,26 @@ class AdminController extends Controller
                 $vids=glob("vids/".$request->seriesName."/*.mkv");
             }
         }
+        //
         for($i=0;$i<count($vids);$i++){
-              $videos = new videos;
-            $videos->videoName = $series->seriesName." Episode ".($i+1);
-            $videos->videoDesc = "Episode ".($i+1)." of the series:".$series->seriesName;
-            $videos->videoURL = $vids[$i];
-            $videos->save();
-            $seriesVideo = new seriesVideo;
-            $seriesVideo->seriesID = $series->id;
-            $seriesVideo->videoID = $videos->id;
-            $seriesVideo->save();
+            $video_data['videoName'] = $series->seriesName." Episode ".($i+1);
+            $video_data['videoDesc'] = "Episode ".($i+1)." of the series:".$series->seriesName;
+            $video_data['videoURL'] = $vids[$i];
+            $video = Video::create($video_data);
+            print($video);
+            exit;
+            // $videos = new videos;
+            // $videos->videoName = $series->seriesName." Episode ".($i+1);
+            // $videos->videoDesc = "Episode ".($i+1)." of the series:".$series->seriesName;
+            // $videos->videoURL = $vids[$i];
+            // $videos->save();
+            $seriesVideo_data['seriesID'] = $series->id;
+            $seriesVideo_data['videoID'] = $videos->id;
+            SeriesVideo::create($seriesVideo_data);
+            // $seriesVideo = new seriesVideo;
+            // $seriesVideo->seriesID = $series->id;
+            // $seriesVideo->videoID = $videos->id;
+            // $seriesVideo->save();
         }
         return view('admin.addSeries');
     }
@@ -66,11 +74,15 @@ class AdminController extends Controller
     */
     
     public function saveGenre(Request $request){
-        $genres = new genres;
-        $genres->genreName = $request->genreName;
-        $genres->genreDesc = $request->genreDesc;
-        $genres->save();
-        $data = ['videos' => $genres->genreName ];
+        $data = $request->all();
+        Genre::create($data);
+
+        // $genres = new genre;
+        // $genres->genreName = $request->genreName;
+        // $genres->genreDesc = $request->genreDesc;
+        // $genres->save();
+
+        // $data = ['videos' => $genre->genreName ];
         return view('admin.addGenre',$data);
     }
     /**
