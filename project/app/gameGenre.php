@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class GameGenre extends Model
 {
-    //
+    protected $fillable = ['gameID', 'genreID'];
+    public $timestamps = false;
 }
