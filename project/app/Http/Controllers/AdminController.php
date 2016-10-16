@@ -43,17 +43,15 @@ class AdminController extends Controller
                 $vids=glob("vids/".$request->seriesName."/*.mkv");
             }
         }
-        //
+        //get all videos of the series
         for($i=0;$i<count($vids);$i++){
             $video_data['videoName'] = $series->seriesName." Episode ".($i+1);
             $video_data['videoDesc'] = "Episode ".($i+1)." of the series:".$series->seriesName;
             $video_data['videoURL'] = $vids[$i];
             $video = Video::create($video_data);
-            
             $seriesVideo_data['seriesID'] = $series->id;
             $seriesVideo_data['videoID'] = $video->id;
             $series_video = SeriesVideo::create($seriesVideo_data);
-
         }
         return view('admin.addSeries');
     }
@@ -63,18 +61,10 @@ class AdminController extends Controller
     *   Create a new Genre for videos
      *   @return view addGenre
     */
-    
     public function saveGenre(Request $request){
         $data = $request->all();
         Genre::create($data);
-
-        // $genres = new genre;
-        // $genres->genreName = $request->genreName;
-        // $genres->genreDesc = $request->genreDesc;
-        // $genres->save();
-
-        // $data = ['videos' => $genre->genreName ];
-        return view('admin.addGenre',$data);
+        return view('admin.addGenre');
     }
     /**
     *   Get all genre from the database and sends the view to seriesGenre
@@ -82,8 +72,7 @@ class AdminController extends Controller
      *   @return view sortGenre
     */
     public function getGenre(){
-        $genres = DB::table('genres')->get();
-        
+        $genres = Genre::all();
         return view('admin.sortGenre',['genres' => $genres]);
     }
     /**
