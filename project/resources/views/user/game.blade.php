@@ -125,6 +125,8 @@
 				<div class="modal-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
             		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+            		<center><h6 id="error_message" hidden color="white"> Token code is not valid. Please purchase it at the administrator and 
+            		try again!! </h6></center>
 					<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 					<center><button type="submit" class="btn btn-primary" id="modal-button">Get Tokens!!</button></center>
 					</form>
@@ -144,5 +146,15 @@
     		dots: true
     	});
     </script>
+    <?php $error = Session::get('error'); ?>
+	@if(count($error)>0)
+	<script>
+	$(function()
+		{
+			$('#myModal').modal({show:true});
+			$('h6').show();
+	});
+	</script>
+	@endif
 </body>
 </html>

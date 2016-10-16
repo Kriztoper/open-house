@@ -89,7 +89,7 @@ class UserController extends Controller
      *
      * @return view
      */
-    public function saveGameStart(){
+    public function saveGameStart($gameId){
         $starter=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
 
@@ -101,6 +101,7 @@ class UserController extends Controller
         }else{
               DB::table('gameTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
         }
+        return view('/playGame/'.$gameID);
     }
     public function saveGameEnd(){
         $ender=(int)(microtime(true));
@@ -110,28 +111,41 @@ class UserController extends Controller
         $total=DB::table('gameTime')->where('studentNumber',$sNumber)->pluck('totalTime');
         $total=$total+$current;
         DB::table('gameTime')->where('studentNumber',$sNumber)->update(['totalTime'=>$total,'timeStart'=>0,'timeOut'=>0]);
+        return view('/game');
     }
 
-    public function saveVideoStart(){
+    public function saveVideoStart($videoPath){
         $starter=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
         $user=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('studentNumber');
         if(empty($user)){
                 DB::table('videoTime')->insert([
-                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'totalTime'=>0],
+                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'KDRAMA'=>0,'ANIME'=>0],
                 ]); 
         }else{
              DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
         }
+        return view('watch_video',['videos'=>$videoPath]);
+
     }
-    public function saveVideoEnd(){
+    public function saveVideoEnd($genre){
         $ender=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
         $starter=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('timeStart');
         $current=$ender-$starter;
-        $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('totalTime');
-        $total=$total+$current;
-        DB::table('videoTime')->where('studentNumber',$sNumber)->update(['totalTime'=>$total,'timeStart'=>0,'timeOut'=>0]);
+        
+       
+        if($genre==1){
+            $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('ANIME');
+            $total=$total+$current;
+            DB::table('videoTime')->where('studentNumber',$sNumber)->update(['ANIME'=>$total,'timeStart'=>0,'timeOut'=>0]);
+        }else if($genre==2){
+            $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('KDRAMA');
+            $total=$total+$current;
+            DB::table('videoTime')->where('studentNumber',$sNumber)->update(['KDRAMA'=>$total,'timeStart'=>0,'timeOut'=>0]);
+        }
+
+       return view('/videos');
     }
 
     public function add_token(Request $request)
@@ -146,16 +160,11 @@ class UserController extends Controller
             $newValue = $currentTokens + $tokenValue;
             DB::table('users')->where('student_number', Auth::user()->student_number)->update(['token'=>(int)$newValue]);
             DB::table('tokens')->where('tokenName', $request->token_code)->update(['isActive'=>0]);
-
+        }else{
+            return Redirect::back()->with('error','not valid token code');
         }
         
         return redirect()->back();
-    }
-    public function show_Time(){
-        $timeConsumed= DB::table('time_Usage')->where('student_number','=',Auth::user()->student_number)->pluck('time_consumed');
-
-        return view('user.time')->with('timeConsumed',$timeConsumed);
-    
     }
     /**
     * 

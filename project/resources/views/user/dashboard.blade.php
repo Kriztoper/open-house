@@ -16,7 +16,6 @@
 
 </head>
 <body>
-
 	<div class="container">
 		<nav id="top-navbar" class="navbar navbar-fixed-top">
 			<div class="container-fluid">
@@ -88,6 +87,8 @@
 				<div class="modal-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
             		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+            		<center><h6 id="error_message" hidden color="white"> Token code is not valid. Please purchase it at the administrator and 
+            		try again!! </h6></center>
 					<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 					<center><button type="submit" class="btn btn-primary" id="modal-button">Get Tokens!!</button></center>
 					</form>
@@ -95,12 +96,22 @@
 			</div>
 		</div>
 	</div>
-
-
+	<!-- #e74c3c -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<script type="text/javascript" src="js/bodyslide.js"></script>
+
+	<?php $error = Session::get('error'); ?>
+	@if(count($error)>0)
+	<script>
+	$(function()
+		{
+			$('#myModal').modal({show:true});
+			$('h6').show();
+	});
+	</script>
+	@endif
 </body>
 </html>

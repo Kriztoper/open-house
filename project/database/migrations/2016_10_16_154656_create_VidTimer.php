@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGamerTimer extends Migration
+class CreateVidTimer extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,13 @@ class CreateGamerTimer extends Migration
      */
     public function up()
     {
-         Schema::create('gameTime', function (Blueprint $table) {
+         Schema::create('videoTime', function (Blueprint $table) {
             $table->integer('studentNumber');
             $table->integer('timeStart');
             $table->integer('timeOut');
-            $table->integer('totalTime'); 
-          }); 
+            $table->integer('KDRAMA');
+            $table->integer('ANIME'); 
+          });  
     }
 
     /**
@@ -27,5 +28,6 @@ class CreateGamerTimer extends Migration
      */
     public function down()
     {
-        Schema::drop('gameTime');    }
+       Schema::drop('videoTime');   
+    }
 }
