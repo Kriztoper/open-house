@@ -106,12 +106,16 @@
 			  				</a>
 			  			</div>
 			  		</div>
+
 			  		@endforeach
 				</div>
 			</div>
 		</div>
 		
-		
+		<br>
+		<br>
+		<br>
+		<br>
 	<!-- Modal for token -->
 	<div id="myModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">

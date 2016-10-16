@@ -101,7 +101,7 @@ class UserController extends Controller
         }else{
               DB::table('gameTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
         }
-        return view('/playGame/'.$gameID);
+        return redirect('/playGame/'.$gameId);
     }
     public function saveGameEnd(){
         $ender=(int)(microtime(true));
