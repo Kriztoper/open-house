@@ -120,10 +120,12 @@ class AdminController extends Controller
         if(count($games)<1){
             $games=glob("games/".$request->gameName."/*.jar" );
             if(count($games)>=1){
+                $game->className = $request->className;
+                $game->isJar =1;
+            } 
                 $data['className'] = $request->className;
                 $data['isJar']     = 1 ;
             }
-        }
         else{
             $data['className'] = 'NONE';
             $data['isJar']     = 0 ;

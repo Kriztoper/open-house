@@ -16,6 +16,7 @@
 
 </head>
 <body>
+
 	<nav class="navbar navbar-fixed-top">
 			<div class="container-fluid">
     			<div class="navbar-header">
@@ -44,13 +45,6 @@
         				</ul>
       				</li>
 	    		</ul>
-	    		<nav class="navbar navbar-fixed-bottom">
-					<div class="container-fluid">
-						<ul class="nav navbar-nav navbar-right navbar-xs">
-							<li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
-						</ul>
-					</div>
-				</nav>
   			</div>
 		</nav>
 
@@ -119,6 +113,8 @@
 					<div class="modal-body">
 						<form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
 	            		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	            		<center><h6 id="error_message" hidden color="white"> Token code is not valid. Please purchase it at the administrator and 
+            		try again!! </h6></center>
 						<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 						<center><button type="submit" class="btn btn-primary" id="modal-button">Get Tokens!!</button></center>
 						</form>
@@ -126,7 +122,15 @@
 				</div>
 			</div>
 		</div>
-	
+		
+		<nav class="navbar navbar-fixed-bottom">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">ABOUT THE DEVELOPERS</a></li>
+				</ul>
+			</div>
+		</nav>
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
@@ -151,5 +155,15 @@
   			});
 		});
     </script>
+    <?php $error = Session::get('error'); ?>
+	@if(count($error)>0)
+	<script>
+	$(function()
+		{
+			$('#myModal').modal({show:true});
+			$('h6').show();
+	});
+	</script>
+	@endif
 </body>
 </html>
