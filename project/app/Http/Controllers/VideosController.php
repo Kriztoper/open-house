@@ -10,10 +10,10 @@ use Kris\LaravelFormBuilder\FormBuilderTrait;
 use App\Forms\RegisterForm;
 use ValidatesRequests;
 use App\User;
-use App\series;
-use App\seriesVideo;
-use App\videos;
-use App\userVideo;
+use App\Series;
+use App\SeriesVideo;
+use App\Video;
+use App\UserVideo;
 
 class VideosController extends Controller
 {
