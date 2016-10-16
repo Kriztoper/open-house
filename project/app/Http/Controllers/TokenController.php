@@ -137,8 +137,7 @@ class TokenController extends Controller
         if ($newValue >= 0) {
             $isVidBought = DB::table('uservideos')
             ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
-            ->join('users', 'users.user_ID', '=', 'uservideos.userID')
-            ->where('users.user_ID', '=', Auth::user()->student_number)
+            ->join('users', 'users.student_number', '=', 'uservideos.userID')
             ->where('videos.videoID', '=', $videoID)
             ->get();
 
