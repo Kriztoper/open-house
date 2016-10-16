@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVideoTime extends Migration
+class CreateVidTimer extends Migration
 {
     /**
      * Run the migrations.
@@ -16,8 +16,9 @@ class CreateVideoTime extends Migration
             $table->integer('studentNumber');
             $table->integer('timeStart');
             $table->integer('timeOut');
-            $table->integer('totalTime'); 
-        }); 
+            $table->integer('KDRAMA');
+            $table->integer('ANIME'); 
+          });  
     }
 
     /**
@@ -27,6 +28,6 @@ class CreateVideoTime extends Migration
      */
     public function down()
     {
-      Schema::drop('videoTime');   
+       Schema::drop('videoTime');   
     }
 }
