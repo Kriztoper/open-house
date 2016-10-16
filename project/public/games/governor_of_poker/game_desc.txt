@@ -1,1 +1,0 @@
-Play a game of Poker with other computer players as you try to win all their money.

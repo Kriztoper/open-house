@@ -89,7 +89,7 @@ class UserController extends Controller
      *
      * @return view
      */
-    public function saveGameStart(){
+    public function saveGameStart($gameId){
         $starter=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
 
@@ -101,6 +101,7 @@ class UserController extends Controller
         }else{
               DB::table('gameTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
         }
+        return view('/playGame/'.$gameID);
     }
     public function saveGameEnd(){
         $ender=(int)(microtime(true));
@@ -110,9 +111,10 @@ class UserController extends Controller
         $total=DB::table('gameTime')->where('studentNumber',$sNumber)->pluck('totalTime');
         $total=$total+$current;
         DB::table('gameTime')->where('studentNumber',$sNumber)->update(['totalTime'=>$total,'timeStart'=>0,'timeOut'=>0]);
+        return view('/game');
     }
 
-    public function saveVideoStart(){
+    public function saveVideoStart($videoPath){
         $starter=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
         $user=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('studentNumber');
@@ -123,6 +125,8 @@ class UserController extends Controller
         }else{
              DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
         }
+        return view('watch_video',['videos'=>$videoPath]);
+
     }
     public function saveVideoEnd(){
         $ender=(int)(microtime(true));
@@ -132,6 +136,8 @@ class UserController extends Controller
         $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('totalTime');
         $total=$total+$current;
         DB::table('videoTime')->where('studentNumber',$sNumber)->update(['totalTime'=>$total,'timeStart'=>0,'timeOut'=>0]);
+
+        return view('/videos');
     }
 
     public function add_token(Request $request)
@@ -150,12 +156,6 @@ class UserController extends Controller
         }
         
         return redirect('/dashboard');
-    }
-    public function show_Time(){
-        $timeConsumed= DB::table('time_Usage')->where('student_number','=',Auth::user()->student_number)->pluck('time_consumed');
-
-        return view('user.time')->with('timeConsumed',$timeConsumed);
-    
     }
     /**
     * 

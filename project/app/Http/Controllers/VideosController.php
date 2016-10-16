@@ -91,7 +91,7 @@ class VideosController extends Controller
       $videos = DB::table('videos')->where('videoID',$id)->first();
       /*$seriesVideo = DB::table('seriesVideo')->where('seriesID',$id)->get();
         $listOfVideos = DB::table('videos')->whereIn('videosID',$serVideo)->get();*/
-      return view('watch_video',['videos'=>$videos]);
+      return view('/startVideo/'.$videos);
   }
 
   // routes for views
