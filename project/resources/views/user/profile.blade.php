@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/profile.css" type="text/css">
-    <link rel="stylesheet" href="/css/navbar.css" type="text/css">
-    <link rel="stylesheet" href="/css/modal.css" type="text/css">
+    <link rel="stylesheet" href="css/profile.css" type="text/css">
+    <link rel="stylesheet" href="css/gamenavbar.css" type="text/css">
+    <link rel="stylesheet" href="css/modal.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -35,9 +35,9 @@
               <li><a href="{{ url('/game') }}">GAMES</a></li>
               <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button">{{ strtoupper(Auth::user()->first_name) }}
                 <span class="caret"></span></a>
-                <ul class="dropdown-menu dropdown-menu-left col-xs-12">
+                <ul class="dropdown-menu dropdown-menu-right col-xs-12">
                     <li><a href="{{url('/profile')}}">PROFILE</a></li>
                     <li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
                     <li role="separator" class="divider"></li>
