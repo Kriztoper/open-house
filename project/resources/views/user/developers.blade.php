@@ -12,7 +12,7 @@
     </head>
   <body>
 
-      <div class="back"><a href="{{ url('/dashboard') }}"><img src="http://i.imgur.com/T6dxHkR.png" width="50" height="50"></a></div>
+      <div class="back"><a href="{{ url('/dashboard') }}">DASHBOARD</a></div>
       <h1 class="jumbotron Absolute-Center"><img src="http://i.imgur.com/i4LQ5Bi.png" class="gap">DEVELOPERS</h1>
 
       <div>
