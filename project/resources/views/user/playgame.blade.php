@@ -52,12 +52,12 @@
 
 				<object>
             	<param name="game" value="{{url(''.$game->gameURL)}}">
-            	<embed src="{{ url(''.$game->gameURL) }}" width="{{$game->width}}" height="{{$game->height}}">
+            	<embed src="{{ url(''.$game->gameURL) }}" width="1200" height="1500">
         		</object>
 			</div>		
 		@elseif	($game->isJar==1)	
 			<div style="width=565px;margin:0 auto;">
-    			<applet code="{{$game->className}}" archive="{{url(''.$game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
+    			<applet code="{{$game->className}}" archive="{{url($game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
     			</applet>
     		</div> 
 		@endif

@@ -74,6 +74,8 @@ Route::get('/buyGame/{gameID}', 'TokenController@buy_game');
 
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
+//This is a test
+Route::get('/testChat' , 'ChatController@testChat');
 
 ?>
 
