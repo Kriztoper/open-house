@@ -65,13 +65,12 @@ Route::get('/videos'          , 'VideosController@listSeries');
 
 //Time_Usage
 Route::get('/startGame'           , 'UserController@saveGameStart');
-Route::get('/exitGame'            ,   'UserController@saveGameEnd');   
-Route::get('/startVideo'          ,'UserController@saveVideoStart');   
-Route::get('/exitVideo'           ,  'UserController@saveVideoEnd');               
+Route::get('/exitGame'            , 'UserController@saveGameEnd');   
+Route::get('/startVideo'          , 'UserController@saveVideoStart');   
+Route::get('/exitVideo'           , 'UserController@saveVideoEnd');               
 /*the next two lines are temporary, used for testing*/
 Route::get('/buyVid/{videoID}', 'TokenController@buy_video');
 Route::get('/buyGame/{gameID}', 'TokenController@buy_game');
-
 
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
