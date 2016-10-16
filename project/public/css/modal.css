@@ -50,6 +50,10 @@
 	border: solid 1px #ec462e;
 }
 
+.modal-body h6{
+	color:yellow;
+}
+
 #modal-button{
 	background-color: #ec462e;
 	border: solid 2px white;

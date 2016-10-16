@@ -160,7 +160,8 @@ class UserController extends Controller
             $newValue = $currentTokens + $tokenValue;
             DB::table('users')->where('student_number', Auth::user()->student_number)->update(['token'=>(int)$newValue]);
             DB::table('tokens')->where('tokenName', $request->token_code)->update(['isActive'=>0]);
-
+        }else{
+            return Redirect::back()->with('error','not valid token code');
         }
         
         return redirect()->back();
