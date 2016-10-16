@@ -33,7 +33,7 @@ Route::post('/register' , 'Auth\AuthController@postRegister');
 Route::get('/dashboard'    , 'UserController@show_dashboard');
 Route::get('/hall_of_fame' , 'UserController@show_hall_of_fame');
 Route::get('/profile'      , 'UserController@show_profile');
-Route::post('/tokens'	   , 'UserController@add_token');
+Route::post('/tokens'	     , 'UserController@add_token');
 Route::get('/game'         , 'GamesController@listGames');
 Route::post('/save_profile', 'UserController@save_Profile');
 
@@ -52,6 +52,7 @@ Route::post('/adminsGenre'    , 'AdminController@saveGenre');
 Route::post('/adminSortsGenre', 'AdminController@sortGenre');
 Route::post('/addToken'       , 'AdminController@generateToken');
 Route::get('/playGame/{id}'   , 'GamesController@playGame');
+Route::get('/listToken'      , 'AdminController@tokenList');
 
 // video functionality
 Route::get('/series_list'     , 'VideosController@listSeries');

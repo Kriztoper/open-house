@@ -21,6 +21,7 @@
         <a href={{url('/adminGame')}}>Game</a>
         <a href={{url('/adminToken')}}>Token</a>
         <a href={{url('/adminGameGenre')}}>Games Genre</a>
+        <a href={{url('/listToken')}}>TOKEN LIST</a>
      </p>
 </body>
 </html>

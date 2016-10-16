@@ -38,13 +38,11 @@ class VideosController extends Controller
   {
 
       //$user = Auth::user();
-      
-      $anime = DB::table('series')
-                ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                ->join('genres','seriesGenres.genreID','=','genres.genreID')
-                ->select('series.*')
-                ->where('genres.genreName','Anime')
-                ->get();
+      $anime = Series::join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
+                       ->join('genres','seriesGenres.genreID','=','genres.genreID')
+                       ->select('series.*')
+                       ->where('genres.genreName','Anime')
+                       ->get();
        $featuredContent = DB::table('series')
                 ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
                 ->join('genres','seriesGenres.genreID','=','genres.genreID')
@@ -57,31 +55,23 @@ class VideosController extends Controller
                 ->select('series.*')
                 ->where('genres.genreName','K-Drama')
                 ->get();
-       $mostBought = DB::table('series')
-                ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                ->join('genres','seriesGenres.genreID','=','genres.genreID')
-                ->select('series.*')
-                ->where('genres.genreName','Most Bought')
-                ->get();
       /*$popularSeries = DB::table('series')
                       ->join('seriesVideo','series.seriesID','=','seriesVideo.seriesID')
                       ->join('userVideos','userVideos.videoID','=','seriesVideo.videoID')
                       ->select('series.*')
                       ->get();*/
-      print($featuredContent);
-       exit();
-      return view('user.videos',['anime' => $anime,'featuredContent' => $featuredContent,'kDrama' => $kDrama,'mostBought' =>  $mostBought]);
+      return view('user.videos',['anime' => $anime,'featuredContent' => $featuredContent,'kDrama' => $kDrama]);
   }
   /**
   *   List all videos of a series (episodes)
   */
    public function listVideos($id){
-       $seriesVideo = DB::table('seriesVideo')->where('seriesID', $id)->get();
-       $series = DB::table('series')->where('seriesID',$id)->first();
+       $seriesVideo = SeriesVideo::where('seriesID',$id)->get();
+       $series = Series::where('seriesID',$id)->first();
        foreach($seriesVideo as $serVid){
            $serVideo[] = $serVid->videoID;
        }
-       $videos = DB::table('videos')->whereIn('videoID',$serVideo)->get();
+       $videos = Video::whereIn('videoID',$serVideo)->get();
 
        return view('list_vid',['videos'=>$videos, 'series'=>$series]);
   }
@@ -89,7 +79,7 @@ class VideosController extends Controller
   *   Return the video(episode) clicked by the user.
   */
   public function watchVideos($id){
-      $videos = DB::table('videos')->where('videoID',$id)->first();
+      $videos = Video::where('videoID',$id)->first();
       /*$seriesVideo = DB::table('seriesVideo')->where('seriesID',$id)->get();
         $listOfVideos = DB::table('videos')->whereIn('videosID',$serVideo)->get();*/
       return view('watch_video',['videos'=>$videos]);
