@@ -26,6 +26,6 @@ class CreateUserGamesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('userGames');
+       Schema::drop('userGames');
     }
 }

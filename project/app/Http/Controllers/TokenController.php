@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\token;
+use App\Token;
 //use App\User;
 
 class TokenController extends Controller
@@ -143,6 +143,15 @@ class TokenController extends Controller
             ->get();
 
             if (empty($isVidBought)) {
+            ->join('users', 'users.student_number', '=', 'uservideos.userID')
+
+            ->where('users.student_number', '=', Auth::user()->student_number)
+            ->where('videos.videoID', '=', $videoID)
+            ->get();
+        
+        if (empty($isVidBought)) {
+            $newValue = Auth::user()->token - 5;
+            if ($newValue >= 0) { 
                 DB::table('uservideos')
                 ->insert(['videoID' => $videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
                 DB::table('users')
@@ -153,6 +162,15 @@ class TokenController extends Controller
                         ->pluck('videoURL');
                 return redirect($path); //return to video
             } 
+                    ->where('videoID', $videoID)
+                    ->pluck('videoURL');
+                return redirect($path);
+            }
+            $series = DB::table('series')
+                  ->join ('seriesvideo','seriesvideo.seriesID','=','series.seriesID')
+                  ->join ('videos','videos.videoID','=','seriesvideo.videoID')
+                  ->first();
+            return redirect('/list_video/'.$series->seriesID);   
         }
         return views('/list_vid/'.$videoID); //return to videos page
     }
@@ -178,6 +196,29 @@ class TokenController extends Controller
         }
         return redirect('/dashboard'); //return to dashboard
 
+        $isGameBought = DB::table('usergames')
+                        ->join('games', 'games.gameID', '=', 'usergames.gameID')
+                        ->join('users', 'users.student_number', '=', 'userGames.userID')
+                        ->where('users.student_number', '=', Auth::user()->student_number)
+                        ->where('games.gameID', '=', $gameID)
+                        ->get();
+        if (empty($isGameBought)) {
+            $newValue = Auth::user()->token - 5;
+            if ($newValue >= 0) {
+                DB::table('users')
+                    ->where('student_number', Auth::user()->student_number)
+                    ->update(['token'=>$newValue]);
+                $gamepath = DB::table('games')
+                            ->where('gameID', $gameID)
+                            ->pluck('gameURL');
+                return redirect('/playGame/'.$gameID); //return to game proper
+            }
+            return redirect('/game'); //return to game listing
+        }
+        $gamepath = DB::table('games')
+                    ->where('gameID', $gameID)
+                    ->pluck('gameURL');
+        return redirect('/playGame/'.$gameID);
     }
 }
 ?>

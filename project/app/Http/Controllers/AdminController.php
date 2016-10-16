@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\series;
-use App\seriesVideo;
-use App\genres;
-use App\seriesGenre;
-use App\videos;
+use App\Series;
+use App\SeriesVideo;
+use App\Genre;
+use App\SeriesGenre;
+use App\Video;
 use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
 use App\Forms\RegisterForm;
 use App\User;
-use App\token;
-use App\game;
-use App\gameGenre;
+use App\Token;
+use App\Game;
+use App\GameGenre;
 use Input;
 use Illuminate\Support\Facades\DB;
 
@@ -31,13 +31,11 @@ class AdminController extends Controller
     *   @return view addSeries
     */
     public function saveSeries(Request $request){
-        $series = new Series;
-        $series->seriesName = $request->seriesName;
-        $series->seriesDesc = $request->seriesDesc;
-        $series->thumbnail = $request->thumbnail;
-        $series->fthumbnail = "".$request->thumbnail." 950";
-        $series->save();
-        
+        //creating new series in series table
+        $data = $request->all();
+        $data['fthumbnail'] = "".$request->thumbnail." 950";
+        $series = Series::create($data);
+        //get all series with the said extentions
         $vids= glob("vids/".$request->seriesName."/*.mp4" );
         if(count($vids)<1){
             $vids=glob("vids/".$request->seriesName."/*.flv" );
@@ -45,16 +43,15 @@ class AdminController extends Controller
                 $vids=glob("vids/".$request->seriesName."/*.mkv");
             }
         }
+        //get all videos of the series
         for($i=0;$i<count($vids);$i++){
-              $videos = new videos;
-            $videos->videoName = $series->seriesName." Episode ".($i+1);
-            $videos->videoDesc = "Episode ".($i+1)." of the series:".$series->seriesName;
-            $videos->videoURL = $vids[$i];
-            $videos->save();
-            $seriesVideo = new seriesVideo;
-            $seriesVideo->seriesID = $series->id;
-            $seriesVideo->videoID = $videos->id;
-            $seriesVideo->save();
+            $video_data['videoName'] = $series->seriesName." Episode ".($i+1);
+            $video_data['videoDesc'] = "Episode ".($i+1)." of the series:".$series->seriesName;
+            $video_data['videoURL'] = $vids[$i];
+            $video = Video::create($video_data);
+            $seriesVideo_data['seriesID'] = $series->id;
+            $seriesVideo_data['videoID'] = $video->id;
+            $series_video = SeriesVideo::create($seriesVideo_data);
         }
         return view('admin.addSeries');
     }
@@ -64,14 +61,10 @@ class AdminController extends Controller
     *   Create a new Genre for videos
      *   @return view addGenre
     */
-    
     public function saveGenre(Request $request){
-        $genres = new genres;
-        $genres->genreName = $request->genreName;
-        $genres->genreDesc = $request->genreDesc;
-        $genres->save();
-        $data = ['videos' => $genres->genreName ];
-        return view('admin.addGenre',$data);
+        $data = $request->all();
+        Genre::create($data);
+        return view('admin.addGenre');
     }
     /**
     *   Get all genre from the database and sends the view to seriesGenre
@@ -79,8 +72,7 @@ class AdminController extends Controller
      *   @return view sortGenre
     */
     public function getGenre(){
-        $genres = DB::table('genres')->get();
-        
+        $genres = Genre::all();
         return view('admin.sortGenre',['genres' => $genres]);
     }
     /**
@@ -88,16 +80,14 @@ class AdminController extends Controller
     *   Set the genre of a video from the forms
      *   @return view sortGenre
     */
-    
     public function sortGenre(Request $request){
-        $series = DB::table('series')->where('seriesName', $request->seriesName)->first();
-        $genres = DB::table('genres')->get();
+        $series = Series::where('seriesName',$request->seriesName)->first();
+        $genres = Genre::all();
         $genresChecked = Input::get('values');
         foreach($genresChecked as $gen){
-            $seriesGenre = new seriesGenre;
-            $seriesGenre->videoID = $series->seriesID;
-            $seriesGenre->genreID = $gen;
-            $seriesGenre->save();
+            $seriesGenre_data['videoID'] = $series->seriesID;
+            $seriesGenre_data['genreID'] = $gen;
+            SeriesGenre::create($seriesGenre_data);
         }   
         return view('admin.sortGenre',['genres' => $genres]);
     }
@@ -107,14 +97,13 @@ class AdminController extends Controller
     *   
     */
     public function sortGameGenre(Request $request){
-        $game = DB::table('games')->where('gameName',$request->gameName)->first();
-        $genres = DB::table('genres')->get();
+        $game   = Game::where('gameName',$request->gameName)->first();
+        $genres = Genre::all();
         $genresChecked = Input::get('values');
         foreach($genresChecked as $gen){
-            $gameGenres = new gameGenre;
-            $gameGenres->gameID = $game->gameID;
-            $gameGenres->genreID = $gen;
-            $gameGenres->save();
+            $gameGenres_data['gameID']  = $game->gameID;
+            $gameGenres_data['genreID'] = $gen;
+            GameGenre::create($gameGenres_data);
         }
         return view('admin.sortGameGenre',['genres'=>$genres]);
     }
@@ -124,11 +113,9 @@ class AdminController extends Controller
      *   @return view addGames
     */
     public function addGame(Request $request){
-        $game = new game;
-        $game->gameName = $request->gameName;
-        $game->gameDesc = $request->gameDesc;
-        $game->thumbnail = "images/Games/".$request->thumbnail.".png";
-        $game->fthumbnail = "images/Featured Games/".$request->fthumbnail.".png";
+        $data = $request->all();
+        $data['thumbnail']  = "images/Games/".$request->thumbnail.".png";
+        $data['fthumbnail'] = "images/Featured Games/".$request->fthumbnail.".png";
         $games= glob("games/".$request->gameName."/*.swf" );
         if(count($games)<1){
             $games=glob("games/".$request->gameName."/*.jar" );
@@ -136,16 +123,16 @@ class AdminController extends Controller
                 $game->className = $request->className;
                 $game->isJar =1;
             } 
+                $data['className'] = $request->className;
+                $data['isJar']     = 1 ;
+            }
         }
         else{
-            $game->className = "NONE";
-            $game->isJar = 0;
+            $data['className'] = 'NONE';
+            $data['isJar']     = 0 ;
         }
-        $game->gameURL = $games[0];
-        $game->save();
-        
-
-        
+        $data['gameURL'] = $games[0];
+        Game::create($data);
         return view('admin.addGames');
     }
     /**
@@ -153,8 +140,7 @@ class AdminController extends Controller
     *   @return view addSeries 
     */
     public function getGameGenre(){
-        $genres = DB::table('genres')->get();
-        
+        $genres = Genre::all();
         return view('admin.sortGameGenre',['genres' => $genres]);
 
     }
@@ -201,7 +187,7 @@ class AdminController extends Controller
     public function show_add_games(){
         return view('admin.addGames');
     }
-    public function show_add_token(){
+    public function show_add_tokens(){
         return view('admin.addToken');
     }
 }

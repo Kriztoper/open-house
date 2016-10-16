@@ -22,6 +22,8 @@ class CreateGamesTable extends Migration
            $table->String('fthumbnail');
            $table->String('className');
            $table->boolean('isJar');
+           $table->integer('width');
+           $table->integer('height');
         });
     }
 

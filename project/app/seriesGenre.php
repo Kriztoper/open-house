@@ -4,14 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class seriesGenre extends Model
+class SeriesGenre extends Model
 {
+    protected $fillable = ['videoID', 'genreID'];
     public $timestamps = false;
-    protected $primaryKey = 'seriesGenreID';
-    protected $table = 'seriesGenres';
-
-    protected $fillable = [
-    	'videoID',
-    	'genreID'
-    ];
+    public $table ='seriesGenres';
 }

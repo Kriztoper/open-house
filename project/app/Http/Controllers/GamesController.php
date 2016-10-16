@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
 use App\Forms\RegisterForm;
 use ValidatesRequests;
-use App\game;
+use App\Game;
 
 class GamesController extends Controller
 {
@@ -66,7 +66,7 @@ class GamesController extends Controller
                         ->select('series.*')
                         ->get();*/
        
-        return view('user.game',['action' => $action,'featuredContent' => $featuredContent,'Strategy' => $strategy,'boardGames' =>  $boardGames]);
+        return view('user.game',['action' => $action,'featured' => $featuredContent,'Strategy' => $strategy,'boardGames' =>  $boardGames]);
     }
 
 

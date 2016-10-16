@@ -81,7 +81,7 @@
         <div class="profBody">
           <div class="panel panel-info trans">
             <div class="panel-heading">
-              <h1 class="panel-title gobold blue">User Profile</h1>
+              <h1 class="panel-title gobolds black">User Profile</h1>
             </div>
             <div class="panel panel-body trans">
               <div class="col-lg-3">
@@ -91,15 +91,15 @@
                 <table class="table table-user-information cyan">
                   <tbody >
                     <tr>
-                      <td class="white gobolds">First Name:</td>
+                      <td class="black gobolds">First Name:</td>
                       <td class="gobolds">{{ Auth::user()->first_name }}</td>
                     </tr>
                     <tr>
-                      <td class="white gobolds">Last Name:</td>
+                      <td class="black gobolds">Last Name:</td>
                       <td class="gobolds">{{ Auth::user()->last_name }}</td>
                     </tr>
                     <tr>
-                      <td class="white gobolds">Student Number:</td>
+                      <td class="black gobolds">Student Number:</td>
                       <td class="gobolds">{{ Auth::user()->student_number }}</td>
                     </tr>
                   </tbody>
@@ -109,8 +109,8 @@
             </div>
             <div class="panel panel-footer trans col-lg-12">
               <div class="pull-right">
-              <button type="button" class="btn btn-primary goldbg gobolds blue" data-toggle="modal" data-target="#editProfile">Edit Profile</button>
-              <a href="#" class="btn btn-primary redbg gobolds blue">Change Password</a>
+              <button type="button" class="btn btn-primary goldbg gobolds black" data-toggle="modal" data-target="#editProfile">Edit Profile</button>
+              <a href="#" class="btn btn-primary redbg gobolds black">Change Password</a>
             </div>
             </div>
           </div>
@@ -137,18 +137,18 @@
       <div class="modal-dialog">
 
     <!-- Modal content-->
-      <div class="modal-content bg modalSize">
-        <div class="modal-header">
+      <div class="modal-content modalSize bg">
+        <div id="head" class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit Profile</h4>
         </div>
 
-        <div class="modal-body">
+        <div id="bud" class="modal-body">
           <form class="form-horizontal" role="form" method="POST" action="{{ url('/save_profile') }}">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <input type="text" class="form-control gap" name="first_name" placeholder="Enter First Name...">
-          <input type="text" class="form-control gap" name="last_name" placeholder="Enter Last Name...">
-          <input type="text" class="form-control gap" name="student_number" placeholder="Enter Student Number...">
+          <input id="inp" type="text" class="form-control gap" name="first_name" placeholder="Enter First Name...">
+          <input id="inp" type="text" class="form-control gap" name="last_name" placeholder="Enter Last Name...">
+          <input id="inp" type="text" class="form-control gap" name="student_number" placeholder="Enter Student Number...">
         </div>
 
         <div class="modal-footer">
@@ -160,5 +160,7 @@
 
     </div>
   </div>
+
+  
 
 </html>

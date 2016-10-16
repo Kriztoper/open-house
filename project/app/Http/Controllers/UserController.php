@@ -86,6 +86,51 @@ class UserController extends Controller
      *
      * @return view
      */
+    public function saveGameStart(){
+        $starter=(int)(microtime(true));
+        $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
+
+        $user=DB::table('gameTime')->where('studentNumber',$sNumber)->pluck('studentNumber');
+        if(empty($user)){
+                DB::table('gameTime')->insert([
+                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'totalTime'=>0],
+                ]);
+        }else{
+              DB::table('gameTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
+        }
+    }
+    public function saveGameEnd(){
+        $ender=(int)(microtime(true));
+        $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
+        $starter=DB::table('gameTime')->where('studentNumber',$sNumber)->pluck('timeStart');
+        $current=$ender-$starter;
+        $total=DB::table('gameTime')->where('studentNumber',$sNumber)->pluck('totalTime');
+        $total=$total+$current;
+        DB::table('gameTime')->where('studentNumber',$sNumber)->update(['totalTime'=>$total,'timeStart'=>0,'timeOut'=>0]);
+    }
+
+    public function saveVideoStart(){
+        $starter=(int)(microtime(true));
+        $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
+        $user=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('studentNumber');
+        if(empty($user)){
+                DB::table('videoTime')->insert([
+                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'totalTime'=>0],
+                ]); 
+        }else{
+             DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
+        }
+    }
+    public function saveVideoEnd(){
+        $ender=(int)(microtime(true));
+        $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
+        $starter=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('timeStart');
+        $current=$ender-$starter;
+        $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('totalTime');
+        $total=$total+$current;
+        DB::table('videoTime')->where('studentNumber',$sNumber)->update(['totalTime'=>$total,'timeStart'=>0,'timeOut'=>0]);
+    }
+
     public function add_token(Request $request)
     {
         // add some logic here for token generation

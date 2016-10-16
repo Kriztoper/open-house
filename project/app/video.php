@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class video extends Model
+class Video extends Model
 {
-    //
+    protected $fillable = ['videoName', 'videoDesc','videoURL'];
+    public $timestamps = false;
 }

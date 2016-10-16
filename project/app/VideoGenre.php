@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Score extends Model
+class VideoGenre extends Model
 {
     //
 }
