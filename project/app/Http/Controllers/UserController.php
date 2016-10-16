@@ -120,7 +120,7 @@ class UserController extends Controller
         $user=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('studentNumber');
         if(empty($user)){
                 DB::table('videoTime')->insert([
-                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'totalTime'=>0],
+                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'KDRAMA'=>0,'ANIME'=>0],
                 ]); 
         }else{
              DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
@@ -128,16 +128,24 @@ class UserController extends Controller
         return view('watch_video',['videos'=>$videoPath]);
 
     }
-    public function saveVideoEnd(){
+    public function saveVideoEnd($genre){
         $ender=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
         $starter=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('timeStart');
         $current=$ender-$starter;
-        $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('totalTime');
-        $total=$total+$current;
-        DB::table('videoTime')->where('studentNumber',$sNumber)->update(['totalTime'=>$total,'timeStart'=>0,'timeOut'=>0]);
+        
+       
+        if($genre==1){
+            $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('ANIME');
+            $total=$total+$current;
+            DB::table('videoTime')->where('studentNumber',$sNumber)->update(['ANIME'=>$total,'timeStart'=>0,'timeOut'=>0]);
+        }else if($genre==2){
+            $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('KDRAMA');
+            $total=$total+$current;
+            DB::table('videoTime')->where('studentNumber',$sNumber)->update(['KDRAMA'=>$total,'timeStart'=>0,'timeOut'=>0]);
+        }
 
-        return view('/videos');
+       return view('/videos');
     }
 
     public function add_token(Request $request)

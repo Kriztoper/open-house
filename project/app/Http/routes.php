@@ -67,7 +67,7 @@ Route::get('/videos'          , 'VideosController@listSeries');
 Route::get('/startGame/{id}'           , 'UserController@saveGameStart');
 Route::get('/exitGame'            , 'UserController@saveGameEnd');   
 Route::get('/startVideo/{id}'          , 'UserController@saveVideoStart');   
-Route::get('/exitVideo'           , 'UserController@saveVideoEnd');               
+Route::get('/exitVideo/{genre}'          , 'UserController@saveVideoEnd');               
 /*the next two lines are temporary, used for testing*/
 Route::get('/buyVid/{videoID}', 'TokenController@buy_video');
 Route::get('/buyGame/{gameID}', 'TokenController@buy_game');

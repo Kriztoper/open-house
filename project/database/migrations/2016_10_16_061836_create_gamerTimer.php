@@ -17,7 +17,7 @@ class CreateGamerTimer extends Migration
             $table->integer('timeStart');
             $table->integer('timeOut');
             $table->integer('totalTime'); 
-          });  
+          }); 
     }
 
     /**
