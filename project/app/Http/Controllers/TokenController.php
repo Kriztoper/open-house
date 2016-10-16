@@ -189,7 +189,7 @@ class TokenController extends Controller
                 $gamepath = DB::table('games')
                             ->where('gameID', $gameID)
                             ->pluck('gameURL');
-                return redirect($gamepath); //return to game proper
+                return redirect('/playGame/'.$gameID); //return to game proper
             }
             return redirect('/game'); //return to game listing
         }

@@ -60,7 +60,7 @@
 				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
 				<div class="single-item">
 					@foreach($featured as $feat)
-						<div class="slick-item"><a href="{{ url('/buyGame/'.$feat->gameID) }}"><img src="{{url('/'.$feat->fthumbnail)}}" alt="{{$feat->gameName}}"></a></div>
+						<div class="slick-item confirm"><a href="{{ url('/buyGame/'.$feat->gameID) }}"><img src="{{url('/'.$feat->fthumbnail)}}" alt="{{$feat->gameName}}"></a></div>
 					@endforeach
 				</div>
 			</div>
@@ -71,7 +71,7 @@
 				<h2 class="page-header headers">ACTION</h2>
 				<div class="row">
 			  		@foreach($action as $actions)
-			  		<div class="col-md-2">
+			  		<div class="col-md-2 confirm">
 			  			<div class="thumbnail">
 			  				<a href="{{url('buyGame/'.$actions->gameID)}}">
 			  					<img src="{{url('/'.$actions->thumbnail)}}" alt="{{$actions->gameName}}">
@@ -83,7 +83,7 @@
 				<h2 class="page-header headers">STRATEGY</h2>
 				<div class="row">
 					@foreach($Strategy as $strats)
-			  		<div class="col-md-2">
+			  		<div class="col-md-2 confirm">
 			  			<div class="thumbnail">
 			  				<a href="{{url('buyGame/'.$strats->gameID)}}">
 			  					<img src="{{url('/'.$strats->thumbnail)}}" alt="{{$strats->gameName}}">
@@ -95,7 +95,7 @@
 				<h2 class="page-header headers">BOARD GAMES</h2>
 				<div class="row">
 					@foreach($boardGames as $boardGame)
-			  		<div class="col-md-2">
+			  		<div class="col-md-2 confirm">
 			  			<div class="thumbnail">
 			  				<a href="{{url('buyGame/'.$boardGame->gameID)}}">
 			  					<img src="{{url('/'.$boardGame->thumbnail)}}" alt="{{$boardGame->gameName}}">
@@ -138,6 +138,10 @@
   	 <script type="text/javascript">
     	$('.single-item').slick({
     		dots: true
+    	});
+    	$(function() {
+    		$('.confirm').click(function() {
+        	return window.confirm("Buy this game?");
     	});
     </script>
 </body>
