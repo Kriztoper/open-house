@@ -68,7 +68,8 @@ class VideosController extends Controller
                       ->join('userVideos','userVideos.videoID','=','seriesVideo.videoID')
                       ->select('series.*')
                       ->get();*/
-     
+      print($featuredContent);
+       exit();
       return view('user.videos',['anime' => $anime,'featuredContent' => $featuredContent,'kDrama' => $kDrama,'mostBought' =>  $mostBought]);
   }
   /**
@@ -81,7 +82,7 @@ class VideosController extends Controller
            $serVideo[] = $serVid->videoID;
        }
        $videos = DB::table('videos')->whereIn('videoID',$serVideo)->get();
-      
+
        return view('list_vid',['videos'=>$videos, 'series'=>$series]);
   }
   /**

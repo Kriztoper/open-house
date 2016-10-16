@@ -49,20 +49,11 @@ class AdminController extends Controller
             $video_data['videoDesc'] = "Episode ".($i+1)." of the series:".$series->seriesName;
             $video_data['videoURL'] = $vids[$i];
             $video = Video::create($video_data);
-            print($video);
-            exit;
-            // $videos = new videos;
-            // $videos->videoName = $series->seriesName." Episode ".($i+1);
-            // $videos->videoDesc = "Episode ".($i+1)." of the series:".$series->seriesName;
-            // $videos->videoURL = $vids[$i];
-            // $videos->save();
+            
             $seriesVideo_data['seriesID'] = $series->id;
-            $seriesVideo_data['videoID'] = $videos->id;
-            SeriesVideo::create($seriesVideo_data);
-            // $seriesVideo = new seriesVideo;
-            // $seriesVideo->seriesID = $series->id;
-            // $seriesVideo->videoID = $videos->id;
-            // $seriesVideo->save();
+            $seriesVideo_data['videoID'] = $video->id;
+            $series_video = SeriesVideo::create($seriesVideo_data);
+
         }
         return view('admin.addSeries');
     }
