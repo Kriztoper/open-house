@@ -61,7 +61,7 @@
 		<nav class="navbar navbar-fixed-bottom">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-right navbar-xs">
-					<li><a href="#">ABOUT THE DEVELOPERS</a></li>
+					<li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -70,7 +70,7 @@
 	<div id="myModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
-			<div class="modal-content">
+			<div class="modal-content bg2">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">KOMSAI OPENHOUSE TOKEN GENERATOR</h4>

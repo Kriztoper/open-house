@@ -78,7 +78,7 @@
 				</div>
 				<h2 class="page-header headers">STRATEGY</h2>
 				<div class="row">
-					@foreach($strategy as $strats)
+					@foreach($Strategy as $strats)
 			  		<div class="col-md-2">
 			  			<div class="thumbnail">
 			  				<a href="{{url('playGame/'.$strats->gameID)}}">
@@ -110,20 +110,20 @@
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">KOMSAY OPENHOUSE TOKEN GENERATOR</h4>
+					<img id="modal-logo" src="http://i.imgur.com/i4LQ5Bi.png" />
+					<img src="http://i.imgur.com/2ggNleD.jpg" />
+					<h4 class="modal-title"><strong>KOMSAI OPENHOUSE TOKEN GENERATOR</strong></h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
-	           		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+            		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
+					<center><button type="submit" class="btn btn-primary" id="modal-button">Get Tokens!!</button></center>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<nav class="navbar navbar-fixed-bottom">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav navbar-right">
