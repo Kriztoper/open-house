@@ -19,7 +19,7 @@ class GamesController extends Controller
         //
     }
     public function playGame($id){
-        $games = DB::table('games')->where('gameID',$id)->first();
+        $games = Game::where('gameID',$id)->first();
         return view('user.playgame',['game'=>$games]);
     }
     public function buyGame(){

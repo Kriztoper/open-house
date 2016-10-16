@@ -173,7 +173,10 @@ class AdminController extends Controller
     public function success(){
         return view('success');
     }
-
+    public function tokenList(){
+        $token = Token::orderBy('tokenValue')->get();
+        return view('admin.listToken',['list'=>$token]);
+    }
     //routes for views
     public function show_dashboard(){
         return view('admin.adminPage');
