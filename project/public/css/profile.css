@@ -3,7 +3,7 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url(http://i.imgur.com/Rhri8TK.png);
+	background-image: url(http://i.imgur.com/GGoHfbW.jpg);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	-moz-background-size: cover;
@@ -33,18 +33,34 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 h4 {
+	font-size: 40px;
 	color: white;
 }
 
 #head {
 	background-color: transparent;
 	background-image: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 #bud {
 	background-color: transparent;
 	border-style: none;
+	padding-top: 0;
+}
+
+#inp {
+	margin-bottom: 10px;
 }
 
 .modalSize {
@@ -60,31 +76,31 @@ h4 {
 }
 
 .gobolds {
-	font-family: goboldregular;
+	font-family: lemonmilkregular;
 	font-size: 15px;
 }
 
 .pac{
 	position: absolute;
-	top: 41.5%;
+	top: 46.5%;
 	left: 58%;
 }
 
 .ghost{
 	position: absolute;
-	top: 42%;
+	top: 47%;
 	left: 62%;
 }
 
 .logo{
 	position: absolute;
-	top: 15%;
+	top: 23%;
 	left: 64%;
 }
 
 .profBody{
 	position: absolute;
-	top: 15%;
+	top: 20%;
 	left:10%;
 	width: 40%;
 }
@@ -108,56 +124,6 @@ h4 {
 	color: #233f59;
 }
 
-
-
-
-#top-navbar {
-	background-color: transparent !important;
-	border-color: transparent !important;
-}
-
-.navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
-    background-color: #BA002c;
-    color: white;
-}
-
-.navbar-fixed-top .navbar-nav > li > a {
-	font-family: montserratregular;
-	color: white;
-	font-size: 10pt;
-	/*letter-spacing: 2pt;*/
-}
-
-.navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
-    background-color: transparent;
-    color: white;
-}
-
-.navbar-fixed-bottom .navbar-nav > li > a {
-	font-family: montserratregular;
-	font-size: 8pt;
-	font-weight: bold;
-	color: darkgray;
-	padding-top: 5px !important;
-    padding-bottom: 5px !important;
-	height: 30px !important;
-}
-
-.navbar {
-	min-height: 30px !important;
-}
-
-.navbar-fixed-bottom {
-	background-color: #BA002c;
-}
-
-.dropdown-menu > li > a {
-	font-family: montserratregular;
-	letter-spacing: 2pt;
-	font-size: 8pt;
-	color: black;
-}
-
 .redfont{
 	color: red;
 }
@@ -170,28 +136,9 @@ h4 {
 }
 
 .white {
-	color: white;
+	color: black;
 }
 
-#owl-demo .item{
-  background: #3fbf79;
-  padding: 30px 0px;
-  margin: 10px;
-  color: #FFF;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  text-align: center;
-}
-.customNavigation{
-  text-align: center;
-}
-//use styles below to disable ugly selection
-.customNavigation a{
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+.black {
+	color: black;
 }
