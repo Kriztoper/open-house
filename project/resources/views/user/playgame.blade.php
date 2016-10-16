@@ -8,46 +8,69 @@
 
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/content.css">
-    <link rel="stylesheet" type="text/css" href="../css/gamenavbar.css">
-    <link rel="stylesheet" type="text/css" href="../css/modal.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
 
 </head>
 <body>
-	<nav class="navbar navbar-fixed-top">
-		<div class="container-fluid">
-    		<div class="navbar-header">
-    			<a class="navbar-brand" href="#">
-    				<img src="http://i.imgur.com/js8s2AR.png?2" alt="OpenHouse">
-    			</a>
-  			</div>
-    		<ul id="tokens" class="nav navbar-nav">
-       			<li>
-           	   		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span></p>
-       			</li>
-    		</ul>
-			<ul id="links" class="nav navbar-nav navbar-right">
-				<li class="active"><a href="{{ url('/exitGame') }}">BACK</a></li>
-	   		</ul>
-  		</div>
-	</nav>
 
-	<div id="middle">
+	<div class="container">
+		<nav id="top-navbar" class="navbar navbar-fixed-top">
+			<div class="container-fluid">
+    			<div class="navbar-header">
+     				<a class="navbar-brand" href="#">
+     					<img src="http://i.imgur.com/js8s2AR.png?2" alt="OpenHouse">
+     				</a>
+  				</div>
+    			<ul id="tokens" class="nav navbar-nav">
+              		<li>
+                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span></p>
+              		</li>
+          		</ul>
+	    		<ul id="links" class="nav navbar-nav navbar-right">
+	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
+	      			<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
+	      			<li><a href="{{ url('/game') }}">GAMES</a></li>
+	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
+	      			<li class="dropdown">
+        				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
+        				<span class="caret"></span></a>
+       					<ul class="dropdown-menu dropdown-menu-left col-xs-12">
+          					<li><a href="{{url('/profile')}}">PROFILE</a></li>
+          					<li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
+          					<li role="separator" class="divider"></li>
+          					<li><a href="{{url('/logout')}}">LOGOUT</a></li>
+        				</ul>
+      				</li>
+	    		</ul>
+  			</div>
+		</nav>
 		@if ($game->isJar!=1)
 			<div align="center">
+
 				<object>
-		           	<param name="game" value="{{url(''.$game->gameURL)}}">
-	   	        	<embed src="{{ url(''.$game->gameURL) }}" width="{{$game->width}}" height="{{$game->height}}">
-	       		</object>
+            	<param name="game" value="{{url(''.$game->gameURL)}}">
+            	<embed src="{{ url(''.$game->gameURL) }}" width="{{$game->width}}" height="{{$game->height}}">
+        		</object>
 			</div>		
 		@elseif	($game->isJar==1)	
 			{{$game->className}}
 			<div style="width=565px;margin:0 auto;">
-	   			<applet code="{{$game->className}}" archive="{{url(''.$game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
-	   			</applet>
-	   		</div> 
+    			<applet code={{$game->className}} archive="{{url(''.$game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
+    			</applet>
+
+    		</div> 
 		@endif
-	</div>
+
+		<nav class="navbar navbar-fixed-bottom">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav navbar-right navbar-xs">
+					<li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
+				</ul>
+			</div>
+		</nav>
 
 	<!-- Modal for token -->
 	<div id="myModal" class="modal fade" role="dialog">
@@ -73,5 +96,6 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>
 </body>
 </html>
