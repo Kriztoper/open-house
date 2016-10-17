@@ -161,7 +161,7 @@ class UserController extends Controller
             DB::table('users')->where('student_number', Auth::user()->student_number)->update(['token'=>(int)$newValue]);
             DB::table('tokens')->where('tokenName', $request->token_code)->update(['isActive'=>0]);
         }else{
-            return Redirect::back()->with('error','not valid token code');
+            return Redirect::back()->with('error', 400);
         }
         
         return Redirect::back();

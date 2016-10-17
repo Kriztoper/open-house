@@ -59,14 +59,14 @@ body {
 }
 
 .videos {
-	height: 750px;
+	height: 100vh;
 	background-image: url(../images/backgrounds/vids-main-bg.jpg);
 	background-attachment: fixed;
 	background-color: #CCCCCC !important;
 }
 
 .games {
-	height: 750px;
+	height: 100vh;
 	background-size: 100%;
 	background-image: url(../images/backgrounds/games-main-bg.jpg);
 	background-attachment: fixed;

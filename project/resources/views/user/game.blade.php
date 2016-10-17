@@ -121,6 +121,8 @@
 				<div class="modal-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
             		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+            		<center><h6 id="error_message" hidden color="white"> Token code is not valid. Please purchase it at the administrator and 
+            		try again!! </h6></center>
 					<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 					<center><button type="submit" class="btn btn-primary" id="modal-button">Get Tokens!!</button></center>
 					</form>
@@ -129,18 +131,17 @@
 		</div>
 	</div>
 
-	<!-- Modal for error in videos -->
-	<div id="errorModal" class="modal fade" role="dialog">
+	<!-- Modal lack of tokens -->
+	<div id="lackOfTokenModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
-					<img id="modal-logo" src="http://i.imgur.com/i4LQ5Bi.png" />
-					<img src="http://i.imgur.com/2ggNleD.jpg" />
-					<h4 class="modal-title"><strong>KOMSAI OPENHOUSE ERROR 404!</strong></h4>
-				</div>
-				<div class="modal-body">
-            		<center><h4 id="error_message"> Feature is still under development. Sorry for the inconvenience. </h4></center>
+					<center>
+						<img id="token-error" src="http://vignette4.wikia.nocookie.net/scream-queens/images/1/15/Error-sadface-f0f0f0.png/revision/latest?cb=20160627204354" />
+						<h1 class="modal-title"><strong>Error</strong></h1>
+						<h5 class="modal-title">Not enough tokens to buy this game</h5>
+					</center>
 				</div>
 			</div>
 		</div>
@@ -178,5 +179,26 @@
   			});
 		});
     </script>
+
+    <?php $error = Session::get('error'); ?>
+	@if(count($error)>0 && Session::get('error') == 400)
+	<script>
+	$(function()
+		{
+			$('#myModal').modal({show:true});
+			$('h6').show();
+	});
+	</script>
+	@endif
+
+	<?php $error = Session::get('error'); ?>
+	@if(count($error)>0 && Session::get('error') == 401)
+	<script>
+	$(function()
+		{
+			$('#lackOfTokenModal').modal({show:true});
+	});
+	</script>
+	@endif
 </body>
 </html>

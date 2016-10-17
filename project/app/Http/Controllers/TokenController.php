@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Token;
+use Illuminate\Support\Facades\Redirect;
 //use App\User;
 
 class TokenController extends Controller
@@ -191,6 +192,9 @@ class TokenController extends Controller
                             ->where('gameID', $gameID)
                             ->pluck('gameURL');
                 return redirect('/startGame/'.$gameID); //return to game proper
+            }else{
+                return Redirect::back()->with('error',401);
+                // error 401 for not enough tokens to purchase a game
             }
             return redirect('/game'); //return to game listing
         }

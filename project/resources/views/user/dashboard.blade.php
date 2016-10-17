@@ -33,7 +33,7 @@
 	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
 	      			<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
 	      			<li><a href="{{ url('/game') }}">GAMES</a></li>
-	      			<li><a href="#" data-toggle="modal" data-target="#errorModal"">VIDEOS</a></li>
+	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown" role="button"> {{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
@@ -97,18 +97,19 @@
 		</div>
 	</div>
 
-	<!-- Modal for error in videos -->
-	<div id="errorModal" class="modal fade" role="dialog">
+	<!-- Modal lack of tokens -->
+	<div id="lackOfTokenModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<img id="modal-logo" src="http://i.imgur.com/i4LQ5Bi.png" />
 					<img src="http://i.imgur.com/2ggNleD.jpg" />
-					<h4 class="modal-title"><strong>KOMSAI OPENHOUSE ERROR 404!</strong></h4>
+					<h4 class="modal-title"><strong>KOMSAI OPENHOUSE ERROR 401!</strong></h4>
 				</div>
 				<div class="modal-body">
-            		<center><h4 id="error_message"> Feature is still under development. Sorry for the inconvenience. </h4></center>
+            		<center><h4> Not enough tokens to buy this game </h4></center>
+            		<center><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Get Tokens!!</button></center>
 				</div>
 			</div>
 		</div>
@@ -122,7 +123,7 @@
 	<script type="text/javascript" src="js/bodyslide.js"></script>
 
 	<?php $error = Session::get('error'); ?>
-	@if(count($error)>0)
+	@if(count($error)>0 && Session::get('error') == 400)
 	<script>
 	$(function()
 		{
@@ -131,5 +132,6 @@
 	});
 	</script>
 	@endif
+
 </body>
 </html>

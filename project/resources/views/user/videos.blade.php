@@ -122,6 +122,24 @@
 			</div>
 		</div>
 		
+		<!-- Modal lack of tokens -->
+		<div id="lackOfTokenModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<img id="modal-logo" src="http://i.imgur.com/i4LQ5Bi.png" />
+						<img src="http://i.imgur.com/2ggNleD.jpg" />
+						<h4 class="modal-title"><strong>KOMSAI OPENHOUSE ERROR 401!</strong></h4>
+					</div>
+					<div class="modal-body">
+	            		<center><h4> Not enough tokens to buy this game </h4></center>
+	            		<center><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Get Tokens!!</button></center>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<nav class="navbar navbar-fixed-bottom">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-right">
@@ -155,12 +173,22 @@
 		});
     </script>
     <?php $error = Session::get('error'); ?>
-	@if(count($error)>0)
+	@if(count($error)>0 && Session::get('error') == 400)
 	<script>
 	$(function()
 		{
 			$('#myModal').modal({show:true});
 			$('h6').show();
+	});
+	</script>
+	@endif
+
+	<?php $error = Session::get('error'); ?>
+	@if(count($error)>0 && Session::get('error') == 401)
+	<script>
+	$(function()
+		{
+			$('#myModal').modal({show:true});
 	});
 	</script>
 	@endif

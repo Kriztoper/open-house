@@ -61,3 +61,16 @@
 	width: 30%;
 	border-radius: 20px;
 }
+
+#lackOfTokenModal .modal-header #token-error{
+	padding-top: 15px;
+	height: 25%;
+	width:  25%;
+}
+
+#lackOfTokenModal .modal-header{
+	background-color:#0B4F66;
+	color:white;
+	padding-bottom: 15px;
+}
+
