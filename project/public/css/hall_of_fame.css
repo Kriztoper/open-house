@@ -4,7 +4,7 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: url(http://i.imgur.com/qqCLisG.jpg);
+	background: url(http://i.imgur.com/GGoHfbW.jpg);
 	background-size: 100%;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
@@ -42,12 +42,18 @@ body {
 
 h1 {
 	font-size: 40px;
-	color: white;
+	color: #101010;
 	font-family: lemonmilkregular;
 	letter-spacing: 10px;
 	margin-top: 90px;
 	margin-bottom: 20px;
 	text-align: center;
+}
+
+
+
+.trans {
+    .transition(.6s ease-in-out left);
 }
 
 .lista {
@@ -60,7 +66,7 @@ h1 {
 	text-align: center;
 	margin-bottom: 7px;
 	margin-top: 0px;
-	color: white;
+	color: #101010;
 	font-size: 20px;
 }
 
@@ -81,7 +87,7 @@ h1 {
 
 .name {
 	font-family: lemonmilkregular;
-	color: white;
+	color: #101010;
 	letter-spacing: 10px;
 	margin-top: 20px;
 	font-size: 30px;

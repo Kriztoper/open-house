@@ -3,7 +3,7 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url(http://i.imgur.com/GGoHfbW.jpg);
+	background-image: url(http://i.imgur.com/ooujE7o.png);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	-moz-background-size: cover;
@@ -47,14 +47,12 @@ h4 {
 }
 
 #head {
-	background-color: transparent;
 	background-image: none;
 	margin-bottom: 0;
 	padding-bottom: 0;
 }
 
 #bud {
-	background-color: transparent;
 	border-style: none;
 	padding-top: 0;
 }
