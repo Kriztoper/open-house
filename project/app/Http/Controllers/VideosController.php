@@ -14,7 +14,6 @@ use App\Series;
 use App\SeriesVideo;
 use App\Video;
 use App\UserVideo;
-
 class VideosController extends Controller
 {
   use FormBuilderTrait;
@@ -23,6 +22,12 @@ class VideosController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
+  public function maxDrama(){
+
+  }
+  public function maxAnime(){
+    
+  }
   public function index()
   {
       //
