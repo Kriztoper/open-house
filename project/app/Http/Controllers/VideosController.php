@@ -14,7 +14,6 @@ use App\Series;
 use App\SeriesVideo;
 use App\Video;
 use App\UserVideo;
-
 class VideosController extends Controller
 {
   use FormBuilderTrait;
@@ -23,6 +22,12 @@ class VideosController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
+  public function maxDrama(){
+
+  }
+  public function maxAnime(){
+    
+  }
   public function index()
   {
       //
@@ -91,7 +96,7 @@ class VideosController extends Controller
       $videos = DB::table('videos')->where('videoID',$id)->first();
       /*$seriesVideo = DB::table('seriesVideo')->where('seriesID',$id)->get();
         $listOfVideos = DB::table('videos')->whereIn('videosID',$serVideo)->get();*/
-      return redirect('/startVideo/'.$videos);
+      return view('watch_video',['videos'=>$videos]);
   }
 
   // routes for views

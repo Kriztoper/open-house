@@ -40,13 +40,11 @@
             	<embed src="{{ url(''.$game->gameURL) }}" width="{{$game->width}}" height="{{$game->height}}">
         		</object>
 			</div>		
-		@elseif	($game->isJar==1)
-			<div id="middle" align="center">
-    			<applet code={{$game->className}} archive="{{url(''.$game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
-    			</applet>
-
-    		</div> 
-		@endif
+		@elseif	($game->isJar==1)	
+			<div style="width=565px;margin:0 auto;">
+	   			<applet code="{{$game->className}}" archive="{{url(''.$game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
+	   			</applet>
+	   		</div> 
 
 	<!-- Modal for token -->
 	<div id="myModal" class="modal fade" role="dialog">

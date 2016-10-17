@@ -151,7 +151,7 @@ class TokenController extends Controller
                 $path = DB::table('videos')
                     ->where('videoID', $videoID)
                     ->pluck('videoURL');
-                return redirect($path);
+                return redirect('/watch_video/'.$videoID);
             }
             $series = DB::table('series')
                   ->join ('seriesvideo','seriesvideo.seriesID','=','series.seriesID')
@@ -162,7 +162,7 @@ class TokenController extends Controller
         $path = DB::table('videos')
                 ->where('videoID', $videoID)
                 ->pluck('videoURL');
-        return redirect($path);
+        return redirect('/watch_video/'.$videoID);
     }
 
     /**

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class HallOfFameController extends Controller
 {
     /**
@@ -14,6 +14,17 @@ class HallOfFameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function maxGames(){
+        
+         DB::table('gameTime')->orderBy('totalTime','DESC')->chunk(10,function($users){
+            foreach($users as $user){
+                 $sNumber=[$user->studentNumber];
+                 var_dump($sNumber);
+            }
+         });
+         exit;
+    }  
     public function index()
     {
         //
