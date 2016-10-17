@@ -41,7 +41,7 @@
         		</object>
 			</div>		
 		@elseif	($game->isJar==1)
-			<div align="center">
+			<div id="middle" align="center">
     			<applet code={{$game->className}} archive="{{url(''.$game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
     			</applet>
 
