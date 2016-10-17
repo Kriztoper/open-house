@@ -45,7 +45,7 @@
 	   			<applet code="{{$game->className}}" archive="{{url(''.$game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
 	   			</applet>
 	   		</div> 
-
+		@endif
 	<!-- Modal for token -->
 	<div id="myModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
