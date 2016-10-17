@@ -37,11 +37,10 @@
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown" role="button"> {{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
-       					<ul class="dropdown-menu dropdown-menu-left col-xs-12">
-          					<li><a href="{{url('/profile')}}">PROFILE</a></li>
-          					<li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
-          					<li role="separator" class="divider"></li>
-          					<li><a href="{{url('/logout')}}">LOGOUT</a></li>
+       					<ul class="dropdown-menu dropdown-menu-right">
+          					<li class="pull-right"><a href="{{url('/profile')}}">PROFILE</a></li>
+          					<li class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
+          					<li class="pull-right"><a href="{{url('/logout')}}">LOGOUT</a></li>
         				</ul>
       				</li>
 	    		</ul>
@@ -60,6 +59,7 @@
 				<p class="quote">Controlling complexity is the essence of computer programming.</p>
 				<p class="quote">The function of good software is to make the complex appear to be simple.</p>
 				<p class="quote">Any fool can use a computer.  Many do.</p>
+				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
 				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
 				<p class="quote">The trouble with programmers is that you can never tell what a programmer is doing until it’s too late.</p>
 			</div>

@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<nav id="top-navbar" class="navbar navbar-fixed-top">
+	<nav class="navbar navbar-fixed-top">
 		<div class="container-fluid">
     		<div class="navbar-header">
     			<a class="navbar-brand" href="#">
@@ -44,14 +44,6 @@
        				</ul>
     			</li>
 	   		</ul>
-
-			<nav class="navbar navbar-fixed-bottom">
-				<div class="container-fluid">
-					<ul class="nav navbar-nav navbar-right navbar-xs">
-						<li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
-					</ul>
-				</div>
-			</nav>
   		</div>
 	</nav>
 
@@ -59,6 +51,13 @@
 		<div class="container">
 				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
 				<div class="single-item">
+					<div class="slick-item"><a href="games/fourSquare/fourSquare.php"><img src="/images/Featured Games/Feature1.png"></a></div>
+					<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
+					<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
+					<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
+					<div class="slick-item"><a href=""><img src="/images/Featured Games/chainReaction.png"></a></div>
+					<div class="slick-item"><a href=""><img src="/images/Featured Games/DotsTrix.png"></a></div>
+					<div class="slick-item"><img src="/images/Featured Games/killerCubes.png"></div>
 					@foreach($featured as $feat)
 					<div class="slick-item">
 						<a href="{{ url('/buyGame/'.$feat->gameID) }}">
@@ -125,8 +124,6 @@
 				<div class="modal-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/tokens') }}">
             		<input type="hidden" name="_token" value="{{ csrf_token() }}">
-            		<center><h6 id="error_message" hidden color="white"> Token code is not valid. Please purchase it at the administrator and 
-            		try again!! </h6></center>
 					<input type="text" class="form-control" name="token_code" placeholder="Enter token code here...">
 					<center><button type="submit" class="btn btn-primary" id="modal-button">Get Tokens!!</button></center>
 					</form>
@@ -134,7 +131,13 @@
 			</div>
 		</div>
 	</div>
-	
+	<nav class="navbar navbar-fixed-bottom">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right navbar-xs">
+          <li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
+        </ul>
+      </div>
+    </nav>
 
    	<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -146,15 +149,19 @@
     		dots: true
     	});
     </script>
-    <?php $error = Session::get('error'); ?>
-	@if(count($error)>0)
-	<script>
-	$(function()
-		{
-			$('#myModal').modal({show:true});
-			$('h6').show();
-	});
-	</script>
-	@endif
+    <script>
+    	jQuery(document).ready(function($) {
+  			$(window).scroll(function() {
+    			var scrollPos = $(window).scrollTop(),
+        		navbar = $('.navbar-fixed-top');
+
+    			if (scrollPos > 20) {
+      				navbar.addClass('change-color');
+    			} else {
+     				navbar.removeClass('change-color');
+    			}
+  			});
+		});
+    </script>
 </body>
 </html>

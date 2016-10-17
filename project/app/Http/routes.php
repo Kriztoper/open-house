@@ -75,7 +75,11 @@ Route::get('/buyGame/{gameID}', 'TokenController@buy_game');
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
 //This is a test
-Route::get('/testChat' , 'ChatController@testChat');
+Route::group(['prefix' => 'shoutbox'], function() {
+  Route::get('/chat', array('as' => 'shoutbox-chat', 'uses' => 'ShoutboxController@index'));
+  Route::post('messages', ['as' => 'shoutbox-fetch', 'uses' => 'ShoutboxController@fetch']);
+  Route::post('send', ['as' => 'shoutbox-send', 'uses' => 'ShoutboxController@send']);      
+});
 
 ?>
 

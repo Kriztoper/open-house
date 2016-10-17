@@ -101,7 +101,7 @@ class UserController extends Controller
         }else{
               DB::table('gameTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
         }
-        return view('/playGame/'.$gameID);
+        return redirect('/playGame/'.$gameId);
     }
     public function saveGameEnd(){
         $ender=(int)(microtime(true));
@@ -111,7 +111,7 @@ class UserController extends Controller
         $total=DB::table('gameTime')->where('studentNumber',$sNumber)->pluck('totalTime');
         $total=$total+$current;
         DB::table('gameTime')->where('studentNumber',$sNumber)->update(['totalTime'=>$total,'timeStart'=>0,'timeOut'=>0]);
-        return view('/game');
+        return redirect('/game');
     }
 
     public function saveVideoStart($videoPath){
@@ -125,7 +125,7 @@ class UserController extends Controller
         }else{
              DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
         }
-        return view('watch_video',['videos'=>$videoPath]);
+        return redirect('watch_video',['videos'=>$videoPath]);
 
     }
     public function saveVideoEnd($genre){
@@ -145,7 +145,7 @@ class UserController extends Controller
             DB::table('videoTime')->where('studentNumber',$sNumber)->update(['KDRAMA'=>$total,'timeStart'=>0,'timeOut'=>0]);
         }
 
-       return view('/videos');
+       return redirect('/videos');
     }
 
     public function add_token(Request $request)
@@ -164,7 +164,7 @@ class UserController extends Controller
             return Redirect::back()->with('error','not valid token code');
         }
         
-        return redirect()->back();
+        return redirect('/dashboard');
     }
     /**
     * 

@@ -68,6 +68,4 @@ class GamesController extends Controller
        
         return view('user.game',['action' => $action,'featured' => $featuredContent,'Strategy' => $strategy,'boardGames' =>  $boardGames]);
     }
-
-
 }
