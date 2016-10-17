@@ -34,12 +34,11 @@
 	      			<li><a href="{{ url('/game') }}">GAMES</a></li>
 	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
 	      			<li class="dropdown">
-        				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
+        				<a class="dropdown-toggle" data-toggle="dropdown" role="button">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
-       					<ul class="dropdown-menu dropdown-menu-left col-xs-12">
+       					<ul class="dropdown-menu dropdown-menu-right col-xs-12">
           					<li><a href="{{url('/profile')}}">PROFILE</a></li>
           					<li><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
-          					<li role="separator" class="divider"></li>
           					<li><a href="{{url('/logout')}}">LOGOUT</a></li>
         				</ul>
       				</li>

@@ -152,7 +152,7 @@ class TokenController extends Controller
                 $path = DB::table('videos')
                     ->where('videoID', $videoID)
                     ->pluck('videoURL');
-                return redirect($path);
+                return redirect('/watch_video/'.$videoID);
             }
             $series = DB::table('series')
                   ->join ('seriesvideo','seriesvideo.seriesID','=','series.seriesID')
@@ -163,7 +163,7 @@ class TokenController extends Controller
         $path = DB::table('videos')
                 ->where('videoID', $videoID)
                 ->pluck('videoURL');
-        return redirect($path);
+        return redirect('/watch_video/'.$videoID);
     }
 
     /**
@@ -175,7 +175,7 @@ class TokenController extends Controller
     */
     public function buy_game($gameID) {
         $isGameBought = DB::table('usergames')
-                        ->join('games', 'games.gameID', '=', 'usergames.gameID')
+                        ->join('games', 'games.gameID', '=', 'userGames.gameID')
                         ->join('users', 'users.student_number', '=', 'userGames.userID')
                         ->where('users.student_number', '=', Auth::user()->student_number)
                         ->where('games.gameID', '=', $gameID)
@@ -196,7 +196,7 @@ class TokenController extends Controller
         $gamepath = DB::table('games')
                     ->where('gameID', $gameID)
                     ->pluck('gameURL');
-        return redirect('/playGame/'.$gameID);
+        return redirect('/startGame/'.$gameID);
     }
 }
 ?>

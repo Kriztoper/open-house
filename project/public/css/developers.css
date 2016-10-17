@@ -14,7 +14,7 @@ html {
 
 body {
 	background-color: transparent;
-	font-family: montserratregular;
+	font-family: lemonmilkregular;
 }
 
 @font-face {
@@ -31,6 +31,19 @@ body {
          url('../fonts/montserrat-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.marg {
+	margin-right: 3px;
+	margin-left: 3px;
 }
 
 .gap {
@@ -51,17 +64,17 @@ body {
 
 
 .jumbotron {
-	font-family: goboldregular;
+	font-family: lemonmilkregular;
 	font-size: 70px;
-	letter-spacing: 30px;
+	letter-spacing: 19px;
 	color: #333333;
 	background: none;
 }
 
 .gob {
-	font-family: goboldregular;
+	font-family: lemonmilkregular;
 	font-size: 20px;
-	letter-spacing: 5px;
+	letter-spacing: 3px;
 	color: #333333;
 }
 
@@ -76,9 +89,6 @@ body {
 	color: white;
 }
 
-.info {
-	position: relative;
-}
 
 .Absolute-Center {
   	margin: auto;
@@ -90,39 +100,6 @@ body {
   	padding: 20px;
 }
 
-#top-navbar {
-	background-color: transparent !important;
-	border-color: transparent !important;
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
-    background-color: #BA002c;
-    color: white;
-}
-.navbar-default .navbar-nav > li > a {
-	margin-right: 10px;
-	font-family: goboldregular;
-	color: white;
-	font-size: 15pt;
-	letter-spacing: 2pt;
-}
-
-.navbar-brand {
-	padding: 0px 0px !important;
-	padding-top: 10px !important;
-}
-
-.gold {
-	color: gold;
-}
-
-.redfont{
-	color: red;
-}
-
-.white {
-	color: white;
-}
 
 a {
     opacity: 0.7;
