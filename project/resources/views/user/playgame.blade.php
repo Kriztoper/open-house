@@ -29,7 +29,7 @@
               		</li>
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
-	    			<li class="active"><a href="{{ url('/game') }}">BACK</a></li>
+	    			<li class="active"><a href="{{ url('/exitGame') }}">BACK</a></li>
 	    		</ul>
   			</div>
 		</nav>
