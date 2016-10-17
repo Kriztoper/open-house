@@ -33,7 +33,7 @@
 	  			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
 	   			<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
 	   			<li><a href="{{ url('/game') }}">GAMES</a></li>
-	   			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
+	   			<li><a href="#" data-toggle="modal" data-target="#errorModal"">VIDEOS</a></li>
 	   			<li class="dropdown">
         			<a class="dropdown-toggle" data-toggle="dropdown" role="button"> {{ strtoupper(Auth::user()->first_name) }}
         			<span class="caret"></span></a>
@@ -51,13 +51,6 @@
 		<div class="container">
 				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
 				<div class="single-item">
-					<div class="slick-item"><a href="games/fourSquare/fourSquare.php"><img src="/images/Featured Games/Feature1.png"></a></div>
-					<div class="slick-item"><a href="games/Domineering/Domineering.php"><img src="/images/Featured Games/domineering.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/CoralineQuest.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/mancala.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/chainReaction.png"></a></div>
-					<div class="slick-item"><a href=""><img src="/images/Featured Games/DotsTrix.png"></a></div>
-					<div class="slick-item"><img src="/images/Featured Games/killerCubes.png"></div>
 					@foreach($featured as $feat)
 					<div class="slick-item">
 						<a href="{{ url('/buyGame/'.$feat->gameID) }}">
@@ -135,6 +128,24 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Modal for error in videos -->
+	<div id="errorModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<img id="modal-logo" src="http://i.imgur.com/i4LQ5Bi.png" />
+					<img src="http://i.imgur.com/2ggNleD.jpg" />
+					<h4 class="modal-title"><strong>KOMSAI OPENHOUSE ERROR 404!</strong></h4>
+				</div>
+				<div class="modal-body">
+            		<center><h4 id="error_message"> Feature is still under development. Sorry for the inconvenience. </h4></center>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<nav class="navbar navbar-fixed-bottom">
       <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right navbar-xs">

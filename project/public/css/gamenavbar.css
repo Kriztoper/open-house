@@ -1,3 +1,7 @@
+html, body {
+	background-color: darkgray;
+}
+
 /*-------NAVBAR SHIT----------*/
 
 .navbar-fixed-top {
