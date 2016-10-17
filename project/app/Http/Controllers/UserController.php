@@ -164,7 +164,7 @@ class UserController extends Controller
             return Redirect::back()->with('error','not valid token code');
         }
         
-        return redirect('/dashboard');
+        return Redirect::back();
     }
     /**
     * 

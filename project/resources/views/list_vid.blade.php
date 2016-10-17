@@ -51,7 +51,7 @@
 				<h1 class="page-header">WATCH ANIME</h1><br>
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<div class="pic col-md-4" style=><img src="{{url('images/Anime Poster/'.$series->fthumbnail.'.jpg')}}" alt="OpenHouse" style="height:100%; width:110%; margin-left:-15px;"></div>
+						<div class="pic col-md-4" style=><img src="{{url('images/Poster/'.$series->fthumbnail.'.jpg')}}" alt="OpenHouse" style="height:100%; width:110%; margin-left:-15px;"></div>
 						<div class="col-md-6">
 							<div class="name">{{$series->seriesName}}</div>
 							<div class="desc">{{$series->seriesDesc}}</div>

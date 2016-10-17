@@ -186,6 +186,8 @@ class TokenController extends Controller
                 DB::table('users')
                     ->where('student_number', Auth::user()->student_number)
                     ->update(['token'=>$newValue]);
+                DB::table('usergames')
+                    ->insert(['userID' => Auth::user()->student_number, 'gameID' => $gameID, 'numOfHours' => 0.0]);
                 $gamepath = DB::table('games')
                             ->where('gameID', $gameID)
                             ->pluck('gameURL');
