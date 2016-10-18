@@ -16,7 +16,6 @@ class HallOfFameController extends Controller
      */
 
     public function maxGames(){
-        
          DB::table('gameTime')->orderBy('totalTime','DESC')->chunk(10,function($users){
             foreach($users as $user){
                  $sNumber=[$user->studentNumber];

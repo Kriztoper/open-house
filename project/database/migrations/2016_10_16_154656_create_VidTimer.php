@@ -18,6 +18,7 @@ class CreateVidTimer extends Migration
             $table->integer('timeOut');
             $table->integer('KDRAMA');
             $table->integer('ANIME'); 
+            $table->integer('genre');
           });  
     }
 

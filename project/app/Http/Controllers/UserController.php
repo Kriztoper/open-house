@@ -114,32 +114,32 @@ class UserController extends Controller
         return redirect('/game');
     }
 
-    public function saveVideoStart($videoPath){
+    public function saveVideoStart($videoPath,$genre){
         $starter=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
         $user=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('studentNumber');
         if(empty($user)){
                 DB::table('videoTime')->insert([
-                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'KDRAMA'=>0,'ANIME'=>0],
+                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'KDRAMA'=>0,'ANIME'=>0,'genre'=>$genre],
                 ]); 
         }else{
-             DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter]);
+             DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter,'genre'=>$genre]);
         }
         return redirect('watch_video',['videos'=>$videoPath]);
 
     }
-    public function saveVideoEnd($genre){
+    public function saveVideoEnd(){
+
         $ender=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
         $starter=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('timeStart');
         $current=$ender-$starter;
-        
-       
+        $genre=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('genre');
         if($genre==1){
             $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('ANIME');
             $total=$total+$current;
             DB::table('videoTime')->where('studentNumber',$sNumber)->update(['ANIME'=>$total,'timeStart'=>0,'timeOut'=>0]);
-        }else if($genre==2){
+        }else if($genre==3){
             $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('KDRAMA');
             $total=$total+$current;
             DB::table('videoTime')->where('studentNumber',$sNumber)->update(['KDRAMA'=>$total,'timeStart'=>0,'timeOut'=>0]);

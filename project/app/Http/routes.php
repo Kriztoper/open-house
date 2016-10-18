@@ -60,14 +60,14 @@ Route::get('/list_vid'        , 'VideosController@show_list_vid');
 Route::get('/watch_video/{id}', 'VideosController@watchVideos');
 Route::get('/videos'          , 'VideosController@listSeries');
 Route::get('/list_video/{id}' , 'VideosController@listVideos');
-Route::get('/watch_video/{id}', 'VideosController@watchVideos');
+Route::get('/watch_video/{id}/{genre}', 'VideosController@watchVideos');
 Route::get('/videos'          , 'VideosController@listSeries');
 
 //Time_Usage
 Route::get('/startGame/{id}'           , 'UserController@saveGameStart');
 Route::get('/exitGame'            , 'UserController@saveGameEnd');   
-Route::get('/startVideo/{id}'          , 'UserController@saveVideoStart');   
-Route::get('/exitVideo/{genre}'          , 'UserController@saveVideoEnd');     
+Route::get('/startVideo/{id}/{genre}' , 'UserController@saveVideoStart');   
+Route::get('/exitVideo/'          , 'UserController@saveVideoEnd');     
 
 Route::get('/maxGame'              ,     'HallofFameController@maxGames');
 

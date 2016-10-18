@@ -29,7 +29,7 @@
                   </li>
               </ul>
           <ul id="links" class="nav navbar-nav navbar-right">
-            <li class="active"><a href="{{ url('/videos') }}">BACK</a></li>
+            <li class="active"><a href="{{ url('/exitVideo') }}">BACK</a></li>
           </ul>
         </div>
     </nav>

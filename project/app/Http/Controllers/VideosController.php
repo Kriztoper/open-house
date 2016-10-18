@@ -93,10 +93,11 @@ class VideosController extends Controller
   *   Return the video(episode) clicked by the user.
   */
   public function watchVideos($id){
+      $genre= DB::table('videosgenres')->where('videoGenreID',$id)->pluck('genreID');
       $videos = DB::table('videos')->where('videoID',$id)->first();
       /*$seriesVideo = DB::table('seriesVideo')->where('seriesID',$id)->get();
         $listOfVideos = DB::table('videos')->whereIn('videosID',$serVideo)->get();*/
-      return view('watch_video',['videos'=>$videos]);
+      return redirect('/startVideo/'.$videos.'/'.$genre);  
   }
 
   // routes for views
