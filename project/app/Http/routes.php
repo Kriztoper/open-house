@@ -70,6 +70,8 @@ Route::get('/startVideo/{id}/{genre}' , 'UserController@saveVideoStart');
 Route::get('/exitVideo/'          , 'UserController@saveVideoEnd');     
 
 Route::get('/maxGame'              ,     'HallofFameController@maxGames');
+Route::get('/maxAnime'             ,     'HallofFameController@maxAnime');
+Route::get('/maxDrama'            		,'HallofFameController@maxDrama');
 
 /*the next two lines are temporary, used for testing*/
 Route::get('/buyVid/{videoID}', 'TokenController@buy_video');

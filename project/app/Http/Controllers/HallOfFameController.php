@@ -14,7 +14,24 @@ class HallOfFameController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+    public function maxDrama(){
+        $max=DB::table('videoTime')
+            ->max('KDRAMA');
+        $user=DB::table('videoTime')
+            ->where('KDRAMA',$max)
+            ->pluck('studentNumber');
+        var_dump($user);
+        exit();
+    }
+    public function maxAnime(){
+        $max=DB::table('videoTime')
+            ->max('ANIME');
+        $user=DB::table('videoTime')
+            ->where('ANIME',$max)
+            ->pluck('studentNumber');
+        var_dump($user);
+        exit();
+    }
     public function maxGames(){
          DB::table('gameTime')->orderBy('totalTime','DESC')->chunk(10,function($users){
             foreach($users as $user){
@@ -22,7 +39,7 @@ class HallOfFameController extends Controller
                  var_dump($sNumber);
             }
          });
-         exit;
+         exit();
     }  
     public function index()
     {
