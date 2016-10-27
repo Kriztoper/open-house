@@ -97,25 +97,49 @@
 		</div>
 	</div>
 
-	<!-- Modal lack of tokens -->
-	<div id="lackOfTokenModal" class="modal fade" role="dialog">
+	<!-- Modal for tutorial-->
+	<div id="tutorialModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
-					<img id="modal-logo" src="http://i.imgur.com/i4LQ5Bi.png" />
-					<img src="http://i.imgur.com/2ggNleD.jpg" />
-					<h4 class="modal-title"><strong>KOMSAI OPENHOUSE ERROR 401!</strong></h4>
-				</div>
-				<div class="modal-body">
-            		<center><h4> Not enough tokens to buy this game </h4></center>
-            		<center><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Get Tokens!!</button></center>
+					<div id="tutorialCarousel" class="carousel slide" data-ride="carousel">
+
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner" role="listbox">
+					    <div class="item active">
+					      <img src="/images/modal/tutorial_1.png" alt="Welcome">
+					    </div>
+
+					    <div class="item">
+					      <img src="/images/modal/tutorial_2.png" alt="Chania">
+					    </div>
+
+					    <div class="item">
+					      <img src="/images/modal/tutorial_3.png" alt="Flower">
+					    </div>
+
+					    <div class="item">
+					      <img src="/images/modal/tutorial_4.png" alt="Flower">
+					    </div>
+					  </div>
+
+					  <!-- Left and right controls -->
+					  <a class="left carousel-control" href="#tutorialCarousel" role="button" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#tutorialCarousel" role="button" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- #e74c3c -->
+	
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
@@ -129,6 +153,16 @@
 		{
 			$('#myModal').modal({show:true});
 			$('h6').show();
+	});
+	</script>
+	@endif
+
+	<?php $error = Session::get('error'); ?>
+	@if(count($error)>0 && Session::get('error') == 405)
+	<script>
+	$(function()
+		{
+			$('#tutorialModal').modal({show:true});
 	});
 	</script>
 	@endif

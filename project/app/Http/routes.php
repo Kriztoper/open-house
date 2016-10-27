@@ -30,10 +30,12 @@ Route::get('/register'  , 'Auth\AuthController@getRegister');
 Route::post('/register' , 'Auth\AuthController@postRegister');
 
 // Routes for normal user
+Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'UserController@show_dashboard']);
+Route::get('/signin'       , 'UserController@signin');
 Route::get('/dashboard'    , 'UserController@show_dashboard');
 Route::get('/hall_of_fame' , 'UserController@show_hall_of_fame');
 Route::get('/profile'      , 'UserController@show_profile');
-Route::post('/tokens'	     , 'UserController@add_token');
+Route::post('/tokens'	   , 'UserController@add_token');
 Route::get('/game'         , 'GamesController@listGames');
 Route::post('/save_profile', 'UserController@save_Profile');
 
@@ -60,18 +62,16 @@ Route::get('/list_vid'        , 'VideosController@show_list_vid');
 Route::get('/watch_video/{id}', 'VideosController@watchVideos');
 Route::get('/videos'          , 'VideosController@listSeries');
 Route::get('/list_video/{id}' , 'VideosController@listVideos');
-Route::get('/watch_video/{id}/{genre}', 'VideosController@watchVideos');
-Route::get('/videos'          , 'VideosController@listSeries');
 
 //Time_Usage
-Route::get('/startGame/{id}'           , 'UserController@saveGameStart');
-Route::get('/exitGame'            , 'UserController@saveGameEnd');   
-Route::get('/startVideo/{id}/{genre}' , 'UserController@saveVideoStart');   
-Route::get('/exitVideo/'          , 'UserController@saveVideoEnd');     
-
-Route::get('/maxGame'              ,     'HallofFameController@maxGames');
-Route::get('/maxAnime'             ,     'HallofFameController@maxAnime');
-Route::get('/maxDrama'            		,'HallofFameController@maxDrama');
+Route::get('/startGame/{id}'          , 'UserController@saveGameStart');
+Route::get('/exitGame'                , 'UserController@saveGameEnd');   
+Route::get('/startVideo/{id}/{genre}' , 'UserController@saveVideoStart'); 
+Route::get('/redirect/{id}'           , 'UserController@videoRedirect'); 
+Route::get('/exitVideo'              , 'UserController@saveVideoEnd');     
+Route::get('/maxGame'                 , 'HallofFameController@maxGames');
+Route::get('/maxAnime'                , 'HallofFameController@maxAnime');
+Route::get('/maxDrama'            	  ,'HallofFameController@maxDrama');
 
 /*the next two lines are temporary, used for testing*/
 Route::get('/buyVid/{videoID}', 'TokenController@buy_video');

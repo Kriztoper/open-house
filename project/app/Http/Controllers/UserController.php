@@ -83,6 +83,10 @@ class UserController extends Controller
     {
         return view('user.videos');
     }
+    public function signin()
+    {
+        return Redirect::to('/dashboard')->with('error', 405);
+    }
 
     /**
      * add tokens based on code input of the user
@@ -114,20 +118,24 @@ class UserController extends Controller
         return redirect('/game');
     }
 
-    public function saveVideoStart($videoPath,$genre){
+    public function saveVideoStart($videoPath,$genre){ 
+        $genreId=(int)($genre);
         $starter=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
         $user=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('studentNumber');
         if(empty($user)){
                 DB::table('videoTime')->insert([
-                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'KDRAMA'=>0,'ANIME'=>0,'genre'=>$genre],
+                ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'KDRAMA'=>0,'ANIME'=>0,'genre'=>$genreId],
                 ]); 
         }else{
-             DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter,'genre'=>$genre]);
+             DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter,'genre'=>$genreId]);
         }
-        return redirect('watch_video',['videos'=>$videoPath]);
-
+        return redirect('/redirect/'.$videoPath);
     }
+    public function videoRedirect($videoPath){
+          $videos = DB::table('videos')->where('videoID',$videoPath)->first();
+           return view('watch_video',['videos'=>$videos]);
+        }
     public function saveVideoEnd(){
 
         $ender=(int)(microtime(true));
@@ -135,6 +143,7 @@ class UserController extends Controller
         $starter=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('timeStart');
         $current=$ender-$starter;
         $genre=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('genre');
+        
         if($genre==1){
             $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('ANIME');
             $total=$total+$current;

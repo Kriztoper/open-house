@@ -56,19 +56,8 @@ class VideosController extends Controller
                 ->select('series.*')
                 ->where('genres.genreName','K-Drama')
                 ->get();
-       $mostBought = DB::table('series')
-                ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                ->join('genres','seriesGenres.genreID','=','genres.genreID')
-                ->select('series.*')
-                ->where('genres.genreName','Most Bought')
-                ->get();
-      /*$popularSeries = DB::table('series')
-                      ->join('seriesVideo','series.seriesID','=','seriesVideo.seriesID')
-                      ->join('userVideos','userVideos.videoID','=','seriesVideo.videoID')
-                      ->select('series.*')
-                      ->get();*/
      
-      return view('user.videos',['anime' => $anime,'featuredContent' => $featuredContent,'kDrama' => $kDrama,'mostBought' =>  $mostBought]);
+      return view('user.videos',['anime' => $anime,'featuredContent' => $featuredContent,'kDrama' => $kDrama]);
   }
   /**
   *   List all videos of a series (episodes)
@@ -76,6 +65,7 @@ class VideosController extends Controller
    public function listVideos($id){
        $seriesVideo = DB::table('seriesVideo')->where('seriesID', $id)->get();
        $series = DB::table('series')->where('seriesID',$id)->first();
+       $serVideo = array();
        foreach($seriesVideo as $serVid){
            $serVideo[] = $serVid->videoID;
        }
@@ -87,13 +77,14 @@ class VideosController extends Controller
   *   Return the video(episode) clicked by the user.
   */
   public function watchVideos($id){
-      $genre= DB::table('videosgenres')->where('videoGenreID',$id)->pluck('genreID');
-      $videos = DB::table('videos')->where('videoID',$id)->first();
+  $seriesID=DB::table('seriesvideo')->where('videoID',$id)->pluck('seriesID');
+  $genre= DB::table('seriesGenres')->where('videoID',$seriesID)->pluck('genreID');
+  //$videos = DB::table('videos')->where('videoID',$id)->first();
       /*$seriesVideo = DB::table('seriesVideo')->where('seriesID',$id)->get();
         $listOfVideos = DB::table('videos')->whereIn('videosID',$serVideo)->get();*/
-      return redirect('/startVideo/'.$videos.'/'.$genre);  
+    //return view('watch_video',['videos'=>$videos]);
+  return redirect('/startVideo/'.$id.'/'.$genre);  
   }
-
   // routes for views
   public function show_list_vid(){
     return view('list_vid'); 

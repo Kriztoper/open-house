@@ -68,9 +68,25 @@
 	width:  25%;
 }
 
-#lackOfTokenModal .modal-header{
-	background-color:#0B4F66;
+#tutorialModal .modal-header .modal-title{
+	font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 	color:white;
-	padding-bottom: 15px;
+	padding-bottom: 20px;
 }
 
+#tutorialModal .modal-header #modal-logo{
+	padding-top: 20px;
+}
+
+#tutorialModal .modal-header{
+	background-color: #3980fb;
+	color:white;
+}
+
+#tutorialModal .modal-header .modal-desc{
+	text-align: center;
+}

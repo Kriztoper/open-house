@@ -58,8 +58,20 @@
       <div class="container-fluid">
             <center>
                 <video height="400" width="400" controls>
-                <source src="{{url('/'.$videos->videoURL)}}" type="video/mp4">
+                  <source src="{{url('/'.$videos->videoURL)}}" type="video/mp4">
+                @if(strpos($videos->videoURL, '.flv')>0)
+                  <object>
+                  <param name="game" value="{{url(''.$videos->videoURL)}}">
+                    <embed src="{{ url(''.$videos->videoURL) }}" width="400" height="400">
+                  </object>
+                @elseif(strpos($videos->videoURL, '.mkv')>0)
+                <source src="{{url('/'.$videos->videoURL)}}" type="video/mkv">
+                 @elseif(strpos($videos->videoURL, '.ogg')>0)
+                <source src="{{url('/'.$videos->videoURL)}}" type="video/ogg">
+                 @elseif(strpos($videos->videoURL, '.mov')>0)
+                <source src="{{url('/'.$videos->videoURL)}}" type="video/mov">
                     Your browser does not support HTML5 video.
+                @endif
                 </video>
                 <h4>{{"".$videos->videoName}}</h4>
             </center>

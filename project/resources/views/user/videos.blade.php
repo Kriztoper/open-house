@@ -72,8 +72,10 @@
 			    				<div class="thumbnail">
 			      					<img src="{{url("/images/Poster/".$animeVids->thumbnail.".jpg")}}" alt="...">
 			      					<div class="caption">
-			        					<h3>{{$animeVids->seriesName}}</h3>
-			        					<p>{{$animeVids->seriesDesc}}</p>
+			      						
+			        					<!--<h3>{{$animeVids->seriesName}}</h3>-->
+			        					
+			        					<!--<p>{{$animeVids->seriesDesc}}</p>-->
 			      					</div>
 			    				</div>
 			    			</a>
@@ -88,8 +90,10 @@
 			    				<div class="thumbnail">
 			      					<img src="{{url("/images/Poster/".$korean->thumbnail.".jpg")}}" alt="...">
 			      					<div class="caption">
+			      						<center>
 			        					<h3>{{$korean->seriesName}}</h3>
-			        					<p>{{$korean->seriesDesc}}</p>
+			        					</center>
+			        					<!--<p>{{$korean->seriesDesc}}</p>-->
 			      					</div>
 			    				</div>
 			    			</a>
@@ -183,14 +187,6 @@
 	</script>
 	@endif
 
-	<?php $error = Session::get('error'); ?>
-	@if(count($error)>0 && Session::get('error') == 401)
-	<script>
-	$(function()
-		{
-			$('#myModal').modal({show:true});
-	});
-	</script>
-	@endif
+	
 </body>
 </html>

@@ -37,7 +37,7 @@
             <li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
               <li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
               <li><a href="{{ url('/game') }}">GAMES</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#errorModal"">VIDEOS</a></li>
+              <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" role="button"> {{ strtoupper(Auth::user()->first_name) }}
                 <span class="caret"></span></a>
