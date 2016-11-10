@@ -79,7 +79,7 @@
 
           <div class="form-group">
             <div class="col-md-12">
-              <a href="/password/email">Forgot Your Password?</a>
+              <a href="{{ url('/forgot_password') }}">Forgot Your Password?</a>
             </div>
           </div>
         </form>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
+use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -70,5 +72,15 @@ class AuthController extends Controller
        ]);
    }
 
+   protected function forgot_password(){
+    return view('auth.forgotpassword');
+   }
+   protected function save_forgot_pass(Request $request)
+   {
+      $target_user = User::where('student_number', $request->student_number)->first();
+      $target_user->password = bcrypt($request->password);
+      $target_user->save();
+      return view('auth.login');s
+   }
    
 }
