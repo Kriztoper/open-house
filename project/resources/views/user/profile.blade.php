@@ -113,7 +113,7 @@
             <div class="panel panel-footer trans col-lg-12">
               <div class="pull-right">
               <button type="button" class="btn btn-primary goldbg gobolds black" data-toggle="modal" data-target="#editProfile">Edit Profile</button>
-              <a href="#" class="btn btn-primary redbg gobolds black">Change Password</a>
+              <a href="{{ url('/change_password') }}" class="btn btn-primary redbg gobolds black">Change Password</a>
             </div>
             </div>
           </div>

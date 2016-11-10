@@ -38,6 +38,8 @@ Route::get('/profile'      , 'UserController@show_profile');
 Route::post('/tokens'	   , 'UserController@add_token');
 Route::get('/game'         , 'GamesController@listGames');
 Route::post('/save_profile', 'UserController@save_Profile');
+Route::get('/change_password', 'UserController@change_password');
+Route::post('/save_password', 'UserController@save_password');
 
 // Admin routes
 Route::get('/admin'           , 'AdminController@show_dashboard');

@@ -45,6 +45,22 @@ class UserController extends Controller
     }
 
     /**
+     * Change Password
+     *
+     * @return view
+     */
+    public function change_password()
+    {
+        return view('user.changepassword');
+    }
+
+    public function save_password(Request $request)
+    {
+        Auth::user()->update(['password' => bcrypt($request->password)]);
+        return view('user.profile');
+    }
+
+    /**
      * Show hall of fame
      *
      * @return view
