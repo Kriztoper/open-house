@@ -17,10 +17,14 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->integer('student_number')->unique();
-            $table->string('username')->unique();
             $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();
+            $table->integer('user_ID');
+            $table->integer('rand_num');
+            $table->integer('token');
+            $table->integer('image_ID');
+            $table->float('numOfHours');
         });
     }
 
@@ -32,5 +36,6 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::drop('users');
+        Schema::dropIfExists('users');
     }
 }

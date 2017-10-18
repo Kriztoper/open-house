@@ -1,0 +1,92 @@
+.modal{
+	padding-left:0px;
+	top: 13%;
+}
+
+.modal-body>form>input{
+	display:inline-block;
+	text-align: center;
+	border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-header{
+	padding:0px;
+	background-color: #222;
+	border-bottom: none;
+}
+
+.modal-header>img{
+	width:100%;
+}
+
+.modal-header>#modal-logo{	
+	height: 50%;
+	width:50%;
+	margin-left: 24%;
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.modal-header>div{
+	height: 50%;
+}
+
+.modal-header>h4{
+	color: white;
+	display: block;
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.modal-title {
+    font-family: montserratregular;
+	text-align: center;   	
+}
+
+.modal-body{
+	background-color: #ec462e;
+	border: solid 1px #ec462e;
+}
+
+.modal-body h6{
+	color:yellow;
+}
+
+#modal-button{
+	background-color: #ec462e;
+	border: solid 2px white;
+	color: white;
+	width: 30%;
+	border-radius: 20px;
+}
+
+#lackOfTokenModal .modal-header #token-error{
+	padding-top: 15px;
+	height: 25%;
+	width:  25%;
+}
+
+#tutorialModal .modal-header .modal-title{
+	font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	color:white;
+	padding-bottom: 20px;
+}
+
+#tutorialModal .modal-header #modal-logo{
+	padding-top: 20px;
+}
+
+#tutorialModal .modal-header{
+	background-color: #3980fb;
+	color:white;
+}
+
+#tutorialModal .modal-header .modal-desc{
+	text-align: center;
+}

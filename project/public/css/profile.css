@@ -1,0 +1,142 @@
+html {
+	width: 100%;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-image: url(http://i.imgur.com/ooujE7o.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+	background-color: transparent;
+	font-family: montserratregular;
+}
+
+@font-face {
+    font-family: 'goboldregular';
+    src: url('../fonts/gobold_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gobold_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h4 {
+	font-size: 40px;
+	color: white;
+}
+
+#head {
+	background-image: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#bud {
+	border-style: none;
+	padding-top: 0;
+}
+
+#inp {
+	margin-bottom: 10px;
+}
+
+.modalSize {
+	width: 500px;
+}
+
+.bg {
+	background-image: url(http://i.imgur.com/l9c6lmf.jpg);
+}
+
+.gap {
+	margin-bottom: 10px;
+}
+
+.gobolds {
+	font-family: lemonmilkregular;
+	font-size: 15px;
+}
+
+.pac{
+	position: absolute;
+	top: 46.5%;
+	left: 58%;
+}
+
+.ghost{
+	position: absolute;
+	top: 47%;
+	left: 62%;
+}
+
+.logo{
+	position: absolute;
+	top: 23%;
+	left: 64%;
+}
+
+.profBody{
+	position: absolute;
+	top: 20%;
+	left:10%;
+	width: 40%;
+}
+
+.trans{
+	background: none;
+}
+
+.redbg{
+	background: red;
+}
+
+.goldbg{
+	background: gold;
+}
+
+.cyan {
+	color: cyan;
+}
+.blue {
+	color: #233f59;
+}
+
+.redfont{
+	color: red;
+}
+.gold {
+	color: gold;
+}
+
+.red {
+	color: #BA002c;
+}
+
+.white {
+	color: black;
+}
+
+.black {
+	color: black;
+}

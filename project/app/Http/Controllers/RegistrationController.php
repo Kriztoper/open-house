@@ -39,19 +39,24 @@ class RegistrationController extends Controller
     }
 
 
-    public function store(FormBuilder $formBuilder, Request $request)
+    public function store(Request $request)
     {
-        $form = $formBuilder->create(App\Forms\SongForm::class);
+        $form = $this->form(\App\Forms\RegisterForm::class);
 
         if (!$form->isValid()) {
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
 
         $data = $request->all();
+        $data['password'] = bcrypt($data['password']);
         $user = User::create($data);
 
-        return \Redirect::to('/project');
+        return \Redirect::to('/success');
         // Do saving and other things...
+    }
+
+    public function success(){
+        return view('success');
     }
 
     /**

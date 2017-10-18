@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+body{
+  background: url("http://imgur.com/B9P1JYs.gif") no-repeat center fixed;
+  background-size: cover;
+  overflow: hidden;
+  font-family: 'montserratregular';
+}
+
+.Absolute-Center {
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.Absolute-Center.is-Responsive {
+  width: 100%; 
+  height: 100%;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 40px;
+  color: white;
+}
+
+#logo{
+  margin-top: 3%;
+  height: 25%;
+  width: 25%;
+}
+
+.log{
+  text-align: center;
+}
+
+.btn{
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#reg{
+  border-color: #FF8226;
+  background: #FF8226; 
+}
+
+#back{
+  border-color: #BA002C;
+  background: #BA002C;
+}
