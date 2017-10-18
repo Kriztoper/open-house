@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Kris\LaravelFormBuilder\FormBuilderTrait;
+
 use App\Forms\RegisterForm;
 use ValidatesRequests;
 use App\User;
@@ -38,20 +40,17 @@ class VideosController extends Controller
 
       //$user = Auth::user();
       
-      $anime = DB::table('series')
-                ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
+      $anime = series::join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
                 ->join('genres','seriesGenres.genreID','=','genres.genreID')
                 ->select('series.*')
                 ->where('genres.genreName','Anime')
                 ->get();
-       $featuredContent = DB::table('series')
-                ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
+       $featuredContent = series::join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
                 ->join('genres','seriesGenres.genreID','=','genres.genreID')
                 ->select('series.*')
                 ->where('genres.genreName','Featured Content')
                 ->get();
-       $kDrama = DB::table('series')
-                ->join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
+       $kDrama = series::join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
                 ->join('genres','seriesGenres.genreID','=','genres.genreID')
                 ->select('series.*')
                 ->where('genres.genreName','K-Drama')
@@ -63,27 +62,39 @@ class VideosController extends Controller
   *   List all videos of a series (episodes)
   */
    public function listVideos($id){
-       $seriesVideo = DB::table('seriesVideo')->where('seriesID', $id)->get();
-       $series = DB::table('series')->where('seriesID',$id)->first();
+
+       $seriesVideo = seriesVideo:: where('seriesID', $id)->get();
+       $series = series::where('seriesID',$id)->first();
+       $userVideos = UserVideo::where('userID',Auth::user()->student_number)->get();
+        $i=0;
+
+        $userVideo[] = array();
        $serVideo = array();
+
        foreach($seriesVideo as $serVid){
            $serVideo[] = $serVid->videoID;
+           $userVideo[$i] = "confirm";
+           foreach($userVideos as $useVid){
+              if($useVid->videoID == $serVid->videoID)
+                  $userVideo[$i]="";
+           }
+           $i++;
        }
-       $videos = DB::table('videos')->whereIn('videoID',$serVideo)->get();
-
-       return view('list_vid',['videos'=>$videos, 'series'=>$series]);
+       $videos = video::whereIn('videoID',$serVideo)->get();
+       return view('list_vid',['videos'=>$videos, 'series'=>$series , 'userVideo' =>$userVideo]);
   }
   /**
   *   Return the video(episode) clicked by the user.
   */
   public function watchVideos($id){
-  $seriesID=DB::table('seriesvideo')->where('videoID',$id)->pluck('seriesID');
+      $videos = video::where('videoID',$id)->first();
+      $genre= DB::table('videosgenres')->where('videoGenreID',$id)->pluck('genreID');
+      /*$videos = DB::table('videos')->where('videoID',$id)->first();*/
+      return view('watch_video',['videos'=>$videos]);
+
+  /*$seriesID=DB::table('seriesvideo')->where('videoID',$id)->pluck('seriesID');
   $genre= DB::table('seriesGenres')->where('videoID',$seriesID)->pluck('genreID');
-  //$videos = DB::table('videos')->where('videoID',$id)->first();
-      /*$seriesVideo = DB::table('seriesVideo')->where('seriesID',$id)->get();
-        $listOfVideos = DB::table('videos')->whereIn('videosID',$serVideo)->get();*/
-    //return view('watch_video',['videos'=>$videos]);
-  return redirect('/startVideo/'.$id.'/'.$genre);  
+  return redirect('/startVideo/'.$id.'/'.$genre);  */
   }
   // routes for views
   public function show_list_vid(){

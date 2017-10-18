@@ -80,7 +80,7 @@ class AuthController extends Controller
       $target_user = User::where('student_number', $request->student_number)->first();
       $target_user->password = bcrypt($request->password);
       $target_user->save();
-      return view('auth.login');s
+      return view('auth.login');
    }
    
 }

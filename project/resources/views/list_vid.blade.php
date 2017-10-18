@@ -58,8 +58,8 @@
 					<div class="panel-body">
 						<h2 class="eps-head">LIST OF EPISODES</h2>
 						<ul class="eps">
-							@foreach ($videos as $video)
-							<li><a class="confirm" href="{{url('/buyVid/'.$video->videoID)}}">{{$video->videoName}}</a></li>
+							@foreach ($videos as $index=>$video)
+							<li><a class="{{$userVideo[$index++]}}" href="{{url('/buyVid/'.$video->videoID)}}">{{$video->videoName}}</a></li>
 							@endforeach
 							
 						</ul>
@@ -95,7 +95,7 @@
 		});
 		$(function() {
     		$('.confirm').click(function() {
-        	return window.confirm("Buy this video?");
+        	return window.confirm("Buy this video for 5 Tokens?");
     	});
 		});
     </script>
