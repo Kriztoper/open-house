@@ -88,11 +88,11 @@ class VideosController extends Controller
   */
   public function watchVideos($id){
       $videos = video::where('videoID',$id)->first();
-      $genre= DB::table('videosgenres')->where('videoGenreID',$id)->pluck('genreID');
+      $genre= DB::table('videosGenres')->where('videoGenreID',$id)->pluck('genreID');
       /*$videos = DB::table('videos')->where('videoID',$id)->first();*/
       return view('watch_video',['videos'=>$videos]);
 
-  /*$seriesID=DB::table('seriesvideo')->where('videoID',$id)->pluck('seriesID');
+  /*$seriesID=DB::table('seriesVideo')->where('videoID',$id)->pluck('seriesID');
   $genre= DB::table('seriesGenres')->where('videoID',$seriesID)->pluck('genreID');
   return redirect('/startVideo/'.$id.'/'.$genre);  */
   }
