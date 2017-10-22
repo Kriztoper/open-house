@@ -62,7 +62,7 @@ class AuthController extends Controller
     */
    protected function create(array $data)
    {
-      $data['token'] = 20;
+      $data['token'] = 100;
        return User::create([
            'first_name'     => $data['first_name'],
            'last_name'      => $data['last_name'],

@@ -4,15 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width = device-width, initial-scale = 1">
 	
-	<title>Awesome Games!</title>
+	<title>Comments</title>
 
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="css/content.css">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="css/modal.css">
+	<link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="/css/content.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/modal.css">
+  <link rel="stylesheet" href="/css/comments.css" type="text/css">
+  
 
 </head>
 <body>
@@ -48,63 +50,13 @@
   		</div>
 	</nav>
 
-	<div class="container-fluid games">
-		<div class="container">
-				<h1 id="featured" class="page-header">FEATURED GAMES</h1>
-				<div class="single-item">
-					@foreach($featured as $feat)
-					<div class="slick-item">
-						<a href="{{ url('/buyGame/'.$feat->gameID) }}">
-							<img src="{{url('/'.$feat->fthumbnail)}}">
-						</a>
-					</div>
-					@endforeach
-				</div>
-			</div>
-	</div>
 
-	<div class="container-fluid more-content">
-			<div class="container">
-				<h2 class="page-header headers">ACTION</h2>
-				<div class="row">
-			  		@foreach($action as $actions)
-			  		<div class="col-md-2">
-			  			<div class="thumbnail">
-			  				<a href="{{url('buyGame/'.$actions->gameID)}}">
-			  					<img src="{{url('/'.$actions->thumbnail)}}" alt="{{$actions->gameName}}">
-			  				</a>
-			  			</div>
-			  		</div>
-			  		@endforeach
-				</div>
-				<h2 class="page-header headers">STRATEGY</h2>
-				<div class="row">
-					@foreach($Strategy as $strats)
-			  		<div class="col-md-2">
-			  			<div class="thumbnail">
-			  				<a href="{{url('buyGame/'.$strats->gameID)}}">
-			  					<img src="{{url('/'.$strats->thumbnail)}}" alt="{{$strats->gameName}}">
-			  				</a>
-			  			</div>
-			  		</div>
-			  		@endforeach
-				</div>
-				<h2 class="page-header headers">BOARD GAMES</h2>
-				<div class="row">
-					@foreach($boardGames as $boardGame)
-			  		<div class="col-md-2">
-			  			<div class="thumbnail">
-			  				<a href="{{url('buyGame/'.$boardGame->gameID)}}">
-			  					<img src="{{url('/'.$boardGame->thumbnail)}}" alt="{{$boardGame->gameName}}">
-			  				</a>
-			  			</div>
-			  		</div>
 
-			  		@endforeach
-				</div>
-			</div>
-		</div>
-		
+  <div class="container" id="comments-cntnr">
+    @include('partials.comments_partial')
+  </div>
+
+
 		<br>
 		<br>
 		<br>
@@ -159,7 +111,7 @@
    	<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.0/jquery-migrate.min.js"></script>
-	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="/slick/slick.min.js"></script>
 
   	 <script type="text/javascript">
     	$('.single-item').slick({

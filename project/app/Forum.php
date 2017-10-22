@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Forum extends Model
 {
-    protected $fillable = ['content', 'forum_id'];
+    protected $fillable = ['title'];
     public $timestamps = false;
+    public $table = 'forums';
 }
