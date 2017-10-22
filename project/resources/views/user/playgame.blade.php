@@ -42,8 +42,10 @@
 			</div>		
 		@elseif	($game->isJar==1)	
 			<div id="middle" style="width=565px;margin:0 auto;">
-	   			<applet code="{{$game->className}}" archive="{{url(''.$game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
-	   			</applet>
+	   			<object type="application/x-java-applet" src="{{url(''.$game->gameURL)}}" width = "{{$game->width}}" height="{{$game->height}}">
+					<param name="archive" value="{{url(''.$game->gameURL)}}" />
+					Applet failed to run.  No Java plug-in was found.
+	   			</object>
 	   		</div> 
 		@endif
 	<!-- Modal for token -->

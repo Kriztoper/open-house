@@ -89,7 +89,7 @@
 			  		</div>
 			  		@endforeach
 				</div>
-				<h2 class="page-header headers">BOARD GAMES</h2>
+<!-- 				<h2 class="page-header headers">BOARD GAMES</h2>
 				<div class="row">
 					@foreach($boardGames as $boardGame)
 			  		<div class="col-md-2">
@@ -101,7 +101,7 @@
 			  		</div>
 
 			  		@endforeach
-				</div>
+				</div> -->
 			</div>
 		</div>
 		
