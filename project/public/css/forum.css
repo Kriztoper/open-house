@@ -11,12 +11,12 @@ body {
     list-style: none;
     padding: 10px;
     position: relative;
-    background: #fff;
-    border: 0.5px solid #50326C;
+    background: #f2f2f2;
+    /* border: 0.5px solid #50326C; */
 }
 
 #author {
-    background: chartreuse;
+    background: #67cf00;
     color: #fff;
     font-size: 12px;
     padding: 7px;

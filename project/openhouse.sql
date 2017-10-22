@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.6deb4
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 18, 2017 at 09:46 AM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Host: localhost
+-- Generation Time: Oct 23, 2017 at 12:44 AM
+-- Server version: 5.7.19-0ubuntu0.17.04.1
+-- PHP Version: 7.0.22-0ubuntu0.17.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,74 @@ SET time_zone = "+00:00";
 --
 -- Database: `openhouse`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `forum_id` int(10) UNSIGNED NOT NULL,
+  `content` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `author` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `forum_id`, `content`, `author`, `created_at`, `updated_at`) VALUES
+(1, 1, 'I am a comment in a forum post.', 'John Doe', '2017-10-20 17:00:00', '2017-10-20 20:00:00'),
+(2, 2, 'kung bat ako gumagawa ng paraan', 'John Doe', '2017-10-20 17:00:00', '2017-10-20 18:00:00'),
+(3, 3, 'Kayat mas mabuti nang malaman mo.', 'John Doe', '2017-10-20 16:02:00', '2017-10-20 16:00:10'),
+(4, 1, 'I am a comment in a forum.', 'John Doe', '2017-10-20 16:00:08', '2017-10-20 20:00:00'),
+(5, 3, 'Hi am a comment', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 3, 'You cant see me cauze am a comment', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 3, 'This comment is brought to you by...', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 3, 'Hello po people am a comment.', 'Jane Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 3, 'I am also another comment by', 'Jane Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 3, 'Hello po. Comment here.', 'Jane Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(14, 3, 'Hi again. Another comment here.', 'Jane Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(15, 3, 'Comment is coming.', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(16, 3, 'Another comment is coming.', 'Jane Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(18, 3, 'Oops a comment.', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(27, 3, 'Halooooo commeeeent', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(28, 3, 'Commentoooo', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(29, 1, 'after application init and running server there is this error in chrome 33.0.1750.146 console: GET http://localhost:4200/assets/app.css 404 (Not Found)\r\nember-cli version: 0.0.2', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(30, 8, 'Please enter your comment here. Thank very very much! Arigatouuuuu', 'Gary Kasparov', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(31, 8, 'Well well well', 'Gary Kasparov', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(32, 8, 'commentou', 'Gary Kasparov', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forums`
+--
+
+CREATE TABLE `forums` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `author` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `forums`
+--
+
+INSERT INTO `forums` (`id`, `title`, `author`, `created_at`, `updated_at`) VALUES
+(1, 'I am a forum title.', 'John Doe', '2017-10-20 18:00:00', '2017-10-20 20:00:00'),
+(2, 'This is also a forum title', 'John Doe', '2017-10-20 17:00:00', '2017-10-20 20:00:00'),
+(3, 'I am also a forum title', 'John Doe', '2017-10-20 18:00:00', '2017-10-20 19:00:00'),
+(5, 'Hello po. Am a new title po.', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 'Hi po. Thiz iz a title.', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 'Is this a working forum title?', 'Gary Kasparov', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 'AM a title', 'Gary Kasparov', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -166,18 +234,17 @@ INSERT INTO `games` (`gameID`, `gameName`, `gameDesc`, `scoreID`, `gameURL`, `th
 
 CREATE TABLE `gameTime` (
   `studentNumber` int(11) NOT NULL,
-  `timeStart` int(11) NOT NULL,
-  `timeOut` int(11) NOT NULL,
-  `totalTime` int(11) NOT NULL
+  `totalTime` int(11) NOT NULL,
+  `startTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `endTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `gameTime`
 --
 
-INSERT INTO `gameTime` (`studentNumber`, `timeStart`, `timeOut`, `totalTime`) VALUES
-(201354044, 0, 0, 14),
-(201467074, 1508299794, 0, 21);
+INSERT INTO `gameTime` (`studentNumber`, `totalTime`, `startTime`, `endTime`) VALUES
+(201712345, 207, '2017-10-22 15:55:10', '2017-10-22 07:55:10');
 
 -- --------------------------------------------------------
 
@@ -253,7 +320,55 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_10_16_061100_create_videoTime', 1),
 ('2016_10_16_061836_create_gamerTimer', 1),
 ('2016_10_16_154656_create_VidTimer', 2),
-('2016_11_14_015436_add_column_to_users', 3);
+('2016_11_14_015436_add_column_to_users', 3),
+('2014_10_12_000000_create_users_table', 1),
+('2014_10_12_100000_create_password_resets_table', 1),
+('2016_10_01_045816_create_games_table', 1),
+('2016_10_01_050107_create_videos_table', 1),
+('2016_10_01_050238_create_genres_table', 1),
+('2016_10_01_050452_create_gameGenres_table', 1),
+('2016_10_01_050615_create_videosGenres_table', 1),
+('2016_10_01_050738_create_images_table', 1),
+('2016_10_01_050914_create_scores_table', 1),
+('2016_10_10_132422_create_tokens_table', 1),
+('2016_10_10_132519_create_userVideos_table', 1),
+('2016_10_11_122431_create_series_table', 1),
+('2016_10_12_054121_create_seriesVideos_table', 1),
+('2016_10_12_113833_create_seriesGenres_table', 1),
+('2016_10_14_160417_user_time', 1),
+('2016_10_15_054307_create_userGames_table', 1),
+('2016_10_16_041855_create_userTimes_table', 1),
+('2016_10_16_061100_create_videoTime', 1),
+('2016_10_16_061836_create_gamerTimer', 1),
+('2016_10_16_154656_create_VidTimer', 2),
+('2016_11_14_015436_add_column_to_users', 3),
+('2014_05_19_151759_create_forum_table_categories', 4),
+('2014_05_19_152425_create_forum_table_threads', 4),
+('2014_05_19_152611_create_forum_table_posts', 4),
+('2015_04_14_180344_create_forum_table_threads_read', 4),
+('2015_07_22_181406_update_forum_table_categories', 4),
+('2015_07_22_181409_update_forum_table_threads', 4),
+('2015_07_22_181417_update_forum_table_posts', 4),
+('2016_05_24_114302_add_defaults_to_forum_table_threads_columns', 4),
+('2016_07_09_111441_add_counts_to_categories_table', 4),
+('2016_07_09_122706_add_counts_to_threads_table', 4),
+('2016_07_10_134700_add_sequence_to_posts_table', 4),
+('2016_07_29_171118_create_chatter_categories_table', 4),
+('2016_07_29_171118_create_chatter_discussion_table', 4),
+('2016_07_29_171118_create_chatter_post_table', 4),
+('2016_07_29_171128_create_foreign_keys', 4),
+('2016_08_02_183143_add_slug_field_for_discussions', 4),
+('2016_08_03_121747_add_color_row_to_chatter_discussions', 4),
+('2017_01_16_121747_add_markdown_and_lock_to_chatter_posts', 4),
+('2017_01_16_121747_create_chatter_user_discussion_pivot_table', 4),
+('2017_10_21_062303_create_forums_table', 5),
+('2017_10_21_063401_create_comments_table', 6),
+('2017_10_21_065615_create_forums_table', 7),
+('2017_10_21_180123_add_author_to_forums', 8),
+('2017_10_21_180130_add_author_to_comments', 8),
+('2017_10_22_003748_add_starts_ends_table', 9),
+('2017_10_22_005318_add_total_time_table', 1),
+('2017_10_22_050853_add_time_start_table', 10);
 
 -- --------------------------------------------------------
 
@@ -304,18 +419,18 @@ INSERT INTO `series` (`seriesID`, `seriesName`, `seriesDesc`, `thumbnail`, `fthu
 (3, 'Assassination Classroom', 'Assassination of an octopus', 'Assassination Classroom', 'Assassination Classroom 950'),
 (4, 'One Punch Man', 'Extremely OP MC', 'One Punch Man', 'One Punch Man 950'),
 (5, 'Pinocchio', 'Korean Pinocchio', 'Pinocchio', 'Pinocchio 950'),
-(6, 'White Album 2', 'Winter "Romance" story', 'White Album 2', 'White Album 2 950'),
+(6, 'White Album 2', 'Winter \"Romance\" story', 'White Album 2', 'White Album 2 950'),
 (7, '#Reply 1997', 'Korean reply', 'Reply 1997', 'Reply 1997 950'),
 (8, 'She Was Pretty', 'Beautiful Korean', 'She Was Pretty', 'She Was Pretty 950'),
-(9, 'KHR', 'The manga is about a young boy, Tsunayoshi Sawada, who discovers that he is next in line to become boss of the Vongola family, a powerful Mafia organization. The Vongolas'' most powerful hitman, a gun-toting infant named Reborn, is sent to teach Tsuna how ', 'khr 250x250', 'khr 250x250 950'),
-(10, 'KHR', 'Reborn!, known in Japan as Katekyō Hitman Reborn! (Japanese: 家庭教師ヒットマンリボーン! Hepburn: Katekyō Hittoman Ribōn!?, Katekyō, a portmanteau of Katei Kyōshi, means "home tutor"), is a Japanese manga written and illustrated by Akira Amano. The manga is about a yo', 'khr', 'khr 950'),
-(11, 'Kiseijuu sei no kakuritsu', 'Parasyte (Japanese: 寄生獣 Hepburn: Kiseijū?, lit. "Parasitic Beasts") is a science fiction horror manga series written and illustrated by Hitoshi Iwaaki, and published in Kodansha''s Afternoon magazine from 1988 to 1995. The manga was published in North Amer', 'parasyte', 'parasyte 950'),
+(9, 'KHR', 'The manga is about a young boy, Tsunayoshi Sawada, who discovers that he is next in line to become boss of the Vongola family, a powerful Mafia organization. The Vongolas\' most powerful hitman, a gun-toting infant named Reborn, is sent to teach Tsuna how ', 'khr 250x250', 'khr 250x250 950'),
+(10, 'KHR', 'Reborn!, known in Japan as Katekyō Hitman Reborn! (Japanese: 家庭教師ヒットマンリボーン! Hepburn: Katekyō Hittoman Ribōn!?, Katekyō, a portmanteau of Katei Kyōshi, means \"home tutor\"), is a Japanese manga written and illustrated by Akira Amano. The manga is about a yo', 'khr', 'khr 950'),
+(11, 'Kiseijuu sei no kakuritsu', 'Parasyte (Japanese: 寄生獣 Hepburn: Kiseijū?, lit. \"Parasitic Beasts\") is a science fiction horror manga series written and illustrated by Hitoshi Iwaaki, and published in Kodansha\'s Afternoon magazine from 1988 to 1995. The manga was published in North Amer', 'parasyte', 'parasyte 950'),
 (12, 'Magi Kingdom of Magic', 'Magi: The Labyrinth of Magic (Japanese: マギ Hepburn: Magi?) is a Japanese fantasy action adventure manga series written and illustrated by Shinobu Ohtaka. It has been serialized in Weekly Shōnen Sunday since June 2009, with the individual chapters collecte', 'magi', 'magi 950'),
-(13, 'Seven Deadly Sins', 'The Seven Deadly Sins (Japanese: 七つの大罪 Hepburn: Nanatsu no Taizai?) is a Japanese fantasy manga series written and illustrated by Nakaba Suzuki. It has been serialized in Kodansha''s Weekly Shōnen Magazine since October 2012, with the chapters collected in', '7 deadly sins', '7 deadly sins 950'),
+(13, 'Seven Deadly Sins', 'The Seven Deadly Sins (Japanese: 七つの大罪 Hepburn: Nanatsu no Taizai?) is a Japanese fantasy manga series written and illustrated by Nakaba Suzuki. It has been serialized in Kodansha\'s Weekly Shōnen Magazine since October 2012, with the chapters collected in', '7 deadly sins', '7 deadly sins 950'),
 (14, 'Tokyo Ghoul S1', 'Tokyo Ghoul is an anime television series by Studio Pierrot aired on Tokyo MX between July and September 2014 with a second season titled Tokyo Ghoul √A that aired January 8, 2015, to March 26, 2015. Studio Pierrot also did an OVA for Tokyo Ghoul: JACK al', 'tokyo ghoul', 'tokyo ghoul 950'),
 (15, 'Tokyo Ghoul S2', 'Tokyo Ghoul is an anime television series by Studio Pierrot aired on Tokyo MX between July and September 2014 with a second season titled Tokyo Ghoul √A that aired January 8, 2015, to March 26, 2015. Studio Pierrot also did an OVA for Tokyo Ghoul: JACK al', 'tokyo ghoulS2', 'tokyo ghoulS2 950'),
 (17, 'Good Doctor', 'Doctor story huhu', 'gooddoctor', 'gooddoctor 950'),
-(18, 'Cheese in the Trap', 'depicts the delicate relationship between female university student Hong Seol (Kim Go-Eun) and her senior Yoo Jung (Park Hae-Jin). Hong-Seol works part-time due to her family''s poor background. Yoo Jung is good looking, gets good grades, athletic and has ', 'Cheese In The Trap', 'Cheese In The Trap 950');
+(18, 'Cheese in the Trap', 'depicts the delicate relationship between female university student Hong Seol (Kim Go-Eun) and her senior Yoo Jung (Park Hae-Jin). Hong-Seol works part-time due to her family\'s poor background. Yoo Jung is good looking, gets good grades, athletic and has ', 'Cheese In The Trap', 'Cheese In The Trap 950');
 
 -- --------------------------------------------------------
 
@@ -701,10 +816,10 @@ INSERT INTO `tokens` (`tokenID`, `isActive`, `tokenName`, `tokenValue`) VALUES
 (45, 1, 'akk1aENP', 20),
 (46, 1, '75QfIMLw', 20),
 (47, 1, 'YPVFgLMr', 20),
-(48, 1, 'LVd2yJsc', 20),
+(48, 0, 'LVd2yJsc', 20),
 (49, 1, '18QU9J2o', 20),
 (50, 1, 'bpyMY2Ct', 20),
-(51, 1, 'vgnYULkC', 20),
+(51, 0, 'vgnYULkC', 20),
 (52, 1, 'MFtsAgvg', 20),
 (53, 1, 'rcnP2wqe', 20),
 (54, 1, 'Vsgoo6Fl', 20),
@@ -717,10 +832,10 @@ INSERT INTO `tokens` (`tokenID`, `isActive`, `tokenName`, `tokenValue`) VALUES
 (61, 1, 'akk1aENP', 20),
 (62, 1, '75QfIMLw', 20),
 (63, 1, 'YPVFgLMr', 20),
-(64, 1, 'LVd2yJsc', 20),
+(64, 0, 'LVd2yJsc', 20),
 (65, 1, '18QU9J2o', 20),
 (66, 1, 'bpyMY2Ct', 20),
-(67, 1, 'vgnYULkC', 20),
+(67, 0, 'vgnYULkC', 20),
 (68, 1, 'MFtsAgvg', 20),
 (69, 1, 'rcnP2wqe', 20),
 (70, 1, 'Vsgoo6Fl', 20),
@@ -769,7 +884,11 @@ INSERT INTO `tokens` (`tokenID`, `isActive`, `tokenName`, `tokenValue`) VALUES
 (113, 1, 'MWO8bM9I', 1),
 (114, 1, 'sx2qFkzW', 1),
 (115, 1, 'liG7XGKh', 1),
-(116, 1, 'GJROMI5e', 1);
+(116, 1, 'GJROMI5e', 1),
+(117, 0, 'ahO9En1E', 1000),
+(118, 1, '4OzWBCRX', 1000),
+(119, 0, 'ahO9En1E', 1000),
+(120, 1, '4OzWBCRX', 1000);
 
 -- --------------------------------------------------------
 
@@ -1312,7 +1431,541 @@ INSERT INTO `userGames` (`userID`, `gameID`, `numOfHours`) VALUES
 (201354044, 4, 0.00),
 (201354044, 31, 0.00),
 (201467074, 21, 0.00),
-(201467074, 24, 0.00);
+(201467074, 24, 0.00),
+(201247036, 3, 0.00),
+(201247036, 5, 0.00),
+(201247036, 25, 0.00),
+(201247036, 2, 0.00),
+(201339978, 2, 0.00),
+(201339978, 3, 0.00),
+(201352703, 2, 0.00),
+(201352703, 3, 0.00),
+(201352703, 29, 0.00),
+(201352703, 5, 0.00),
+(201352703, 20, 0.00),
+(201339978, 30, 0.00),
+(201352703, 23, 0.00),
+(201352703, 32, 0.00),
+(201352703, 30, 0.00),
+(201352703, 11, 0.00),
+(201352703, 9, 0.00),
+(201338192, 29, 0.00),
+(201338192, 33, 0.00),
+(201338192, 20, 0.00),
+(201338192, 11, 0.00),
+(201338192, 32, 0.00),
+(201352706, 9, 0.00),
+(201352706, 18, 0.00),
+(201338192, 4, 0.00),
+(201338192, 18, 0.00),
+(201338978, 10, 0.00),
+(201338978, 1, 0.00),
+(201338978, 18, 0.00),
+(201338978, 4, 0.00),
+(201352703, 6, 0.00),
+(201352703, 8, 0.00),
+(201352703, 12, 0.00),
+(201352703, 18, 0.00),
+(201338192, 8, 0.00),
+(201352706, 8, 0.00),
+(201338192, 34, 0.00),
+(201352703, 34, 0.00),
+(201338192, 36, 0.00),
+(201352703, 36, 0.00),
+(201338192, 35, 0.00),
+(201338192, 37, 0.00),
+(201334613, 4, 0.00),
+(201343275, 35, 0.00),
+(201338978, 30, 0.00),
+(201208532, 4, 0.00),
+(201480161, 21, 0.00),
+(20174513, 9, 0.00),
+(201512233, 9, 0.00),
+(201243900, 1, 0.00),
+(201754513, 11, 0.00),
+(201208532, 15, 0.00),
+(201754513, 15, 0.00),
+(201464813, 11, 0.00),
+(201754513, 12, 0.00),
+(201464813, 21, 0.00),
+(201208532, 16, 0.00),
+(201464813, 4, 0.00),
+(201754513, 21, 0.00),
+(201424468, 4, 0.00),
+(201339978, 14, 0.00),
+(201366209, 12, 0.00),
+(201366209, 11, 0.00),
+(201352792, 31, 0.00),
+(201344633, 1, 0.00),
+(201481022, 22, 0.00),
+(201366209, 9, 0.00),
+(201366209, 2, 0.00),
+(201339978, 45, 0.00),
+(201481022, 30, 0.00),
+(201481022, 31, 0.00),
+(201481022, 40, 0.00),
+(201424468, 1, 0.00),
+(201352792, 30, 0.00),
+(201354085, 19, 0.00),
+(201344633, 27, 0.00),
+(201352792, 17, 0.00),
+(201345789, 27, 0.00),
+(201341300, 38, 0.00),
+(201354111, 33, 0.00),
+(201354111, 37, 0.00),
+(201369904, 9, 0.00),
+(201354085, 38, 0.00),
+(201352792, 36, 0.00),
+(201345789, 30, 0.00),
+(201354111, 35, 0.00),
+(201369904, 4, 0.00),
+(201339978, 36, 0.00),
+(201345789, 16, 0.00),
+(201339978, 26, 0.00),
+(201344633, 19, 0.00),
+(201367501, 10, 0.00),
+(201506397, 2, 0.00),
+(201367501, 1, 0.00),
+(201504320, 1, 0.00),
+(201510777, 15, 0.00),
+(201367501, 2, 0.00),
+(201512658, 30, 0.00),
+(201367501, 4, 0.00),
+(201512658, 15, 0.00),
+(201506397, 30, 0.00),
+(201512658, 9, 0.00),
+(201506397, 48, 0.00),
+(201506397, 19, 0.00),
+(201512658, 19, 0.00),
+(201354080, 9, 0.00),
+(201334613, 3, 0.00),
+(201354080, 31, 0.00),
+(201369687, 12, 0.00),
+(201369687, 9, 0.00),
+(201352618, 14, 0.00),
+(201334613, 2, 0.00),
+(201338978, 40, 0.00),
+(201338978, 42, 0.00),
+(201362775, 11, 0.00),
+(201481022, 28, 0.00),
+(201352618, 36, 0.00),
+(201352618, 31, 0.00),
+(201481022, 19, 0.00),
+(201354080, 2, 0.00),
+(201481022, 17, 0.00),
+(201334613, 1, 0.00),
+(201481022, 39, 0.00),
+(201354080, 4, 0.00),
+(201352618, 53, 0.00),
+(201366209, 38, 0.00),
+(201366209, 40, 0.00),
+(201334612, 32, 0.00),
+(201334612, 31, 0.00),
+(201352797, 31, 0.00),
+(201351835, 31, 0.00),
+(201356789, 4, 0.00),
+(201512243, 9, 0.00),
+(201504676, 30, 0.00),
+(201512243, 30, 0.00),
+(201512243, 19, 0.00),
+(201504676, 31, 0.00),
+(201504676, 53, 0.00),
+(201351835, 50, 0.00),
+(201504676, 13, 0.00),
+(201352797, 32, 0.00),
+(201351835, 11, 0.00),
+(201503335, 15, 0.00),
+(201351835, 37, 0.00),
+(201504676, 1, 0.00),
+(201512243, 4, 0.00),
+(201343294, 1, 0.00),
+(201356789, 41, 0.00),
+(201353482, 9, 0.00),
+(201356789, 16, 0.00),
+(201353482, 11, 0.00),
+(201334851, 32, 0.00),
+(201334851, 11, 0.00),
+(201353482, 12, 0.00),
+(201356789, 48, 0.00),
+(201338192, 42, 0.00),
+(201338192, 30, 0.00),
+(201338192, 38, 0.00),
+(20131111, 13, 0.00),
+(20131111, 19, 0.00),
+(201481026, 4, 0.00),
+(201475355, 32, 0.00),
+(201473648, 2, 0.00),
+(201475355, 4, 0.00),
+(201481026, 2, 0.00),
+(201254887, 17, 0.00),
+(201473648, 3, 0.00),
+(201481026, 27, 0.00),
+(201473648, 50, 0.00),
+(201481026, 17, 0.00),
+(201362055, 33, 0.00),
+(201254887, 1, 0.00),
+(201362055, 51, 0.00),
+(201362055, 51, 0.00),
+(20131111, 4, 0.00),
+(201362775, 24, 0.00),
+(201334453, 4, 0.00),
+(201362775, 15, 0.00),
+(201334453, 15, 0.00),
+(201233333, 33, 0.00),
+(201233333, 30, 0.00),
+(201233333, 38, 0.00),
+(201233333, 32, 0.00),
+(201233333, 14, 0.00),
+(201233333, 17, 0.00),
+(201338192, 39, 0.00),
+(201338192, 24, 0.00),
+(201233333, 28, 0.00),
+(201233333, 7, 0.00),
+(201353034, 27, 0.00),
+(201338192, 27, 0.00),
+(201353034, 53, 0.00),
+(201339978, 27, 0.00),
+(201233333, 40, 0.00),
+(201353034, 43, 0.00),
+(201233333, 48, 0.00),
+(201233333, 16, 0.00),
+(201362775, 16, 0.00),
+(201338192, 21, 0.00),
+(201339978, 33, 0.00),
+(201352618, 49, 0.00),
+(201362775, 26, 0.00),
+(201233333, 5, 0.00),
+(201233333, 49, 0.00),
+(201233333, 53, 0.00),
+(201352618, 16, 0.00),
+(201362775, 28, 0.00),
+(201511645, 50, 0.00),
+(201362775, 5, 0.00),
+(201362775, 31, 0.00),
+(201464319, 4, 0.00),
+(201511645, 11, 0.00),
+(201338192, 28, 0.00),
+(201511645, 3, 0.00),
+(201338192, 31, 0.00),
+(201511645, 1, 0.00),
+(201481823, 15, 0.00),
+(201362775, 45, 0.00),
+(201481823, 9, 0.00),
+(201338339, 7, 0.00),
+(201362775, 44, 0.00),
+(201352618, 32, 0.00),
+(201352618, 4, 0.00),
+(201503335, 40, 0.00),
+(201352618, 37, 0.00),
+(201503617, 33, 0.00),
+(201352618, 3, 0.00),
+(201503617, 40, 0.00),
+(201352618, 19, 0.00),
+(201503617, 4, 0.00),
+(201338192, 1, 0.00),
+(201352618, 33, 0.00),
+(201506761, 11, 0.00),
+(201503335, 12, 0.00),
+(201503335, 37, 0.00),
+(201352618, 17, 0.00),
+(201473618, 37, 0.00),
+(201338192, 3, 0.00),
+(201717344, 6, 0.00),
+(201717344, 35, 0.00),
+(201717344, 42, 0.00),
+(201717344, 28, 0.00),
+(201506761, 6, 0.00),
+(201506761, 51, 0.00),
+(201857539, 53, 0.00),
+(201857539, 14, 0.00),
+(2011233, 17, 0.00),
+(201503609, 35, 0.00),
+(201338192, 19, 0.00),
+(201352797, 17, 0.00),
+(201352618, 5, 0.00),
+(201464319, 11, 0.00),
+(201503609, 42, 0.00),
+(201503609, 32, 0.00),
+(201464319, 13, 0.00),
+(201503609, 25, 0.00),
+(201503617, 32, 0.00),
+(201481810, 21, 0.00),
+(201481810, 26, 0.00),
+(2011233, 11, 0.00),
+(201338192, 26, 0.00),
+(201481810, 32, 0.00),
+(201476512, 6, 0.00),
+(201481810, 6, 0.00),
+(201857539, 49, 0.00),
+(201857539, 48, 0.00),
+(201352618, 40, 0.00),
+(201469019, 24, 0.00),
+(201338192, 2, 0.00),
+(201338192, 14, 0.00),
+(201473650, 21, 0.00),
+(201473650, 4, 0.00),
+(201473650, 15, 0.00),
+(201473650, 9, 0.00),
+(201339978, 1, 0.00),
+(201269829, 9, 0.00),
+(201269829, 1, 0.00),
+(201506461, 4, 0.00),
+(201334952, 4, 0.00),
+(201506461, 3, 0.00),
+(201334952, 15, 0.00),
+(201338016, 37, 0.00),
+(201352703, 37, 0.00),
+(201269829, 36, 0.00),
+(201269829, 31, 0.00),
+(201338016, 32, 0.00),
+(201344596, 25, 0.00),
+(201344596, 27, 0.00),
+(201504320, 9, 0.00),
+(201504320, 50, 0.00),
+(201506849, 14, 0.00),
+(201504320, 4, 0.00),
+(201364563, 9, 0.00),
+(201364563, 11, 0.00),
+(201364563, 21, 0.00),
+(201352703, 4, 0.00),
+(201354107, 6, 0.00),
+(201354107, 12, 0.00),
+(201354107, 1, 0.00),
+(201352703, 33, 0.00),
+(201352703, 16, 0.00),
+(201354107, 15, 0.00),
+(201338016, 16, 0.00),
+(201352703, 19, 0.00),
+(201338192, 48, 0.00),
+(201338016, 25, 0.00),
+(201352703, 40, 0.00),
+(201398868, 1, 0.00),
+(201480304, 27, 0.00),
+(201398868, 4, 0.00),
+(201239436, 12, 0.00),
+(201239436, 11, 0.00),
+(201353025, 11, 0.00),
+(201239436, 4, 0.00),
+(201239436, 15, 0.00),
+(201553009, 32, 0.00),
+(201553009, 7, 0.00),
+(201553009, 28, 0.00),
+(201473639, 1, 0.00),
+(201553009, 4, 0.00),
+(201473639, 6, 0.00),
+(201473639, 4, 0.00),
+(201418531, 42, 0.00),
+(201418531, 36, 0.00),
+(201418531, 1, 0.00),
+(201418531, 7, 0.00),
+(123, 6, 0.00),
+(123, 27, 0.00),
+(123, 5, 0.00),
+(201511362, 17, 0.00),
+(123, 17, 0.00),
+(201312345, 44, 0.00),
+(201429434, 1, 0.00),
+(201312345, 4, 0.00),
+(201512951, 19, 0.00),
+(201429434, 26, 0.00),
+(201353025, 4, 0.00),
+(201234437, 7, 0.00),
+(201429434, 32, 0.00),
+(201233333, 19, 0.00),
+(201367501, 16, 0.00),
+(201429434, 24, 0.00),
+(201869486, 1, 0.00),
+(201233333, 11, 0.00),
+(201234437, 4, 0.00),
+(201367501, 5, 0.00),
+(201234437, 1, 0.00),
+(201367501, 31, 0.00),
+(201233333, 15, 0.00),
+(201233333, 6, 0.00),
+(201456789, 19, 0.00),
+(201233333, 1, 0.00),
+(201466666, 7, 0.00),
+(201312345, 15, 0.00),
+(201312345, 33, 0.00),
+(201312345, 9, 0.00),
+(201312345, 17, 0.00),
+(201466666, 6, 0.00),
+(201466666, 36, 0.00),
+(201103229, 21, 0.00),
+(201103229, 4, 0.00),
+(201103229, 15, 0.00),
+(201103229, 9, 0.00),
+(201353025, 9, 0.00),
+(201124779, 12, 0.00),
+(201353025, 27, 0.00),
+(201506724, 4, 0.00),
+(201506724, 11, 0.00),
+(201466666, 15, 0.00),
+(201366209, 36, 0.00),
+(201352618, 51, 0.00),
+(201353034, 3, 0.00),
+(201144347, 4, 0.00),
+(201362775, 4, 0.00),
+(201353034, 50, 0.00),
+(201353034, 17, 0.00),
+(201833222, 26, 0.00),
+(201833222, 40, 0.00),
+(201833222, 17, 0.00),
+(201833222, 15, 0.00),
+(201362055, 4, 0.00),
+(222311111, 4, 0.00),
+(201144347, 6, 0.00),
+(201244347, 40, 0.00),
+(201481814, 11, 0.00),
+(201481814, 9, 0.00),
+(201481814, 12, 0.00),
+(201481814, 15, 0.00),
+(201244347, 48, 0.00),
+(222311111, 2, 0.00),
+(222311111, 7, 0.00),
+(201469019, 17, 0.00),
+(201352797, 13, 0.00),
+(201352797, 7, 0.00),
+(201367501, 36, 0.00),
+(201367501, 40, 0.00),
+(201345107, 15, 0.00),
+(201367501, 26, 0.00),
+(201464319, 31, 0.00),
+(201345107, 9, 0.00),
+(201257492, 15, 0.00),
+(201257492, 12, 0.00),
+(201257492, 33, 0.00),
+(201257492, 2, 0.00),
+(201345107, 11, 0.00),
+(201344349, 4, 0.00),
+(201344349, 31, 0.00),
+(201437650, 21, 0.00),
+(201458585, 32, 0.00),
+(201458585, 27, 0.00),
+(200812345, 36, 0.00),
+(201367501, 50, 0.00),
+(201458585, 15, 0.00),
+(201437650, 5, 0.00),
+(201367501, 42, 0.00),
+(201437650, 50, 0.00),
+(201399999, 49, 0.00),
+(201437650, 24, 0.00),
+(201367501, 7, 0.00),
+(201399999, 11, 0.00),
+(201399999, 7, 0.00),
+(201473627, 4, 0.00),
+(201367501, 14, 0.00),
+(201473627, 9, 0.00),
+(201473627, 21, 0.00),
+(201473627, 36, 0.00),
+(201473620, 4, 0.00),
+(201367501, 44, 0.00),
+(201367501, 41, 0.00),
+(201367501, 37, 0.00),
+(201469019, 10, 0.00),
+(201367501, 49, 0.00),
+(201367501, 45, 0.00),
+(201367501, 24, 0.00),
+(201506464, 4, 0.00),
+(201334952, 9, 0.00),
+(201334952, 11, 0.00),
+(201506464, 5, 0.00),
+(201352618, 7, 0.00),
+(201506464, 2, 0.00),
+(201506464, 27, 0.00),
+(2147483647, 9, 0.00),
+(201338192, 25, 0.00),
+(201338192, 5, 0.00),
+(201481022, 7, 0.00),
+(201481022, 50, 0.00),
+(210241244, 26, 0.00),
+(201421342, 19, 0.00),
+(201421342, 3, 0.00),
+(201421342, 14, 0.00),
+(201421342, 45, 0.00),
+(201353034, 19, 0.00),
+(201353034, 1, 0.00),
+(201464319, 50, 0.00),
+(201464319, 42, 0.00),
+(201464319, 9, 0.00),
+(201464319, 49, 0.00),
+(201469019, 48, 0.00),
+(201504562, 17, 0.00),
+(201511348, 4, 0.00),
+(201504604, 31, 0.00),
+(201511348, 19, 0.00),
+(201511348, 24, 0.00),
+(201506376, 9, 0.00),
+(201504562, 2, 0.00),
+(201506376, 4, 0.00),
+(200500000, 14, 0.00),
+(111, 4, 0.00),
+(201506376, 2, 0.00),
+(201511348, 2, 0.00),
+(111, 6, 0.00),
+(111, 27, 0.00),
+(201503613, 40, 0.00),
+(201504562, 31, 0.00),
+(201503613, 26, 0.00),
+(201503613, 31, 0.00),
+(201353034, 31, 0.00),
+(201338192, 15, 0.00),
+(201354081, 31, 0.00),
+(200500000, 26, 0.00),
+(201353034, 49, 0.00),
+(201353034, 36, 0.00),
+(200500000, 27, 0.00),
+(201353034, 48, 0.00),
+(201504954, 16, 0.00),
+(201366209, 19, 0.00),
+(201366209, 25, 0.00),
+(200500000, 50, 0.00),
+(111, 2, 0.00),
+(201476252, 2, 0.00),
+(201476252, 31, 0.00),
+(201504954, 4, 0.00),
+(201343007, 42, 0.00),
+(200112344, 44, 0.00),
+(200112344, 45, 0.00),
+(201343007, 4, 0.00),
+(201464319, 45, 0.00),
+(201511316, 9, 0.00),
+(201511316, 4, 0.00),
+(200112344, 51, 0.00),
+(201464319, 10, 0.00),
+(201366209, 3, 0.00),
+(201464319, 21, 0.00),
+(201366209, 16, 0.00),
+(201464319, 43, 0.00),
+(201476252, 17, 0.00),
+(201512355, 6, 0.00),
+(201504604, 4, 0.00),
+(201504604, 36, 0.00),
+(201486232, 27, 0.00),
+(201418532, 9, 0.00),
+(201418532, 4, 0.00),
+(201513839, 31, 0.00),
+(201504954, 24, 0.00),
+(201504954, 9, 0.00),
+(201339978, 16, 0.00),
+(201367501, 48, 0.00),
+(201354044, 5, 0.00),
+(201354044, 42, 0.00),
+(201354044, 1, 0.00),
+(201354044, 27, 0.00),
+(201354044, 4, 0.00),
+(201354044, 31, 0.00),
+(201467074, 21, 0.00),
+(201467074, 24, 0.00),
+(201412345, 4, 0.00),
+(201412345, 42, 0.00),
+(201412345, 11, 0.00),
+(201412345, 21, 0.00),
+(201412345, 13, 0.00),
+(201412345, 17, 0.00),
+(201712345, 4, 0.00),
+(201712345, 17, 0.00),
+(201712345, 37, 0.00);
 
 -- --------------------------------------------------------
 
@@ -1471,7 +2124,9 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `student_number`, `passwor
 (162, 'Allan', 'Sarsoza', 201513839, '$2y$10$SD91bMYajbEEud34yMUBBOcALmStUdj68X2mEoBelnO0KCK0A.JB2', '4sKk8Ydzbkxt0SekZ8m6hoyO9Jz0Dr5ZPIDskcPqvtbb8PxZC4tBds41ucgg', '2016-10-20 23:40:10', '2016-10-21 00:45:57', 0, 0, 15, 0, 0.00, ''),
 (163, 'John', 'Snow', 201354044, '$2y$10$/m9X9vQ.FGGCgy3VTAx0LOX8SX1acWIFHmqxk4DzJ51Yv5mMhZuGO', 'vPUdXZ8qFrSc7zA8QF06mm2QhhFmtcgYCUeSWWTuX6YMWJlaG4CcUivpKlyg', '2016-11-09 17:10:51', '2016-11-09 17:21:54', 0, 0, 9980, 0, 0.00, ''),
 (164, 'Edward', 'Tan', 201467074, '$2y$10$wP58P6QZ73boOdXg4pnDX.Bo90/uwrpcfw2yaivS7yqt4chARH53q', NULL, '2017-10-17 20:08:21', '2017-10-17 20:08:21', 0, 0, 0, 0, 0.00, ''),
-(165, 'John', 'Doe', 201412345, '$2y$10$fHkuHNnfelUKVIkFtiQBruVLMTH/iQojVRiX8T0iGSNShbYgsHTTy', NULL, '2017-10-17 23:37:50', '2017-10-17 23:37:50', 0, 0, 20, 0, 0.00, '');
+(165, 'John', 'Doe', 201412345, '$2y$10$fHkuHNnfelUKVIkFtiQBruVLMTH/iQojVRiX8T0iGSNShbYgsHTTy', 'S9XgGW8HSbFnHPQPEXdvMXHxD1xSsGdj7rJU0jZDVuVoi0EzlaveKVu51LXL', '2017-10-17 23:37:50', '2017-10-22 05:15:33', 0, 0, 1020, 0, 0.00, ''),
+(166, 'Jane', 'Doe', 201454321, '$2y$10$JjxdHuiHmCg/jLsJpRL2TuLh0gsasXEVk1YZIeBTDO0doxUjyMOMy', NULL, '2017-10-21 18:22:15', '2017-10-21 18:22:15', 0, 0, 20, 0, 0.00, ''),
+(167, 'Gary', 'Kasparov', 201712345, '$2y$10$FhPDiXuvjKr9nVN6dM7YyebyuSVh/E26qRFp5BCNoWY9XIl5VYGZq', NULL, '2017-10-22 05:17:46', '2017-10-22 05:17:46', 0, 0, 65, 0, 0.00, '');
 
 -- --------------------------------------------------------
 
@@ -1668,7 +2323,13 @@ INSERT INTO `userVideos` (`userVideosID`, `videoID`, `userID`, `isBought`, `vidC
 (174, 65, 201352703, 1, 0),
 (175, 97, 201367501, 1, 0),
 (176, 53, 201467074, 1, 0),
-(177, 30, 201467074, 1, 0);
+(177, 30, 201467074, 1, 0),
+(178, 21, 201412345, 1, 0),
+(179, 18, 201412345, 1, 0),
+(180, 19, 201712345, 1, 0),
+(181, 18, 201712345, 1, 0),
+(182, 31, 201712345, 1, 0),
+(183, 30, 201712345, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1972,16 +2633,35 @@ CREATE TABLE `videosGenres` (
 
 CREATE TABLE `videoTime` (
   `studentNumber` int(11) NOT NULL,
-  `timeStart` int(11) NOT NULL,
   `timeOut` int(11) NOT NULL,
   `KDRAMA` int(11) NOT NULL,
   `ANIME` int(11) NOT NULL,
-  `genre` int(11) NOT NULL
+  `genre` int(11) NOT NULL,
+  `startTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `videoTime`
+--
+
+INSERT INTO `videoTime` (`studentNumber`, `timeOut`, `KDRAMA`, `ANIME`, `genre`, `startTime`) VALUES
+(201712345, 0, 0, 10, 0, '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `forums`
+--
+ALTER TABLE `forums`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `gameGenres`
@@ -2074,6 +2754,16 @@ ALTER TABLE `videosGenres`
 --
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+--
+-- AUTO_INCREMENT for table `forums`
+--
+ALTER TABLE `forums`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
 -- AUTO_INCREMENT for table `gameGenres`
 --
 ALTER TABLE `gameGenres`
@@ -2117,17 +2807,17 @@ ALTER TABLE `seriesVideo`
 -- AUTO_INCREMENT for table `tokens`
 --
 ALTER TABLE `tokens`
-  MODIFY `tokenID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `tokenID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
 --
 -- AUTO_INCREMENT for table `userVideos`
 --
 ALTER TABLE `userVideos`
-  MODIFY `userVideosID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+  MODIFY `userVideosID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
 --
 -- AUTO_INCREMENT for table `videos`
 --
