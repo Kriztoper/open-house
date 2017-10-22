@@ -111,7 +111,8 @@ h1 {
     padding: 10px;
     position: relative;
     background: #fff;
-    border: 0.5px solid #50326C;
+	border-left: 0.5px solid #50326C;
+    border-right: 0.5px solid #50326C;
 }
 
 #author {
@@ -155,10 +156,11 @@ h1 {
 }
 
 #forum-title-hdr {
+	color: #797979;
 	text-align: center;
     background: #fff;
     margin-bottom: unset;
     padding: 10px;
-	border: 0.5px solid #50326C;
+	border: 1px solid #50326C;
 	font-weight: bold;
 }
