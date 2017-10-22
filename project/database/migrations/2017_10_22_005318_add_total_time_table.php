@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddStartsEndsTable extends Migration
+class AddTotalTimeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,7 @@ class AddStartsEndsTable extends Migration
     public function up()
     {
         Schema::table('gameTime', function (Blueprint $table) {
-            $table->date("startTimes");
-            $table->date("endTimes");
+            $table->integer('totalTime');
         });
     }
 
@@ -26,6 +25,7 @@ class AddStartsEndsTable extends Migration
     public function down()
     {
         Schema::table('gameTime', function (Blueprint $table) {
+            //
         });
     }
 }

@@ -3,3 +3,6 @@
 Homestead.yaml
 Homestead.json
 .env
+public/vids
+public/games
+public/images

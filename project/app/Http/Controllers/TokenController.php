@@ -173,7 +173,7 @@ class TokenController extends Controller
     * @return game view
     *
     */
-    public function buy_game($gameID) {
+    public function buy_game($gameID) { 
         $isGameBought = DB::table('userGames')
                         ->join('games', 'games.gameID', '=', 'userGames.gameID')
                         ->join('users', 'users.student_number', '=', 'userGames.userID')
@@ -201,7 +201,7 @@ class TokenController extends Controller
         $gamepath = DB::table('games')
                     ->where('gameID', $gameID)
                     ->pluck('gameURL');
-        return redirect('/startGame/'.$gameID);
+        return redirect('/startGame/'.$gameID); 
     }
 }
 ?>

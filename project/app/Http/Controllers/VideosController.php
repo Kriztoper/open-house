@@ -16,6 +16,8 @@ use App\Series;
 use App\SeriesVideo;
 use App\Video;
 use App\UserVideo;
+use Carbon\Carbon;
+
 class VideosController extends Controller
 {
   use FormBuilderTrait;
@@ -88,13 +90,29 @@ class VideosController extends Controller
   */
   public function watchVideos($id){
       $videos = video::where('videoID',$id)->first();
-      $genre= DB::table('videosGenres')->where('videoGenreID',$id)->pluck('genreID');
+      $genre= DB::table('videosGenres')->where('videoID',$id)->pluck('genreID');
       /*$videos = DB::table('videos')->where('videoID',$id)->first();*/
+
+      $genreId=(int)($genre);
+        $starter=Carbon::now();
+        $starter= new Carbon();
+        $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
+        $user=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('studentNumber','genre');
+        if(empty($user)){
+                DB::table('videoTime')->insert([
+                ['studentNumber' =>$sNumber , 'startTime' => $starter,'timeOut'=>0,'KDRAMA'=>0,'ANIME'=>0,'genre'=>$genreId],
+                ]); 
+        }else{
+             DB::table('videoTime')->where('studentNumber', $sNumber)->update(['startTime'=>$starter,'genre'=>$genreId]);
+        }
       return view('watch_video',['videos'=>$videos]);
 
   /*$seriesID=DB::table('seriesVideo')->where('videoID',$id)->pluck('seriesID');
   $genre= DB::table('seriesGenres')->where('videoID',$seriesID)->pluck('genreID');
   return redirect('/startVideo/'.$id.'/'.$genre);  */
+  }
+  public function exitVid() {
+    return view('list_vid');
   }
   // routes for views
   public function show_list_vid(){

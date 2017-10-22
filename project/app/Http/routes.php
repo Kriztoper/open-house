@@ -44,6 +44,7 @@ Route::post('/save_profile', 'UserController@save_Profile');
 Route::get('/change_password', 'UserController@change_password');
 Route::post('/save_password', 'UserController@save_password');
 
+Route::get('/time'			  ,	'UserTime@index');
 // Admin routes
 Route::get('/admin'           , 'AdminController@show_dashboard');
 Route::get('/adminSeries'     , 'AdminController@show_add_series');

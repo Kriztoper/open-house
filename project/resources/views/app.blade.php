@@ -1,15 +1,8 @@
 <html lang="{{config('app.locale')}}">
+    <head>
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        </head>
     <body>
-    <span id="badge">0</span>
-    <p>mehehe<p>
-       @yield('content');
+        @yield('content');
     </body>
-    <script>
-        var $badge = $('#badge'); // cache 
-        setInterval(function () {
-        var value = parseInt($badge.html());
-            value++;
-            $badge.html(value);
-        }, 1000);
-    </script>
 </html>
