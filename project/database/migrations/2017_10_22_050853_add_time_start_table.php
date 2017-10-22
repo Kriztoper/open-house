@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnToUsers extends Migration
+class AddTimeStartTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class AddColumnToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function ($table) {
-            $table->string('avatar');
+        Schema::table('videotime', function (Blueprint $table) {
+            $table->timestamp('startTime');
         });
     }
 
@@ -24,6 +24,8 @@ class AddColumnToUsers extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('videotime', function (Blueprint $table) {
+            //
+        });
     }
 }
