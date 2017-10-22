@@ -44,6 +44,7 @@ Route::post('/save_profile', 'UserController@save_Profile');
 Route::get('/change_password', 'UserController@change_password');
 Route::post('/save_password', 'UserController@save_password');
 
+Route::get('/time'			  ,	'UserTime@index');
 // Admin routes
 Route::get('/admin'           , 'AdminController@show_dashboard');
 Route::get('/adminSeries'     , 'AdminController@show_add_series');
@@ -91,5 +92,10 @@ Route::group(['prefix' => 'shoutbox'], function() {
   Route::post('send', ['as' => 'shoutbox-send', 'uses' => 'ShoutboxController@send']);      
 });
 
+// forum
+Route::get('/forum', 'ForumController@showForums');
+Route::post('/forum', 'ForumController@createNewTopic');
+Route::get('/comments/{id}', 'ForumController@showForumComments');
+Route::post('/comments/{id}', 'ForumController@commentOnForum');
 ?>
 

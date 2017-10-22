@@ -35,6 +35,7 @@
               </ul>
           <ul id="links" class="nav navbar-nav navbar-right">
             <li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
+              <li><a href="{{ url('/forum') }}">FORUM</a></li>  
               <li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
               <li><a href="{{ url('/game') }}">GAMES</a></li>
               <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
@@ -91,9 +92,13 @@
         <h1>Most Active User</h1>
         <div class="center">
           <img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle mostA" width="200" height="200">
-          <p class="name para">CARLO</p>
+          @if(count($mostActives) > 0) 
+            @foreach($mostActives as $mA)
+              <p class="name para">{{$mA->first_name}}</p>
+            @endforeach
+          @endif
         </div>
-
+        
         <h1>Most Active Viewer</h1>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -104,14 +109,23 @@
             
             <div class="item active mid">
               <p class="para"><img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="100" height="100"></p>
-              <p class="para">Kdrama: Carlo</p>
-              <img src="http://i.imgur.com/q4yEc1z.jpg" width="800" height="300">
+              @if(count($kdrama) > 0) 
+                  @foreach($kdrama as $kd)
+                      <p class="para">Kdrama: {{$kd->first_name}}</p>
+                      <img src="http://i.imgur.com/q4yEc1z.jpg" width="800" height="300">
+                  @endforeach
+              @endif
             </div>
 
             <div class="item mid">
               <p class="para"><img src="http://i.imgur.com/IvLy13w.jpg" class="img-circle" width="100" height="100"></p>
-              <p class="para">Anime: Carlo</p>
-              <img src="http://i.imgur.com/fiXJXhb.jpg" width="800" height="300">
+               @if(count($animes) > 0) 
+                  @foreach($animes as $anime)
+                      <p class="para">Anime: {{$anime->first_name}}</p>
+                      <img src="http://i.imgur.com/fiXJXhb.jpg" width="800" height="300">
+                  @endforeach
+              @endif
+              
             </div>
 
           </div>
@@ -146,12 +160,7 @@
                 "http://i.imgur.com/fICe2B5.jpg", "http://i.imgur.com/kN7CEzt.png", "http://i.imgur.com/EBG3AhZ.png", "http://i.imgur.com/rubf4d2.png",
                 "http://i.imgur.com/ByLhtZt.png", "http://i.imgur.com/FLxj6lJ.png", "http://i.imgur.com/797olpD.png", "http://i.imgur.com/znnRKYn.png",
                 "http://i.imgur.com/dWX7t1i.png", "http://i.imgur.com/rOkBOfu.png");
-
-              $names = array(
-                "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", 
-                "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo",
-                "Carlo", "Carlo", "Carlo", "Carlo", "Carlo", "Carlo");
-
+             
               $avatars = array(
                 "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
                 "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
@@ -162,8 +171,9 @@
                 "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", 
                 "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg",
                 "http://i.imgur.com/IvLy13w.jpg", "http://i.imgur.com/IvLy13w.jpg");
-
-              for ($i=0; $i < count($games); ) { 
+              $i = 0;
+              $count = 0;
+              foreach ($posts as $post) { 
                 # code...
                 if ($i == 0) {
                   echo '<div class="item trans active"><div><ul>';
@@ -173,20 +183,27 @@
                   echo '<div class="item trans"><div><ul>';  
                 }
 
-                for ($k=0; $k < 4; $k++) { 
+                for ($k=0; $k < 4 && $i > 3; $k++) { 
                   # code...
 
                   if($i == 32){
                     $k = 2;
                   }
-                  
+                 // $name = $userC;
                   echo '<li class="lista">';
                   echo '<p class="para"><img src="'.$avatars[$i].'" class="img-circle" width="50" height="50"></p>';
-                  echo '<p class="para">'.$names[$i].'</p>';
+                  echo '<p class="para">'.$post->first_name.'</p>';
                   echo '<p class="para"><img src="'.$games[$i].'" width="250" height="250"></p></li>';
 
                   $i++;
 
+                }
+                if ($i < 3) {
+                  echo '<li class="lista">';
+                  echo '<p class="para"><img src="'.$avatars[$count].'" class="img-circle" width="50" height="50"></p>';
+                  echo '<p class="para">'.$post->first_name.'</p>';
+                  echo '<p class="para"><img src="'.$games[$count].'" width="250" height="250"></p></li>';
+                  $count++;
                 }
                 echo '</ul></div></div>';
               }

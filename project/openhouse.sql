@@ -23,20 +23,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gamegenres`
+-- Table structure for table `gameGenres`
 --
 
-CREATE TABLE `gamegenres` (
+CREATE TABLE `gameGenres` (
   `gameGenresID` int(10) UNSIGNED NOT NULL,
   `gameID` int(11) NOT NULL,
   `genreID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `gamegenres`
+-- Dumping data for table `gameGenres`
 --
 
-INSERT INTO `gamegenres` (`gameGenresID`, `gameID`, `genreID`) VALUES
+INSERT INTO `gameGenres` (`gameGenresID`, `gameID`, `genreID`) VALUES
 (1, 1, 4),
 (2, 2, 4),
 (3, 3, 5),
@@ -161,10 +161,10 @@ INSERT INTO `games` (`gameID`, `gameName`, `gameDesc`, `scoreID`, `gameURL`, `th
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gametime`
+-- Table structure for table `gameTime`
 --
 
-CREATE TABLE `gametime` (
+CREATE TABLE `gameTime` (
   `studentNumber` int(11) NOT NULL,
   `timeStart` int(11) NOT NULL,
   `timeOut` int(11) NOT NULL,
@@ -172,10 +172,10 @@ CREATE TABLE `gametime` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `gametime`
+-- Dumping data for table `gameTime`
 --
 
-INSERT INTO `gametime` (`studentNumber`, `timeStart`, `timeOut`, `totalTime`) VALUES
+INSERT INTO `gameTime` (`studentNumber`, `timeStart`, `timeOut`, `totalTime`) VALUES
 (201354044, 0, 0, 14),
 (201467074, 1508299794, 0, 21);
 
@@ -320,20 +320,20 @@ INSERT INTO `series` (`seriesID`, `seriesName`, `seriesDesc`, `thumbnail`, `fthu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seriesgenres`
+-- Table structure for table `seriesGenres`
 --
 
-CREATE TABLE `seriesgenres` (
+CREATE TABLE `seriesGenres` (
   `seriesGenresID` int(10) UNSIGNED NOT NULL,
   `videoID` int(11) NOT NULL,
   `genreID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `seriesgenres`
+-- Dumping data for table `seriesGenres`
 --
 
-INSERT INTO `seriesgenres` (`seriesGenresID`, `videoID`, `genreID`) VALUES
+INSERT INTO `seriesGenres` (`seriesGenresID`, `videoID`, `genreID`) VALUES
 (1, 2, 1),
 (2, 2, 2),
 (4, 3, 1),
@@ -358,20 +358,20 @@ INSERT INTO `seriesgenres` (`seriesGenresID`, `videoID`, `genreID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seriesvideo`
+-- Table structure for table `seriesVideo`
 --
 
-CREATE TABLE `seriesvideo` (
+CREATE TABLE `seriesVideo` (
   `seriesVideoID` int(10) UNSIGNED NOT NULL,
   `seriesID` int(11) NOT NULL,
   `videoID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `seriesvideo`
+-- Dumping data for table `seriesVideo`
 --
 
-INSERT INTO `seriesvideo` (`seriesVideoID`, `seriesID`, `videoID`) VALUES
+INSERT INTO `seriesVideo` (`seriesVideoID`, `seriesID`, `videoID`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 1, 3),
@@ -774,20 +774,20 @@ INSERT INTO `tokens` (`tokenID`, `isActive`, `tokenName`, `tokenValue`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usergames`
+-- Table structure for table `userGames`
 --
 
-CREATE TABLE `usergames` (
+CREATE TABLE `userGames` (
   `userID` int(11) NOT NULL,
   `gameID` int(11) NOT NULL,
   `numOfHours` double(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `usergames`
+-- Dumping data for table `userGames`
 --
 
-INSERT INTO `usergames` (`userID`, `gameID`, `numOfHours`) VALUES
+INSERT INTO `userGames` (`userID`, `gameID`, `numOfHours`) VALUES
 (201247036, 3, 0.00),
 (201247036, 5, 0.00),
 (201247036, 25, 0.00),
@@ -1476,10 +1476,10 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `student_number`, `passwor
 -- --------------------------------------------------------
 
 --
--- Table structure for table `uservideos`
+-- Table structure for table `userVideos`
 --
 
-CREATE TABLE `uservideos` (
+CREATE TABLE `userVideos` (
   `userVideosID` int(10) UNSIGNED NOT NULL,
   `videoID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
@@ -1488,10 +1488,10 @@ CREATE TABLE `uservideos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `uservideos`
+-- Dumping data for table `userVideos`
 --
 
-INSERT INTO `uservideos` (`userVideosID`, `videoID`, `userID`, `isBought`, `vidCount`) VALUES
+INSERT INTO `userVideos` (`userVideosID`, `videoID`, `userID`, `isBought`, `vidCount`) VALUES
 (1, 30, 201339978, 1, 0),
 (2, 53, 201352703, 1, 0),
 (3, 122, 201208532, 1, 0),
@@ -1955,10 +1955,10 @@ INSERT INTO `videos` (`videoID`, `videoName`, `videoDesc`, `videoURL`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `videosgenres`
+-- Table structure for table `videosGenres`
 --
 
-CREATE TABLE `videosgenres` (
+CREATE TABLE `videosGenres` (
   `videoGenreID` int(10) UNSIGNED NOT NULL,
   `videoID` int(11) NOT NULL,
   `genreID` int(11) NOT NULL
@@ -1967,10 +1967,10 @@ CREATE TABLE `videosgenres` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `videotime`
+-- Table structure for table `videoTime`
 --
 
-CREATE TABLE `videotime` (
+CREATE TABLE `videoTime` (
   `studentNumber` int(11) NOT NULL,
   `timeStart` int(11) NOT NULL,
   `timeOut` int(11) NOT NULL,
@@ -1984,9 +1984,9 @@ CREATE TABLE `videotime` (
 --
 
 --
--- Indexes for table `gamegenres`
+-- Indexes for table `gameGenres`
 --
-ALTER TABLE `gamegenres`
+ALTER TABLE `gameGenres`
   ADD PRIMARY KEY (`gameGenresID`);
 
 --
@@ -2027,15 +2027,15 @@ ALTER TABLE `series`
   ADD PRIMARY KEY (`seriesID`);
 
 --
--- Indexes for table `seriesgenres`
+-- Indexes for table `seriesGenres`
 --
-ALTER TABLE `seriesgenres`
+ALTER TABLE `seriesGenres`
   ADD PRIMARY KEY (`seriesGenresID`);
 
 --
--- Indexes for table `seriesvideo`
+-- Indexes for table `seriesVideo`
 --
-ALTER TABLE `seriesvideo`
+ALTER TABLE `seriesVideo`
   ADD PRIMARY KEY (`seriesVideoID`);
 
 --
@@ -2052,9 +2052,9 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_student_number_unique` (`student_number`);
 
 --
--- Indexes for table `uservideos`
+-- Indexes for table `userVideos`
 --
-ALTER TABLE `uservideos`
+ALTER TABLE `userVideos`
   ADD PRIMARY KEY (`userVideosID`);
 
 --
@@ -2064,9 +2064,9 @@ ALTER TABLE `videos`
   ADD PRIMARY KEY (`videoID`);
 
 --
--- Indexes for table `videosgenres`
+-- Indexes for table `videosGenres`
 --
-ALTER TABLE `videosgenres`
+ALTER TABLE `videosGenres`
   ADD PRIMARY KEY (`videoGenreID`);
 
 --
@@ -2074,9 +2074,9 @@ ALTER TABLE `videosgenres`
 --
 
 --
--- AUTO_INCREMENT for table `gamegenres`
+-- AUTO_INCREMENT for table `gameGenres`
 --
-ALTER TABLE `gamegenres`
+ALTER TABLE `gameGenres`
   MODIFY `gameGenresID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT for table `games`
@@ -2104,14 +2104,14 @@ ALTER TABLE `scores`
 ALTER TABLE `series`
   MODIFY `seriesID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
--- AUTO_INCREMENT for table `seriesgenres`
+-- AUTO_INCREMENT for table `seriesGenres`
 --
-ALTER TABLE `seriesgenres`
+ALTER TABLE `seriesGenres`
   MODIFY `seriesGenresID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
--- AUTO_INCREMENT for table `seriesvideo`
+-- AUTO_INCREMENT for table `seriesVideo`
 --
-ALTER TABLE `seriesvideo`
+ALTER TABLE `seriesVideo`
   MODIFY `seriesVideoID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
 --
 -- AUTO_INCREMENT for table `tokens`
@@ -2124,9 +2124,9 @@ ALTER TABLE `tokens`
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 --
--- AUTO_INCREMENT for table `uservideos`
+-- AUTO_INCREMENT for table `userVideos`
 --
-ALTER TABLE `uservideos`
+ALTER TABLE `userVideos`
   MODIFY `userVideosID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 --
 -- AUTO_INCREMENT for table `videos`
@@ -2134,9 +2134,9 @@ ALTER TABLE `uservideos`
 ALTER TABLE `videos`
   MODIFY `videoID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
 --
--- AUTO_INCREMENT for table `videosgenres`
+-- AUTO_INCREMENT for table `videosGenres`
 --
-ALTER TABLE `videosgenres`
+ALTER TABLE `videosGenres`
   MODIFY `videoGenreID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

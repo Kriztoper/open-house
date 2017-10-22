@@ -14,7 +14,6 @@ class AddColumnToUsers extends Migration
     {
         Schema::table('users', function ($table) {
             $table->string('avatar');
-        
         });
     }
 

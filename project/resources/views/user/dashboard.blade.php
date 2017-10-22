@@ -31,7 +31,8 @@
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
 	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
-	      			<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
+              <li><a href="{{ url('/forum') }}">FORUM</a></li>  
+							<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
 	      			<li><a href="{{ url('/game') }}">GAMES</a></li>
 	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
 	      			<li class="dropdown">

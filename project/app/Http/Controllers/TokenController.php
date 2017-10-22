@@ -134,9 +134,9 @@ class TokenController extends Controller
     *
     */
     public function buy_video($videoID) {
-        $isVidBought = DB::table('uservideos')
-            ->join('videos', 'videos.videoID', '=', 'uservideos.videoID')
-            ->join('users', 'users.student_number', '=', 'uservideos.userID')
+        $isVidBought = DB::table('userVideos')
+            ->join('videos', 'videos.videoID', '=', 'userVideos.videoID')
+            ->join('users', 'users.student_number', '=', 'userVideos.userID')
             ->where('users.student_number', '=', Auth::user()->student_number)
             ->where('videos.videoID', '=', $videoID)
             ->get();
@@ -144,7 +144,7 @@ class TokenController extends Controller
         if (empty($isVidBought)) {
             $newValue = Auth::user()->token - 5;
             if ($newValue >= 0) {
-                DB::table('uservideos')
+                DB::table('userVideos')
                 ->insert(['videoID' => $videoID, 'userID' => Auth::user()->student_number, 'isBought' => 1]);
                 DB::table('users')
                 ->where('student_number', Auth::user()->student_number)
@@ -155,8 +155,8 @@ class TokenController extends Controller
                 return redirect('/watch_video/'.$videoID);
             }
             $series = DB::table('series')
-                  ->join ('seriesvideo','seriesvideo.seriesID','=','series.seriesID')
-                  ->join ('videos','videos.videoID','=','seriesvideo.videoID')
+                  ->join ('seriesVideo','seriesVideo.seriesID','=','series.seriesID')
+                  ->join ('videos','videos.videoID','=','seriesVideo.videoID')
                   ->first();
             return redirect('/list_video/'.$series->seriesID);   
         }
@@ -173,8 +173,8 @@ class TokenController extends Controller
     * @return game view
     *
     */
-    public function buy_game($gameID) {
-        $isGameBought = DB::table('usergames')
+    public function buy_game($gameID) { 
+        $isGameBought = DB::table('userGames')
                         ->join('games', 'games.gameID', '=', 'userGames.gameID')
                         ->join('users', 'users.student_number', '=', 'userGames.userID')
                         ->where('users.student_number', '=', Auth::user()->student_number)
@@ -186,7 +186,7 @@ class TokenController extends Controller
                 DB::table('users')
                     ->where('student_number', Auth::user()->student_number)
                     ->update(['token'=>$newValue]);
-                DB::table('usergames')
+                DB::table('userGames')
                     ->insert(['userID' => Auth::user()->student_number, 'gameID' => $gameID, 'numOfHours' => 0.0]);
                 $gamepath = DB::table('games')
                             ->where('gameID', $gameID)
@@ -201,7 +201,7 @@ class TokenController extends Controller
         $gamepath = DB::table('games')
                     ->where('gameID', $gameID)
                     ->pluck('gameURL');
-        return redirect('/startGame/'.$gameID);
+        return redirect('/startGame/'.$gameID); 
     }
 }
 ?>
