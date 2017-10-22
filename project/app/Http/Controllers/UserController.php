@@ -70,9 +70,9 @@ class UserController extends Controller
     {
         $userTimes = 'Daniel';
         $posts = DB::select('SELECT studentNumber, first_name FROM gameTime, users WHERE users.student_Number = gameTime.studentNumber order by totalTime desc limit 32');
-        $kdrama = DB::select('SELECT first_name, studentNumber, KDRAMA from videotime, users WHERE users.student_Number = videotime.studentNumber order by KDRAMA desc LIMIT 1');
-        $animes = DB::select('SELECT first_name, studentNumber, ANIME from videotime, users WHERE users.student_Number = videotime.studentNumber order by ANIME desc LIMIT 1');
-        $mostActives = DB::select('SELECT first_name, ANIME, KDRAMA, totalTime, (ANIME+KDRAMA+totalTime) as total FROM gametime, videotime,users WHERE users.student_Number = videotime.studentNumber and users.student_Number = gametime.studentNumber order by total desc LIMIT 1 ');
+        $kdrama = DB::select('SELECT first_name, studentNumber, KDRAMA from videoTime, users WHERE users.student_Number = videoTime.studentNumber order by KDRAMA desc LIMIT 1');
+        $animes = DB::select('SELECT first_name, studentNumber, ANIME from videoTime, users WHERE users.student_Number = videoTime.studentNumber order by ANIME desc LIMIT 1');
+        $mostActives = DB::select('SELECT first_name, ANIME, KDRAMA, totalTime, (ANIME+KDRAMA+totalTime) as total FROM gameTime, videoTime,users WHERE users.student_Number = videoTime.studentNumber and users.student_Number = gameTime.studentNumber order by total desc LIMIT 1 ');
         return view('user.hall_of_fame',compact('posts','kdrama','animes','mostActives'));
         // return view('watch_video',['videos'=>$videos]);
     }

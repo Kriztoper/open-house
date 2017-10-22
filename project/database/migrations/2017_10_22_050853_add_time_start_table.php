@@ -12,7 +12,7 @@ class AddTimeStartTable extends Migration
      */
     public function up()
     {
-        Schema::table('videotime', function (Blueprint $table) {
+        Schema::table('videoTime', function (Blueprint $table) {
             $table->timestamp('startTime');
         });
     }
@@ -24,7 +24,7 @@ class AddTimeStartTable extends Migration
      */
     public function down()
     {
-        Schema::table('videotime', function (Blueprint $table) {
+        Schema::table('videoTime', function (Blueprint $table) {
             //
         });
     }
