@@ -5,19 +5,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/registerStyle.css" type="text/css">
+    <link rel="stylesheet" href="css/register.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container-fluid">
       <div class="log">
-          <img id="logo" src="http://i.imgur.com/vOlWVBr.png" />
+          <img id="logo" src="http://i.imgur.com/i4LQ5Bi.png" />
       </div>
       <div class="row">
         <div class="Absolute-Center is-Responsive">
-          <form class="form-horizontal" role="form" method="POST" action="{{ url('/save_forgot_pass') }}">
+          <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="first_name" placeholder="First Name" value="{{ old('first_name') }}">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{ old('last_name') }}">
+              </div>
+            </div>
 
             <div class="form-group">
               <div class="col-md-12">
@@ -40,7 +52,7 @@
             <div class="form-group">
               <div class="col-md-12">
                 <div>
-                  <button type="submit" id="reg" class="btn btn-primary btn-block">Save New Password</button>
+                  <button type="submit" id="reg" class="btn btn-primary btn-block">Register</button>
                 </div>
                 <div>
                   <a id="back" class="btn btn-success btn-block" href="{{ url('/login') }}">Back to Login</a>

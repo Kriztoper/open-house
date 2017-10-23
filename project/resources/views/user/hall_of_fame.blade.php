@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <nav class="navbar navbar-fixed-bottom">
+    <nav class="navbar navbar-fixed-bottom" id="navbar-fixed-bottom">
       <div class="container-fluid">
         <ul class="nav navbar-nav navbar-right navbar-xs">
           <li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>

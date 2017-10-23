@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/profileStyle.css" type="text/css">
+    <link rel="stylesheet" href="css/profile.css" type="text/css">
     <link rel="stylesheet" href="css/gamenavbar.css" type="text/css">
     <link rel="stylesheet" href="css/modal.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
@@ -21,7 +21,7 @@
       <div class="container-fluid">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">
-              <img src="http://i.imgur.com/js8s2AR.png" alt="OpenHouse">
+              <img src="http://i.imgur.com/js8s2AR.png?2" alt="OpenHouse">
             </a>
           </div>
           <ul id="tokens" class="nav navbar-nav">
@@ -31,7 +31,7 @@
               </ul>
           <ul id="links" class="nav navbar-nav navbar-right">
             <li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
-              <li><a href="{{ url('/forum') }}">FORUM</a></li>
+              <li><a href="{{ url('/forum') }}">FORUM</a></li>  
               <li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
               <li><a href="{{ url('/game') }}">GAMES</a></li>
               <li><a href="{{ url('/videos') }}">VIDEOS</a></li>
@@ -55,7 +55,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <img id="modal-logo" src="http://i.imgur.com/i4LQ5Bi.png" />
-          <img src="http://i.imgur.com/vOlWVBr.pngg" />
+          <img src="http://i.imgur.com/2ggNleD.jpg" />
           <h4 class="modal-title"><strong>KOMSAI OPENHOUSE TOKEN GENERATOR</strong></h4>
         </div>
         <div class="modal-body">
@@ -95,15 +95,15 @@
                 <table class="table table-user-information cyan">
                   <tbody >
                     <tr>
-                      <td class="white gobolds">First Name:</td>
+                      <td class="black gobolds">First Name:</td>
                       <td class="gobolds">{{ Auth::user()->first_name }}</td>
                     </tr>
                     <tr>
-                      <td class="white gobolds">Last Name:</td>
+                      <td class="black gobolds">Last Name:</td>
                       <td class="gobolds">{{ Auth::user()->last_name }}</td>
                     </tr>
                     <tr>
-                      <td class="white gobolds">Student Number:</td>
+                      <td class="black gobolds">Student Number:</td>
                       <td class="gobolds">{{ Auth::user()->student_number }}</td>
                     </tr>
                   </tbody>
@@ -122,15 +122,15 @@
 
 
         <div class="logo">
-          <img src="http://i.imgur.com/vOlWVBr.png" alt="Cinque Terre" width="300" height="150">
+          <img src="http://i.imgur.com/i4LQ5Bi.png" alt="Cinque Terre" width="300" height="150">
         </div>
 
         <div class="pac p">
-          <!-- <img src="http://i.imgur.com/7stkOu8.gif" alt="Cinque Terre" width="55" height="40"> -->
+          <img src="http://i.imgur.com/7stkOu8.gif" alt="Cinque Terre" width="55" height="40">
         </div>
         <!-- ghost dapat an gif pero wa pa source-->
         <div class="ghost">
-          <!-- <img src="http://i.imgur.com/uBUEscJ.gif" width="400" height="35"> -->
+          <img src="http://i.imgur.com/uBUEscJ.gif" width="400" height="35">
         </div>
 
       </div>

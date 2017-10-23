@@ -85,12 +85,22 @@
     
   </div>
 
+  @if (count($errors) > 0)
+  <div class="alert alert-danger">
+    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
   <div class="container" id="forums-cntnr">
     <div id="forum-form">
         <form method="post" action="{{url('forum')}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <button id="forum-btn" >Submit</button>
-            <textarea id="forum-area" name="title" placeholder="Enter topic title"></textarea>
+            <textarea id="forum-area" name="title" placeholder="Enter topic title" required></textarea>
         </form>
     </div>
     <div id="forum-titles-list">

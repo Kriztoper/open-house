@@ -10,7 +10,7 @@
     <div id="comment-form">
         <form method="post" action="{{url('comments/'.$forum[0]->id)}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <textarea id="comment-area" name="content" placeholder="Enter comment"></textarea>
+            <textarea id="comment-area" name="content" placeholder="Enter comment" required></textarea>
             <button id="comment-btn" >Submit</button>
         </form>
     </div>
