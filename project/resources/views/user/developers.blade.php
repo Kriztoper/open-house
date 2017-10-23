@@ -13,13 +13,14 @@
   <body>
 
       <div class="back"><a href="{{ url('/dashboard') }}">DASHBOARD</a></div>
-      <h1 class="jumbotron Absolute-Center"><img src="http://i.imgur.com/i4LQ5Bi.png" class="gap">DEVELOPERS</h1>
+      <h1 class="jumbotron Absolute-Center"><img src="http://i.imgur.com/vOlWVBr.png" class="gap">DEVELOPERS</h1>
 
       <div>
         <div class="Absolute-Center">
 
           <?php
             $avatar = array(
+			  "http://i.imgur.com/I6z5K7W.jpg", "http://i.imgur.com/7a6Bu0z.jpg", "http://i.imgur.com/xt4OW4B.jpg", "http://i.imgur.com/1RdipGh.jpg",
               "http://i.imgur.com/ImJxxzf.jpg", "http://i.imgur.com/o3muWud.jpg", "http://i.imgur.com/1pbtTof.jpg",
               "http://i.imgur.com/P2bD7va.jpg", "http://i.imgur.com/RS2A2yO.jpg", "http://i.imgur.com/nrPYpv1.jpg",
               "http://i.imgur.com/tTrvdwY.jpg", "http://i.imgur.com/bHlKMUX.jpg", "http://i.imgur.com/E2iMJCH.jpg",
@@ -28,6 +29,7 @@
               );
 
             $fb = array(
+			  "https://www.facebook.com/daniel.hizon", "https://www.facebook.com/mikee.margallo", "https://www.facebook.com/ejtan1998", "https://www.facebook.com/kriztoper.urmeneta",
               "https://www.facebook.com/babalcon44", "https://www.facebook.com/jay.dejesus.27", "https://www.facebook.com/TheJoshuaRenzo",
               "https://www.facebook.com/arnimaxine.hilvano", "https://www.facebook.com/jamesmichael.kuizon", "https://www.facebook.com/jeff.lucanas",
               "https://www.facebook.com/franciscarlo.molina", "https://www.facebook.com/bart.monton", "https://www.facebook.com/theOnlyRex",
@@ -36,6 +38,7 @@
               );
 
             $twit = array(
+			  "https://twitter.com/Daniel_Jr_L", "https://twitter.com/Mikeeliti_ako", "https://twitter.com/edwardtan1998", "NONE", 
               "https://twitter.com/bababalcon", "https://twitter.com/_iamnotJ", "https://twitter.com/_jrenzo",
               "https://twitter.com/Ri_Maxine", "https://twitter.com/jhamezzz1315", "NONE",
               "https://twitter.com/TWICE_MOMOls", "NONE", "https://twitter.com/the_OnlyRex",
@@ -44,6 +47,7 @@
               );
 
             $insta = array(
+			  "https://www.instagram.com/daniel_gjr/", "https://www.instagram.com/mikeemargallo/","https://www.instagram.com/d.war.do/", "NONE",
               "https://www.instagram.com/bababalcon/", "NONE", "https://www.instagram.com/joshua_renzo/",
               "https://www.instagram.com/jemerald14/", "https://www.instagram.com/jhamezzz1315/", "NONE",
               "NONE", "NONE", "https://www.instagram.com/rexolis/", 
@@ -52,6 +56,7 @@
               );
 
             $pokemon = array(
+              "https://cdn.bulbagarden.net/upload/0/01/Spr_2c_155.png", "https://cdn.bulbagarden.net/upload/6/60/Spr_3e_280.png", "https://cdn.bulbagarden.net/upload/7/7b/Spr_5b_144.png", "https://cdn.bulbagarden.net/upload/2/2a/Spr_3e_201.png",
               "http://i.imgur.com/JoIqmF2.gif", "http://i.imgur.com/PnkDOMH.gif", "http://i.imgur.com/6BDPSgJ.gif",
               "http://i.imgur.com/ucq3CmI.gif", "http://i.imgur.com/hv2GaTP.gif", "http://i.imgur.com/sZOte2o.gif",
               "http://i.imgur.com/O4bNGIu.gif", "http://i.imgur.com/Mzhlp4J.gif", "http://i.imgur.com/l5INYxC.gif",
@@ -60,11 +65,12 @@
               );
 
             $names = array(
+			  "Daniel Hizon", "Jhunn Margallo", "Edward Tan", "Kriztoper Uremeneta",
               "James Babalcon", "Jay de Jesus", "Joshua Dorado", "Maxine Hilvano", "James Kuizon", "Jeff Lucanas", "Francis Molina", "Bart Monton", "Rex Olis",
               "Zyra Penaranda", "Khalile Pujante", "Albuen Rosello", "Charlotte Sacmar", "Val Tingson", "Carlo Valleramos"
               );
 
-            $job = array(1,0,0,0,0,0,0,0,0,0,1,0,1,0,1);
+            $job = array(0,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1);
 
             for ($i=0; $i < count($avatar); $i++) { 
               # code...

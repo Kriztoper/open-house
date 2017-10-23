@@ -3,20 +3,18 @@ html {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url(http://i.imgur.com/X9hf5hJ.gif);
+	background-image: url(https://i.imgur.com/SfusgMy.gif);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	-moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-color: rgb(0,0,0);
 }
 
 body {
 	background-color: transparent;
-	font-family: lemonmilkregular;
-
+	font-family: montserratregular;
 }
 
 @font-face {
@@ -43,75 +41,102 @@ body {
     font-style: normal;
 }
 
-.marg {
-	margin-right: 3px;
-	margin-left: 3px;
-}
-
-.gap {
-	margin-bottom: 20px;
-}
-
-.back {
-   position: fixed;
-   right: 2.5%;
-   bottom: 3%;
-   filter: alpha(opacity=50);
-}
-
-.back:hover {
-	opacity: 1.0;
-    filter: alpha(opacity=100);
-}
-
-
-.jumbotron {
-	font-family: lemonmilkregular;
-	font-size: 70px;
-	letter-spacing: 19px;
-	color: #ffffff;
-	background: none;
-}
-
-.gob {
-	font-family: lemonmilkregular;
-	font-size: 20px;
-	letter-spacing: 3px;
-	color: #333333;
-}
-
-.pic {
-	margin: 10px;
-	margin-bottom: 50px;
-	text-align: center;
-}
-
-.pad {
-	padding-top: 47px;
+h4 {
+	font-size: 40px;
 	color: white;
 }
 
-
-.Absolute-Center {
-  	margin: auto;
-  	top: 0; left: 0; bottom: 0; right: 0;
-	width: 100%; 
-  	height: 100%;
-  	min-width: 200px;
-  	max-width:700px;
-  	padding: 20px;
+#head {
+	background-image: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
-p{
-	color: white;	
+#bud {
+	border-style: none;
+	padding-top: 0;
 }
 
-a {
-    opacity: 0.7;
-    filter: alpha(opacity=50); 
+#inp {
+	margin-bottom: 10px;
 }
 
-a:hover {
-    opacity: 1.0;
-    filter: alpha(opacity=100);
+.modalSize {
+	width: 500px;
+}
+
+.bg {
+	background-image: url(http://i.imgur.com/l9c6lmf.jpg);
+}
+
+.gap {
+	margin-bottom: 10px;
+}
+
+.gobolds {
+	font-family: lemonmilkregular;
+	font-size: 15px;
+}
+
+.pac{
+	position: absolute;
+	top: 46.5%;
+	left: 58%;
+}
+
+.ghost{
+	position: absolute;
+	top: 47%;
+	left: 62%;
+}
+
+.logo{
+	position: absolute;
+	top: 23%;
+	left: 64%;
+}
+
+.profBody{
+	position: absolute;
+	top: 20%;
+	left:10%;
+	width: 40%;
+}
+
+.trans{
+	background: none;
+}
+
+.redbg{
+	background: red;
+}
+
+.goldbg{
+	background: gold;
+}
+
+.cyan {
+	color: cyan;
+}
+.blue {
+	color: #233f59;
+}
+
+.redfont{
+	color: red;
+}
+.gold {
+	color: gold;
+}
+
+.red {
+	color: #BA002c;
+}
+
+.white {
+	color: black;
+}
+
+.black {
+	color: #000000;
 }

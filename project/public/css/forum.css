@@ -5,6 +5,7 @@ body {
 #forums-cntnr {
     position: relative;
     margin-top: 100px;
+    z-index: 2;
 }
 
 .title-card {
@@ -12,6 +13,7 @@ body {
     padding: 10px;
     position: relative;
     background: #f2f2f2;
+    z-index: 2;
     /* border: 0.5px solid #50326C; */
 }
 
@@ -29,6 +31,7 @@ body {
 #titles-link:hover {
     font-size: 17px;    
     text-decoration: none;
+    z-index: 2;
 }
 
 #titles-link:visited {
@@ -66,4 +69,12 @@ body {
 	position: relative;
     float: right;
     right: 10px;
+}
+
+#forum-titles-list {
+    z-index: 2;
+}
+
+#titles {
+    z-index: 2;
 }
