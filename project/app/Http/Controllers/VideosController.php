@@ -90,10 +90,9 @@ class VideosController extends Controller
   */
   public function watchVideos($id){
       $videos = video::where('videoID',$id)->first();
-      $genre= DB::table('videosGenres')->where('videoID',$id)->pluck('genreID');
       /*$videos = DB::table('videos')->where('videoID',$id)->first();*/
-
-      $genreId=(int)($genre);
+				
+      $genreId=(int)($videos->genre);
         $starter=Carbon::now();
         $starter= new Carbon();
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
