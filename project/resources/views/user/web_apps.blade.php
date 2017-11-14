@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Forum</title>
+        <title>Web Apps</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!--<<<<<< Updated upstream -->
-        <link rel="stylesheet" href="css/hall_of_fame.css" type="text/css">
+        <link rel="stylesheet" href="css/web_apps.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <link rel="stylesheet" type="text/css" href="slick/slick.css">
@@ -86,7 +86,59 @@
     
   </div>
 
-  @if (count($errors) > 0)
+  
+
+
+
+    
+<br><br>
+<ul class="cards">
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--fence"></div>
+      <div class="card__content">
+        <div class="card__title">Foodesire</div>
+        <p class="card__text">Food searching app covered in Tacloban City.</p>        
+        <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+        <button class="btn btn--block card__btn"><a target="_blank" href="http://foodesire.herokuapp.com">Button</a></button>
+      </div>
+    </div>
+  </li>
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--river"></div>
+      <div class="card__content">
+        <div class="card__title">Foodesire</div>
+        <p class="card__text">Food searching app covered in Tacloban City.</p>
+        <p class="card__text">This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.</p>
+        <button class="btn btn--block card__btn"><a target="_blank" href="http://foodesire.herokuapp.com">Button</a></button>
+      </div>
+    </div>
+  </li>
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--record"></div>
+      <div class="card__content">
+        <div class="card__title">Foodesire</div>
+        <p class="card__text">Food searching app covered in Tacloban City.</p>
+        <p class="card__text">This defines the ability for a flex item to shrink if necessary. Negative numbers are invalid.</p>
+        <button class="btn btn--block card__btn"><a target="_blank" href="http://foodesire.herokuapp.com">Button</a></button>
+      </div>
+    </div>
+  </li>
+  <li class="cards__item">
+    <div class="card">
+      <div class="card__image card__image--flowers"></div>
+      <div class="card__content">
+        <div class="card__title">Foodesire</div>
+        <p class="card__text">Food searching app covered in Tacloban City.</p>
+        <p class="card__text">This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property."</p>
+        <button class="btn btn--block card__btn"><a target="_blank" href="http://foodesire.herokuapp.com">Button</a></button>
+      </div>
+    </div>
+  </li>
+</ul>
+  {{--  @if (count($errors) > 0)
   <div class="alert alert-danger">
     <strong>Whoops!</strong> There were some problems with your input.<br><br>
     <ul>
@@ -95,8 +147,8 @@
       @endforeach
     </ul>
   </div>
-  @endif
-  <div class="container" id="forums-cntnr">
+  @endif  --}}
+  {{--  <div class="container" id="forums-cntnr">
     <div id="forum-form">
         <form method="post" action="{{url('forum')}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -113,8 +165,13 @@
         @endforeach
       </ul>
     </div>
-  </div>
+  </div>  --}}
   
+
+
+
+
+
   <!-- Modal for error in videos -->
   <div id="errorModal" class="modal fade" role="dialog">
     <div class="modal-dialog">

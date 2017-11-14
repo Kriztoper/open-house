@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.6.6deb4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 22, 2017 at 09:57 PM
--- Server version: 5.7.16-log
--- PHP Version: 7.1.9
+-- Host: localhost
+-- Generation Time: Oct 23, 2017 at 12:44 AM
+-- Server version: 5.7.19-0ubuntu0.17.04.1
+-- PHP Version: 7.0.22-0ubuntu0.17.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -58,6 +56,7 @@ INSERT INTO `comments` (`id`, `forum_id`, `content`, `author`, `created_at`, `up
 (18, 3, 'Oops a comment.', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (27, 3, 'Halooooo commeeeent', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (28, 3, 'Commentoooo', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(29, 1, 'after application init and running server there is this error in chrome 33.0.1750.146 console: GET http://localhost:4200/assets/app.css 404 (Not Found)\r\nember-cli version: 0.0.2', 'John Doe', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (30, 8, 'Please enter your comment here. Thank very very much! Arigatouuuuu', 'Gary Kasparov', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (31, 8, 'Well well well', 'Gary Kasparov', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (32, 8, 'commentou', 'Gary Kasparov', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
@@ -131,9 +130,14 @@ INSERT INTO `gamegenres` (`gamegenresID`, `gameID`, `genreID`) VALUES
 (25, 31, 4),
 (26, 32, 4),
 (27, 15, 2),
+(28, 15, 6),
+(30, 6, 6),
 (33, 9, 2),
+(34, 9, 6),
 (35, 11, 2),
+(36, 11, 6),
 (37, 12, 2),
+(38, 12, 6),
 (39, 21, 2),
 (40, 21, 5),
 (45, 33, 5),
@@ -183,13 +187,19 @@ INSERT INTO `games` (`gameID`, `gameName`, `gameDesc`, `scoreID`, `gameURL`, `th
 (3, 'avatar_fortress_fight_2', 'Avatar', 0, 'games/avatar_fortress_fight_2/avatar_fortress_fight_2.swf', 'images/Games/avatar-fortress-fight2.png', 'images/Featured Games/DotsTrix.png', 'NONE', 0, 800, 600),
 (4, 'box_head_2_play', 'pew pew', 0, 'games/box_head_2_play/box_head_2play.swf', 'images/Games/boxHead.png', 'images/Featured Games/Feature2.png', 'NONE', 0, 800, 600),
 (5, 'catch_the_ball', 'ball', 0, 'games/catch_the_ball/catch_the_ball.swf', 'images/Games/catchTheBall.png', 'images/Featured Games/.png', 'NONE', 0, 800, 600),
+(6, 'chainReaction', 'chain', 0, 'games/chainReaction/chainReaction.jar', 'images/Games/chainReaction.png', 'images/Featured Games/chainReaction.png', 'game.ChainReaction.class', 1, 800, 600),
 (7, 'combat_tournament_legends', '', 0, 'games/combat_tournament_legends/combat_tournament_legends.swf', 'images/Games/combatTournament.png', 'images/Featured Games/.png', 'NONE', 0, 800, 600),
+(9, 'Coraline', '', 0, 'games/Coraline/coraline.jar', 'images/Games/coraline.png', 'images/Featured Games/coralineQuest.png', 'controller.GameFrame.class', 1, 850, 600),
 (10, 'detonate2', '', 0, 'games/detonate2/detonate2.swf', 'images/Games/detonate2.png', 'images/Featured Games/Feature2.png', 'NONE', 0, 450, 550),
+(11, 'Domineering', '', 0, 'games/Domineering/domineering.jar', 'images/Games/domineering.png', 'images/Featured Games/domineering.png', 'main.Main.class', 1, 1000, 700),
+(12, 'DotsTrix', '', 0, 'games/DotsTrix/dotsTrix.jar', 'images/Games/dotsTrix.png', 'images/Featured Games/DotsTrix.png', 'model.GameFrame.class', 1, 565, 650),
 (13, 'fireboy_and_watergirl_2', '', 0, 'games/fireboy_and_watergirl_2/fireboy_and_watergirl_2.swf', 'images/Games/fireboyWatergirl2.png', 'images/Featured Games/fireboy&watergirl2.png', 'NONE', 0, 800, 600),
 (14, 'football_legends_2016', '', 0, 'games/football_legends_2016/football_legends_2016.swf', 'images/Games/football.png', 'images/Featured Games/.png', 'NONE', 0, 800, 450),
+(15, 'fourSquare', '', 0, 'games/fourSquare/fourSquare.jar', 'images/Games/4square.png', 'images/Featured Games/4Square.png', 'Main.FourSquare.class', 1, 714, 714),
 (16, 'governor_of_poker', '', 0, 'games/governor_of_poker/governor_of_poker.swf', 'images/Games/governorOfPoker.png', 'images/Featured Games/.png', 'NONE', 0, 800, 600),
 (17, 'gun_mayhem', '', 0, 'games/gun_mayhem/gun_mayhem.swf', 'images/Games/gunMayhem.png', 'images/Featured Games/.png', 'NONE', 0, 800, 600),
 (19, 'king_of_fighters_wing_1.8', '', 0, 'games/king_of_fighters_wing_1.8/kof-wing-1.8-2.swf', 'images/Games/theKingOfFighter.png', 'images/Featured Games/.png', 'NONE', 0, 800, 600),
+(21, 'mancala', '', 0, 'games/mancala/Mancala.jar', 'images/Games/mancala.png', 'images/Featured Games/mancala.png', 'mp03v7.MancalaTestClass', 1, 1100, 700),
 (22, 'pandemic2', '', 0, 'games/pandemic2/pandemic2.swf', 'images/Games/pandemic2.png', 'images/Featured Games/.png', 'NONE', 0, 700, 500),
 (24, 'playing_with_fire_2', '', 0, 'games/playing_with_fire_2/playing_with_fire_2.swf', 'images/Games/playingWithFire2.png', 'images/Featured Games/.png', 'NONE', 0, 800, 600),
 (25, 'plumber_game', '', 0, 'games/plumber_game/plumber_game.swf', 'images/Games/plumber.png', 'images/Featured Games/.png', 'NONE', 0, 800, 600),
@@ -234,8 +244,7 @@ CREATE TABLE `gametime` (
 --
 
 INSERT INTO `gametime` (`studentNumber`, `totalTime`, `startTime`, `endTime`) VALUES
-(201712345, 207, '2017-10-22 15:55:10', '2017-10-22 07:55:10'),
-(201412345, -56466, '2017-10-22 19:24:12', '2017-10-22 11:24:12');
+(201712345, 207, '2017-10-22 15:55:10', '2017-10-22 07:55:10');
 
 -- --------------------------------------------------------
 
@@ -411,6 +420,7 @@ INSERT INTO `series` (`seriesID`, `seriesName`, `seriesDesc`, `thumbnail`, `fthu
 (4, 'One Punch Man', 'Extremely OP MC', 'One Punch Man', 'One Punch Man 950'),
 (5, 'Pinocchio', 'Korean Pinocchio', 'Pinocchio', 'Pinocchio 950'),
 (6, 'White Album 2', 'Winter \"Romance\" story', 'White Album 2', 'White Album 2 950'),
+(7, '#Reply 1997', 'Korean reply', 'Reply 1997', 'Reply 1997 950'),
 (8, 'She Was Pretty', 'Beautiful Korean', 'She Was Pretty', 'She Was Pretty 950'),
 (9, 'KHR', 'The manga is about a young boy, Tsunayoshi Sawada, who discovers that he is next in line to become boss of the Vongola family, a powerful Mafia organization. The Vongolas\' most powerful hitman, a gun-toting infant named Reborn, is sent to teach Tsuna how ', 'khr 250x250', 'khr 250x250 950'),
 (10, 'KHR', 'Reborn!, known in Japan as Katekyō Hitman Reborn! (Japanese: 家庭教師ヒットマンリボーン! Hepburn: Katekyō Hittoman Ribōn!?, Katekyō, a portmanteau of Katei Kyōshi, means \"home tutor\"), is a Japanese manga written and illustrated by Akira Amano. The manga is about a yo', 'khr', 'khr 950'),
@@ -419,6 +429,7 @@ INSERT INTO `series` (`seriesID`, `seriesName`, `seriesDesc`, `thumbnail`, `fthu
 (13, 'Seven Deadly Sins', 'The Seven Deadly Sins (Japanese: 七つの大罪 Hepburn: Nanatsu no Taizai?) is a Japanese fantasy manga series written and illustrated by Nakaba Suzuki. It has been serialized in Kodansha\'s Weekly Shōnen Magazine since October 2012, with the chapters collected in', '7 deadly sins', '7 deadly sins 950'),
 (14, 'Tokyo Ghoul S1', 'Tokyo Ghoul is an anime television series by Studio Pierrot aired on Tokyo MX between July and September 2014 with a second season titled Tokyo Ghoul √A that aired January 8, 2015, to March 26, 2015. Studio Pierrot also did an OVA for Tokyo Ghoul: JACK al', 'tokyo ghoul', 'tokyo ghoul 950'),
 (15, 'Tokyo Ghoul S2', 'Tokyo Ghoul is an anime television series by Studio Pierrot aired on Tokyo MX between July and September 2014 with a second season titled Tokyo Ghoul √A that aired January 8, 2015, to March 26, 2015. Studio Pierrot also did an OVA for Tokyo Ghoul: JACK al', 'tokyo ghoulS2', 'tokyo ghoulS2 950'),
+(17, 'Good Doctor', 'Doctor story huhu', 'gooddoctor', 'gooddoctor 950'),
 (18, 'Cheese in the Trap', 'depicts the delicate relationship between female university student Hong Seol (Kim Go-Eun) and her senior Yoo Jung (Park Hae-Jin). Hong-Seol works part-time due to her family\'s poor background. Yoo Jung is good looking, gets good grades, athletic and has ', 'Cheese In The Trap', 'Cheese In The Trap 950');
 
 -- --------------------------------------------------------
@@ -462,20 +473,20 @@ INSERT INTO `seriesgenres` (`seriesgenresID`, `videoID`, `genreID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seriesvideo`
+-- Table structure for table `seriesVideo`
 --
 
-CREATE TABLE `seriesvideo` (
+CREATE TABLE `seriesVideo` (
   `seriesVideoID` int(10) UNSIGNED NOT NULL,
   `seriesID` int(11) NOT NULL,
   `videoID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `seriesvideo`
+-- Dumping data for table `seriesVideo`
 --
 
-INSERT INTO `seriesvideo` (`seriesVideoID`, `seriesID`, `videoID`) VALUES
+INSERT INTO `seriesVideo` (`seriesVideoID`, `seriesID`, `videoID`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 1, 3),
@@ -882,20 +893,20 @@ INSERT INTO `tokens` (`tokenID`, `isActive`, `tokenName`, `tokenValue`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usergames`
+-- Table structure for table `userGames`
 --
 
-CREATE TABLE `usergames` (
+CREATE TABLE `userGames` (
   `userID` int(11) NOT NULL,
   `gameID` int(11) NOT NULL,
   `numOfHours` double(8,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `usergames`
+-- Dumping data for table `userGames`
 --
 
-INSERT INTO `usergames` (`userID`, `gameID`, `numOfHours`) VALUES
+INSERT INTO `userGames` (`userID`, `gameID`, `numOfHours`) VALUES
 (201247036, 3, 0.00),
 (201247036, 5, 0.00),
 (201247036, 25, 0.00),
@@ -1954,16 +1965,7 @@ INSERT INTO `usergames` (`userID`, `gameID`, `numOfHours`) VALUES
 (201412345, 17, 0.00),
 (201712345, 4, 0.00),
 (201712345, 17, 0.00),
-(201712345, 37, 0.00),
-(201412345, 1, 0.00),
-(201412345, 2, 0.00),
-(201412345, 7, 0.00),
-(201412345, 14, 0.00),
-(201412345, 15, 0.00),
-(201412345, 6, 0.00),
-(201412345, 9, 0.00),
-(201412345, 12, 0.00),
-(201412345, 39, 0.00);
+(201712345, 37, 0.00);
 
 -- --------------------------------------------------------
 
@@ -2122,17 +2124,17 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `student_number`, `passwor
 (162, 'Allan', 'Sarsoza', 201513839, '$2y$10$SD91bMYajbEEud34yMUBBOcALmStUdj68X2mEoBelnO0KCK0A.JB2', '4sKk8Ydzbkxt0SekZ8m6hoyO9Jz0Dr5ZPIDskcPqvtbb8PxZC4tBds41ucgg', '2016-10-20 23:40:10', '2016-10-21 00:45:57', 0, 0, 15, 0, 0.00, ''),
 (163, 'John', 'Snow', 201354044, '$2y$10$/m9X9vQ.FGGCgy3VTAx0LOX8SX1acWIFHmqxk4DzJ51Yv5mMhZuGO', 'vPUdXZ8qFrSc7zA8QF06mm2QhhFmtcgYCUeSWWTuX6YMWJlaG4CcUivpKlyg', '2016-11-09 17:10:51', '2016-11-09 17:21:54', 0, 0, 9980, 0, 0.00, ''),
 (164, 'Edward', 'Tan', 201467074, '$2y$10$wP58P6QZ73boOdXg4pnDX.Bo90/uwrpcfw2yaivS7yqt4chARH53q', NULL, '2017-10-17 20:08:21', '2017-10-17 20:08:21', 0, 0, 0, 0, 0.00, ''),
-(165, 'John', 'Doe', 201412345, '$2y$10$fHkuHNnfelUKVIkFtiQBruVLMTH/iQojVRiX8T0iGSNShbYgsHTTy', 'rw35u1buNTRcl9znI8Qy8fcyPmRK2vLYfEPuKbHm5EUGIppvTktpX8V2i9nv', '2017-10-17 23:37:50', '2017-10-22 10:48:42', 0, 0, 910, 0, 0.00, ''),
+(165, 'John', 'Doe', 201412345, '$2y$10$fHkuHNnfelUKVIkFtiQBruVLMTH/iQojVRiX8T0iGSNShbYgsHTTy', 'S9XgGW8HSbFnHPQPEXdvMXHxD1xSsGdj7rJU0jZDVuVoi0EzlaveKVu51LXL', '2017-10-17 23:37:50', '2017-10-22 05:15:33', 0, 0, 1020, 0, 0.00, ''),
 (166, 'Jane', 'Doe', 201454321, '$2y$10$JjxdHuiHmCg/jLsJpRL2TuLh0gsasXEVk1YZIeBTDO0doxUjyMOMy', NULL, '2017-10-21 18:22:15', '2017-10-21 18:22:15', 0, 0, 20, 0, 0.00, ''),
 (167, 'Gary', 'Kasparov', 201712345, '$2y$10$FhPDiXuvjKr9nVN6dM7YyebyuSVh/E26qRFp5BCNoWY9XIl5VYGZq', NULL, '2017-10-22 05:17:46', '2017-10-22 05:17:46', 0, 0, 65, 0, 0.00, '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `uservideos`
+-- Table structure for table `userVideos`
 --
 
-CREATE TABLE `uservideos` (
+CREATE TABLE `userVideos` (
   `userVideosID` int(10) UNSIGNED NOT NULL,
   `videoID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
@@ -2141,10 +2143,10 @@ CREATE TABLE `uservideos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `uservideos`
+-- Dumping data for table `userVideos`
 --
 
-INSERT INTO `uservideos` (`userVideosID`, `videoID`, `userID`, `isBought`, `vidCount`) VALUES
+INSERT INTO `userVideos` (`userVideosID`, `videoID`, `userID`, `isBought`, `vidCount`) VALUES
 (1, 30, 201339978, 1, 0),
 (2, 53, 201352703, 1, 0),
 (3, 122, 201208532, 1, 0),
@@ -2327,20 +2329,7 @@ INSERT INTO `uservideos` (`userVideosID`, `videoID`, `userID`, `isBought`, `vidC
 (180, 19, 201712345, 1, 0),
 (181, 18, 201712345, 1, 0),
 (182, 31, 201712345, 1, 0),
-(183, 30, 201712345, 1, 0),
-(184, 19, 201412345, 1, 0),
-(185, 237, 201412345, 1, 0),
-(186, 30, 201412345, 1, 0),
-(187, 53, 201412345, 1, 0),
-(188, 85, 201412345, 1, 0),
-(189, 213, 201412345, 1, 0),
-(190, 225, 201412345, 1, 0),
-(191, 189, 201412345, 1, 0),
-(192, 65, 201412345, 1, 0),
-(193, 143, 201412345, 1, 0),
-(194, 98, 201412345, 1, 0),
-(195, 248, 201412345, 1, 0),
-(196, 115, 201412345, 1, 0);
+(183, 30, 201712345, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -2457,6 +2446,51 @@ INSERT INTO `videos` (`videoID`, `videoName`, `videoDesc`, `videoURL`) VALUES
 (95, 'White Album 2 Episode 11', 'Episode 11 of the series:White Album 2', 'vids/White Album 2/A11.mp4'),
 (96, 'White Album 2 Episode 12', 'Episode 12 of the series:White Album 2', 'vids/White Album 2/A12.mp4'),
 (97, 'White Album 2 Episode 13', 'Episode 13 of the series:White Album 2', 'vids/White Album 2/A13.mp4'),
+(98, '#Reply 1997 Episode 1', 'Episode 1 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 1-1.mp4'),
+(99, '#Reply 1997 Episode 2', 'Episode 2 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 1-2.mp4'),
+(100, '#Reply 1997 Episode 3', 'Episode 3 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 1-3.mp4'),
+(101, '#Reply 1997 Episode 4', 'Episode 4 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 10-1.mp4'),
+(102, '#Reply 1997 Episode 5', 'Episode 5 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 10-2.mp4'),
+(103, '#Reply 1997 Episode 6', 'Episode 6 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 10-3.mp4'),
+(104, '#Reply 1997 Episode 7', 'Episode 7 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 11-1.mp4'),
+(105, '#Reply 1997 Episode 8', 'Episode 8 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 11-2.mp4'),
+(106, '#Reply 1997 Episode 9', 'Episode 9 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 11-3.mp4'),
+(107, '#Reply 1997 Episode 10', 'Episode 10 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 12-1.mp4'),
+(108, '#Reply 1997 Episode 11', 'Episode 11 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 12-2.mp4'),
+(109, '#Reply 1997 Episode 12', 'Episode 12 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 12-3.mp4'),
+(110, '#Reply 1997 Episode 13', 'Episode 13 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 13-1.mp4'),
+(111, '#Reply 1997 Episode 14', 'Episode 14 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 13-2.mp4'),
+(112, '#Reply 1997 Episode 15', 'Episode 15 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 13-3.mp4'),
+(113, '#Reply 1997 Episode 16', 'Episode 16 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 14-1.mp4'),
+(114, '#Reply 1997 Episode 17', 'Episode 17 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 14-2.mp4'),
+(115, '#Reply 1997 Episode 18', 'Episode 18 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 14-3.mp4'),
+(116, '#Reply 1997 Episode 19', 'Episode 19 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 15-1.mp4'),
+(117, '#Reply 1997 Episode 20', 'Episode 20 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 15-2.mp4'),
+(118, '#Reply 1997 Episode 21', 'Episode 21 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 15-3.mp4'),
+(119, '#Reply 1997 Episode 22', 'Episode 22 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 16-1.mp4'),
+(120, '#Reply 1997 Episode 23', 'Episode 23 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 16-2.mp4'),
+(121, '#Reply 1997 Episode 24', 'Episode 24 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 16-3.mp4'),
+(122, '#Reply 1997 Episode 25', 'Episode 25 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 16-4.mp4'),
+(123, '#Reply 1997 Episode 26', 'Episode 26 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 2-1.mp4'),
+(124, '#Reply 1997 Episode 27', 'Episode 27 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 2-2.mp4'),
+(125, '#Reply 1997 Episode 28', 'Episode 28 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 2-3.mp4'),
+(126, '#Reply 1997 Episode 29', 'Episode 29 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 3-1.mp4'),
+(127, '#Reply 1997 Episode 30', 'Episode 30 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 3-2.mp4'),
+(128, '#Reply 1997 Episode 31', 'Episode 31 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 3-3.mp4'),
+(129, '#Reply 1997 Episode 32', 'Episode 32 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 4-1.mp4'),
+(130, '#Reply 1997 Episode 33', 'Episode 33 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 4-2.mp4'),
+(131, '#Reply 1997 Episode 34', 'Episode 34 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 4-3.mp4'),
+(132, '#Reply 1997 Episode 35', 'Episode 35 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 5-1.mp4'),
+(133, '#Reply 1997 Episode 36', 'Episode 36 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 5-2.mp4'),
+(134, '#Reply 1997 Episode 37', 'Episode 37 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 5-3.mp4'),
+(135, '#Reply 1997 Episode 38', 'Episode 38 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 6-1.mp4'),
+(136, '#Reply 1997 Episode 39', 'Episode 39 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 6-2.mp4'),
+(137, '#Reply 1997 Episode 40', 'Episode 40 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 6-3.mp4'),
+(138, '#Reply 1997 Episode 41', 'Episode 41 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 8-1.mp4'),
+(139, '#Reply 1997 Episode 42', 'Episode 42 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 8-2.mp4'),
+(140, '#Reply 1997 Episode 43', 'Episode 43 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 8-3.mp4'),
+(141, '#Reply 1997 Episode 44', 'Episode 44 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 9-2.mp4'),
+(142, '#Reply 1997 Episode 45', 'Episode 45 of the series:#Reply 1997', 'vids/#Reply 1997/Reply 1997 Episode 9-3.mp4'),
 (143, 'She Was Pretty Episode 1', 'Episode 1 of the series:She Was Pretty', 'vids/She Was Pretty/01.mp4'),
 (144, 'She Was Pretty Episode 2', 'Episode 2 of the series:She Was Pretty', 'vids/She Was Pretty/02.mp4'),
 (145, 'She Was Pretty Episode 3', 'Episode 3 of the series:She Was Pretty', 'vids/She Was Pretty/04.mp4'),
@@ -2551,6 +2585,17 @@ INSERT INTO `videos` (`videoID`, `videoName`, `videoDesc`, `videoURL`) VALUES
 (234, 'Tokyo Ghoul S2 Episode 10', 'Episode 10 of the series:Tokyo Ghoul S2', 'vids/Tokyo Ghoul S2/TG s2 epA10.mp4'),
 (235, 'Tokyo Ghoul S2 Episode 11', 'Episode 11 of the series:Tokyo Ghoul S2', 'vids/Tokyo Ghoul S2/TG s2 epA11.mp4'),
 (236, 'Tokyo Ghoul S2 Episode 12', 'Episode 12 of the series:Tokyo Ghoul S2', 'vids/Tokyo Ghoul S2/TG s2 epA12.mp4'),
+(237, 'Good Doctor Episode 1', 'Episode 1 of the series:Good Doctor', 'vids/Good Doctor/Good Doctor Episode 12 Part 1.mp4'),
+(238, 'Good Doctor Episode 2', 'Episode 2 of the series:Good Doctor', 'vids/Good Doctor/Good Doctor Episode 12 Part 2.mp4'),
+(239, 'Good Doctor Episode 3', 'Episode 3 of the series:Good Doctor', 'vids/Good Doctor/Good Doctor Episode 12 Part 3.mp4'),
+(240, 'Good Doctor Episode 4', 'Episode 4 of the series:Good Doctor', 'vids/Good Doctor/Good Doctor Episode 12 Part 4.mp4'),
+(241, 'Good Doctor Episode 5', 'Episode 5 of the series:Good Doctor', 'vids/Good Doctor/good_doctor_-_13_clip1.mp4'),
+(242, 'Good Doctor Episode 6', 'Episode 6 of the series:Good Doctor', 'vids/Good Doctor/good_doctor_-_15_clip2_2.mp4'),
+(243, 'Good Doctor Episode 7', 'Episode 7 of the series:Good Doctor', 'vids/Good Doctor/good_doctor_-_16_clip1.mp4'),
+(244, 'Good Doctor Episode 8', 'Episode 8 of the series:Good Doctor', 'vids/Good Doctor/good_doctor_-_17_clip1.mp4'),
+(245, 'Good Doctor Episode 9', 'Episode 9 of the series:Good Doctor', 'vids/Good Doctor/good_doctor_-_18_clip1.mp4'),
+(246, 'Good Doctor Episode 10', 'Episode 10 of the series:Good Doctor', 'vids/Good Doctor/good_doctor_-_19_clip1.mp4'),
+(247, 'Good Doctor Episode 11', 'Episode 11 of the series:Good Doctor', 'vids/Good Doctor/good_doctor_-_20_clip1.mp4'),
 (248, 'Cheese in the Trap Episode 1', 'Episode 1 of the series:Cheese in the Trap', 'vids/Cheese in the Trap/Cheese in the Trap episode 1.mp4'),
 (249, 'Cheese in the Trap Episode 2', 'Episode 2 of the series:Cheese in the Trap', 'vids/Cheese in the Trap/Cheese in the Trap episode 10.mp4'),
 (250, 'Cheese in the Trap Episode 3', 'Episode 3 of the series:Cheese in the Trap', 'vids/Cheese in the Trap/Cheese in the Trap episode 11.mp4'),
@@ -2571,10 +2616,10 @@ INSERT INTO `videos` (`videoID`, `videoName`, `videoDesc`, `videoURL`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `videosgenres`
+-- Table structure for table `videosGenres`
 --
 
-CREATE TABLE `videosgenres` (
+CREATE TABLE `videosGenres` (
   `videoGenreID` int(10) UNSIGNED NOT NULL,
   `videoID` int(11) NOT NULL,
   `genreID` int(11) NOT NULL
@@ -2600,8 +2645,7 @@ CREATE TABLE `videotime` (
 --
 
 INSERT INTO `videotime` (`studentNumber`, `timeOut`, `KDRAMA`, `ANIME`, `genre`, `startTime`) VALUES
-(201712345, 0, 0, 10, 0, '0000-00-00 00:00:00'),
-(201412345, 0, 0, 346, 0, '0000-00-00 00:00:00');
+(201712345, 0, 0, 10, 0, '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -2669,9 +2713,9 @@ ALTER TABLE `seriesgenres`
   ADD PRIMARY KEY (`seriesgenresID`);
 
 --
--- Indexes for table `seriesvideo`
+-- Indexes for table `seriesVideo`
 --
-ALTER TABLE `seriesvideo`
+ALTER TABLE `seriesVideo`
   ADD PRIMARY KEY (`seriesVideoID`);
 
 --
@@ -2688,9 +2732,9 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_student_number_unique` (`student_number`);
 
 --
--- Indexes for table `uservideos`
+-- Indexes for table `userVideos`
 --
-ALTER TABLE `uservideos`
+ALTER TABLE `userVideos`
   ADD PRIMARY KEY (`userVideosID`);
 
 --
@@ -2700,9 +2744,9 @@ ALTER TABLE `videos`
   ADD PRIMARY KEY (`videoID`);
 
 --
--- Indexes for table `videosgenres`
+-- Indexes for table `videosGenres`
 --
-ALTER TABLE `videosgenres`
+ALTER TABLE `videosGenres`
   ADD PRIMARY KEY (`videoGenreID`);
 
 --
@@ -2714,92 +2758,76 @@ ALTER TABLE `videosgenres`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
 --
 -- AUTO_INCREMENT for table `forums`
 --
 ALTER TABLE `forums`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT for table `gamegenres`
 --
 ALTER TABLE `gamegenres`
   MODIFY `gamegenresID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
-
 --
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
   MODIFY `gameID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
-
 --
 -- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
   MODIFY `genreID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
   MODIFY `imageID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `scores`
 --
 ALTER TABLE `scores`
   MODIFY `scoreID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `series`
 --
 ALTER TABLE `series`
   MODIFY `seriesID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
 --
 -- AUTO_INCREMENT for table `seriesgenres`
 --
 ALTER TABLE `seriesgenres`
   MODIFY `seriesgenresID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
 --
--- AUTO_INCREMENT for table `seriesvideo`
+-- AUTO_INCREMENT for table `seriesVideo`
 --
-ALTER TABLE `seriesvideo`
+ALTER TABLE `seriesVideo`
   MODIFY `seriesVideoID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
-
 --
 -- AUTO_INCREMENT for table `tokens`
 --
 ALTER TABLE `tokens`
   MODIFY `tokenID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
-
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
-
 --
--- AUTO_INCREMENT for table `uservideos`
+-- AUTO_INCREMENT for table `userVideos`
 --
-ALTER TABLE `uservideos`
-  MODIFY `userVideosID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
-
+ALTER TABLE `userVideos`
+  MODIFY `userVideosID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=184;
 --
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
   MODIFY `videoID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
-
 --
--- AUTO_INCREMENT for table `videosgenres`
+-- AUTO_INCREMENT for table `videosGenres`
 --
-ALTER TABLE `videosgenres`
+ALTER TABLE `videosGenres`
   MODIFY `videoGenreID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

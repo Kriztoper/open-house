@@ -27,6 +27,6 @@ class CreateVideosGenresTable extends Migration
     public function down()
     {
         Schema::dropIfExists('videosGenres');
-        Schema::dropIfExists('  seriesGenres');
+        Schema::dropIfExists('  seriesgenres');
     }
 }

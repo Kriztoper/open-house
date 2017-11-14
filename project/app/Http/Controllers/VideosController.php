@@ -42,18 +42,18 @@ class VideosController extends Controller
 
       //$user = Auth::user();
       
-      $anime = series::join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                ->join('genres','seriesGenres.genreID','=','genres.genreID')
+      $anime = series::join('seriesgenres','seriesgenres.videoID','=','series.seriesID')
+                ->join('genres','seriesgenres.genreID','=','genres.genreID')
                 ->select('series.*')
                 ->where('genres.genreName','Anime')
                 ->get();
-       $featuredContent = series::join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                ->join('genres','seriesGenres.genreID','=','genres.genreID')
+       $featuredContent = series::join('seriesgenres','seriesgenres.videoID','=','series.seriesID')
+                ->join('genres','seriesgenres.genreID','=','genres.genreID')
                 ->select('series.*')
                 ->where('genres.genreName','Featured Content')
                 ->get();
-       $kDrama = series::join('seriesGenres','seriesGenres.videoID','=','series.seriesID')
-                ->join('genres','seriesGenres.genreID','=','genres.genreID')
+       $kDrama = series::join('seriesgenres','seriesgenres.videoID','=','series.seriesID')
+                ->join('genres','seriesgenres.genreID','=','genres.genreID')
                 ->select('series.*')
                 ->where('genres.genreName','K-Drama')
                 ->get();
@@ -96,18 +96,18 @@ class VideosController extends Controller
         $starter=Carbon::now();
         $starter= new Carbon();
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
-        $user=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('studentNumber','genre');
+        $user=DB::table('videotime')->where('studentNumber',$sNumber)->pluck('studentNumber','genre');
         if(empty($user)){
-                DB::table('videoTime')->insert([
+                DB::table('videotime')->insert([
                 ['studentNumber' =>$sNumber , 'startTime' => $starter,'timeOut'=>0,'KDRAMA'=>0,'ANIME'=>0,'genre'=>$genreId],
                 ]); 
         }else{
-             DB::table('videoTime')->where('studentNumber', $sNumber)->update(['startTime'=>$starter,'genre'=>$genreId]);
+             DB::table('videotime')->where('studentNumber', $sNumber)->update(['startTime'=>$starter,'genre'=>$genreId]);
         }
       return view('watch_video',['videos'=>$videos]);
 
   /*$seriesID=DB::table('seriesVideo')->where('videoID',$id)->pluck('seriesID');
-  $genre= DB::table('seriesGenres')->where('videoID',$seriesID)->pluck('genreID');
+  $genre= DB::table('seriesgenres')->where('videoID',$seriesID)->pluck('genreID');
   return redirect('/startVideo/'.$id.'/'.$genre);  */
   }
   public function exitVid() {

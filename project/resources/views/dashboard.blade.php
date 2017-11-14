@@ -30,6 +30,7 @@
           		</ul>
 	    		<ul id="links" class="nav navbar-nav navbar-right">
 	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
+					<li><a href="{{ url('/') }}">WEB APPS</a></li>  
 					<li><a href="{{ url('/forum') }}">FORUM</a></li>  
 					<li><a href="#">HALL OF FAME</a></li>
 	      			<li><a href="#">GAMES</a></li>

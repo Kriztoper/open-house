@@ -12,8 +12,8 @@ class CreateGameGenresTable extends Migration
      */
     public function up()
     {
-        Schema::create('gameGenres', function (Blueprint $table) {
-            $table->increments('gameGenresID');
+        Schema::create('gamegenres', function (Blueprint $table) {
+            $table->increments('gamegenresID');
             $table->integer('gameID');
             $table->integer('genreID');
         });
@@ -26,6 +26,6 @@ class CreateGameGenresTable extends Migration
      */
     public function down()
     {
-        Schema::drop('gameGenres');
+        Schema::drop('gamegenres');
     }
 }

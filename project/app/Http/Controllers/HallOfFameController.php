@@ -15,25 +15,25 @@ class HallOfFameController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function maxDrama(){
-        $max=DB::table('videoTime')
+        $max=DB::table('videotime')
             ->max('KDRAMA');
-        $user=DB::table('videoTime')
+        $user=DB::table('videotime')
             ->where('KDRAMA',$max)
             ->pluck('studentNumber');
         var_dump($user);
         exit();
     }
     public function maxAnime(){
-        $max=DB::table('videoTime')
+        $max=DB::table('videotime')
             ->max('ANIME');
-        $user=DB::table('videoTime')
+        $user=DB::table('videotime')
             ->where('ANIME',$max)
             ->pluck('studentNumber');
         var_dump($user);
         exit();
     }
     public function maxGames(){
-         DB::table('gameTime')->orderBy('totalTime','DESC')->chunk(10,function($users){
+         DB::table('gametime')->orderBy('totalTime','DESC')->chunk(10,function($users){
             foreach($users as $user){
                  $sNumber=[$user->studentNumber];
                  var_dump($sNumber);

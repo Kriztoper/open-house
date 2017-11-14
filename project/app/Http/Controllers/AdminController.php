@@ -101,9 +101,9 @@ class AdminController extends Controller
         $genres = Genre::all();
         $genresChecked = Input::get('values');
         foreach($genresChecked as $gen){
-            $gameGenres_data['gameID']  = $game->gameID;
-            $gameGenres_data['genreID'] = $gen;
-            GameGenre::create($gameGenres_data);
+            $gamegenres_data['gameID']  = $game->gameID;
+            $gamegenres_data['genreID'] = $gen;
+            GameGenre::create($gamegenres_data);
         }
         return view('admin.sortGameGenre',['genres'=>$genres]);
     }

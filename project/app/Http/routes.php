@@ -97,5 +97,9 @@ Route::get('/forum', 'ForumController@showForums');
 Route::post('/forum', 'ForumController@createNewTopic');
 Route::get('/comments/{id}', 'ForumController@showForumComments');
 Route::post('/comments/{id}', 'ForumController@commentOnForum');
+
+// web apps
+Route::get('/web_apps', 'UserController@showWebApps');
+
 ?>
 
