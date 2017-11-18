@@ -9,13 +9,19 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Forum;
 use App\Comment;
+use App\ForumTag;
 
 class ForumController extends Controller
 {
     public function showForums() {
         $forums = Forum::select('forums.*')->get();
         $comments = Comment::select('comments.*')->get();
-        return view('forum',['forums' => $forums, 'comments' => $comments]);
+        $forumTags = [];
+        foreach($forums as $forum) {
+            $tag = ForumTag::select('forum_tags.tag')->where('id', $forum->tag_id)->pluck('tag');
+            array_push($forumTags, $tag);
+        }
+        return view('forum',['forums' => $forums, 'comments' => $comments, 'forumTags' => $forumTags]);
     }
 
     public function createNewTopic(Request $request) {
@@ -23,11 +29,27 @@ class ForumController extends Controller
         $forum = new Forum;
         $forum->title = $request->title;
         $forum->author = $author;        
+        $forum->tag_id = ForumTag::select('forum_tags.id')->where('tag', $_POST['selection'])->pluck('id');
+        
+        // if tag does not exist create tag in forums_tag table
+        if ($forum->tag_id == null) {
+            $forumTag = new ForumTag;
+            $forumTag->tag = $_POST['selection'];
+            $forumTag->save();
+
+            $forum->tag_id = ForumTag::select('forum_tags.id')->where('tag', $_POST['selection'])->pluck('id');
+        }
+
         $forum->save();
 
         $forums = Forum::select('forums.*')->get();
         $comments = Comment::select('comments.*')->get();
-        return view('forum',['forums' => $forums, 'comments' => $comments]);
+        $forumTags = [];
+        foreach($forums as $forum) {
+            $tag = ForumTag::select('forum_tags.tag')->where('id', $forum->tag_id)->pluck('tag');
+            array_push($forumTags, $tag);
+        }
+        return view('forum',['forums' => $forums, 'comments' => $comments, 'forumTags' => $forumTags]);
     }
 
     public function commentOnForum($id, Request $request) {
@@ -46,7 +68,8 @@ class ForumController extends Controller
     public function showForumComments($id) {
         $forum = Forum::select('forums.*')->where('id', $id)->get();
         $commentsList = Comment::select('comments.*')->where('forum_id', $id)->get();
-        return view('comments', ['forum' => $forum, 'commentsList' => $commentsList]);
+        $forumTag = ForumTag::select('forum_tags.tag')->where('id', $forum[0]->tag_id)->pluck('tag');
+        return view('comments', ['forum' => $forum, 'commentsList' => $commentsList, 'forumTag' => $forumTag]);
     }
 
     /**

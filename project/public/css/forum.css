@@ -14,7 +14,18 @@ body {
     position: relative;
     background: #f2f2f2;
     z-index: 2;
-    /* border: 0.5px solid #50326C; */
+}
+
+.card-partition {
+    display: flex;    
+}
+
+.forum-title {
+    width: 50%;
+}
+
+.forum-desc {
+    width: 50%;
 }
 
 #author {
@@ -25,16 +36,37 @@ body {
     border-radius: 5px;
     position: relative;
     float: right;
-    top: -6px;
 }
 
-#titles-link:hover {
+#tag {
+    margin-left: 5px;
+    background: #da810d;
+    color: #fff;
+    font-size: 12px;
+    padding: 7px;
+    border-radius: 5px;
+    position: relative;
+    float: right;
+}
+
+#date-created {
+    margin-left: 5px;
+    background: #dad70d;
+    color: #fff;
+    font-size: 12px;
+    padding: 7px;
+    border-radius: 5px;
+    position: relative;
+    float: right;
+}
+
+.titles-link:hover {
     font-size: 17px;    
     text-decoration: none;
     z-index: 2;
 }
 
-#titles-link:visited {
+.titles-link:visited {
     text-decoration: none;
 }
 
@@ -42,33 +74,43 @@ body {
     padding-left: unset;
 }
 
-#forum-area {
+#forum-tag-form {
     width: 100%;
-    height: 41px;
+    display: flex;
+}
+
+#title-tag-form {
+    display: flex;
+}
+
+#forum-form {
+    width: 100%;
+    margin-right: unset;
+    padding: 10px;
+    text-align: center;
+    background: #f3f3f2;
+    padding-top: 20px;
+}
+
+#forum-area {
+    width: 75%;
 }
 
 #forum-btn {
-	background-color:#00AEFF;
-	color:#fff;
-	border-color: #00AEFF;
-    padding: 5px;
-	border-radius: 5px;
-	position: relative;
-    float: right;
-    right: 10px;
+	background-color: #00AEFF;
+    color: #fff;
+    border-color: #00AEFF;
+    border-radius: 5px;
+    position: relative;
     z-index: 1;
-    top: 37px;
 }
 
 #forum-btn:hover {
-	background-color:#fff;
-	color: #00AEFF;
-	border-color: #00AEFF;
-    padding: 5px;
-	border-radius: 5px;
-	position: relative;
-    float: right;
-    right: 10px;
+	background-color: #fff;
+    color: #00AEFF;
+    border-color: #00AEFF;
+    border-radius: 5px;
+    position: relative;
 }
 
 #forum-titles-list {
