@@ -5,15 +5,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!--<<<<<< Updated upstream -->
         <link rel="stylesheet" href="css/hall_of_fame.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <link rel="stylesheet" type="text/css" href="slick/slick.css">
         <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
         <link rel="stylesheet" type="text/css" href="css/forum.css">
-
-<!-- Stashed changes -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       
@@ -95,20 +92,39 @@
     </ul>
   </div>
   @endif
+
+
   <div class="container" id="forums-cntnr">
-    <div id="forum-form">
-        <form method="post" action="{{url('forum')}}">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <button id="forum-btn" >Submit</button>
-            <textarea id="forum-area" name="title" placeholder="Enter topic title" required></textarea>
-        </form>
+    <div id="title-tag-form">
+      <form id="forum-tag-form" method="post" action="{{url('forum')}}">
+        <div id="forum-form">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="text" id="forum-area" name="title" placeholder="Enter topic title" required></input>
+          <input id="tag-form-input" list="selections" name="selection" placeholder="Enter tag here" required>
+          <datalist id="selections">
+            <dynamic-option v-for="forumTag in forumTags" :tag="forumTag" :key="forumTag.id"></dynamic-option>
+          </datalist>
+          <button id="forum-btn" >Submit</button>
+        </div>
+      </form>
     </div>
     <div id="forum-titles-list">
       <ul id="titles">
         @foreach ($forums as $index=>$forum)
           <li class="title-card">
-          <a id="titles-link" href="{{url('comments/'.$forum->id)}}">
-          {{$forum->title}} <span id="author">{{$forum->author}}</span></a></li>
+            <a class="titles-link" href="{{url('comments/'.$forum->id)}}">
+              <div class="card-partition">  
+                <div class="forum-title">
+                  {{$forum->title}}
+                </div> 
+                <div class="forum-desc">
+                  <span id="date-created">{{$forum->created_at}}</span>
+                  <span id="tag">{{$forumTags[$index]}}</span>
+                  <span id="author">{{$forum->author}}</span>
+                </div>
+              </div>  
+            </a>
+          </li>
         @endforeach
       </ul>
     </div>
@@ -158,6 +174,23 @@
   </script>
   @endif
 
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    Vue.component('dynamic-option', {
+        props: ['tag'],
+        template: "<option name='forumTagOption' :value='tag'></option>"
+    })
+
+    var vm = new Vue({
+      el: "#forums-cntnr",
+      data: {
+        forumTags: {!! json_encode(array_unique($forumTags)) !!},
+      },
+      methods: {},
+      computed: {}
+    });
+  </script>
 
   </body>
 
