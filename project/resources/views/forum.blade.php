@@ -122,7 +122,7 @@
                   </div> 
                   <div class="forum-desc">
                     <span id="date-created">@{{ forum.created_at }}</span>
-                    <span id="tag">@{{ forum.tag }}</span>{{--  [$index]}}</span>  --}}
+                    <span id="tag">@{{ forum.tag }}</span>
                     <span id="author">@{{ forum.author }}</span>
                   </div>
                 </div>  
