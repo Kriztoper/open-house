@@ -16,12 +16,14 @@ class ForumController extends Controller
     public function showForums() {
         $forums = Forum::select('forums.*')->get();
         $comments = Comment::select('comments.*')->get();
-        $forumTags = [];
+        $distinctForumTags = [];
         foreach($forums as $forum) {
-            $tag = ForumTag::select('forum_tags.tag')->where('id', $forum->tag_id)->pluck('tag');
-            array_push($forumTags, $tag);
+            $forum['tag'] = ForumTag::select('forum_tags.tag')->where('id', $forum->tag_id)->pluck('tag');
+            if (!in_array($forum['tag'], $distinctForumTags)) {
+                array_push($distinctForumTags, $forum['tag']);
+            }
         }
-        return view('forum',['forums' => $forums, 'comments' => $comments, 'forumTags' => $forumTags]);
+        return view('forum',['forums' => $forums, 'distinctForumTags' => $distinctForumTags]);
     }
 
     public function createNewTopic(Request $request) {
@@ -44,12 +46,14 @@ class ForumController extends Controller
 
         $forums = Forum::select('forums.*')->get();
         $comments = Comment::select('comments.*')->get();
-        $forumTags = [];
+        $distinctForumTags = [];
         foreach($forums as $forum) {
-            $tag = ForumTag::select('forum_tags.tag')->where('id', $forum->tag_id)->pluck('tag');
-            array_push($forumTags, $tag);
+            $forum['tag'] = ForumTag::select('forum_tags.tag')->where('id', $forum->tag_id)->pluck('tag');
+            if (!in_array($forum['tag'], $distinctForumTags)) {
+                array_push($distinctForumTags, $forum['tag']);
+            }
         }
-        return view('forum',['forums' => $forums, 'comments' => $comments, 'forumTags' => $forumTags]);
+        return view('forum',['forums' => $forums, 'distinctForumTags' => $distinctForumTags]);
     }
 
     public function commentOnForum($id, Request $request) {

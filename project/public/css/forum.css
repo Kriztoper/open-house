@@ -5,7 +5,6 @@ body {
 #forums-cntnr {
     position: relative;
     margin-top: 100px;
-    z-index: 2;
 }
 
 .title-card {
@@ -13,7 +12,6 @@ body {
     padding: 10px;
     position: relative;
     background: #f2f2f2;
-    z-index: 2;
 }
 
 .card-partition {
@@ -63,7 +61,6 @@ body {
 .titles-link:hover {
     font-size: 17px;    
     text-decoration: none;
-    z-index: 2;
 }
 
 .titles-link:visited {
@@ -76,10 +73,6 @@ body {
 
 #forum-tag-form {
     width: 100%;
-    display: flex;
-}
-
-#title-tag-form {
     display: flex;
 }
 
@@ -97,26 +90,22 @@ body {
 }
 
 #forum-btn {
-	background-color: #00AEFF;
+    background-color: #00AEFF;
     color: #fff;
     border-color: #00AEFF;
     border-radius: 5px;
     position: relative;
-    z-index: 1;
 }
 
 #forum-btn:hover {
-	background-color: #fff;
+    background-color: #fff;
     color: #00AEFF;
     border-color: #00AEFF;
     border-radius: 5px;
     position: relative;
 }
 
-#forum-titles-list {
-    z-index: 2;
-}
-
-#titles {
-    z-index: 2;
+#search {
+    text-align: -webkit-right;
+    margin-bottom: 10px;
 }
