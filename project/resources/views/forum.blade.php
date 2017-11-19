@@ -94,39 +94,42 @@
   @endif
 
 
-  <div class="container" id="forums-cntnr">
-    <div id="title-tag-form">
-      <form id="forum-tag-form" method="post" action="{{url('forum')}}">
-        <div id="forum-form">
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <input type="text" id="forum-area" name="title" placeholder="Enter topic title" required></input>
-          <input id="tag-form-input" list="selections" name="selection" placeholder="Enter tag here" required>
-          <datalist id="selections">
-            <dynamic-option v-for="forumTag in forumTags" :tag="forumTag" :key="forumTag.id"></dynamic-option>
-          </datalist>
-          <button id="forum-btn" >Submit</button>
-        </div>
-      </form>
-    </div>
-    <div id="forum-titles-list">
-      <ul id="titles">
-        @foreach ($forums as $index=>$forum)
-          <li class="title-card">
-            <a class="titles-link" href="{{url('comments/'.$forum->id)}}">
-              <div class="card-partition">  
-                <div class="forum-title">
-                  {{$forum->title}}
-                </div> 
-                <div class="forum-desc">
-                  <span id="date-created">{{$forum->created_at}}</span>
-                  <span id="tag">{{$forumTags[$index]}}</span>
-                  <span id="author">{{$forum->author}}</span>
-                </div>
-              </div>  
-            </a>
-          </li>
-        @endforeach
-      </ul>
+  <div id="app">
+    <div class="container" id="forums-cntnr">
+      <div id="search">
+        <input type="text" placeholder="search keyword here" v-model="keyword">
+      </div>
+      <div id="title-tag-form">
+        <form id="forum-tag-form" method="post" action="{{url('forum')}}">
+          <div id="forum-form">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="text" id="forum-area" name="title" placeholder="Enter topic title" required>
+            <input id="tag-form-input" list="selections" name="selection" placeholder="Enter tag here" required>
+            <datalist id="selections">
+              <dynamic-option v-for="forumTag in distinctForumTags" :tag="forumTag.tag" :key="forumTag.id"></dynamic-option>
+            </datalist>
+            <button id="forum-btn" >Submit</button>
+          </div>
+        </form>
+      </div>
+      <div id="forum-titles-list">
+        <ul id="titles">
+            <li class="title-card" v-for="forum in filteredList">
+              <a class="titles-link" v-bind:href="'comments/' + forum.id">
+                <div class="card-partition">  
+                  <div class="forum-title">
+                    @{{ forum.title }}
+                  </div> 
+                  <div class="forum-desc">
+                    <span id="date-created">@{{ forum.created_at }}</span>
+                    <span id="tag">@{{ forum.tag }}</span>{{--  [$index]}}</span>  --}}
+                    <span id="author">@{{ forum.author }}</span>
+                  </div>
+                </div>  
+              </a>
+            </li>
+        </ul>
+      </div>
     </div>
   </div>
   
@@ -183,12 +186,25 @@
     })
 
     var vm = new Vue({
-      el: "#forums-cntnr",
+      el: "#app",
       data: {
-        forumTags: {!! json_encode(array_unique($forumTags)) !!},
+        keyword: "",
+        forums: {!! json_encode($forums) !!},
+        distinctForumTags: {!! json_encode($distinctForumTags) !!},
       },
-      methods: {},
-      computed: {}
+      methods: {
+
+      },
+      computed: {
+        filteredList: function() {
+          return this.forums.filter((forum) => {
+            return forum.title.toLowerCase().includes(this.keyword.toLowerCase()) || 
+              forum.author.toLowerCase().includes(this.keyword.toLowerCase()) || 
+              forum.tag.toLowerCase().includes(this.keyword.toLowerCase()) ||
+              forum.created_at.toLowerCase().includes(this.keyword.toLowerCase());
+          });
+        }
+      }
     });
   </script>
 
