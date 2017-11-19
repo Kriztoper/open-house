@@ -44,16 +44,7 @@ class ForumController extends Controller
 
         $forum->save();
 
-        $forums = Forum::select('forums.*')->get();
-        $comments = Comment::select('comments.*')->get();
-        $distinctForumTags = [];
-        foreach($forums as $forum) {
-            $forum['tag'] = ForumTag::select('forum_tags.tag')->where('id', $forum->tag_id)->pluck('tag');
-            if (!in_array($forum['tag'], $distinctForumTags)) {
-                array_push($distinctForumTags, $forum['tag']);
-            }
-        }
-        return view('forum',['forums' => $forums, 'distinctForumTags' => $distinctForumTags]);
+        return $this->showForums();
     }
 
     public function commentOnForum($id, Request $request) {
@@ -64,9 +55,7 @@ class ForumController extends Controller
         $comment->author = $author;
         $comment->save();
         
-        $forum = Forum::select('forums.*')->where('id', $id)->get();
-        $commentsList = Comment::select('comments.*')->where('forum_id', $id)->get();
-        return view('comments', ['forum' => $forum, 'commentsList' => $commentsList]);
+        return $this->showForumComments($id);
     }
 
     public function showForumComments($id) {
