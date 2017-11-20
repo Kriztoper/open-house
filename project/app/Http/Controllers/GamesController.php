@@ -37,32 +37,32 @@ class GamesController extends Controller
         //$user = Auth::user();
         
         $action = DB::table('games')
-                  ->join('gameGenres','gameGenres.gameID','=','games.gameID')
-                  ->join('genres','gameGenres.genreID','=','genres.genreID')
+                  ->join('gamegenres','gamegenres.gameID','=','games.gameID')
+                  ->join('genres','gamegenres.genreID','=','genres.genreID')
                   ->select('games.*')
                   ->where('genres.genreName','Action')
                   ->get();
          $featuredContent = DB::table('games')
-                  ->join('gameGenres','gameGenres.gameID','=','games.gameID')
-                  ->join('genres','gameGenres.genreID','=','genres.genreID')
+                  ->join('gamegenres','gamegenres.gameID','=','games.gameID')
+                  ->join('genres','gamegenres.genreID','=','genres.genreID')
                   ->select('games.*')
                   ->where('genres.genreName','Featured Content')
                   ->get();
          $strategy = DB::table('games')
-                  ->join('gameGenres','gameGenres.gameID','=','games.gameID')
-                  ->join('genres','gameGenres.genreID','=','genres.genreID')
+                  ->join('gamegenres','gamegenres.gameID','=','games.gameID')
+                  ->join('genres','gamegenres.genreID','=','genres.genreID')
                   ->select('games.*')
                   ->where('genres.genreName','Strategy')
                   ->get();
          $boardGames = DB::table('games')
-                  ->join('gameGenres','gameGenres.gameID','=','games.gameID')
-                  ->join('genres','gameGenres.genreID','=','genres.genreID')
+                  ->join('gamegenres','gamegenres.gameID','=','games.gameID')
+                  ->join('genres','gamegenres.genreID','=','genres.genreID')
                   ->select('games.*')
                   ->where('genres.genreName','Board Games')
                   ->get();
         /*$popularSeries = DB::table('series')
-                        ->join('seriesVideo','series.seriesID','=','seriesVideo.seriesID')
-                        ->join('userVideos','userVideos.videoID','=','seriesVideo.videoID')
+                        ->join('seriesvideo','series.seriesID','=','seriesvideo.seriesID')
+                        ->join('uservideos','uservideos.videoID','=','seriesvideo.videoID')
                         ->select('series.*')
                         ->get();*/
        

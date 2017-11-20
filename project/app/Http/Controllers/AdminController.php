@@ -49,9 +49,9 @@ class AdminController extends Controller
             $video_data['videoDesc'] = "Episode ".($i+1)." of the series:".$series->seriesName;
             $video_data['videoURL'] = $vids[$i];
             $video = Video::create($video_data);
-            $seriesVideo_data['seriesID'] = $series->id;
-            $seriesVideo_data['videoID'] = $video->id;
-            $series_video = SeriesVideo::create($seriesVideo_data);
+            $seriesvideo_data['seriesID'] = $series->id;
+            $seriesvideo_data['videoID'] = $video->id;
+            $series_video = SeriesVideo::create($seriesvideo_data);
         }
         return view('admin.addSeries');
     }
@@ -101,9 +101,9 @@ class AdminController extends Controller
         $genres = Genre::all();
         $genresChecked = Input::get('values');
         foreach($genresChecked as $gen){
-            $gameGenres_data['gameID']  = $game->gameID;
-            $gameGenres_data['genreID'] = $gen;
-            GameGenre::create($gameGenres_data);
+            $gamegenres_data['gameID']  = $game->gameID;
+            $gamegenres_data['genreID'] = $gen;
+            GameGenre::create($gamegenres_data);
         }
         return view('admin.sortGameGenre',['genres'=>$genres]);
     }

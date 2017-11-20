@@ -8,5 +8,5 @@ class SeriesGenre extends Model
 {
     protected $fillable = ['videoID', 'genreID'];
     public $timestamps = false;
-    public $table ='seriesGenres';
+    public $table ='seriesgenres';
 }

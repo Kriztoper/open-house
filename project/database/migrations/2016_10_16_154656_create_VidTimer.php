@@ -12,7 +12,7 @@ class CreateVidTimer extends Migration
      */
     public function up()
     {
-         Schema::create('videoTime', function (Blueprint $table) {
+         Schema::create('videotime', function (Blueprint $table) {
             $table->integer('studentNumber');
             $table->integer('timeStart');
             $table->integer('timeOut');
@@ -29,6 +29,6 @@ class CreateVidTimer extends Migration
      */
     public function down()
     {
-       Schema::drop('videoTime');   
+       Schema::drop('videotime');   
     }
 }

@@ -12,8 +12,8 @@ class CreateSeriesVideosTable extends Migration
      */
     public function up()
     {
-        Schema::create('seriesVideo', function (Blueprint $table) {
-            $table->increments('seriesVideoID');
+        Schema::create('seriesvideo', function (Blueprint $table) {
+            $table->increments('seriesvideoID');
             $table->integer('seriesID');
             $table->integer('videoID');
         });
@@ -25,6 +25,6 @@ class CreateSeriesVideosTable extends Migration
      */
     public function down()
     {
-         Schema::drop('seriesVideo');
+         Schema::drop('seriesvideo');
     }
 }

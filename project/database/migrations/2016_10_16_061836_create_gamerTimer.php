@@ -12,7 +12,7 @@ class CreateGamerTimer extends Migration
      */
     public function up()
     {
-         Schema::create('gameTime', function (Blueprint $table) {
+         Schema::create('gametime', function (Blueprint $table) {
             $table->integer('studentNumber');
             $table->integer('timeStart');
             $table->integer('timeOut');
@@ -27,5 +27,5 @@ class CreateGamerTimer extends Migration
      */
     public function down()
     {
-        Schema::drop('gameTime');    }
+        Schema::drop('gametime');    }
 }

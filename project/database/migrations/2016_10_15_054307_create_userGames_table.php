@@ -12,7 +12,7 @@ class CreateUserGamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('userGames', function (Blueprint $table) {
+        Schema::create('usergames', function (Blueprint $table) {
             $table->integer('userID');
             $table->integer('gameID');
             $table->float('numOfHours');
@@ -26,6 +26,6 @@ class CreateUserGamesTable extends Migration
      */
     public function down()
     {
-       Schema::drop('userGames');
+       Schema::drop('usergames');
     }
 }

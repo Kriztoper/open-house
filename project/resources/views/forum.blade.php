@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/hall_of_fame.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <link rel="stylesheet" type="text/css" href="slick/slick.css">
@@ -97,7 +96,22 @@
   <div id="app">
     <div class="container" id="forums-cntnr">
       <div id="search">
-        <input type="text" placeholder="search keyword here" v-model="keyword">
+        {{--  <div id="utility-cntnr">  --}}
+        <span id="utility-cntnr">
+          <div id="sortby-cntnr">
+            <label>Sort By</label>
+            <sortby-select inline-template>
+              <select v-model="value">
+                <option v-on: v-for="sortByValue in sortByValues" v-bind:value="sortByValue">@{{ sortByValue }}</option>
+                @{{ sort }}
+              </select>
+            </sortby-select>
+          </div>
+          <div id="search-cntnr">
+            <input id="search-field" type="text" placeholder="search keyword here" v-model="keyword">
+          </div>
+        </span>
+        {{--  </div>  --}}
       </div>
       <div id="title-tag-form">
         <form id="forum-tag-form" method="post" action="{{url('forum')}}">
@@ -178,12 +192,41 @@
   @endif
 
 
-  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script>
     Vue.component('dynamic-option', {
         props: ['tag'],
         template: "<option name='forumTagOption' :value='tag'></option>"
     })
+
+    Vue.component('sortby-select', {
+      data: function() {
+        return {
+          value: {},
+        }
+      },
+      computed: {
+        sort: function() {
+          if (this.value === "None") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.id - forum2.id;
+            });
+          } else if (this.value === "Title") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.title.localeCompare(forum2.title);
+            });
+          } else if (this.value === "Author") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.author.localeCompare(forum2.author);
+            });
+          } else if (this.value === "Tag") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.tag.localeCompare(forum2.tag);
+            });
+          }
+        }
+      }
+    });
 
     var vm = new Vue({
       el: "#app",
@@ -191,9 +234,15 @@
         keyword: "",
         forums: {!! json_encode($forums) !!},
         distinctForumTags: {!! json_encode($distinctForumTags) !!},
+        sortByValues: [ "None", "Title", "Author", "Tag" ],
       },
       methods: {
-
+        sortByTitle: function(obj) {
+          alert(obj);
+          this.forums.sort(function(string1, string2) {
+              return string1.title.localeCompare(string2.title);
+          });
+        },
       },
       computed: {
         filteredList: function() {
@@ -203,7 +252,7 @@
               forum.tag.toLowerCase().includes(this.keyword.toLowerCase()) ||
               forum.created_at.toLowerCase().includes(this.keyword.toLowerCase());
           });
-        }
+        },
       }
     });
   </script>
