@@ -102,7 +102,7 @@
             <label>Sort By</label>
             <sortby-select inline-template>
               <select v-model="value">
-                <option v-on: v-for="sortByValue in sortByValues" v-bind:value="sortByValue">@{{ sortByValue }}</option>
+                <option v-on: v-for="sortByValue in sortByValues" v-bind:value="sortByValue">@{{ sortByValue.text }}</option>
                 @{{ sort }}
               </select>
             </sortby-select>
@@ -199,7 +199,7 @@
         template: "<option name='forumTagOption' :value='tag'></option>"
     })
 
-    Vue.component('sortby-select', {
+    sortby = Vue.component('sortby-select', {
       data: function() {
         return {
           value: {},
@@ -207,21 +207,41 @@
       },
       computed: {
         sort: function() {
-          if (this.value === "None") {
+          if (this.value.text === "None") {
             vm.forums.sort(function(forum1, forum2) {
               return forum1.id - forum2.id;
             });
-          } else if (this.value === "Title") {
+          } else if (this.value.text === "Title: ascending") {
             vm.forums.sort(function(forum1, forum2) {
               return forum1.title.localeCompare(forum2.title);
             });
-          } else if (this.value === "Author") {
+          } else if (this.value.text === "Title: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.title.localeCompare(forum1.title);
+            });
+          } else if (this.value.text === "Author: ascending") {
             vm.forums.sort(function(forum1, forum2) {
               return forum1.author.localeCompare(forum2.author);
             });
-          } else if (this.value === "Tag") {
+          } else if (this.value.text === "Author: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.author.localeCompare(forum1.author);
+            });
+          } else if (this.value.text === "Tag: ascending") {
             vm.forums.sort(function(forum1, forum2) {
               return forum1.tag.localeCompare(forum2.tag);
+            });
+          } else if (this.value.text === "Tag: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.tag.localeCompare(forum1.tag);
+            });
+          } else if (this.value.text === "Creation Date: ascending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.created_at.localeCompare(forum2.created_at);
+            });
+          } else if (this.value.text === "Creation Date: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.created_at.localeCompare(forum1.created_at);
             });
           }
         }
@@ -234,19 +254,57 @@
         keyword: "",
         forums: {!! json_encode($forums) !!},
         distinctForumTags: {!! json_encode($distinctForumTags) !!},
-        sortByValues: [ "None", "Title", "Author", "Tag" ],
+        sortByValues: [ 
+          { 
+            text: "None",
+          }, 
+          {
+            text: "Title: ascending",
+          },
+          {
+            text: "Title: descending",
+          },
+          {
+            text: "Author: ascending",
+          },
+          {
+            text: "Author: descending",
+          }, 
+          {
+            text: "Tag: ascending",
+          },
+          {
+            text: "Tag: descending",
+          },
+          {
+            text: "Creation Date: ascending",
+          },
+          {
+            text: "Creation Date: descending",
+          },
+        ],
       },
       methods: {
-        sortByTitle: function(obj) {
-          alert(obj);
-          this.forums.sort(function(string1, string2) {
-              return string1.title.localeCompare(string2.title);
-          });
+        /*  methods: {
+          updateStuff: function () {
+            this.$http.get('/forum').then((response) => {
+              console.log(response.data.data);
+              this.stuff = response.data.data;
+            }, (response) => {
+              console.log('ERROR');
+              console.log(response);
+            });
+            setTimeout(this.updateStuff, 5000);
+          }
         },
+        ready() {
+          this.updateStuff();
+        }  */
       },
       computed: {
         filteredList: function() {
           return this.forums.filter((forum) => {
+            console.log(sortby.value);
             return forum.title.toLowerCase().includes(this.keyword.toLowerCase()) || 
               forum.author.toLowerCase().includes(this.keyword.toLowerCase()) || 
               forum.tag.toLowerCase().includes(this.keyword.toLowerCase()) ||
