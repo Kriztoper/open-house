@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/hall_of_fame.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <link rel="stylesheet" type="text/css" href="slick/slick.css">
@@ -97,7 +96,22 @@
   <div id="app">
     <div class="container" id="forums-cntnr">
       <div id="search">
-        <input type="text" placeholder="search keyword here" v-model="keyword">
+        {{--  <div id="utility-cntnr">  --}}
+        <span id="utility-cntnr">
+          <div id="sortby-cntnr">
+            <label>Sort By</label>
+            <sortby-select inline-template>
+              <select v-model="value">
+                <option v-on: v-for="sortByValue in sortByValues" v-bind:value="sortByValue">@{{ sortByValue.text }}</option>
+                @{{ sort }}
+              </select>
+            </sortby-select>
+          </div>
+          <div id="search-cntnr">
+            <input id="search-field" type="text" placeholder="search keyword here" v-model="keyword">
+          </div>
+        </span>
+        {{--  </div>  --}}
       </div>
       <div id="title-tag-form">
         <form id="forum-tag-form" method="post" action="{{url('forum')}}">
@@ -178,12 +192,61 @@
   @endif
 
 
-  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script>
     Vue.component('dynamic-option', {
         props: ['tag'],
         template: "<option name='forumTagOption' :value='tag'></option>"
     })
+
+    sortby = Vue.component('sortby-select', {
+      data: function() {
+        return {
+          value: {},
+        }
+      },
+      computed: {
+        sort: function() {
+          if (this.value.text === "None") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.id - forum2.id;
+            });
+          } else if (this.value.text === "Title: ascending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.title.localeCompare(forum2.title);
+            });
+          } else if (this.value.text === "Title: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.title.localeCompare(forum1.title);
+            });
+          } else if (this.value.text === "Author: ascending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.author.localeCompare(forum2.author);
+            });
+          } else if (this.value.text === "Author: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.author.localeCompare(forum1.author);
+            });
+          } else if (this.value.text === "Tag: ascending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.tag.localeCompare(forum2.tag);
+            });
+          } else if (this.value.text === "Tag: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.tag.localeCompare(forum1.tag);
+            });
+          } else if (this.value.text === "Creation Date: ascending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.created_at.localeCompare(forum2.created_at);
+            });
+          } else if (this.value.text === "Creation Date: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.created_at.localeCompare(forum1.created_at);
+            });
+          }
+        }
+      }
+    });
 
     var vm = new Vue({
       el: "#app",
@@ -191,19 +254,63 @@
         keyword: "",
         forums: {!! json_encode($forums) !!},
         distinctForumTags: {!! json_encode($distinctForumTags) !!},
+        sortByValues: [ 
+          { 
+            text: "None",
+          }, 
+          {
+            text: "Title: ascending",
+          },
+          {
+            text: "Title: descending",
+          },
+          {
+            text: "Author: ascending",
+          },
+          {
+            text: "Author: descending",
+          }, 
+          {
+            text: "Tag: ascending",
+          },
+          {
+            text: "Tag: descending",
+          },
+          {
+            text: "Creation Date: ascending",
+          },
+          {
+            text: "Creation Date: descending",
+          },
+        ],
       },
       methods: {
-
+        /*  methods: {
+          updateStuff: function () {
+            this.$http.get('/forum').then((response) => {
+              console.log(response.data.data);
+              this.stuff = response.data.data;
+            }, (response) => {
+              console.log('ERROR');
+              console.log(response);
+            });
+            setTimeout(this.updateStuff, 5000);
+          }
+        },
+        ready() {
+          this.updateStuff();
+        }  */
       },
       computed: {
         filteredList: function() {
           return this.forums.filter((forum) => {
+            console.log(sortby.value);
             return forum.title.toLowerCase().includes(this.keyword.toLowerCase()) || 
               forum.author.toLowerCase().includes(this.keyword.toLowerCase()) || 
               forum.tag.toLowerCase().includes(this.keyword.toLowerCase()) ||
               forum.created_at.toLowerCase().includes(this.keyword.toLowerCase());
           });
-        }
+        },
       }
     });
   </script>

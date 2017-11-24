@@ -12,7 +12,7 @@ class AddTotalTimeTable extends Migration
      */
     public function up()
     {
-        Schema::table('gameTime', function (Blueprint $table) {
+        Schema::table('gametime', function (Blueprint $table) {
             $table->integer('totalTime');
         });
     }
@@ -24,7 +24,7 @@ class AddTotalTimeTable extends Migration
      */
     public function down()
     {
-        Schema::table('gameTime', function (Blueprint $table) {
+        Schema::table('gametime', function (Blueprint $table) {
             //
         });
     }

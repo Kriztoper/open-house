@@ -1,3 +1,54 @@
+html {
+    width: 100%;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: url(http://i.imgur.com/GGoHfbW.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	
+}
+
+body {
+	background-color: transparent;
+	font-family: lemonmilkregular;
+}
+
+@font-face {
+    font-family: 'goboldregular';
+    src: url('../fonts/gobold_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gobold_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+	font-size: 40px;
+	color: #101010;
+	font-family: lemonmilkregular;
+	letter-spacing: 10px;
+	margin-top: 90px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
 body {
     font-family: monospace;
 }
@@ -5,6 +56,7 @@ body {
 #forums-cntnr {
     position: relative;
     margin-top: 100px;
+    margin-bottom: 50px;    
 }
 
 .title-card {
@@ -106,6 +158,38 @@ body {
 }
 
 #search {
-    text-align: -webkit-right;
-    margin-bottom: 10px;
+    /* text-align: -webkit-right; */
+    /* margin-bottom: 10px; */
+    background: antiquewhite;
+    margin-bottom: unset;
+    /* padding: 10px; */
+    border: solid 1px gray;
+    display: flex;
 }
+
+#utility-cntnr {
+    text-align: right;
+    position: relative;
+    /* float: right; */
+    right: -53%;
+}
+
+#sortby-cntnr {
+    /* background: antiquewhite; */
+    /* margin-bottom: unset; */
+    /* padding: 10px; */
+    border-left: solid 1px gray;
+    display: -webkit-inline-box;
+    padding: 10px;
+}
+
+#search-cntnr {
+    border-left: 1px solid gray;
+    /* height: 20px; */
+    display: -webkit-inline-box;    
+}
+
+#search-field {
+    margin: 10px;
+}
+

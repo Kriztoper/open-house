@@ -68,10 +68,10 @@ class UserController extends Controller
      */
     public function show_hall_of_fame()
     {
-        $posts = DB::select('SELECT studentNumber, first_name FROM gameTime, users WHERE users.student_Number = gameTime.studentNumber order by totalTime desc limit 32');
-        $kdrama = DB::select('SELECT first_name, studentNumber, KDRAMA from videoTime, users WHERE users.student_Number = videoTime.studentNumber order by KDRAMA desc LIMIT 1');
-        $animes = DB::select('SELECT first_name, studentNumber, ANIME from videoTime, users WHERE users.student_Number = videoTime.studentNumber order by ANIME desc LIMIT 1');
-        $mostActives = DB::select('SELECT first_name, ANIME, KDRAMA, totalTime, (ANIME+KDRAMA+totalTime) as total FROM gameTime, videoTime,users WHERE users.student_Number = videoTime.studentNumber and users.student_Number = gameTime.studentNumber order by total desc LIMIT 1 ');
+        $posts = DB::select('SELECT studentNumber, first_name FROM gametime, users WHERE users.student_Number = gametime.studentNumber order by totalTime desc limit 32');
+        $kdrama = DB::select('SELECT first_name, studentNumber, KDRAMA from videotime, users WHERE users.student_Number = videotime.studentNumber order by KDRAMA desc LIMIT 1');
+        $animes = DB::select('SELECT first_name, studentNumber, ANIME from videotime, users WHERE users.student_Number = videotime.studentNumber order by ANIME desc LIMIT 1');
+        $mostActives = DB::select('SELECT first_name, ANIME, KDRAMA, totalTime, (ANIME+KDRAMA+totalTime) as total FROM gametime, videotime,users WHERE users.student_Number = videotime.studentNumber and users.student_Number = gametime.studentNumber order by total desc LIMIT 1 ');
         return view('user.hall_of_fame',compact('posts','kdrama','animes','mostActives'));
     }
 
@@ -120,13 +120,13 @@ class UserController extends Controller
         
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
         
-        $user=DB::table('gameTime')->where('studentNumber',$sNumber)->pluck('studentNumber');
+        $user=DB::table('gametime')->where('studentNumber',$sNumber)->pluck('studentNumber');
         if(empty($user)){
-            DB::table('gameTime')->insert([
+            DB::table('gametime')->insert([
                         ['studentNumber' =>$sNumber , 'startTime' => $starter,'endTime'=>0,'totalTime'=>0],
                         ]);
         }else{
-            DB::table('gameTime')->where('studentNumber', $sNumber)->update(['startTime'=>$starter]);
+            DB::table('gametime')->where('studentNumber', $sNumber)->update(['startTime'=>$starter]);
         }
         return redirect('/playGame/'.$gameId);
     }
@@ -134,11 +134,11 @@ class UserController extends Controller
         $ender=Carbon::now();
         $ender= new Carbon();
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
-        $starter=DB::table('gameTime')->where('studentNumber',$sNumber)->pluck('startTime');
+        $starter=DB::table('gametime')->where('studentNumber',$sNumber)->pluck('startTime');
         $current=strtotime($ender)-strtotime($starter);
-        $total=DB::table('gameTime')->where('studentNumber',$sNumber)->pluck('totalTime');
+        $total=DB::table('gametime')->where('studentNumber',$sNumber)->pluck('totalTime');
         $total1=$total+$current;
-        DB::table('gameTime')->where('studentNumber',$sNumber)->update(['endTime'=>$ender,'totalTime'=>$total1]); 
+        DB::table('gametime')->where('studentNumber',$sNumber)->update(['endTime'=>$ender,'totalTime'=>$total1]); 
         return redirect('/game');
     }
 
@@ -146,13 +146,13 @@ class UserController extends Controller
         $genreId=(int)($genre);
         $starter=(int)(microtime(true));
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
-        $user=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('studentNumber');
+        $user=DB::table('videotime')->where('studentNumber',$sNumber)->pluck('studentNumber');
         if(empty($user)){
-                DB::table('videoTime')->insert([
+                DB::table('videotime')->insert([
                 ['studentNumber' =>$sNumber , 'timeStart' => $starter,'timeOut'=>0,'KDRAMA'=>0,'ANIME'=>0,'genre'=>$genreId],
                 ]); 
         }else{
-             DB::table('videoTime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter,'genre'=>$genreId]);
+             DB::table('videotime')->where('studentNumber', $sNumber)->update(['timeStart'=>$starter,'genre'=>$genreId]);
         }
         return redirect('/redirect/'.$videoPath); */
     }
@@ -164,18 +164,18 @@ class UserController extends Controller
         $ender=Carbon::now();
         $ender= new Carbon();
         $sNumber=DB::table('users')->where('student_number',Auth::user()->student_number)->pluck('student_number');
-        $starter=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('startTime');
+        $starter=DB::table('videotime')->where('studentNumber',$sNumber)->pluck('startTime');
         $current=strtotime($ender)-strtotime($starter);
-        $genre=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('genre');
+        $genre=DB::table('videotime')->where('studentNumber',$sNumber)->pluck('genre');
         
         if($genre==0){
-            $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('ANIME');
+            $total=DB::table('videotime')->where('studentNumber',$sNumber)->pluck('ANIME');
             $total1=$total+$current;
-            DB::table('videoTime')->where('studentNumber',$sNumber)->update(['ANIME'=>$total1,'startTime'=>0,'timeOut'=>0]);
+            DB::table('videotime')->where('studentNumber',$sNumber)->update(['ANIME'=>$total1,'startTime'=>0,'timeOut'=>0]);
         }else if($genre==1){
-            $total=DB::table('videoTime')->where('studentNumber',$sNumber)->pluck('KDRAMA');
+            $total=DB::table('videotime')->where('studentNumber',$sNumber)->pluck('KDRAMA');
             $total1=$total+$current;
-            DB::table('videoTime')->where('studentNumber',$sNumber)->update(['KDRAMA'=>$total1,'startTime'=>0,'timeOut'=>0]);
+            DB::table('videotime')->where('studentNumber',$sNumber)->update(['KDRAMA'=>$total1,'startTime'=>0,'timeOut'=>0]);
         }
        return redirect('/videos');
     }

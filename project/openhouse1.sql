@@ -96,7 +96,7 @@ INSERT INTO `forums` (`id`, `title`, `author`, `created_at`, `updated_at`) VALUE
 --
 
 CREATE TABLE `gamegenres` (
-  `gameGenresID` int(10) UNSIGNED NOT NULL,
+  `gamegenresID` int(10) UNSIGNED NOT NULL,
   `gameID` int(11) NOT NULL,
   `genreID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -105,7 +105,7 @@ CREATE TABLE `gamegenres` (
 -- Dumping data for table `gamegenres`
 --
 
-INSERT INTO `gamegenres` (`gameGenresID`, `gameID`, `genreID`) VALUES
+INSERT INTO `gamegenres` (`gamegenresID`, `gameID`, `genreID`) VALUES
 (1, 1, 4),
 (2, 2, 4),
 (3, 3, 5),
@@ -296,19 +296,19 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_10_01_045816_create_games_table', 1),
 ('2016_10_01_050107_create_videos_table', 1),
 ('2016_10_01_050238_create_genres_table', 1),
-('2016_10_01_050452_create_gameGenres_table', 1),
-('2016_10_01_050615_create_videosGenres_table', 1),
+('2016_10_01_050452_create_gamegenres_table', 1),
+('2016_10_01_050615_create_videosgenres_table', 1),
 ('2016_10_01_050738_create_images_table', 1),
 ('2016_10_01_050914_create_scores_table', 1),
 ('2016_10_10_132422_create_tokens_table', 1),
-('2016_10_10_132519_create_userVideos_table', 1),
+('2016_10_10_132519_create_uservideos_table', 1),
 ('2016_10_11_122431_create_series_table', 1),
-('2016_10_12_054121_create_seriesVideos_table', 1),
-('2016_10_12_113833_create_seriesGenres_table', 1),
+('2016_10_12_054121_create_seriesvideos_table', 1),
+('2016_10_12_113833_create_seriesgenres_table', 1),
 ('2016_10_14_160417_user_time', 1),
-('2016_10_15_054307_create_userGames_table', 1),
+('2016_10_15_054307_create_usergames_table', 1),
 ('2016_10_16_041855_create_userTimes_table', 1),
-('2016_10_16_061100_create_videoTime', 1),
+('2016_10_16_061100_create_videotime', 1),
 ('2016_10_16_061836_create_gamerTimer', 1),
 ('2016_10_16_154656_create_VidTimer', 2),
 ('2016_11_14_015436_add_column_to_users', 3),
@@ -317,19 +317,19 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_10_01_045816_create_games_table', 1),
 ('2016_10_01_050107_create_videos_table', 1),
 ('2016_10_01_050238_create_genres_table', 1),
-('2016_10_01_050452_create_gameGenres_table', 1),
-('2016_10_01_050615_create_videosGenres_table', 1),
+('2016_10_01_050452_create_gamegenres_table', 1),
+('2016_10_01_050615_create_videosgenres_table', 1),
 ('2016_10_01_050738_create_images_table', 1),
 ('2016_10_01_050914_create_scores_table', 1),
 ('2016_10_10_132422_create_tokens_table', 1),
-('2016_10_10_132519_create_userVideos_table', 1),
+('2016_10_10_132519_create_uservideos_table', 1),
 ('2016_10_11_122431_create_series_table', 1),
-('2016_10_12_054121_create_seriesVideos_table', 1),
-('2016_10_12_113833_create_seriesGenres_table', 1),
+('2016_10_12_054121_create_seriesvideos_table', 1),
+('2016_10_12_113833_create_seriesgenres_table', 1),
 ('2016_10_14_160417_user_time', 1),
-('2016_10_15_054307_create_userGames_table', 1),
+('2016_10_15_054307_create_usergames_table', 1),
 ('2016_10_16_041855_create_userTimes_table', 1),
-('2016_10_16_061100_create_videoTime', 1),
+('2016_10_16_061100_create_videotime', 1),
 ('2016_10_16_061836_create_gamerTimer', 1),
 ('2016_10_16_154656_create_VidTimer', 2),
 ('2016_11_14_015436_add_column_to_users', 3),
@@ -428,7 +428,7 @@ INSERT INTO `series` (`seriesID`, `seriesName`, `seriesDesc`, `thumbnail`, `fthu
 --
 
 CREATE TABLE `seriesgenres` (
-  `seriesGenresID` int(10) UNSIGNED NOT NULL,
+  `seriesgenresID` int(10) UNSIGNED NOT NULL,
   `videoID` int(11) NOT NULL,
   `genreID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -437,7 +437,7 @@ CREATE TABLE `seriesgenres` (
 -- Dumping data for table `seriesgenres`
 --
 
-INSERT INTO `seriesgenres` (`seriesGenresID`, `videoID`, `genreID`) VALUES
+INSERT INTO `seriesgenres` (`seriesgenresID`, `videoID`, `genreID`) VALUES
 (1, 2, 1),
 (2, 2, 2),
 (4, 3, 1),
@@ -466,7 +466,7 @@ INSERT INTO `seriesgenres` (`seriesGenresID`, `videoID`, `genreID`) VALUES
 --
 
 CREATE TABLE `seriesvideo` (
-  `seriesVideoID` int(10) UNSIGNED NOT NULL,
+  `seriesvideoID` int(10) UNSIGNED NOT NULL,
   `seriesID` int(11) NOT NULL,
   `videoID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -475,7 +475,7 @@ CREATE TABLE `seriesvideo` (
 -- Dumping data for table `seriesvideo`
 --
 
-INSERT INTO `seriesvideo` (`seriesVideoID`, `seriesID`, `videoID`) VALUES
+INSERT INTO `seriesvideo` (`seriesvideoID`, `seriesID`, `videoID`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 1, 3),
@@ -2133,7 +2133,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `student_number`, `passwor
 --
 
 CREATE TABLE `uservideos` (
-  `userVideosID` int(10) UNSIGNED NOT NULL,
+  `uservideosID` int(10) UNSIGNED NOT NULL,
   `videoID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `isBought` tinyint(1) NOT NULL,
@@ -2144,7 +2144,7 @@ CREATE TABLE `uservideos` (
 -- Dumping data for table `uservideos`
 --
 
-INSERT INTO `uservideos` (`userVideosID`, `videoID`, `userID`, `isBought`, `vidCount`) VALUES
+INSERT INTO `uservideos` (`uservideosID`, `videoID`, `userID`, `isBought`, `vidCount`) VALUES
 (1, 30, 201339978, 1, 0),
 (2, 53, 201352703, 1, 0),
 (3, 122, 201208532, 1, 0),
@@ -2623,7 +2623,7 @@ ALTER TABLE `forums`
 -- Indexes for table `gamegenres`
 --
 ALTER TABLE `gamegenres`
-  ADD PRIMARY KEY (`gameGenresID`);
+  ADD PRIMARY KEY (`gamegenresID`);
 
 --
 -- Indexes for table `games`
@@ -2666,13 +2666,13 @@ ALTER TABLE `series`
 -- Indexes for table `seriesgenres`
 --
 ALTER TABLE `seriesgenres`
-  ADD PRIMARY KEY (`seriesGenresID`);
+  ADD PRIMARY KEY (`seriesgenresID`);
 
 --
 -- Indexes for table `seriesvideo`
 --
 ALTER TABLE `seriesvideo`
-  ADD PRIMARY KEY (`seriesVideoID`);
+  ADD PRIMARY KEY (`seriesvideoID`);
 
 --
 -- Indexes for table `tokens`
@@ -2691,7 +2691,7 @@ ALTER TABLE `users`
 -- Indexes for table `uservideos`
 --
 ALTER TABLE `uservideos`
-  ADD PRIMARY KEY (`userVideosID`);
+  ADD PRIMARY KEY (`uservideosID`);
 
 --
 -- Indexes for table `videos`
@@ -2725,7 +2725,7 @@ ALTER TABLE `forums`
 -- AUTO_INCREMENT for table `gamegenres`
 --
 ALTER TABLE `gamegenres`
-  MODIFY `gameGenresID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `gamegenresID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `games`
@@ -2761,13 +2761,13 @@ ALTER TABLE `series`
 -- AUTO_INCREMENT for table `seriesgenres`
 --
 ALTER TABLE `seriesgenres`
-  MODIFY `seriesGenresID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `seriesgenresID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `seriesvideo`
 --
 ALTER TABLE `seriesvideo`
-  MODIFY `seriesVideoID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
+  MODIFY `seriesvideoID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=264;
 
 --
 -- AUTO_INCREMENT for table `tokens`
@@ -2785,7 +2785,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `uservideos`
 --
 ALTER TABLE `uservideos`
-  MODIFY `userVideosID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
+  MODIFY `uservideosID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
 
 --
 -- AUTO_INCREMENT for table `videos`
