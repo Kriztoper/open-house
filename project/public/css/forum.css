@@ -82,7 +82,22 @@ body {
 #pinned-card-partition {
     display: flex;
     border: 1px solid #b3b3b3;
+}
+
+#inner-pinned-card-partition {
+    display: flex;
     padding: 10px;
+    width: 98%;
+}
+
+#delete-pin-btn {
+    height: 20px; 
+    border: 1px solid #ccc; 
+}
+
+#delete-pin-btn:hover {
+    color: #fff;
+    background-color: #f00;
 }
 
 .card-partition {
