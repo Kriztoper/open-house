@@ -33,7 +33,8 @@ class ForumController extends Controller
         $forum->title = $request->title;
         $forum->author = $author;        
         $forum->tag_id = ForumTag::select('forum_tags.id')->where('tag', $_POST['selection'])->pluck('id');
-        
+        $forum->color = $request->forumColor;
+
         // if tag does not exist create tag in forums_tag table
         if ($forum->tag_id == null) {
             $forumTag = new ForumTag;

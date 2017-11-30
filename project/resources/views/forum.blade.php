@@ -118,6 +118,13 @@
           <div id="forum-form">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="text" id="forum-area" name="title" placeholder="Enter topic title" required>
+            <input type="hidden" name="forumColor" id="forum-color-input" value="" />
+            <button
+              id="forum-color" onchange="setForumColor()"
+              class="jscolor {valueElement:null,value:'66ccff'}"
+              style="border:2px solid black;">
+              Pick a color
+            </button>
             <input id="tag-form-input" list="selections" name="selection" placeholder="Enter tag here" required>
             <datalist id="selections">
               <dynamic-option v-for="forumTag in distinctForumTags" :tag="forumTag.tag" :key="forumTag.id"></dynamic-option>
@@ -131,7 +138,7 @@
             <li class="title-card" v-for="forum in filteredList">
               <a class="titles-link" v-bind:href="'comments/' + forum.id">
                 <div class="card-partition">  
-                  <div class="forum-title">
+                  <div v-bind:style="'border-left: 10px solid ' + forum.color + ';'" class="forum-title">
                     @{{ forum.title }}
                   </div> 
                   <div class="forum-desc">
@@ -344,6 +351,24 @@
     });
   </script>
 
+  <script src="js/jscolor.js"></script>
+  <script>
+    //Function to convert rgb color to a hex format
+    function rgb2hex(orig){
+      var rgb = orig.replace(/\s/g,'').match(/^rgba?\((\d+),(\d+),(\d+)/i);
+      return (rgb && rgb.length === 4) ? "#" +
+        ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+        ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+        ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : orig;
+    }
+
+    $('#forum-btn').click(function() {
+      var hex = rgb2hex( document.querySelector("#forum-color").style.backgroundColor );      
+      var clr = document.getElementById('forum-color-input').value = hex;
+      alert(clr);
+    });
+   
+  </script>
   </body>
 
 

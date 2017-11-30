@@ -64,6 +64,7 @@ body {
     padding: 10px;
     position: relative;
     background: #f2f2f2;
+    padding-left: unset;
 }
 
 .card-partition {
@@ -72,6 +73,9 @@ body {
 
 .forum-title {
     width: 50%;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .forum-desc {
@@ -138,7 +142,7 @@ body {
 }
 
 #forum-area {
-    width: 75%;
+    width: 65%;
 }
 
 #forum-btn {
