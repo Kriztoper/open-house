@@ -8,12 +8,43 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Forum;
+use App\PinnedForum;
 use App\Comment;
 use App\ForumTag;
 
 class ForumController extends Controller
 {
+    public function pinForum($forum_id) {
+        $user_id = Auth::user()->id;
+        
+        // get pinned forum if user already has an existing pinned forum
+        $pinnedForum = PinnedForum::select('pinned_forums.*')->where('user_id', $user_id)->get();
+
+        if (!$pinnedForum->isEmpty()) { // user has existing pinned forum
+            $pinnedForum[0]->forum_id = $forum_id;
+            $pinnedForum[0]->save();
+        } else { // user has no existing pinned forum
+            $pinnedForum = new PinnedForum;
+            $pinnedForum->user_id = $user_id;
+            $pinnedForum->forum_id = $forum_id;
+            $pinnedForum->save();
+        }
+
+        return redirect()->action('ForumController@showForums');
+    }
+
     public function showForums() {
+        // get pinned forum
+        $user_id = Auth::user()->id;
+        $forum_id = PinnedForum::select('pinned_forums.*')->where('user_id', $user_id)->pluck('forum_id');
+        $pinnedForum = Forum::select('forums.*')->where('id', $forum_id)->get();
+
+        // get pinned forum's tag
+        $pinnedForumTag = "";
+        if (!$pinnedForum->isEmpty()) {
+            $pinnedForumTag = ForumTag::select('forum_tags.tag')->where('id', $pinnedForum[0]->tag_id)->pluck('tag');
+        }
+
         $forums = Forum::select('forums.*')->get();
         $comments = Comment::select('comments.*')->get();
         $distinctForumTags = [];
@@ -31,7 +62,7 @@ class ForumController extends Controller
             $color .= $colorsHexIndex[rand(0, 15)];
         }
 
-        return view('forum',['forums' => $forums, 'distinctForumTags' => $distinctForumTags, 'color' => $color]);
+        return view('forum',['forums' => $forums, 'distinctForumTags' => $distinctForumTags, 'color' => $color, 'pinnedForum' => $pinnedForum, 'pinnedForumTag' => $pinnedForumTag]);
     }
 
     public function createNewTopic(Request $request) {
