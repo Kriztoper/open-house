@@ -127,25 +127,43 @@
             </button>
             <input id="tag-form-input" list="selections" name="selection" placeholder="Enter tag here" required>
             <datalist id="selections">
-              <dynamic-option v-for="forumTag in distinctForumTags" :tag="forumTag.tag" :key="forumTag.id"></dynamic-option>
+              <dynamic-option v-for="forumTag in distinctForumTags" :tag="forumTag" :key="forumTag.id"></dynamic-option>
             </datalist>
             <button id="forum-btn" >Submit</button>
           </div>
         </form>
       </div>
       <div id="forum-titles-list">
+        @if(!$pinnedForum->isEmpty())
+          <div id="pinned-forum-cntnr">
+            <p id="pinned-post-lbl">Pinned Post <span class="glyphicon">&#xe146;</span></p>
+            <a class="titles-link" v-bind:href="'comments/' + pinnedForum[0].id">
+              <div v-bind:style="'border-left: 10px solid ' + pinnedForum[0].color + ';'" id="pinned-card-partition" class="card-partition">  
+                <div class="forum-title">
+                  @{{ pinnedForum[0].title }}
+                </div> 
+                <div class="forum-desc">
+                  <span class="num-comments">@{{ pinnedForum[0].num_comments }}</span>
+                  <span class="date-updated">@{{ pinnedForum[0].updated_at }}</span>
+                  <span class="tag">{{ $pinnedForumTag }}</span>
+                  <span class="author">@{{ pinnedForum[0].author }}</span>
+                </div>
+              </div>  
+            </a>
+          </div>
+        @endif
         <ul id="titles">
-            <li class="title-card" v-for="forum in filteredList">
+            <li v-bind:style="'border-left: 10px solid ' + forum.color + ';'" class="title-card" v-for="forum in filteredList">
               <a class="titles-link" v-bind:href="'comments/' + forum.id">
                 <div class="card-partition">  
-                  <div v-bind:style="'border-left: 10px solid ' + forum.color + ';'" class="forum-title">
+                  <div class="forum-title">
                     @{{ forum.title }}
                   </div> 
                   <div class="forum-desc">
-                    <span id="">@{{ forum.num_comments }}</span>
-                    <span id="date-created">@{{ forum.updated_at }}</span>
-                    <span id="tag">@{{ forum.tag }}</span>
-                    <span id="author">@{{ forum.author }}</span>
+                    <span class="num-comments">@{{ forum.num_comments }}</span>
+                    <span class="date-updated">@{{ forum.updated_at }}</span>
+                    <span class="tag">@{{ forum.tag }}</span>
+                    <span class="author">@{{ forum.author }}</span>
                   </div>
                 </div>  
               </a>
@@ -277,6 +295,7 @@
       data: {
         keyword: "",
         forums: {!! json_encode($forums) !!},
+        pinnedForum: {!! json_encode($pinnedForum) !!},        
         distinctForumTags: {!! json_encode($distinctForumTags) !!},
         sortByValues: [ 
           { 
@@ -365,7 +384,6 @@
     $('#forum-btn').click(function() {
       var hex = rgb2hex( document.querySelector("#forum-color").style.backgroundColor );      
       var clr = document.getElementById('forum-color-input').value = hex;
-      alert(clr);
     });
    
   </script>

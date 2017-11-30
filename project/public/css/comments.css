@@ -111,8 +111,8 @@ h1 {
     padding: 10px;
     position: relative;
     background: #fff;
-	border-left: 0.5px solid #50326C;
-    border-right: 0.5px solid #50326C;
+	border-left: 0.5px solid #ccc;
+    border-right: 0.5px solid #ccc;
 }
 
 #author {
@@ -174,7 +174,7 @@ h1 {
     background: #fff;
     margin-bottom: unset;
     padding: 10px;
-	border: 1px solid #50326C;
+	border: 1px solid #ccc;
 	padding-top: unset;
 }
 
@@ -182,6 +182,10 @@ h1 {
 	color: #797979;
 	font-weight: bold;
 	margin-bottom: 20px;
+}
+
+#pin {
+	padding-bottom: 10px;
 }
 
 #forum-author {

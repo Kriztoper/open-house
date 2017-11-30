@@ -67,6 +67,24 @@ body {
     padding-left: unset;
 }
 
+#pinned-forum-cntnr {
+    list-style: none;
+    padding: 10px;
+    position: relative;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+}
+
+/* #pinned-post-lbl {
+
+} */
+
+#pinned-card-partition {
+    display: flex;
+    border: 1px solid #b3b3b3;
+    padding: 10px;
+}
+
 .card-partition {
     display: flex;    
 }
@@ -82,7 +100,11 @@ body {
     width: 50%;
 }
 
-#author {
+.num-comments {
+    padding-left: 40px;
+}
+
+.author {
     background: #67cf00;
     color: #fff;
     font-size: 12px;
@@ -92,7 +114,7 @@ body {
     float: right;
 }
 
-#tag {
+.tag {
     margin-left: 5px;
     background: #da810d;
     color: #fff;
@@ -103,7 +125,7 @@ body {
     float: right;
 }
 
-#date-created {
+.date-updated {
     margin-left: 5px;
     background: #dad70d;
     color: #fff;
@@ -162,11 +184,8 @@ body {
 }
 
 #search {
-    /* text-align: -webkit-right; */
-    /* margin-bottom: 10px; */
     background: antiquewhite;
     margin-bottom: unset;
-    /* padding: 10px; */
     border: solid 1px gray;
     display: flex;
 }
@@ -174,14 +193,10 @@ body {
 #utility-cntnr {
     text-align: right;
     position: relative;
-    /* float: right; */
     right: -53%;
 }
 
 #sortby-cntnr {
-    /* background: antiquewhite; */
-    /* margin-bottom: unset; */
-    /* padding: 10px; */
     border-left: solid 1px gray;
     display: -webkit-inline-box;
     padding: 10px;
@@ -189,7 +204,6 @@ body {
 
 #search-cntnr {
     border-left: 1px solid gray;
-    /* height: 20px; */
     display: -webkit-inline-box;    
 }
 

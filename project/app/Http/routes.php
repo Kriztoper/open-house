@@ -97,5 +97,6 @@ Route::get('/forum', 'ForumController@showForums');
 Route::post('/forum', 'ForumController@createNewTopic');
 Route::get('/comments/{id}', 'ForumController@showForumComments');
 Route::post('/comments/{id}', 'ForumController@commentOnForum');
+Route::post('/forum/pin/{forum_id}', 'ForumController@pinForum');
 ?>
 
