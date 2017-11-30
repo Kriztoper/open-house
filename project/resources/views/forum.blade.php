@@ -121,7 +121,7 @@
             <input type="hidden" name="forumColor" id="forum-color-input" value="" />
             <button
               id="forum-color" onchange="setForumColor()"
-              class="jscolor {valueElement:null,value:'66ccff'}"
+              class="jscolor {valueElement:null,value:'{!! $color !!}'}"
               style="border:2px solid black;">
               Pick a color
             </button>
