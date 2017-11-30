@@ -24,7 +24,14 @@ class ForumController extends Controller
             }
         }
 
-        return view('forum',['forums' => $forums, 'distinctForumTags' => $distinctForumTags]);
+        // randomize color
+        $colorsHexIndex = "0123456789abcdef";
+        $color = "#";
+        for ($i = 0; $i < 6; $i++) {
+            $color .= $colorsHexIndex[rand(0, 15)];
+        }
+
+        return view('forum',['forums' => $forums, 'distinctForumTags' => $distinctForumTags, 'color' => $color]);
     }
 
     public function createNewTopic(Request $request) {
@@ -33,7 +40,8 @@ class ForumController extends Controller
         $forum->title = $request->title;
         $forum->author = $author;        
         $forum->tag_id = ForumTag::select('forum_tags.id')->where('tag', $_POST['selection'])->pluck('id');
-        
+        $forum->color = $request->forumColor;
+
         // if tag does not exist create tag in forums_tag table
         if ($forum->tag_id == null) {
             $forumTag = new ForumTag;

@@ -1,5 +1,6 @@
 <div id="forum-comments-list">
     <div id="frm-comments-block">
+        <div id="forum-title-hdr-cntnr-color" style="background: {!! $forum[0]->color !!}"></div>
         <div id="forum-title-hdr-cntnr">
             <h2 id="forum-title-hdr">{{ $forum[0]->title }}</h2>      
             <span id="forum-author">{{ $forum[0]->author }}</span>      
