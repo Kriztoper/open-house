@@ -33,6 +33,20 @@ class ForumController extends Controller
         return redirect()->action('ForumController@showForums');
     }
 
+    public function deletePinnedForum($forum_id) {
+        $user_id = Auth::user()->id;
+        
+        // get pinned forum if user already has an existing pinned forum
+        $pinnedForum = PinnedForum::select('pinned_forums.*')->where('user_id', $user_id)->get();
+
+        if (!$pinnedForum->isEmpty()) { // user has existing pinned forum
+            $pinnedForum[0]->forum_id = null;
+            $pinnedForum[0]->save();
+        }
+
+        return redirect()->action('ForumController@showForums');
+    }
+
     public function showForums() {
         // get pinned forum
         $user_id = Auth::user()->id;

@@ -137,19 +137,25 @@
         @if(!$pinnedForum->isEmpty())
           <div id="pinned-forum-cntnr">
             <p id="pinned-post-lbl">Pinned Post <span class="glyphicon">&#xe146;</span></p>
-            <a class="titles-link" v-bind:href="'comments/' + pinnedForum[0].id">
-              <div v-bind:style="'border-left: 10px solid ' + pinnedForum[0].color + ';'" id="pinned-card-partition" class="card-partition">  
-                <div class="forum-title">
-                  @{{ pinnedForum[0].title }}
-                </div> 
-                <div class="forum-desc">
-                  <span class="num-comments">@{{ pinnedForum[0].num_comments }}</span>
-                  <span class="date-updated">@{{ pinnedForum[0].updated_at }}</span>
-                  <span class="tag">{{ $pinnedForumTag }}</span>
-                  <span class="author">@{{ pinnedForum[0].author }}</span>
-                </div>
+              <div id="pinned-card-partition" v-bind:style="'border-left: 10px solid ' + pinnedForum[0].color + ';'">
+                <a class="titles-link" v-bind:href="'comments/' + pinnedForum[0].id">
+                  <div id="inner-pinned-card-partition" class="card-partition">
+                    <div class="forum-title">
+                      @{{ pinnedForum[0].title }}
+                    </div>
+                    <div class="forum-desc">
+                      <span class="num-comments">@{{ pinnedForum[0].num_comments }}</span>
+                      <span class="date-updated">@{{ pinnedForum[0].updated_at }}</span>
+                      <span class="tag">{{ $pinnedForumTag }}</span>
+                      <span class="author">@{{ pinnedForum[0].author }}</span>
+                    </div>
+                  </div>
+                </a>
+                <form id="delete-pin-form" method="post" action="{{url('forum/pin/delete/'.$pinnedForum[0]->id)}}">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <button id="delete-pin-btn">X</button>
+                </form>
               </div>  
-            </a>
           </div>
         @endif
         <ul id="titles">
