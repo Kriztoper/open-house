@@ -135,7 +135,8 @@
                     @{{ forum.title }}
                   </div> 
                   <div class="forum-desc">
-                    <span id="date-created">@{{ forum.created_at }}</span>
+                    <span id="">@{{ forum.num_comments }}</span>
+                    <span id="date-created">@{{ forum.updated_at }}</span>
                     <span id="tag">@{{ forum.tag }}</span>
                     <span id="author">@{{ forum.author }}</span>
                   </div>
@@ -239,9 +240,25 @@
             vm.forums.sort(function(forum1, forum2) {
               return forum1.created_at.localeCompare(forum2.created_at);
             });
-          } else if (this.value.text === "Creation Date: descending") {
+            } else if (this.value.text === "Creation Date: descending") {
             vm.forums.sort(function(forum1, forum2) {
               return forum2.created_at.localeCompare(forum1.created_at);
+            });
+          }  else if (this.value.text === "Last Activity: ascending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.updated_at.localeCompare(forum2.updated_at);
+            });
+            } else if (this.value.text === "Last Activity: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.updated_at.localeCompare(forum1.updated_at);
+            });
+          } else if (this.value.text === "Hot Topics: ascending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum1.num_comments - forum2.num_comments;
+            });
+          } else if (this.value.text === "Hot Topics: descending") {
+            vm.forums.sort(function(forum1, forum2) {
+              return forum2.num_comments - forum1.num_comments;
             });
           }
         }
@@ -282,6 +299,18 @@
           {
             text: "Creation Date: descending",
           },
+          {
+            text: "Last Activity: ascending",
+          },
+          {
+            text: "Last Activity: descending",
+          },
+          {
+            text: "Hot Topics: ascending",
+          },
+          {
+            text: "Hot Topics: descending",
+          },
         ],
       },
       methods: {
@@ -304,11 +333,11 @@
       computed: {
         filteredList: function() {
           return this.forums.filter((forum) => {
-            console.log(sortby.value);
-            return forum.title.toLowerCase().includes(this.keyword.toLowerCase()) || 
+            return forum.title.toLowerCase().includes(this.keyword.toLowerCase()) ||
+              forum.num_comments.toString().includes(this.keyword) || 
               forum.author.toLowerCase().includes(this.keyword.toLowerCase()) || 
               forum.tag.toLowerCase().includes(this.keyword.toLowerCase()) ||
-              forum.created_at.toLowerCase().includes(this.keyword.toLowerCase());
+              forum.updated_at.toLowerCase().includes(this.keyword.toLowerCase());
           });
         },
       }
