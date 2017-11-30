@@ -23,6 +23,7 @@ class ForumController extends Controller
                 array_push($distinctForumTags, $forum['tag']);
             }
         }
+
         return view('forum',['forums' => $forums, 'distinctForumTags' => $distinctForumTags]);
     }
 
@@ -54,7 +55,11 @@ class ForumController extends Controller
         $comment->content = $request->content;
         $comment->author = $author;
         $comment->save();
-        
+
+        $forum = Forum::select('forums.*')->where('id', $id)->get()->first();
+        $forum->num_comments = $forum->num_comments + 1;
+        $forum->save();
+
         return $this->showForumComments($id);
     }
 
