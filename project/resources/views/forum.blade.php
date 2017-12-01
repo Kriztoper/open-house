@@ -121,8 +121,7 @@
             <input type="hidden" name="forumColor" id="forum-color-input" value="" />
             <button
               id="forum-color" onchange="setForumColor()"
-              class="jscolor {valueElement:null,value:'{!! $color !!}'}"
-              style="border:2px solid black;">
+              class="jscolor {valueElement:null,value:'{!! $color !!}'}">
               Pick a color
             </button>
             <input id="tag-form-input" list="selections" name="selection" placeholder="Enter tag here" required>
@@ -159,6 +158,17 @@
           </div>
         @endif
         <ul id="titles">
+            <div id="forum-list-headers" class="card-partition" style="background-color: #fff;">  
+              <div class="forum-title">
+                Forum Title
+              </div> 
+              <div id="forum-list-headers-forum-desc">
+                <span class="num-comments-lbl">Comments</span>
+                <span class="author-lbl">Author</span>
+                <span class="tag-lbl">Tag</span>
+                <span class="date-updated-lbl">Date Updated</span>
+              </div>
+            </div>
             <li v-bind:style="'border-left: 10px solid ' + forum.color + ';'" class="title-card" v-for="forum in filteredList">
               <a class="titles-link" v-bind:href="'comments/' + forum.id">
                 <div class="card-partition">  
