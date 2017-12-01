@@ -69,10 +69,15 @@ body {
 
 #pinned-forum-cntnr {
     list-style: none;
-    padding: 10px;
+    padding: 10px 10px 20px;
     position: relative;
     background: #f2f2f2;
     border: 1px solid #ccc;
+}
+
+#forum-color {
+    border:1px solid #ccc;
+    height: 32px;
 }
 
 /* #pinned-post-lbl {
@@ -80,14 +85,14 @@ body {
 } */
 
 #pinned-card-partition {
-    display: flex;
+    display: grid;
     border: 1px solid #b3b3b3;
+    grid-template-columns: 97.7% 2.2%;
 }
 
 #inner-pinned-card-partition {
     display: flex;
     padding: 10px;
-    width: 98%;
 }
 
 #delete-pin-btn {
@@ -151,6 +156,33 @@ body {
     float: right;
 }
 
+#forum-list-headers-forum-desc {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.num-comments-lbl {
+    padding: 7px;
+    padding-left: 40px;
+}
+
+.author-lbl {
+    margin-left: 15%;    
+}
+
+.tag-lbl {
+    margin-left: 15%;
+}
+
+.date-updated-lbl {
+    margin-left: 15%;
+}
+
+#forum-list-headers {
+    padding: 10px;
+}
+
 .titles-link:hover {
     font-size: 17px;    
     text-decoration: none;
@@ -172,10 +204,9 @@ body {
 #forum-form {
     width: 100%;
     margin-right: unset;
-    padding: 10px;
+    padding: 20px 10px 20px;
     text-align: center;
     background: #f3f3f2;
-    padding-top: 20px;
 }
 
 #forum-area {
@@ -225,4 +256,3 @@ body {
 #search-field {
     margin: 10px;
 }
-
