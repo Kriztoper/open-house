@@ -105,6 +105,7 @@ CREATE TABLE `gamegenres` (
 --
 
 INSERT INTO `gamegenres` (`gamegenresID`, `gameID`, `genreID`) VALUES
+
 (1, 1, 4),
 (2, 2, 4),
 (3, 3, 5),
@@ -326,6 +327,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_10_01_045816_create_games_table', 1),
 ('2016_10_01_050107_create_videos_table', 1),
 ('2016_10_01_050238_create_genres_table', 1),
+
 ('2016_10_01_050452_create_gamegenres_table', 1),
 ('2016_10_01_050615_create_videosGenres_table', 1),
 ('2016_10_01_050738_create_images_table', 1),
@@ -2798,7 +2800,7 @@ ALTER TABLE `series`
 --
 ALTER TABLE `seriesgenres`
   MODIFY `seriesgenresID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
---
+
 -- AUTO_INCREMENT for table `seriesVideo`
 --
 ALTER TABLE `seriesVideo`

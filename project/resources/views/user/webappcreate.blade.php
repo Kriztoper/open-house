@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Forum</title>
+        <title>Web Apps</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/hall_of_fame.css" type="text/css">
+<!--<<<<<< Updated upstream -->
+        <link rel="stylesheet" href="css/web_apps.css" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <link rel="stylesheet" type="text/css" href="slick/slick.css">
         <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
         <link rel="stylesheet" type="text/css" href="css/forum.css">
+<!-- Stashed changes -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       
@@ -83,7 +86,18 @@
     
   </div>
 
-  @if (count($errors) > 0)
+  
+
+
+<br><br><br>  
+<img src="{{$imageName}}" width="150" height="150"> <br/>
+<p>{{$category}}</p>
+  <p>{{$pagename}}</p>
+  <p>{{$link}}</p>
+  <p>{{$description}}</p>
+
+
+  {{--  @if (count($errors) > 0)
   <div class="alert alert-danger">
     <strong>Whoops!</strong> There were some problems with your input.<br><br>
     <ul>
@@ -92,48 +106,31 @@
       @endforeach
     </ul>
   </div>
-  @endif
-
-
-  <div id="app">
-    <div class="container" id="forums-cntnr">
-      <div id="search">
-        <input type="text" placeholder="search keyword here" v-model="keyword">
-      </div>
-      <div id="title-tag-form">
-        <form id="forum-tag-form" method="post" action="{{url('forum')}}">
-          <div id="forum-form">
+  @endif  --}}
+  {{--  <div class="container" id="forums-cntnr">
+    <div id="forum-form">
+        <form method="post" action="{{url('forum')}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="text" id="forum-area" name="title" placeholder="Enter topic title" required>
-            <input id="tag-form-input" list="selections" name="selection" placeholder="Enter tag here" required>
-            <datalist id="selections">
-              <dynamic-option v-for="forumTag in distinctForumTags" :tag="forumTag.tag" :key="forumTag.id"></dynamic-option>
-            </datalist>
             <button id="forum-btn" >Submit</button>
-          </div>
+            <textarea id="forum-area" name="title" placeholder="Enter topic title" required></textarea>
         </form>
-      </div>
-      <div id="forum-titles-list">
-        <ul id="titles">
-            <li class="title-card" v-for="forum in filteredList">
-              <a class="titles-link" v-bind:href="'comments/' + forum.id">
-                <div class="card-partition">  
-                  <div class="forum-title">
-                    @{{ forum.title }}
-                  </div> 
-                  <div class="forum-desc">
-                    <span id="date-created">@{{ forum.created_at }}</span>
-                    <span id="tag">@{{ forum.tag }}</span>
-                    <span id="author">@{{ forum.author }}</span>
-                  </div>
-                </div>  
-              </a>
-            </li>
-        </ul>
-      </div>
     </div>
-  </div>
+    <div id="forum-titles-list">
+      <ul id="titles">
+        @foreach ($forums as $index=>$forum)
+          <li class="title-card">
+          <a id="titles-link" href="{{url('comments/'.$forum->id)}}">
+          {{$forum->title}} <span id="author">{{$forum->author}}</span></a></li>
+        @endforeach
+      </ul>
+    </div>
+  </div>  --}}
   
+
+
+
+
+
   <!-- Modal for error in videos -->
   <div id="errorModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -179,37 +176,14 @@
   @endif
 
 
-  <script src="https://unpkg.com/vue"></script>
-  <script>
-    Vue.component('dynamic-option', {
-        props: ['tag'],
-        template: "<option name='forumTagOption' :value='tag'></option>"
-    })
-
-    var vm = new Vue({
-      el: "#app",
-      data: {
-        keyword: "",
-        forums: {!! json_encode($forums) !!},
-        distinctForumTags: {!! json_encode($distinctForumTags) !!},
-      },
-      methods: {
-
-      },
-      computed: {
-        filteredList: function() {
-          return this.forums.filter((forum) => {
-            return forum.title.toLowerCase().includes(this.keyword.toLowerCase()) || 
-              forum.author.toLowerCase().includes(this.keyword.toLowerCase()) || 
-              forum.tag.toLowerCase().includes(this.keyword.toLowerCase()) ||
-              forum.created_at.toLowerCase().includes(this.keyword.toLowerCase());
-          });
-        }
-      }
-    });
-  </script>
-
   </body>
 
 
 </html>
+
+<script type="text/javascript">
+  function AddCategory() {
+    alert("wew");
+  }
+
+</script>

@@ -1,0 +1,84 @@
+html {
+	width: 100%;
+	padding: 0;
+	background-color: white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-image: url(../images/backgrounds/vids-list-bg.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+body {
+	background-color: transparent !important;
+	font-family: montserratregular;
+}
+
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.panel-default{
+	border-color: #3c3c3c;
+}
+
+.page-header{
+	font-family: lemonmilkregular;
+	color: white !important;
+	border-color: transparent !important;
+}
+
+.panel-default > .panel-heading {
+	background-color: #3c3c3c;
+	border-color: #3c3c3c;
+	height: 380px;
+}
+
+.pic{
+	background-color: white;
+	height: 85%;
+	width: 30%;
+	margin-left: 100px;
+	margin-top: 25px;
+}
+
+.name{
+	margin-top: 25px;	
+	color: #ff8226;
+	font-family: 'lemonmilkregular';
+	font-size: 35pt;
+}
+
+.desc{
+	color: white;
+	font-size: 20pt;
+}
+
+.panel-default > .panel-body {
+	margin-left: 100px;
+}
+
+.eps-head{
+	color: #ff8226;
+	font-size: 20pt;
+}
+
+.eps{
+	font-size: 15pt;
+}
+
+.transparent {
+	background-color: transparent !important;
+}

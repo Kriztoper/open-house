@@ -74,7 +74,7 @@ class VideosController extends Controller
        $serVideo = array();
 
        foreach($seriesVideo as $serVid){
-           $serVideo[] = $serVid->videoID;
+           $serVideo[] = $serVid->videoID; 
            $userVideo[$i] = "confirm";
            foreach($userVideos as $useVid){
               if($useVid->videoID == $serVid->videoID)

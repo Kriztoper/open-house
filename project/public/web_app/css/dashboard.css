@@ -1,0 +1,87 @@
+html {
+	width: 100%;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: url(../images/backgrounds/dash-bg.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+body {
+	background-color: transparent;
+	font-family: montserratregular;
+}
+
+@font-face {
+    font-family: 'goboldregular';
+    src: url('../fonts/gobold_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gobold_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.jumbotron {
+	background-color: transparent;
+}
+
+.page-header {
+	color: white !important;
+	border-color: transparent !important;
+}
+
+#welcome {
+	margin-top: 20%;
+	text-align: center;
+}
+
+#welcome h3 {
+	font-family: montserratregular;
+	letter-spacing: 3pt;
+	padding: 0;
+	margin: 0;
+}
+
+#welcome h1 {
+	font-family: lemonmilkregular;
+	padding: 0;
+	margin: 0;
+}
+
+.quote {
+	text-align: center;
+	font-style: italic;
+	font-size: 10pt !important;
+	color: white;
+	margin-top: 150px;
+	padding-left: 250px; 
+	padding-right: 250px; 
+}
+
+.slick-item img {
+	margin: auto !important;
+}
+
+.slick-item p {
+	margin-left: 40px;
+	font-size: 10pt;
+	color: white;
+}

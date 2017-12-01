@@ -1,0 +1,114 @@
+html {
+	width: 100%;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-image: url(http://i.imgur.com/X9hf5hJ.gif);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgb(0,0,0);
+}
+
+body {
+	background-color: transparent;
+	font-family: lemonmilkregular;
+
+}
+
+@font-face {
+    font-family: 'goboldregular';
+    src: url('../fonts/gobold_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gobold_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.marg {
+	margin-right: 3px;
+	margin-left: 3px;
+}
+
+.gap {
+	margin-bottom: 20px;
+}
+
+.back {
+   position: fixed;
+   right: 2.5%;
+   bottom: 3%;
+   filter: alpha(opacity=50);
+}
+
+.back:hover {
+	opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+
+.jumbotron {
+	font-family: lemonmilkregular;
+	font-size: 70px;
+	letter-spacing: 19px;
+	color: #ffffff;
+	background: none;
+}
+
+.gob {
+	font-family: lemonmilkregular;
+	font-size: 20px;
+	letter-spacing: 3px;
+	color: #333333;
+}
+
+.pic {
+	margin: 10px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.pad {
+	padding-top: 47px;
+	color: white;
+}
+
+
+.Absolute-Center {
+  	margin: auto;
+  	top: 0; left: 0; bottom: 0; right: 0;
+	width: 100%; 
+  	height: 100%;
+  	min-width: 200px;
+  	max-width:700px;
+  	padding: 20px;
+}
+
+
+a {
+    opacity: 0.7;
+    filter: alpha(opacity=50); 
+}
+
+a:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}

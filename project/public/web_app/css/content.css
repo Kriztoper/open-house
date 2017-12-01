@@ -1,0 +1,78 @@
+html {
+	width: 100%;
+	padding: 0;
+	background-color: white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	background-color: white;
+	font-family: montserratregular;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#middle {
+	margin-top: 60px;
+}
+
+.jumbotron {
+	background-color: transparent;
+}
+
+.page-header {
+	font-family: lemonmilkregular;
+	border-color: transparent !important;
+}
+
+#featured {
+	font-size: 60pt;
+	margin-top: 115px;
+	margin-bottom: 130px;
+	color: white !important;
+	border-color: transparent !important;
+	line-height: 120%;
+	letter-spacing: 2pt !important;
+}
+
+.slick-item img {
+	margin: auto !important;
+}
+
+.class {
+	margin-top: 150px;
+}
+
+.videos {
+	height: 100vh;
+	background-image: url(../images/backgrounds/vids-main-bg.jpg);
+	background-attachment: fixed;
+	background-color: #CCCCCC !important;
+}
+
+.games {
+	height: 100vh;
+	background-size: 100%;
+	background-image: url(../images/backgrounds/games-main-bg.jpg);
+	background-attachment: fixed;
+	background-color: #CCCCCC !important;
+}
+
+.headers {
+	margin-top: 50px;
+}

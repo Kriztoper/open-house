@@ -44,7 +44,7 @@ Route::post('/save_profile', 'UserController@save_Profile');
 Route::get('/change_password', 'UserController@change_password');
 Route::post('/save_password', 'UserController@save_password');
 
-Route::get('/time'			  ,	'UserTime@index');
+//Route::get('/time'			  ,	'UserTime@index');
 // Admin routes
 Route::get('/admin'           , 'AdminController@show_dashboard');
 Route::get('/adminSeries'     , 'AdminController@show_add_series');
@@ -86,11 +86,11 @@ Route::get('/buyGame/{gameID}', 'TokenController@buy_game');
 //	Admin
 Route::get('/admin', 'AdminController@show_dashboard');
 //This is a test
-Route::group(['prefix' => 'shoutbox'], function() {
+/*Route::group(['prefix' => 'shoutbox'], function() {
   Route::get('/chat', array('as' => 'shoutbox-chat', 'uses' => 'ShoutboxController@index'));
   Route::post('messages', ['as' => 'shoutbox-fetch', 'uses' => 'ShoutboxController@fetch']);
   Route::post('send', ['as' => 'shoutbox-send', 'uses' => 'ShoutboxController@send']);      
-});
+}); */
 
 // forum
 Route::get('/forum', 'ForumController@showForums');
@@ -99,7 +99,13 @@ Route::get('/comments/{id}', 'ForumController@showForumComments');
 Route::post('/comments/{id}', 'ForumController@commentOnForum');
 
 // web apps
-Route::get('/web_apps', 'UserController@showWebApps');
-
+//Route::get('/web_apps', 'UserController@showWebApps');
+Route::resource('/web_apps', 'WebAppsController');
+Route::post('/web_apps/new', 'WebAppsController@store');
+Route::post('/web_apps', 'WebAppsController@addCategory');
+Route::post('/web_apps/{id}', 'WebAppsController@edit');
+Route::get('/web_apps/{id}/delete', 'WebAppsController@destroy');
+Route::get('/web_apps/{id}/destroyCategory', 'WebAppsController@destroyCategory');
+Route::post('/web_apps/{id}/updateCategory', 'WebAppsController@updateCategory');
 ?>
 

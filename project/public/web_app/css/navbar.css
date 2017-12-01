@@ -1,0 +1,75 @@
+/*-------NAVBAR SHIT----------*/
+
+.navbar-fixed-top {
+	background: transparent;
+  	border: none;	
+}
+
+.navbar-fixed-top.change-color {
+	background-color: #2E3146;
+}
+
+.navbar-fixed-top .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+    background-color: #BA002c;
+    color: #2E3146;
+}
+
+.navbar-fixed-top .navbar-nav > li > a {
+	font-family: montserratregular;
+	color: white;
+	font-size: 10pt;
+	/*letter-spacing: 2pt;*/
+}
+
+.navbar-fixed-bottom .navbar-nav > li > a:hover, .navbar-fixed-top .navbar-nav > li > a:focus {
+    background-color: transparent;
+    color: white;
+}
+
+.navbar-fixed-bottom .navbar-nav > li > a {
+	font-family: montserratregular;
+	font-size: 8pt;
+	font-weight: bold;
+	color: darkgray;
+	padding-top: 5px !important;
+    padding-bottom: 5px !important;
+	height: 30px !important;
+}
+
+.navbar {
+	min-height: 30px !important;
+}
+
+.navbar-fixed-bottom {
+	background-color: #BA002c;
+	opacity: 0.6;
+}
+
+.dropdown-menu > li {
+	text-align: right !important;
+}
+
+.dropdown-menu > li > a {
+	font-family: montserratregular;
+	letter-spacing: 2pt;
+	font-size: 8pt;
+	color: black;
+}
+
+.redfont{
+	color: red;
+}
+.gold {
+	color: gold;
+}
+
+.red {
+	color: #BA002c;
+}
+
+.white {
+	color: white;
+}
+
+
+/*-------END OF NAVBAR SHIT---------*/

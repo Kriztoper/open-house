@@ -10,10 +10,10 @@ html {
 	background-repeat: no-repeat;
 	
 }
- 
+
 body {
 	background-color: transparent;
-	font-family: monospace;
+	font-family: lemonmilkregular;
 }
 
 @font-face {
@@ -51,7 +51,7 @@ h1 {
 }
 
 
-/*
+
 .trans {
     .transition(.6s ease-in-out left);
 }
@@ -99,118 +99,4 @@ h1 {
 
 .center {
 	text-align: center;
-} */
-
-#comments-cntnr {
-    position: relative;
-    margin-top: 100px;
-}
-
-.title-card {
-	list-style: none;
-    padding: 10px;
-    position: relative;
-    background: #fff;
-	border-left: 0.5px solid #50326C;
-    border-right: 0.5px solid #50326C;
-}
-
-#author {
-    background: #67cf00;
-    color: #fff;
-    font-size: 12px;
-    padding: 7px;
-	border-radius: 5px;
-	position: relative;
-    float: right;
-}
-
-#comment-date-created {
-    margin-left: 5px;
-    background: #dad70d;
-    color: #fff;
-    font-size: 12px;
-    padding: 7px;
-    border-radius: 5px;
-    position: relative;
-	float: right;
-}
-
-#comments {
-	padding-left: unset;
-}
-
-#comment-area {
-	width: 500px;
-	height: 100px;
-}
-
-#comment-btn {
-	background-color:#00AEFF;
-	color:#fff;
-	border-color: #00AEFF;
-    padding: 8px;
-	border-radius: 5px;
-	position: relative;
-    top: -15px;
-}
-
-#comment-btn:hover {
-	background-color:#fff;
-	color: #00AEFF;
-	border-color: #00AEFF;
-    padding: 8px;
-	border-radius: 5px;
-	position: relative;
-    top: -15px;
-}
-
-#forum-title-hdr-cntnr {
-	text-align: center;
-    background: #fff;
-    margin-bottom: unset;
-    padding: 10px;
-	border: 1px solid #50326C;
-}
-
-#forum-title-hdr {
-	color: #797979;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-
-#forum-author {
-    background: #67cf00;
-    color: #fff;
-    font-size: 12px;
-    padding: 7px;
-    border-radius: 5px;
-}
-
-#tag {
-    background: #da810d;
-    color: #fff;
-    font-size: 12px;
-    padding: 7px;
-    border-radius: 5px;
-}
-
-#date-created {
-    background: #dad70d;
-    color: #fff;
-    font-size: 12px;
-    padding: 7px;
-    border-radius: 5px;
-}
-
-.card-partition {
-    display: flex;    
-}
-
-.comment-content {
-    width: 50%;
-}
-
-.comment-desc {
-    width: 50%;
 }
