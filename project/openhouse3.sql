@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 01, 2017 at 01:38 PM
+-- Generation Time: Nov 18, 2017 at 11:22 AM
 -- Server version: 5.7.20-0ubuntu0.17.04.1
 -- PHP Version: 7.0.22-0ubuntu0.17.04.1
 
@@ -212,14 +212,7 @@ INSERT INTO `comments` (`id`, `forum_id`, `content`, `author`, `created_at`, `up
 (205, 17, 'LOVE YOU MAYONAA!!!\r\nSAGOTA NA AKO PLEEEEEAAASSEEEE!!!!', 'Clark Lajarca', '2017-11-14 06:29:41', '2017-11-15 07:38:29'),
 (206, 23, 'MAYONAAA T_T', 'Clark Lajarca', '2017-11-14 06:29:41', '2017-11-15 07:38:29'),
 (207, 21, 'EDI WOWW!!!!', 'Clark Lajarca', '2017-11-14 06:29:41', '2017-11-15 07:38:29'),
-(208, 27, 'I SUGGEST _ FOR ME', 'Clark Lajarca', '2017-11-14 06:29:41', '2017-11-15 07:38:29'),
-(209, 51, 'Uhmmm...', 'Juan(John) Gawin(Doe)', '2017-11-19 15:06:56', '2017-11-19 15:06:56'),
-(215, 51, 'Yeah...', 'Juan(John) Gawin(Doe)', '2017-11-19 15:17:21', '2017-11-19 15:17:21'),
-(216, 52, 'I\'ve heard you like VueJS. Do you?', 'Juan(John) Gawin(Doe)', '2017-11-19 15:19:26', '2017-11-19 15:19:26'),
-(222, 16, 'das', 'Juan(John) Gawin(Doe)', '2017-11-28 06:01:05', '2017-11-28 06:01:05'),
-(223, 16, 'yas', 'Juan(John) Gawin(Doe)', '2017-11-30 06:59:42', '2017-11-30 06:59:42'),
-(225, 16, 'gas', 'Juan(John) Gawin(Doe)', '2017-11-30 07:19:56', '2017-11-30 07:19:56'),
-(226, 17, 'yo', 'Juan(John) Gawin(Doe)', '2017-11-29 23:21:00', '2017-11-29 23:21:00');
+(208, 27, 'I SUGGEST _ FOR ME', 'Clark Lajarca', '2017-11-14 06:29:41', '2017-11-15 07:38:29');
 
 -- --------------------------------------------------------
 
@@ -232,8 +225,6 @@ CREATE TABLE `forums` (
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `author` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `tag_id` int(11) NOT NULL DEFAULT '1',
-  `num_comments` int(11) NOT NULL DEFAULT '0',
-  `color` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#66ccff',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -242,35 +233,29 @@ CREATE TABLE `forums` (
 -- Dumping data for table `forums`
 --
 
-INSERT INTO `forums` (`id`, `title`, `author`, `tag_id`, `num_comments`, `color`, `created_at`, `updated_at`) VALUES
-(16, 'Hi\r\n', 'James Michael Kuizon', 1, 22, '#00cdfa', '2017-10-23 05:44:18', '2017-11-29 23:19:56'),
-(17, 'Mayonatics Fan Club', 'VladJamir Tingson', 1, 26, '#6a5477', '2017-10-23 05:52:26', '2017-11-29 23:21:01'),
-(18, 'DAPAT NADEDELETE IT FORUM', 'VladJamir Tingson', 1, 2, '#151512', '2017-10-23 05:47:26', '2017-11-15 07:39:24'),
-(20, 'REPORT BUGS', 'VladJamir Tingson', 1, 17, '#fa4412', '2017-10-23 05:50:43', '2017-11-15 07:39:24'),
-(21, 'WALWALAN FORUM #OneUP', 'VladJamir Tingson', 1, 14, '#010203', '2017-10-23 05:47:33', '2017-11-15 07:39:24'),
-(22, 'JOKES SECTION', 'VladJamir Tingson', 1, 13, '#999900', '2017-10-23 05:49:27', '2017-11-15 07:39:24'),
-(23, 'CRUSHABLES in UP', 'VladJamir Tingson', 1, 38, '#abcdef', '2017-10-23 06:08:26', '2017-11-15 07:39:24'),
-(24, 'ARCADE TOURNAMENT somewhere ha CS LAB 3 pamakiana nala', 'VladJamir Tingson', 1, 6, '#fedcba', '2017-10-23 06:17:09', '2017-11-15 07:39:24'),
-(26, 'COMMEND SECTION', 'VladJamir Tingson', 1, 6, '#123456', '2017-10-23 05:47:37', '2017-11-15 07:39:24'),
-(27, 'SUGGESTIONS BOX', 'Juan(John) Gawin(Doe)', 1, 7, '#654321', '2017-10-23 09:43:12', '2017-11-15 07:39:24'),
-(28, 'TEST FORUM', 'VladJamir Tingson', 1, 0, '#ab5487', '2017-10-24 04:24:35', '2017-11-15 07:39:24'),
-(29, 'Papa Mao', 'Mao Zedong', 1, 0, '#fd54a3', '2017-10-24 07:39:22', '2017-11-15 07:39:24'),
-(30, 'ZANDERNATICS!!!', 'Zander Ford', 1, 4, '#12adbb', '2017-10-24 08:36:47', '2017-11-15 07:39:24'),
-(31, 'Kamusta Scholars!!!', 'Virgildo Sabalo', 1, 1, '#bcbccb', '2017-10-24 08:45:41', '2017-11-15 07:39:24'),
-(32, 'GATE CRASH', 'Earth Kingdom', 1, 6, '#981256', '2017-10-24 09:29:36', '2017-11-15 07:39:24'),
-(33, 'SEND NUKES', 'Albuen Rosello', 1, 1, '#cccccc', '2017-10-24 09:35:19', '2017-11-15 07:39:24'),
-(34, 'FINDING JOWA', 'VladJamir Tingson', 1, 8, '#6512ff', '2017-10-24 09:45:35', '2017-11-15 07:39:24'),
-(35, 'ANNOUNCEMENT', 'John Ultra', 1, 1, '#abc123', '2017-10-24 09:59:00', '2017-11-15 07:39:24'),
-(36, 'Hain ba tak crush?', 'Anez Baekhyun', 1, 2, '#bbbccc', '2017-10-26 03:32:06', '2017-11-15 07:39:24'),
-(37, '#OneUP', 'Anez Baekhyun', 1, 2, '#423902', '2017-10-26 03:32:41', '2017-11-15 07:39:24'),
-(38, 'KOMSAI WARS', 'ENTREL B', 1, 0, '#981723', '2017-10-27 03:03:37', '2017-11-15 07:39:24'),
-(50, '#OneUP Tambayan', 'Juan(John) Gawin(Doe)', 2, 0, '#412904', '2017-11-17 19:44:58', '2017-11-17 19:44:58'),
-(51, 'Mic Test', 'Juan(John) Gawin(Doe)', 3, 2, '#940782', '2017-11-19 15:05:28', '2017-11-19 15:05:28'),
-(52, 'Let\'s talk about frameworks :)', 'Juan(John) Gawin(Doe)', 3, 1, '#fbc123', '2017-11-19 15:18:45', '2017-11-19 15:18:45'),
-(53, 'knock knock jokes section', 'Juan(John) Gawin(Doe)', 4, 0, '#afcbaa', '2017-11-19 19:55:09', '2017-11-19 19:55:09'),
-(54, 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into', 'Juan(John) Gawin(Doe)', 3, 0, '#66ccff', '2017-11-30 00:57:24', '2017-11-30 00:57:24'),
-(55, 'Random stuffs', 'Juan(John) Gawin(Doe)', 1, 0, '#ff0a0a', '2017-11-30 01:22:36', '2017-11-30 01:22:36'),
-(56, 'Startup Ideas', 'Juan(John) Gawin(Doe)', 3, 0, '#56e236', '2017-11-30 06:13:51', '2017-11-30 06:13:51');
+INSERT INTO `forums` (`id`, `title`, `author`, `tag_id`, `created_at`, `updated_at`) VALUES
+(16, 'Hi\r\n', 'James Michael Kuizon', 1, '2017-10-23 05:44:18', '2017-11-15 07:39:24'),
+(17, 'Mayonatics Fan Club', 'VladJamir Tingson', 1, '2017-10-23 05:52:26', '2017-11-15 07:39:24'),
+(18, 'DAPAT NADEDELETE IT FORUM', 'VladJamir Tingson', 1, '2017-10-23 05:47:26', '2017-11-15 07:39:24'),
+(20, 'REPORT BUGS', 'VladJamir Tingson', 1, '2017-10-23 05:50:43', '2017-11-15 07:39:24'),
+(21, 'WALWALAN FORUM #OneUP', 'VladJamir Tingson', 1, '2017-10-23 05:47:33', '2017-11-15 07:39:24'),
+(22, 'JOKES SECTION', 'VladJamir Tingson', 1, '2017-10-23 05:49:27', '2017-11-15 07:39:24'),
+(23, 'CRUSHABLES in UP', 'VladJamir Tingson', 1, '2017-10-23 06:08:26', '2017-11-15 07:39:24'),
+(24, 'ARCADE TOURNAMENT somewhere ha CS LAB 3 pamakiana nala', 'VladJamir Tingson', 1, '2017-10-23 06:17:09', '2017-11-15 07:39:24'),
+(26, 'COMMEND SECTION', 'VladJamir Tingson', 1, '2017-10-23 05:47:37', '2017-11-15 07:39:24'),
+(27, 'SUGGESTIONS BOX', 'Juan(John) Gawin(Doe)', 1, '2017-10-23 09:43:12', '2017-11-15 07:39:24'),
+(28, 'TEST FORUM', 'VladJamir Tingson', 1, '2017-10-24 04:24:35', '2017-11-15 07:39:24'),
+(29, 'Papa Mao', 'Mao Zedong', 1, '2017-10-24 07:39:22', '2017-11-15 07:39:24'),
+(30, 'ZANDERNATICS!!!', 'Zander Ford', 1, '2017-10-24 08:36:47', '2017-11-15 07:39:24'),
+(31, 'Kamusta Scholars!!!', 'Virgildo Sabalo', 1, '2017-10-24 08:45:41', '2017-11-15 07:39:24'),
+(32, 'GATE CRASH', 'Earth Kingdom', 1, '2017-10-24 09:29:36', '2017-11-15 07:39:24'),
+(33, 'SEND NUKES', 'Albuen Rosello', 1, '2017-10-24 09:35:19', '2017-11-15 07:39:24'),
+(34, 'FINDING JOWA', 'VladJamir Tingson', 1, '2017-10-24 09:45:35', '2017-11-15 07:39:24'),
+(35, 'ANNOUNCEMENT', 'John Ultra', 1, '2017-10-24 09:59:00', '2017-11-15 07:39:24'),
+(36, 'Hain ba tak crush?', 'Anez Baekhyun', 1, '2017-10-26 03:32:06', '2017-11-15 07:39:24'),
+(37, '#OneUP', 'Anez Baekhyun', 1, '2017-10-26 03:32:41', '2017-11-15 07:39:24'),
+(38, 'KOMSAI WARS', 'ENTREL B', 1, '2017-10-27 03:03:37', '2017-11-15 07:39:24'),
+(50, '#OneUP Tambayan', 'Juan(John) Gawin(Doe)', 2, '2017-11-17 19:44:58', '2017-11-17 19:44:58');
 
 -- --------------------------------------------------------
 
@@ -394,19 +379,19 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_10_01_045816_create_games_table', 1),
 ('2016_10_01_050107_create_videos_table', 1),
 ('2016_10_01_050238_create_genres_table', 1),
-('2016_10_01_050452_create_gameGenres_table', 1),
-('2016_10_01_050615_create_videosGenres_table', 1),
+('2016_10_01_050452_create_gamegenres_table', 1),
+('2016_10_01_050615_create_videosgenres_table', 1),
 ('2016_10_01_050738_create_images_table', 1),
 ('2016_10_01_050914_create_scores_table', 1),
 ('2016_10_10_132422_create_tokens_table', 1),
-('2016_10_10_132519_create_userVideos_table', 1),
+('2016_10_10_132519_create_uservideos_table', 1),
 ('2016_10_11_122431_create_series_table', 1),
-('2016_10_12_054121_create_seriesVideos_table', 1),
-('2016_10_12_113833_create_seriesGenres_table', 1),
+('2016_10_12_054121_create_seriesvideos_table', 1),
+('2016_10_12_113833_create_seriesgenres_table', 1),
 ('2016_10_14_160417_user_time', 1),
-('2016_10_15_054307_create_userGames_table', 1),
+('2016_10_15_054307_create_usergames_table', 1),
 ('2016_10_16_041855_create_userTimes_table', 1),
-('2016_10_16_061100_create_videoTime', 1),
+('2016_10_16_061100_create_videotime', 1),
 ('2016_10_16_061836_create_gamerTimer', 1),
 ('2016_10_16_154656_create_VidTimer', 2),
 ('2016_11_14_015436_add_column_to_users', 3),
@@ -415,19 +400,19 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_10_01_045816_create_games_table', 1),
 ('2016_10_01_050107_create_videos_table', 1),
 ('2016_10_01_050238_create_genres_table', 1),
-('2016_10_01_050452_create_gameGenres_table', 1),
-('2016_10_01_050615_create_videosGenres_table', 1),
+('2016_10_01_050452_create_gamegenres_table', 1),
+('2016_10_01_050615_create_videosgenres_table', 1),
 ('2016_10_01_050738_create_images_table', 1),
 ('2016_10_01_050914_create_scores_table', 1),
 ('2016_10_10_132422_create_tokens_table', 1),
-('2016_10_10_132519_create_userVideos_table', 1),
+('2016_10_10_132519_create_uservideos_table', 1),
 ('2016_10_11_122431_create_series_table', 1),
-('2016_10_12_054121_create_seriesVideos_table', 1),
-('2016_10_12_113833_create_seriesGenres_table', 1),
+('2016_10_12_054121_create_seriesvideos_table', 1),
+('2016_10_12_113833_create_seriesgenres_table', 1),
 ('2016_10_14_160417_user_time', 1),
-('2016_10_15_054307_create_userGames_table', 1),
+('2016_10_15_054307_create_usergames_table', 1),
 ('2016_10_16_041855_create_userTimes_table', 1),
-('2016_10_16_061100_create_videoTime', 1),
+('2016_10_16_061100_create_videotime', 1),
 ('2016_10_16_061836_create_gamerTimer', 1),
 ('2016_10_16_154656_create_VidTimer', 2),
 ('2016_11_14_015436_add_column_to_users', 3),
@@ -463,19 +448,19 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_10_01_045816_create_games_table', 1),
 ('2016_10_01_050107_create_videos_table', 1),
 ('2016_10_01_050238_create_genres_table', 1),
-('2016_10_01_050452_create_gameGenres_table', 1),
-('2016_10_01_050615_create_videosGenres_table', 1),
+('2016_10_01_050452_create_gamegenres_table', 1),
+('2016_10_01_050615_create_videosgenres_table', 1),
 ('2016_10_01_050738_create_images_table', 1),
 ('2016_10_01_050914_create_scores_table', 1),
 ('2016_10_10_132422_create_tokens_table', 1),
-('2016_10_10_132519_create_userVideos_table', 1),
+('2016_10_10_132519_create_uservideos_table', 1),
 ('2016_10_11_122431_create_series_table', 1),
-('2016_10_12_054121_create_seriesVideos_table', 1),
-('2016_10_12_113833_create_seriesGenres_table', 1),
+('2016_10_12_054121_create_seriesvideos_table', 1),
+('2016_10_12_113833_create_seriesgenres_table', 1),
 ('2016_10_14_160417_user_time', 1),
-('2016_10_15_054307_create_userGames_table', 1),
+('2016_10_15_054307_create_usergames_table', 1),
 ('2016_10_16_041855_create_userTimes_table', 1),
-('2016_10_16_061100_create_videoTime', 1),
+('2016_10_16_061100_create_videotime', 1),
 ('2016_10_16_061836_create_gamerTimer', 1),
 ('2016_10_16_154656_create_VidTimer', 2),
 ('2016_11_14_015436_add_column_to_users', 3),
@@ -484,19 +469,19 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2016_10_01_045816_create_games_table', 1),
 ('2016_10_01_050107_create_videos_table', 1),
 ('2016_10_01_050238_create_genres_table', 1),
-('2016_10_01_050452_create_gameGenres_table', 1),
-('2016_10_01_050615_create_videosGenres_table', 1),
+('2016_10_01_050452_create_gamegenres_table', 1),
+('2016_10_01_050615_create_videosgenres_table', 1),
 ('2016_10_01_050738_create_images_table', 1),
 ('2016_10_01_050914_create_scores_table', 1),
 ('2016_10_10_132422_create_tokens_table', 1),
-('2016_10_10_132519_create_userVideos_table', 1),
+('2016_10_10_132519_create_uservideos_table', 1),
 ('2016_10_11_122431_create_series_table', 1),
-('2016_10_12_054121_create_seriesVideos_table', 1),
-('2016_10_12_113833_create_seriesGenres_table', 1),
+('2016_10_12_054121_create_seriesvideos_table', 1),
+('2016_10_12_113833_create_seriesgenres_table', 1),
 ('2016_10_14_160417_user_time', 1),
-('2016_10_15_054307_create_userGames_table', 1),
+('2016_10_15_054307_create_usergames_table', 1),
 ('2016_10_16_041855_create_userTimes_table', 1),
-('2016_10_16_061100_create_videoTime', 1),
+('2016_10_16_061100_create_videotime', 1),
 ('2016_10_16_061836_create_gamerTimer', 1),
 ('2016_10_16_154656_create_VidTimer', 2),
 ('2016_11_14_015436_add_column_to_users', 3),
@@ -881,9 +866,9 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `student_number`, `passwor
 (162, 'Allan', 'Sarsoza', 201513839, '$2y$10$SD91bMYajbEEud34yMUBBOcALmStUdj68X2mEoBelnO0KCK0A.JB2', '4sKk8Ydzbkxt0SekZ8m6hoyO9Jz0Dr5ZPIDskcPqvtbb8PxZC4tBds41ucgg', '2016-10-20 23:40:10', '2016-10-21 00:45:57', 0, 0, 50, 0, 0.00, ''),
 (163, 'John', 'Snow', 201354044, '$2y$10$/m9X9vQ.FGGCgy3VTAx0LOX8SX1acWIFHmqxk4DzJ51Yv5mMhZuGO', 'vPUdXZ8qFrSc7zA8QF06mm2QhhFmtcgYCUeSWWTuX6YMWJlaG4CcUivpKlyg', '2016-11-09 17:10:51', '2016-11-09 17:21:54', 0, 0, 9980, 0, 0.00, ''),
 (164, 'Xander', 'Ayala', 201467074, '$2y$10$Hg4zVM.Eve6vsFUM6BtlLuMnq7dnw9BCwx0qp.OZl1Waa/ZBcWpmK', 'me6XDBPCsrk3Hrt9fm7qiPWjpOm3UQHAqL7HVgiFGJruBwTO357jDnFdIuxS', '2017-10-17 20:08:21', '2017-10-22 22:21:51', 0, 0, 50, 0, 0.00, ''),
-(165, 'Juan(John)', 'Gawin(Doe)', 201412345, '$2y$10$fHkuHNnfelUKVIkFtiQBruVLMTH/iQojVRiX8T0iGSNShbYgsHTTy', 'KoCQUOHjhwUgNBbIEndAF2u33pAh4ieLnFSsq3QD3VF15brwFDixJSN9UK9j', '2017-10-17 23:37:50', '2017-11-30 11:04:15', 0, 0, 1000, 0, 0.00, ''),
+(165, 'Juan(John)', 'Gawin(Doe)', 201412345, '$2y$10$fHkuHNnfelUKVIkFtiQBruVLMTH/iQojVRiX8T0iGSNShbYgsHTTy', 'lH9IWbwjIiVXXSx1yysMcK5RyjdVlvlD3ymhplKUULtlrKhrjzvQaYWOzqfF', '2017-10-17 23:37:50', '2017-10-25 18:13:28', 0, 0, 1000, 0, 0.00, ''),
 (166, 'Jane', 'Doe', 201454321, '$2y$10$JjxdHuiHmCg/jLsJpRL2TuLh0gsasXEVk1YZIeBTDO0doxUjyMOMy', NULL, '2017-10-21 18:22:15', '2017-10-21 18:22:15', 0, 0, 20, 0, 0.00, ''),
-(167, 'Gary', 'Kasparov', 201712345, '$2y$10$FhPDiXuvjKr9nVN6dM7YyebyuSVh/E26qRFp5BCNoWY9XIl5VYGZq', '9wzMgYD3ZXW2wuXcej7L1kZxT46KlBAxCg2QP1UDwnW15tf3RJyFfvgnXbbR', '2017-10-22 05:17:46', '2017-11-30 11:04:42', 0, 0, 50, 0, 0.00, ''),
+(167, 'Gary', 'Kasparov', 201712345, '$2y$10$FhPDiXuvjKr9nVN6dM7YyebyuSVh/E26qRFp5BCNoWY9XIl5VYGZq', NULL, '2017-10-22 05:17:46', '2017-10-22 05:17:46', 0, 0, 50, 0, 0.00, ''),
 (168, 'Jhunn', 'Margallo', 201406429, '$2y$10$56Tmxqc5wNVxtCAaLG0D3efrl.3NfpBLVt5kfrek4bd2JHxkvFT/6', 'KuivVXNKiYVvDhOqnu4WsqXCIiS2ORNCWV1WzksKnIiQPe6yfNAiKJ6gn1SG', '2017-10-22 18:44:01', '2017-10-22 22:51:00', 0, 0, 50, 0, 0.00, ''),
 (169, 'jim', 'data', 201120800, '$2y$10$H4XhEMSqXAVdhTYEncPKj.dIYZET0YDciZ5dVgA.q03qPtgv1ckZ2', 'pR4jBHAgfHSSKiMLfwvgF6rgjHiGH16nJmXxAhlIP7MQzFgUwRZLSMhzJxrz', '2017-10-22 19:02:59', '2017-10-22 19:19:07', 0, 0, 50, 0, 0.00, ''),
 (170, 'Tsin', 'Tao', 201417345, '$2y$10$51tPEg/V8uEdTfFAyhEDVO22bFKd2gQKWlXVlp5OFShwP3lenJ9bq', 'gl7OcTjjQMDFL6Kmb8JgPoGUtGM83tmKRZqAfE2lcfHeagsir7bIWvpGlMNY', '2017-10-22 19:20:49', '2017-10-27 00:56:45', 0, 0, 25, 0, 0.00, ''),
@@ -1234,12 +1219,12 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
 --
 -- AUTO_INCREMENT for table `forums`
 --
 ALTER TABLE `forums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT for table `games`
 --
