@@ -313,7 +313,7 @@
         forums: {!! json_encode($forums) !!},
         pinnedForum: {!! json_encode($pinnedForum) !!},        
         distinctForumTags: {!! json_encode($distinctForumTags) !!},
-        sortByValues: [ 
+        sortByValues: [
           { 
             text: "None",
           }, 
@@ -402,6 +402,16 @@
       var clr = document.getElementById('forum-color-input').value = hex;
     });
    
+    // forums autoupdate
+    setInterval(function() {
+      $.ajax({
+        url: "/api/forum",
+      }).done(function( data ) {
+        if (vm.forums.length !== data.forums.length) {
+          vm.forums = data.forums;
+        }
+      });
+    }, 10000);
   </script>
   </body>
 

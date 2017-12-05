@@ -1,4 +1,4 @@
-<div id="forum-comments-list">
+<div id="app">
     <div id="frm-comments-block">
         <div id="forum-title-hdr-cntnr-color" style="background: {!! $forum[0]->color !!}"></div>
         <div id="forum-title-hdr-cntnr">
@@ -15,19 +15,17 @@
         </div>
 
         <ul id="comments">
-        @foreach ($commentsList as $index=>$comment)
-            <li class="title-card">
+            <li v-for="comment in computedComments" class="title-card">
                 <div class="card-partition">
                     <div class="comment-content">
-                        {{$comment->content}}
+                        @{{ comment.content }}
                     </div>
                     <div class="comment-desc">
-                        <span id="comment-date-created">{{$comment->created_at}}</span>
-                        <span id="author">{{$comment->author}}</span>
+                        <span id="comment-date-created">@{{ comment.created_at }}</span>
+                        <span id="author">@{{ comment.author }}</span>
                     </div>
                 </div>
             </li>
-        @endforeach
         </ul>
     </div>
     <div id="comment-form">
