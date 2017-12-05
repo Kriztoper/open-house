@@ -153,5 +153,35 @@
 	});
 	</script>
 	@endif
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script>
+		var vm = new Vue({
+      el: "#comments-cntnr",
+      data: {
+        comments: {!! json_encode($commentsList) !!},
+      },
+      methods: {
+
+      },
+      computed: {
+        computedComments: function() {
+					return this.comments;
+				},
+      }
+    });
+
+		// comments auto-update
+		var forum = {!! json_encode($forum[0]) !!};
+    setInterval(function() {
+      $.ajax({
+        url: "/api/comments/" + forum.id,
+      }).done(function( data ) {
+				if (vm.comments.length !== data.commentsList.length) {
+          vm.comments = data.commentsList;
+        }
+      });
+    }, 10000);
+  </script>
 </body>
 </html>

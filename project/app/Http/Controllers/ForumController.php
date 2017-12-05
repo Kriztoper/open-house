@@ -47,6 +47,38 @@ class ForumController extends Controller
         return redirect()->action('ForumController@showForums');
     }
 
+    public function api_showForums() {
+        // get pinned forum
+        $user_id = Auth::user()->id;
+        $forum_id = PinnedForum::select('pinned_forums.*')->where('user_id', $user_id)->pluck('forum_id');
+        $pinnedForum = Forum::select('forums.*')->where('id', $forum_id)->get();
+
+        // get pinned forum's tag
+        $pinnedForumTag = "";
+        if (!$pinnedForum->isEmpty()) {
+            $pinnedForumTag = ForumTag::select('forum_tags.tag')->where('id', $pinnedForum[0]->tag_id)->pluck('tag');
+        }
+
+        $forums = Forum::select('forums.*')->get();
+        $comments = Comment::select('comments.*')->get();
+        $distinctForumTags = [];
+        foreach($forums as $forum) {
+            $forum['tag'] = ForumTag::select('forum_tags.tag')->where('id', $forum->tag_id)->pluck('tag');
+            if (!in_array($forum['tag'], $distinctForumTags)) {
+                array_push($distinctForumTags, $forum['tag']);
+            }
+        }
+
+        // randomize color
+        $colorsHexIndex = "0123456789abcdef";
+        $color = "#";
+        for ($i = 0; $i < 6; $i++) {
+            $color .= $colorsHexIndex[rand(0, 15)];
+        }
+
+        return ['forums' => $forums, 'distinctForumTags' => $distinctForumTags, 'color' => $color, 'pinnedForum' => $pinnedForum, 'pinnedForumTag' => $pinnedForumTag];
+    }
+
     public function showForums() {
         // get pinned forum
         $user_id = Auth::user()->id;
@@ -121,6 +153,13 @@ class ForumController extends Controller
         $commentsList = Comment::select('comments.*')->where('forum_id', $id)->get();
         $forumTag = ForumTag::select('forum_tags.tag')->where('id', $forum[0]->tag_id)->pluck('tag');
         return view('comments', ['forum' => $forum, 'commentsList' => $commentsList, 'forumTag' => $forumTag]);
+    }
+
+    public function api_showForumComments($id) {
+        $forum = Forum::select('forums.*')->where('id', $id)->get();
+        $commentsList = Comment::select('comments.*')->where('forum_id', $id)->get();
+        $forumTag = ForumTag::select('forum_tags.tag')->where('id', $forum[0]->tag_id)->pluck('tag');
+        return ['forum' => $forum, 'commentsList' => $commentsList, 'forumTag' => $forumTag];
     }
 
     /**

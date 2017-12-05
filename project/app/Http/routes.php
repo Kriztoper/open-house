@@ -99,5 +99,9 @@ Route::get('/comments/{id}', 'ForumController@showForumComments');
 Route::post('/comments/{id}', 'ForumController@commentOnForum');
 Route::post('/forum/pin/{forum_id}', 'ForumController@pinForum');
 Route::post('/forum/pin/delete/{forum_id}', 'ForumController@deletePinnedForum');
+
+// api
+Route::get('/api/forum', 'ForumController@api_showForums');
+Route::get('/api/comments/{id}', 'ForumController@api_showForumComments');
 ?>
 
