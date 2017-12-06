@@ -61,8 +61,8 @@ class GamesController extends Controller
                   ->where('genres.genreName','Board Games')
                   ->get();
         /*$popularSeries = DB::table('series')
-                        ->join('seriesVideo','series.seriesID','=','seriesVideo.seriesID')
-                        ->join('userVideos','userVideos.videoID','=','seriesVideo.videoID')
+                        ->join('seriesvideo','series.seriesID','=','seriesvideo.seriesID')
+                        ->join('uservideos','uservideos.videoID','=','seriesvideo.videoID')
                         ->select('series.*')
                         ->get();*/
        

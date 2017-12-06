@@ -31,7 +31,7 @@ class VideosController extends Controller
       //
   }
   public function buyVideo(){
-      $userVideos = new userVideo;
+      $uservideos = new userVideo;
   }
   /**
    * List all series from the database with respect to its genre or tag
@@ -65,18 +65,23 @@ class VideosController extends Controller
   */
    public function listVideos($id){
 
-       $seriesVideo = seriesVideo:: where('seriesID', $id)->get();
+       $seriesvideo = seriesvideo:: where('seriesID', $id)->get();
        $series = series::where('seriesID',$id)->first();
-       $userVideos = UserVideo::where('userID',Auth::user()->student_number)->get();
+       $uservideos = UserVideo::where('userID',Auth::user()->student_number)->get();
         $i=0;
 
         $userVideo[] = array();
        $serVideo = array();
 
+<<<<<<< HEAD
        foreach($seriesVideo as $serVid){
            $serVideo[] = $serVid->videoID; 
+=======
+       foreach($seriesvideo as $serVid){
+           $serVideo[] = $serVid->videoID;
+>>>>>>> origin/development
            $userVideo[$i] = "confirm";
-           foreach($userVideos as $useVid){
+           foreach($uservideos as $useVid){
               if($useVid->videoID == $serVid->videoID)
                   $userVideo[$i]="";
            }
@@ -106,7 +111,11 @@ class VideosController extends Controller
         }
       return view('watch_video',['videos'=>$videos]);
 
+<<<<<<< HEAD
   /*$seriesID=DB::table('seriesVideo')->where('videoID',$id)->pluck('seriesID');
+=======
+  /*$seriesID=DB::table('seriesvideo')->where('videoID',$id)->pluck('seriesID');
+>>>>>>> origin/development
   $genre= DB::table('seriesgenres')->where('videoID',$seriesID)->pluck('genreID');
   return redirect('/startVideo/'.$id.'/'.$genre);  */
   }

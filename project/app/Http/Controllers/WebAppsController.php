@@ -22,6 +22,8 @@ class WebAppsController extends Controller
     {
         $webapps = WebApp::all();
         $categories = Category::all();
+
+        //return view('user.web_apps')->with('categoryList', $categoryList);
         return view('user.web_apps',['categories'=>$categories,'webapps'=>$webapps]);
     }
 
@@ -36,7 +38,7 @@ class WebAppsController extends Controller
         //dd($categories);  
         return view('user.new_webapp',['categories'=>$categories]);
     }
-
+   
     /**
      * Store a newly created resource in storage.
      *
@@ -71,21 +73,29 @@ class WebAppsController extends Controller
         $category = Category::find($id);
 
         $webapp = DB::table('web_apps')->where('category',$category->category)->get();
-        foreach ($webapp as $key => $value) {
-            $key->category = "uncategorized";
-            $key->update();
+        foreach ($webapp as $key) {
+            $web = WebApp::find($key->id);
+            $web->category = "Uncategorized";
+            $web->update();
         }
-        //$category->delete();
+        $webapp = DB::table('web_apps')->where('category',$category->category)->get();
+        $category->delete();
 
         $data = Category::all();
         return redirect('web_apps')->with('data',$data);
     }
     public function updateCategory(Request $request, $id) {
         //make webapp that has this category. uncategorized.
+        $newCategory = $request->input("x");
         $category = Category::find($id);
         $webapp = DB::table('web_apps')->where('category',$category->category)->get();
-        return $webapp;
-        return $category;
+        foreach ($webapp as $key) {
+            $web = WebApp::find($key->id);
+            $web->category = $newCategory;
+            $web->update();
+        }
+        $data = Category::all();
+        return redirect('web_apps')->with('data',$data);
     }
     /**
      * Display the specified resource.
@@ -106,6 +116,7 @@ class WebAppsController extends Controller
      */
     public function edit(Request $request, $id)
     {
+        $id = $request->input("webid");
         $webapp = WebApp::find($id);
         $image = $request->file('image');
         if (empty($request->file('image'))) {} else {
@@ -113,16 +124,17 @@ class WebAppsController extends Controller
             $webapp->imagename = $image->getClientOriginalName();
         }
         
-        
-
         $webapp->pagename = $request->input("web_title");
         $webapp->link = $request->input("web_link");
         $webapp->pagedescription = $request->input("web_desc");
         $categoryID = $request->input("category");
-        $categoryNow = DB::table('categories')->where('id',$categoryID)->pluck('category');
-        if($categoryNow==$webapp->category) {} else {
+        if(empty($categoryID)) {} else {
+            $categoryNow = DB::table('categories')->where('id',$categoryID)->pluck('category');
+                if($categoryNow==$webapp->category) {} else {
             $webapp->category=$categoryNow;
         }
+        }
+        
         $webapp->update();
 
         $data = Category::all();
@@ -158,11 +170,23 @@ class WebAppsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
+        $id = $request->input("webid");
         $webapp = WebApp::find($id);
         $webapp->delete();
         $data = Category::all();
         return redirect('web_apps')->with('data',$data);
+    }
+    public function showByCategory($id) 
+    {
+        $category = Category::find($id);
+        $webapps = DB::table('web_apps')->where('category',$category->category)->get();
+        $categories = Category::all();
+        return view('user.web_apps',['categories'=>$categories,'webapps'=>$webapps]);
+    }
+    public function search(Request $request) 
+    {
+        return "sdfsd";
     }
 }

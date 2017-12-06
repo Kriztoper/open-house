@@ -1,3 +1,54 @@
+html {
+    width: 100%;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: url(http://i.imgur.com/GGoHfbW.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	
+}
+
+body {
+	background-color: transparent;
+	font-family: lemonmilkregular;
+}
+
+@font-face {
+    font-family: 'goboldregular';
+    src: url('../fonts/gobold_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gobold_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lemonmilkregular';
+    src: url('../fonts/lemonmilk-webfont.woff2') format('woff2'),
+         url('../fonts/lemonmilk-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+	font-size: 40px;
+	color: #101010;
+	font-family: lemonmilkregular;
+	letter-spacing: 10px;
+	margin-top: 90px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
 body {
     font-family: monospace;
 }
@@ -5,6 +56,7 @@ body {
 #forums-cntnr {
     position: relative;
     margin-top: 100px;
+    margin-bottom: 50px;    
 }
 
 .title-card {
@@ -12,6 +64,45 @@ body {
     padding: 10px;
     position: relative;
     background: #f2f2f2;
+    padding-left: unset;
+}
+
+#pinned-forum-cntnr {
+    list-style: none;
+    padding: 10px 10px 20px;
+    position: relative;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+}
+
+#forum-color {
+    border:1px solid #ccc;
+    height: 32px;
+}
+
+/* #pinned-post-lbl {
+
+} */
+
+#pinned-card-partition {
+    display: grid;
+    border: 1px solid #b3b3b3;
+    grid-template-columns: 97.7% 2.2%;
+}
+
+#inner-pinned-card-partition {
+    display: flex;
+    padding: 10px;
+}
+
+#delete-pin-btn {
+    height: 20px; 
+    border: 1px solid #ccc; 
+}
+
+#delete-pin-btn:hover {
+    color: #fff;
+    background-color: #f00;
 }
 
 .card-partition {
@@ -20,13 +111,20 @@ body {
 
 .forum-title {
     width: 50%;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .forum-desc {
     width: 50%;
 }
 
-#author {
+.num-comments {
+    padding-left: 40px;
+}
+
+.author {
     background: #67cf00;
     color: #fff;
     font-size: 12px;
@@ -36,7 +134,7 @@ body {
     float: right;
 }
 
-#tag {
+.tag {
     margin-left: 5px;
     background: #da810d;
     color: #fff;
@@ -47,7 +145,7 @@ body {
     float: right;
 }
 
-#date-created {
+.date-updated {
     margin-left: 5px;
     background: #dad70d;
     color: #fff;
@@ -56,6 +154,33 @@ body {
     border-radius: 5px;
     position: relative;
     float: right;
+}
+
+#forum-list-headers-forum-desc {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.num-comments-lbl {
+    padding: 7px;
+    padding-left: 40px;
+}
+
+.author-lbl {
+    margin-left: 15%;    
+}
+
+.tag-lbl {
+    margin-left: 15%;
+}
+
+.date-updated-lbl {
+    margin-left: 15%;
+}
+
+#forum-list-headers {
+    padding: 10px;
 }
 
 .titles-link:hover {
@@ -79,14 +204,13 @@ body {
 #forum-form {
     width: 100%;
     margin-right: unset;
-    padding: 10px;
+    padding: 20px 10px 20px;
     text-align: center;
     background: #f3f3f2;
-    padding-top: 20px;
 }
 
 #forum-area {
-    width: 75%;
+    width: 65%;
 }
 
 #forum-btn {
@@ -106,6 +230,29 @@ body {
 }
 
 #search {
-    text-align: -webkit-right;
-    margin-bottom: 10px;
+    background: antiquewhite;
+    margin-bottom: unset;
+    border: solid 1px gray;
+    display: flex;
+}
+
+#utility-cntnr {
+    text-align: right;
+    position: relative;
+    right: -53%;
+}
+
+#sortby-cntnr {
+    border-left: solid 1px gray;
+    display: -webkit-inline-box;
+    padding: 10px;
+}
+
+#search-cntnr {
+    border-left: 1px solid gray;
+    display: -webkit-inline-box;    
+}
+
+#search-field {
+    margin: 10px;
 }

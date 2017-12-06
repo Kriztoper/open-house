@@ -103,19 +103,21 @@
                       <span id="search_concept">Filter by</span> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
+                      <li><a href="#all">All</a></li>
                       @if(count($categories) > 0) 
                         @foreach($categories as $cat)
-                          <li><a href="{{ url('/web_apps/category/'.$cat->id) }}">{{$cat->category}}</a></li>
+                          <li><a href="web_apps/{{$cat->id}}/category">{{$cat->category}}</a></li>
                         @endforeach
                      @endif
                     </ul>
                 </div>
-                <!--{!!Form::open(array('url' => '/web_apps/search', 'method'=>'GET', 'files' => true))!!}    -->
-                <input type="text" class="form-control" name="huehue" placeholder="Search term...">
-                
-                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-            
-                <!--{!!Form::close()!!} -->
+                {!!Form::open(array('url' => '/web_apps', 'method'=>'GET', 'files' => true))!!}
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+                {!!Form::close()!!}
             </div>
              
         </div>
@@ -205,9 +207,9 @@
             <p class="card__text">{{$web->pagedescription}} 
             This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up. </p>
 
-            <a type="button" onclick="edit({{$web}})" class="btn btn-info" id="{{$web->id}}">Edit</a>
+            <a type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal3">Edit</a>
 
-            <a type="button" onclick="destroy({{$web}})" class="btn btn-info" data-toggle="modal" id="{{$web->id}}">Delete</a>
+            <a type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal4">Delete</a>
             
           </div>
         </div>
@@ -220,18 +222,16 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" id="header1">Edit Webapp</h4>
+                    <h4 class="modal-title">Edit Webapp {{$web->id}}</h4>
                   </div>
                   <div class="modal-body">
                     {!!Form::open(array('url' => '/web_apps/'.$web->id, 'method'=>'POST', 'files' => true))!!}
-                      <input type="hidden" class="form-control" id="webid" name="webid">
-                      <input type="file" class="form-control" accept="image/*" id="image1" name="image" placeholder="WebApp Image" value="{{$web->imagename}}">
-                      <input type="text" class="form-control" id="web_title1" name="web_title" required placeholder="WebApp Title" value="{{$web->pagename}}">
-                      <input type="text" class="form-control" id="web_link1" name="web_link" required placeholder="App link" value="{{$web->link}}">
-                      <input type="text" class="form-control" id="web_desc1" name="web_desc" required placeholder="App Description" value="{{$web->pagedescription}}">
+                      <input type="file" class="form-control" accept="image/*" name="image" placeholder="WebApp Image" value="{{$web->imagename}}">
+                      <input type="text" class="form-control" name="web_title" required placeholder="WebApp Title" value="{{$web->pagename}}">
+                      <input type="text" class="form-control" name="web_link" required placeholder="App link" value="{{$web->link}}">
+                      <input type="text" class="form-control" name="web_desc" required placeholder="App Description" value="{{$web->pagedescription}}">
                       <label>Category: {{$web->category}}</label>
-                      <select id="category1" name="category" class="form-control" style="width:350px">
-                        <option disabled selected value> -- select an option -- </option>
+                      <select name="category" class="form-control" style="width:350px">
                       @foreach ($categories as $cat)
                           @if($cat==$web->category)
                             <option selected="selected" value="{{ $cat->id }}" value="{{$web->category}}">{{ $cat->category }}</option>
@@ -259,8 +259,6 @@
                   </div>
                   <div class="modal-body">
                     {!!Form::open(array('url' => '/web_apps/'.$web->id.'/delete', 'method'=>'GET', 'files' => true))!!}
-                      <input type="hidden" class="form-control" id="webid1" name="webid">
-                      
                       <label>Are you sure you want to delete this WebApp? </label>
                       <br/>
                       <button type="submit" class="btn btn-default">Yes</button>
@@ -323,17 +321,6 @@
   </div>
   
    <script>
-      function edit($web) {
-        document.getElementById("webid").value = $web["id"];
-        document.getElementById("web_title1").value = $web["pagename"];
-        document.getElementById("web_desc1").value = $web["pagedescription"];
-        document.getElementById("web_link1").value = $web["link"];
-        $('#myModal3').modal({show:true});
-      }
-      function destroy($web) {
-        document.getElementById("webid1").value = $web["id"];
-        $('#myModal4').modal({show:true});
-      }
       jQuery(document).ready(function($) {
         $(window).scroll(function() {
           var scrollPos = $(window).scrollTop(),

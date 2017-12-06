@@ -107,5 +107,11 @@ Route::post('/web_apps/{id}', 'WebAppsController@edit');
 Route::get('/web_apps/{id}/delete', 'WebAppsController@destroy');
 Route::get('/web_apps/{id}/destroyCategory', 'WebAppsController@destroyCategory');
 Route::post('/web_apps/{id}/updateCategory', 'WebAppsController@updateCategory');
+Route::post('/web_apps/search', 'WebAppsController@search');
+
+Route::get('/web_apps/category/{id}', 'WebAppsController@showByCategory');
+
+Route::post('/forum/pin/{forum_id}', 'ForumController@pinForum');
+Route::post('/forum/pin/delete/{forum_id}', 'ForumController@deletePinnedForum');
 ?>
 

@@ -26,7 +26,11 @@ class CreateSeriesGenresTable extends Migration
      */
     public function down()
     {
+<<<<<<< HEAD
         Schema::dropIfExists('videosGenres');
+=======
+        Schema::dropIfExists('videosgenres');
+>>>>>>> origin/development
         Schema::dropIfExists('seriesgenres');
     }
 }

@@ -12,7 +12,7 @@ class CreateVideosGenresTable extends Migration
      */
     public function up()
     {
-        Schema::create('videosGenres', function (Blueprint $table) {
+        Schema::create('videosgenres', function (Blueprint $table) {
             $table->increments('videoGenreID');
             $table->integer('videoID');
             $table->integer('genreID');
@@ -26,7 +26,11 @@ class CreateVideosGenresTable extends Migration
      */
     public function down()
     {
+<<<<<<< HEAD
         Schema::dropIfExists('videosGenres');
+=======
+        Schema::dropIfExists('videosgenres');
+>>>>>>> origin/development
         Schema::dropIfExists('  seriesgenres');
     }
 }
