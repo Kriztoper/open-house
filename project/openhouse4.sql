@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 25, 2018 at 09:59 PM
+-- Generation Time: Dec 01, 2017 at 01:38 PM
 -- Server version: 5.7.20-0ubuntu0.17.04.1
 -- PHP Version: 7.0.22-0ubuntu0.17.04.1
 
@@ -219,11 +219,7 @@ INSERT INTO `comments` (`id`, `forum_id`, `content`, `author`, `created_at`, `up
 (222, 16, 'das', 'Juan(John) Gawin(Doe)', '2017-11-28 06:01:05', '2017-11-28 06:01:05'),
 (223, 16, 'yas', 'Juan(John) Gawin(Doe)', '2017-11-30 06:59:42', '2017-11-30 06:59:42'),
 (225, 16, 'gas', 'Juan(John) Gawin(Doe)', '2017-11-30 07:19:56', '2017-11-30 07:19:56'),
-(226, 17, 'yo', 'Juan(John) Gawin(Doe)', '2017-11-29 23:21:00', '2017-11-29 23:21:00'),
-(227, 16, 'bas', 'Juan(John) Gawin(Doe)', '2017-12-04 19:08:31', '2017-12-04 19:08:31'),
-(228, 16, 'mas', 'Juan(John) Gawin(Doe)', '2017-12-04 19:08:48', '2017-12-04 19:08:48'),
-(229, 16, 'was', 'Juan(John) Gawin(Doe)', '2017-12-04 19:11:03', '2017-12-04 19:11:03'),
-(230, 16, 'pas', 'Juan(John) Gawin(Doe)', '2017-12-04 19:11:30', '2017-12-04 19:11:30');
+(226, 17, 'yo', 'Juan(John) Gawin(Doe)', '2017-11-29 23:21:00', '2017-11-29 23:21:00');
 
 -- --------------------------------------------------------
 
@@ -247,7 +243,7 @@ CREATE TABLE `forums` (
 --
 
 INSERT INTO `forums` (`id`, `title`, `author`, `tag_id`, `num_comments`, `color`, `created_at`, `updated_at`) VALUES
-(16, 'Hi\r\n', 'James Michael Kuizon', 1, 26, '#00cdfa', '2017-10-23 05:44:18', '2017-12-04 19:11:30'),
+(16, 'Hi\r\n', 'James Michael Kuizon', 1, 22, '#00cdfa', '2017-10-23 05:44:18', '2017-11-29 23:19:56'),
 (17, 'Mayonatics Fan Club', 'VladJamir Tingson', 1, 26, '#6a5477', '2017-10-23 05:52:26', '2017-11-29 23:21:01'),
 (18, 'DAPAT NADEDELETE IT FORUM', 'VladJamir Tingson', 1, 2, '#151512', '2017-10-23 05:47:26', '2017-11-15 07:39:24'),
 (20, 'REPORT BUGS', 'VladJamir Tingson', 1, 17, '#fa4412', '2017-10-23 05:50:43', '2017-11-15 07:39:24'),
@@ -274,14 +270,7 @@ INSERT INTO `forums` (`id`, `title`, `author`, `tag_id`, `num_comments`, `color`
 (53, 'knock knock jokes section', 'Juan(John) Gawin(Doe)', 4, 0, '#afcbaa', '2017-11-19 19:55:09', '2017-11-19 19:55:09'),
 (54, 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into', 'Juan(John) Gawin(Doe)', 3, 0, '#66ccff', '2017-11-30 00:57:24', '2017-11-30 00:57:24'),
 (55, 'Random stuffs', 'Juan(John) Gawin(Doe)', 1, 0, '#ff0a0a', '2017-11-30 01:22:36', '2017-11-30 01:22:36'),
-(56, 'Startup Ideas', 'Juan(John) Gawin(Doe)', 3, 0, '#56e236', '2017-11-30 06:13:51', '2017-11-30 06:13:51'),
-(57, 'Which is the best JS Framework?', 'Gary Kasparov', 3, 0, '#2a2f57', '2017-12-04 07:38:59', '2017-12-04 07:38:59'),
-(58, 'Which is the best PHP Framework?', 'Gary Kasparov', 3, 0, '#2c810f', '2017-12-04 07:53:30', '2017-12-04 07:53:30'),
-(59, 'What book should I read about Effective Reading', 'Gary Kasparov', 3, 0, '#8e8f60', '2017-12-04 08:04:17', '2017-12-04 08:04:17'),
-(60, 'Suggest productivity tools', 'Gary Kasparov', 3, 0, '#cfa927', '2017-12-04 08:54:16', '2017-12-04 08:54:16'),
-(61, 'Suggest programming tips', 'Gary Kasparov', 3, 0, '#53b82b', '2017-12-04 08:56:11', '2017-12-04 08:56:11'),
-(62, 'Suggest computer architecture books', 'Gary Kasparov', 3, 0, '#9f2b39', '2017-12-04 08:57:41', '2017-12-04 08:57:41'),
-(63, 'Suggest data structures book', 'Gary Kasparov', 3, 0, '#cd6c8f', '2017-12-04 08:58:40', '2017-12-04 08:58:40');
+(56, 'Startup Ideas', 'Juan(John) Gawin(Doe)', 3, 0, '#56e236', '2017-11-30 06:13:51', '2017-11-30 06:13:51');
 
 -- --------------------------------------------------------
 
@@ -537,9 +526,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2017_10_21_180130_add_author_to_comments', 8),
 ('2017_10_22_003748_add_starts_ends_table', 9),
 ('2017_10_22_005318_add_total_time_table', 1),
-('2017_10_22_050853_add_time_start_table', 10),
-('2017_11_27_065328_create_web_app_category_table', 11),
-('2017_11_27_071913_create_web_app_table', 11);
+('2017_10_22_050853_add_time_start_table', 10);
 
 -- --------------------------------------------------------
 
@@ -894,7 +881,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `student_number`, `passwor
 (162, 'Allan', 'Sarsoza', 201513839, '$2y$10$SD91bMYajbEEud34yMUBBOcALmStUdj68X2mEoBelnO0KCK0A.JB2', '4sKk8Ydzbkxt0SekZ8m6hoyO9Jz0Dr5ZPIDskcPqvtbb8PxZC4tBds41ucgg', '2016-10-20 23:40:10', '2016-10-21 00:45:57', 0, 0, 50, 0, 0.00, ''),
 (163, 'John', 'Snow', 201354044, '$2y$10$/m9X9vQ.FGGCgy3VTAx0LOX8SX1acWIFHmqxk4DzJ51Yv5mMhZuGO', 'vPUdXZ8qFrSc7zA8QF06mm2QhhFmtcgYCUeSWWTuX6YMWJlaG4CcUivpKlyg', '2016-11-09 17:10:51', '2016-11-09 17:21:54', 0, 0, 9980, 0, 0.00, ''),
 (164, 'Xander', 'Ayala', 201467074, '$2y$10$Hg4zVM.Eve6vsFUM6BtlLuMnq7dnw9BCwx0qp.OZl1Waa/ZBcWpmK', 'me6XDBPCsrk3Hrt9fm7qiPWjpOm3UQHAqL7HVgiFGJruBwTO357jDnFdIuxS', '2017-10-17 20:08:21', '2017-10-22 22:21:51', 0, 0, 50, 0, 0.00, ''),
-(165, 'Juan(John)', 'Gawin(Doe)', 201412345, '$2y$10$fHkuHNnfelUKVIkFtiQBruVLMTH/iQojVRiX8T0iGSNShbYgsHTTy', '4XhQZ554bTOHkZtpQSzlqyThQvFI62kDEF1NO8KLneqotxfILy705h8xPNky', '2017-10-17 23:37:50', '2018-01-25 05:47:29', 0, 0, 1000, 0, 0.00, ''),
+(165, 'Juan(John)', 'Gawin(Doe)', 201412345, '$2y$10$fHkuHNnfelUKVIkFtiQBruVLMTH/iQojVRiX8T0iGSNShbYgsHTTy', 'KoCQUOHjhwUgNBbIEndAF2u33pAh4ieLnFSsq3QD3VF15brwFDixJSN9UK9j', '2017-10-17 23:37:50', '2017-11-30 11:04:15', 0, 0, 1000, 0, 0.00, ''),
 (166, 'Jane', 'Doe', 201454321, '$2y$10$JjxdHuiHmCg/jLsJpRL2TuLh0gsasXEVk1YZIeBTDO0doxUjyMOMy', NULL, '2017-10-21 18:22:15', '2017-10-21 18:22:15', 0, 0, 20, 0, 0.00, ''),
 (167, 'Gary', 'Kasparov', 201712345, '$2y$10$FhPDiXuvjKr9nVN6dM7YyebyuSVh/E26qRFp5BCNoWY9XIl5VYGZq', '9wzMgYD3ZXW2wuXcej7L1kZxT46KlBAxCg2QP1UDwnW15tf3RJyFfvgnXbbR', '2017-10-22 05:17:46', '2017-11-30 11:04:42', 0, 0, 50, 0, 0.00, ''),
 (168, 'Jhunn', 'Margallo', 201406429, '$2y$10$56Tmxqc5wNVxtCAaLG0D3efrl.3NfpBLVt5kfrek4bd2JHxkvFT/6', 'KuivVXNKiYVvDhOqnu4WsqXCIiS2ORNCWV1WzksKnIiQPe6yfNAiKJ6gn1SG', '2017-10-22 18:44:01', '2017-10-22 22:51:00', 0, 0, 50, 0, 0.00, ''),
@@ -1247,12 +1234,12 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 --
 -- AUTO_INCREMENT for table `forums`
 --
 ALTER TABLE `forums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT for table `games`
 --
