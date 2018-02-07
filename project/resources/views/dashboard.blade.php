@@ -14,27 +14,28 @@
 
 </head>
 <body>
+	<p id="name">{{ strtoupper(Auth::user()->first_name) }}</p>
 
 	<div class="container-fluid">
 		<nav id="top-navbar" class="navbar navbar-default">
 			<div class="container-fluid">
     			<div class="navbar-header">
      				<a class="navbar-brand" href="#">
-     					<img src="http://i.imgur.com/js8s2AR.png" style="margin: auto !important; position: center" width=80%/>
+     					<img src="http://i.imgur.com/js8s2AR.png?2" alt="OpenHouse">
      				</a>
   				</div>
     			<ul id="tokens" class="nav navbar-nav">
               		<li>
-                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{'69'}}</span></p>
+                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{'69'}}</span> <span class="glyphicon glyphicon-record plus"></span></p>
               		</li>
           		</ul>
-	    		<ul id="links" class="nav navbar-nav navbar-right">
+	    		<ul id="links" class="nav navbar-nav navbar-right"><!--
 	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
 					<li><a href="{{ url('/forum') }}">FORUM</a></li>  
 					<li><a href="#">HALL OF FAME</a></li>
 	      			<li><a href="#">GAMES</a></li>
 	      			<li><a href="{{url('videos')}}">VIDEOS</a></li>
-	      			<!-- Change to user name -->
+	      			 Change to user name 
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown">{{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
@@ -44,11 +45,20 @@
           					<li role="separator" class="divider"></li>
           					<li><a href="{{url('logout')}}">LOGOUT</a></li>
         				</ul>
-      				</li>
+      				</li> -->
 	    		</ul>
   			</div>
 		</nav>
-			
+		<a href="{{ url('/hall_of_fame') }}"> <div id="hall"></div> </a>
+		<a href="{{url('videos')}}"> <div id="videos"></div> </a> 
+		<a href="{{url('game')}}"> <div id="games"></div> </a> 
+		<div id="web"></div>
+		<a href="{{ url('/forum') }}"> <div id="forum"></div> </a>
+		<div id="chat"> </div>
+		<a href="{{url('\profile')}}"><div id="profile"></div></a>
+		<a href="{{url('/developers')}}"><div id="developer"></div></a>
+		<a href="{{url('logout')}}"><div id="log"></div></a>
+
 		<div class="jumbotron">
 			<div class="container">
 				<h1 class="page-header">
@@ -67,14 +77,14 @@
 				</div>
 			</div>
 		</div>
-
+<!--
 		<nav class="navbar navbar-fixed-bottom">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">ABOUT THE DEVELOPERS</a></li>
 				</ul>
 			</div>
-		</nav>
+		</nav> -->
     </div>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.js"></script>

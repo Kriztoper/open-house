@@ -1,12 +1,74 @@
 html {
-	width: 100%;
+
+  width: 100%;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: url(../images/backgrounds/dash-bg.jpg);
+	background: url(../images/backgrounds/bg.png);
 	background-size: 100%;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
+  
+}
+#token {
+	text-align: left;
+}
+#videos {
+   background-image: url(../images/backgrounds/videos.png);
+   height: 180px;
+   width: 302px;
+   position: absolute; 
+   visibility: visible; 
+   left: 485px; 
+   top: 390px; 
+   z-index: 200;
+}
+#videos:hover {
+   background-image: url(../images/backgrounds/videoshover.png);
+}
+
+#developer {
+   background-image: url(../images/backgrounds/deve.png);
+   height: 266px;
+   width: 79px;
+   position: absolute; 
+   visibility: visible; 
+   left: -30px; 
+   top: 300px; 
+   z-index: 200;
+}
+#developer:hover {
+   background-image: url(../images/backgrounds/devehover.png);
+}
+
+#profile {
+   background-image: url(../images/backgrounds/profiles.png);
+   height: 108px;
+   width: 108px;
+   position: absolute; 
+   visibility: visible; 
+   left: 1100px; 
+   top: 10px; 
+   z-index: 200;
+}
+.addT {
+	background-image: url(../images/backgrounds/log.png);
+}
+#profile:hover {
+   background-image: url(../images/backgrounds/profhover.png);
+}
+#log {
+   background-image: url(../images/backgrounds/log.png);
+   height: 43px;
+   width: 43px;
+   position: absolute; 
+   visibility: visible; 
+   left: 1060px; 
+   top: 70px; 
+   z-index: 200;
+}
+#log:hover {
+   background-image: url(../images/backgrounds/loghover.png);
 }
 
 body {
@@ -39,6 +101,78 @@ body {
 
 }
 
+#web {
+   background-image: url(../images/backgrounds/web.png);
+   height: 160px;
+   width: 410px;
+   position: absolute; 
+   visibility: visible; 
+   left: 99px; 
+   top: 70px; 
+   z-index: 200;
+}
+#web:hover {
+   background-image: url(../images/backgrounds/webhover.png);
+}
+
+#forum {
+   background-image: url(../images/backgrounds/forum.png);
+   height: 160px;
+   width: 335px;
+   position: absolute; 
+   visibility: visible; 
+   left: 185px; 
+   top: 240px; 
+   z-index: 200;
+}
+#forum:hover {
+   background-image: url(../images/backgrounds/forumhover.png);
+}
+
+#chat {
+   background-image: url(../images/backgrounds/chat.png);
+   height: 160px;
+   width: 300px;
+   position: absolute; 
+   visibility: visible; 
+   left: 99px; 
+   top: 405px; 
+   z-index: 200;
+}
+#chat:hover {
+   background-image: url(../images/backgrounds/chathover.png);
+}
+
+
+#hall {
+   background-image: url(../images/backgrounds/hallhover.png);
+   height: 360px;
+   width: 390px;
+   position: absolute; 
+   visibility: visible; 
+   left: 670px; 
+   top: 115px; 
+   z-index: 500;
+}
+#hall:hover {
+   background-image: url(../images/backgrounds/hall.png);
+}
+
+#games {
+   background-image: url(../images/backgrounds/games.png);
+   height: 180px;
+   width: 360px;
+   position: absolute; 
+   visibility: visible; 
+   left: 810px; 
+   top: 390px; 
+   z-index: 200;
+}
+#games:hover {
+   background-image: url(../images/backgrounds/gameshover.png);
+}
+
+
 .jumbotron {
 	background-color: transparent;
 }
@@ -65,7 +199,15 @@ body {
 	padding: 0;
 	margin: 0;
 }
-
+#name {
+	font-family: lemonmilkregular;
+	text-align: right;
+	font-style: italic;
+	font-size: 15pt !important;
+	color: white;
+	margin-top: 115px;
+	margin-right: 45px;
+}
 .quote {
 	text-align: center;
 	font-style: italic;

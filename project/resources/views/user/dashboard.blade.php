@@ -16,6 +16,8 @@
 
 </head>
 <body>
+	<p id="name">{{ strtoupper(Auth::user()->first_name) }}</p>
+
 	<div class="container">
 		<nav id="top-navbar" class="navbar navbar-fixed-top">
 			<div class="container-fluid">
@@ -26,15 +28,15 @@
   				</div>
     			<ul id="tokens" class="nav navbar-nav">
               		<li>
-                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span></p>
+                		<p class="navbar-text"><span class="glyphicon glyphicon-record gold"></span><span class="redfont"> x </span><span class="white">{{Auth::user()->token}}</span>   <a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></p>
               		</li>
-          		</ul>
-	    		<ul id="links" class="nav navbar-nav navbar-right">
+          		</ul> 
+	    		<ul id="links" class="nav navbar-nav navbar-right"> <!--
 	    			<li class="active"><a href="{{ url('/dashboard') }}">DASHBOARD</a></li>
               <li><a href="{{ url('/forum') }}">FORUM</a></li>  
 							<li><a href="{{ url('/hall_of_fame') }}">HALL OF FAME</a></li>
 	      			<li><a href="{{ url('/game') }}">GAMES</a></li>
-	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li>
+	      			<li><a href="{{ url('/videos') }}">VIDEOS</a></li> 
 	      			<li class="dropdown">
         				<a class="dropdown-toggle" data-toggle="dropdown" role="button"> {{ strtoupper(Auth::user()->first_name) }}
         				<span class="caret"></span></a>
@@ -43,11 +45,21 @@
           					<li class="pull-right"><a href="#" data-toggle="modal" data-target="#myModal">ADD TOKENS</a></li>
           					<li class="pull-right"><a href="{{url('/logout')}}">LOGOUT</a></li>
         				</ul>
-      				</li>
+      				</li> -->
 	    		</ul>
   			</div>
 		</nav>
-			
+		<a href="{{ url('/hall_of_fame') }}"> <div id="hall"></div> </a>
+		<a href="{{url('videos')}}"> <div id="videos"></div> </a> 
+		<a href="{{url('game')}}"> <div id="games"></div> </a> 
+		<div id="web"></div>
+		<a href="{{ url('/forum') }}"> <div id="forum"></div> </a>
+		<div id="chat"> </div>
+		<a href="{{url('\profile')}}"><div id="profile"></div></a>
+		<a href="{{url('/developers')}}"><div id="developer"></div></a>
+		<a href="{{url('logout')}}"><div id="log"></div></a>
+
+		<!--
 		<div class="jumbotron">
 
 			<div id="welcome" class="container">
@@ -64,15 +76,15 @@
 				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
 				<p class="quote">The trouble with programmers is that you can never tell what a programmer is doing until it’s too late.</p>
 			</div>
-		</div>
-
+		</div> -->
+<!--
 		<nav class="navbar navbar-fixed-bottom">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-right navbar-xs">
 					<li><a href="{{url('/developers')}}">ABOUT THE DEVELOPERS</a></li>
 				</ul>
 			</div>
-		</nav>
+		</nav> -->
     </div>
 
 	<!-- Modal for token -->
