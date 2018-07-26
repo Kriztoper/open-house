@@ -55,11 +55,11 @@
 				<h1 class="page-header">KOMSAI OPENHOUSE</h1>
 			</div>
 			<div id="rotate">
-				<p class="quote">There's no place like <strong>127.0.0.1</strong></p>
+				<p class="quote">There’s no place like <strong>127.0.0.1</strong></p>
 				<p class="quote">That’s what’s cool about working with computers.  They don’t argue, they remember everything, and they don’t drink all your beer.</p>
 				<p class="quote">Controlling complexity is the essence of computer programming.</p>
 				<p class="quote">The function of good software is to make the complex appear to be simple.</p>
-				<p class="quote">Any fool can use a computer.  Many do.</p>
+				<p class="quote">Any fool can operate a computer.  Many do.</p>
 				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
 				<p class="quote">Most of you are familiar with the virtues of a programmer.  There are three, of course: laziness, impatience, and hubris.</p>
 				<p class="quote">The trouble with programmers is that you can never tell what a programmer is doing until it’s too late.</p>
@@ -148,7 +148,7 @@
 	<script type="text/javascript" src="js/bodyslide.js"></script>
 
 	<?php $error = Session::get('error'); ?>
-	@if(count($error)>0 && Session::get('error') == 400)
+	@if($error != null && is_array($error) || $error instanceof Countable && count($error)>0 && Session::get('error') == 400)
 	<script>
 	$(function()
 		{
@@ -159,7 +159,7 @@
 	@endif
 
 	<?php $error = Session::get('error'); ?>
-	@if(count($error)>0 && Session::get('error') == 405)
+	@if($error != null && is_array($error) || $error instanceof Countable && count($error)>0 && Session::get('error') == 405)
 	<script>
 	$(function()
 		{
@@ -167,6 +167,6 @@
 	});
 	</script>
 	@endif
-
+	
 </body>
 </html>
