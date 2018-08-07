@@ -184,7 +184,7 @@
   </div>
 
   <?php $error = Session::get('error'); ?>
-  @if(count($error)>0 && Session::get('error') == 400)
+  @if($error != null && count($error)>0 && Session::get('error') == 400)
   <script>
   $(function()
     {
