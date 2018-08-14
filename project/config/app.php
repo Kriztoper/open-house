@@ -150,7 +150,8 @@ return [
         */
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
         Way\Generators\GeneratorsServiceProvider::class,
-Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
+        Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
+        Orangehill\Iseed\IseedServiceProvider::class,
 
     ],
 
